@@ -1,141 +1,190 @@
 window.RASKY_SITE_DATA = {
+  heroPanels: [
+    {
+      title: "Hospitality Vision",
+      image: "assets/optimized/brand-restaurant-set.jpg",
+      alt: "Premium restaurant brand visual used as hospitality concept direction"
+    },
+    {
+      title: "Perfect Host",
+      image: "assets/optimized/perfecthost-map.jpg",
+      alt: "Perfect Host restaurant floor management interface"
+    },
+    {
+      title: "Illusions",
+      image: "assets/optimized/raskyjack-illusions.jpg",
+      alt: "Illusions album artwork by Raskyjack"
+    },
+    {
+      title: "Shnork",
+      image: "assets/optimized/shnork-cover.jpg",
+      alt: "In the Shadow of a Shnork fantasy novel cover artwork"
+    },
+    {
+      title: "Motion Desk",
+      image: "assets/optimized/motiondesk-screenshot.jpg",
+      alt: "Motion Desk creator workspace website preview"
+    }
+  ],
+  identity: [
+    "Hospitality Leader",
+    "Music Creator",
+    "Product Builder",
+    "Creative Entrepreneur"
+  ],
+  pillars: [
+    {
+      title: "Hospitality Professional",
+      text: "Leading teams and delivering experiences in high-end venues."
+    },
+    {
+      title: "Music Creator",
+      text: "Building an artist brand, releasing music and creating visuals that connect."
+    },
+    {
+      title: "Product Builder",
+      text: "Turning practical problems into working tools, prototypes and digital experiences."
+    },
+    {
+      title: "Creative Entrepreneur",
+      text: "Exploring brands, venues and concepts that could become real businesses."
+    }
+  ],
+  venuePillars: [
+    "Quality drinks and a seasonal menu",
+    "Warm service and atmosphere",
+    "Live music and curated events",
+    "Strong brand and visual identity",
+    "Built to scale in the right location"
+  ],
+  musicTracks: [
+    ["01", "Illusions", "2:59"],
+    ["02", "Flow State", "3:07"],
+    ["03", "Smoke and Glass", "3:29"],
+    ["04", "Glass Ceilings", "3:19"],
+    ["05", "Stand Tall", "3:42"]
+  ],
+  musicLinks: [
+    ["Spotify", "https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG"],
+    ["Apple Music", "https://music.apple.com/gb/artist/raskyjack/1845586303"],
+    ["YouTube", "https://www.youtube.com/@raskyjackmusic/releases"],
+    ["Instagram", "https://www.instagram.com/raskyjack/"],
+    ["SoundCloud", "https://soundcloud.com/raskyjack"]
+  ],
   projects: [
     {
-      title: "SportsPredictions / TennisPredict",
-      status: "Working prototype",
-      category: "Sports data product",
-      image: "assets/optimized/tennispredict-mockup.jpg",
-      alt: "TennisPredict desktop and mobile prediction app mockup",
+      title: "Perfect Host",
+      status: "Hospitality prototype",
+      category: "Hospitality",
+      image: "assets/optimized/perfecthost-map.jpg",
+      alt: "Perfect Host restaurant floor management interface",
       description:
-        "A tennis prediction and analytics prototype using data-driven thinking, model confidence, player information and match views.",
-      strengths: ["Prediction models", "Tennis analysis", "Swift app UI", "Data pipeline thinking"],
+        "A restaurant floor-management system shaped by real service problems: table states, timing, communication and guest awareness.",
       link: ""
     },
     {
       title: "Motion Desk",
-      status: "Concept site / product direction",
-      category: "Creative workflow app",
-      image: "",
-      alt: "",
+      status: "Concept",
+      category: "Productivity",
+      image: "assets/optimized/motiondesk-screenshot.jpg",
+      alt: "Motion Desk creator workspace preview",
       description:
-        "A macOS-style creator workspace idea for organising releases, assets, planning, analytics and creative momentum in one place.",
-      strengths: ["Native-app feel", "Creator workflow", "Local-first organisation", "Premium UI direction"],
-      link: "MotionDesk.raskydesign.com",
-      // TODO: Add a real exported Motion Desk screenshot if one is produced later.
-      visual: "motion"
+        "A creator workspace concept for organising assets, campaigns, planning and insights around releases and creative work.",
+      link: "https://motiondesk.raskydesign.com"
     },
     {
-      title: "Perfect Host",
-      status: "Hospitality operations prototype",
-      category: "Restaurant floor management",
-      image: "assets/optimized/perfecthost-map.jpg",
-      alt: "Perfect Host floor map interface showing tables, service states and bar layout",
+      title: "SportsPredictions",
+      status: "Prototype",
+      category: "Sports",
+      image: "assets/optimized/tennispredict-mockup.jpg",
+      alt: "TennisPredict prediction app mockup",
       description:
-        "A hospitality tool shaped by real restaurant work: table status, service timing, notes, guest flow and operational awareness.",
-      strengths: ["Floor planning", "Guest experience", "Service timing", "Real-world problem solving"],
+        "A tennis prediction and analytics app exploring data-driven models, confidence, player insights and match views.",
       link: ""
     },
     {
-      title: "Shnork Game / Story World",
-      status: "Creative IP in progress",
-      category: "Game and worldbuilding",
+      title: "Shnork",
+      status: "Novel / IP project",
+      category: "Creative IP",
       image: "assets/optimized/shnork-cover.jpg",
-      alt: "In the Shadow of a Shnork illustrated cover artwork",
+      alt: "In the Shadow of a Shnork cover artwork",
       description:
-        "A long-form story and game-world direction with characters, atmosphere, status-effect ideas and Unity prototype material.",
-      strengths: ["Storytelling", "Game systems", "Unity prototype direction", "World/IP building"],
-      link: ""
+        "A fantasy novel and game-world direction with characters, systems, visuals and a Unity prototype path.",
+      link: "#shnork"
     },
     {
       title: "Raskode",
-      status: "Concept / early prototype idea",
-      category: "Personal AI assistant",
+      status: "Concept",
+      category: "AI tools",
       image: "",
       alt: "",
       description:
-        "A personal AI and coding assistant concept around faster learning, automation, project memory and turning rough ideas into prototypes.",
-      strengths: ["AI-assisted development", "Automation", "Learning loops", "Prototype acceleration"],
-      link: "",
-      // TODO: Add screenshots or docs when a dedicated Raskode prototype folder is available.
-      visual: "raskode"
-    },
-    {
-      title: "Graphic Design / Brand Work",
-      status: "Visual experiments",
-      category: "Brand direction",
-      image: "assets/optimized/brand-restaurant-set.jpg",
-      alt: "Premium restaurant branding set visual experiment",
-      description:
-        "Logo, menu, hospitality and visual identity experiments that show taste, brand thinking and a feel for premium presentation.",
-      strengths: ["Hospitality branding", "Visual taste", "Menu direction", "AI visual exploration"],
+        "A personal AI assistant concept for learning faster, organising project context and turning rough ideas into first builds.",
       link: ""
     },
     {
-      title: "Etsy Profit Calculator",
-      status: "Live utility project",
-      category: "Practical web tool",
-      image: "",
-      alt: "",
+      title: "EtsyCalc",
+      status: "Live",
+      category: "Web app",
+      image: "assets/optimized/etsycalc-screenshot.jpg",
+      alt: "Etsy Profit Calculator website screenshot",
       description:
-        "A focused calculator for UK Etsy sellers, built around clearer pricing, costs, fees and profit visibility.",
-      strengths: ["Useful product", "Clear user problem", "Web app build", "Commercial thinking"],
-      link: "etsycalc.raskydesign.com",
-      visual: "calculator"
+        "A UK Etsy profit calculator for sellers who want clearer pricing, fees, costs and margin decisions.",
+      link: "https://etsycalc.raskydesign.com"
     },
     {
-      title: "Music / raskyjack",
-      status: "Artist brand",
-      category: "Music and identity",
-      image: "assets/optimized/raskyjack-awaken.jpg",
-      alt: "Raskyjack Awaken the Signal cover artwork",
+      title: "Graphic / Website Design",
+      status: "Visual experiments",
+      category: "Brand",
+      image: "assets/optimized/brand-restaurant-set.jpg",
+      alt: "Premium restaurant branding experiment",
       description:
-        "Music released under Raskyjack, supported by cover artwork, visual direction and a creative identity across major streaming platforms.",
-      strengths: ["Artist identity", "Cover artwork", "Publishing discipline", "Creative marketing"],
+        "Hospitality, menu, website and visual identity experiments exploring cleaner, more premium brand directions.",
+      link: ""
+    },
+    {
+      title: "Raskyjack / Music",
+      status: "Artist brand",
+      category: "Music",
+      image: "assets/optimized/raskyjack-illusions.jpg",
+      alt: "Illusions album artwork by Raskyjack",
+      description:
+        "The music side of Rasky: songwriting, releases, artwork, audience-building and a wider creative identity.",
       link: "#music"
     }
   ],
-  cocktails: [
-    "Tropical Raskarita",
-    "Rasky Ros&eacute; Fizz",
-    "Rasky Mojito Twist",
-    "Charming Rask",
-    "Raskys Garden Elixir",
-    "Ye Old Rask"
-  ],
-  why: [
-    "I learn quickly and use modern tools to close the gap between idea and working prototype.",
-    "I act on ideas instead of only talking about them, even when the first version is rough.",
-    "I understand hospitality and customer experience from real service work, not just theory.",
-    "I can combine AI, design taste, product thinking and practical execution.",
-    "I care about how ideas are presented, because good work still needs trust and clarity.",
-    "I am serious about improving, building long-term value and working with people who raise the standard."
-  ],
-  capabilities: [
-    ["AI", "AI-assisted development"],
-    ["PT", "Product prototyping"],
-    ["HO", "Hospitality operations"],
-    ["CX", "Customer experience"],
-    ["BD", "Brand/design direction"],
-    ["MU", "Music and creative identity"],
-    ["GW", "Game/world design"],
-    ["BC", "Business concept development"],
-    ["MK", "Marketing/content ideas"],
-    ["EX", "Fast learning and execution"]
-  ],
-  timeline: [
-    ["Hospitality", "Built a practical service mindset through real hospitality management in Hove/Sussex."],
-    ["Music", "Developed Raskyjack as an artist identity with artwork, releases and platform presence."],
-    ["Products", "Built useful app and web prototypes across Etsy tools, sports predictions and creative workflows."],
-    ["AI tools", "Used AI-assisted building to learn faster, test ideas and create more complete prototypes."],
-    ["Worldbuilding", "Expanded Shnork into story, visuals, game systems and a long-term creative IP direction."],
-    ["Raskys", "Shaped a flexible hospitality concept around drinks, music, events, community and premium service."]
-  ],
-  musicLinks: [
-    ["Spotify", "#"],
-    ["Apple Music", "#"],
-    ["YouTube", "#"],
-    ["TikTok", "#"],
-    ["Instagram", "#"],
-    ["SoundCloud", "#"]
+  strengths: [
+    {
+      title: "Hospitality Leadership",
+      text: "I understand service, timing, standards and how teams create the feeling guests remember."
+    },
+    {
+      title: "Customer Experience",
+      text: "I think about the person on the other side of the product, table, song or brand."
+    },
+    {
+      title: "Music & Brand Identity",
+      text: "Raskyjack gives the work a real creative voice, not just a portfolio wrapper."
+    },
+    {
+      title: "Product Prototyping",
+      text: "I can turn practical problems into tools quickly enough to test whether the idea has legs."
+    },
+    {
+      title: "Website / Graphic Design",
+      text: "I care about layout, visuals, tone and whether something feels credible at first glance."
+    },
+    {
+      title: "AI-Assisted Development",
+      text: "I use modern tools to learn faster, build faster and keep momentum without pretending AI does the thinking for me."
+    },
+    {
+      title: "Storytelling & Creative IP",
+      text: "Shnork shows the long-game side: worlds, characters, systems and ideas that can keep expanding."
+    },
+    {
+      title: "Fast Learning & Execution",
+      text: "I would rather make the first useful version, learn from it and improve than wait for perfect conditions."
+    }
   ]
 };

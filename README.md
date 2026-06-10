@@ -1,62 +1,102 @@
 # Rasky Portfolio
 
-Premium personal brand / portfolio website for `raskydesign.com`.
+Static GitHub Pages site for Rasky: Jack's personal brand across hospitality leadership, Raskyjack music, creative products, business concepts and AI-assisted building.
 
-## Run locally
+## Run Locally
 
-This is a static site. From this folder:
+From this folder:
 
 ```powershell
-python -m http.server 4173
+python -m http.server 4293
 ```
 
 Then open:
 
 ```text
-http://localhost:4173
+http://localhost:4293
 ```
 
-You can also open `index.html` directly in a browser, but a local server is closer to deployment.
+The site is plain HTML, CSS and JavaScript. There is no build step.
 
-## Edit content
+## Edit Content
 
-Most portfolio content is in:
+Most homepage content lives in:
 
 ```text
 data.js
 ```
 
-Edit project titles, statuses, copy, strengths, links, cocktail names, timeline items, capabilities and music links there.
+Edit these sections there:
 
-The contact form email is in:
+- hero visual strip panels
+- identity strip
+- About pillar cards
+- Raskys concept pillars
+- Raskyjack music links and track list
+- project cards
+- What I Bring cards
+
+Structural page copy is in:
 
 ```text
 index.html
 ```
 
-Replace `hello@raskydesign.com` with the real contact email before publishing.
+Visual styling is in:
 
-## Assets used
+```text
+styles.css
+```
 
-Curated local assets were copied into `assets/` and optimized JPEG versions were generated in `assets/optimized/`.
+## Assets
 
-Included assets:
+Optimized web images are in:
 
-- TennisPredict mockup from `Documents/SportsPredictions/MockupsImages`
-- Perfect Host floor map from `Documents/Codex/PerfectHost`
-- Shnork cover and character art from `Desktop/SHNORK CONTENT`
-- Raskyjack artwork from `Desktop/raskymusic/Artwork`
-- Rasky branding / restaurant visual from `Documents/raskydesign`
-- Rasky logo from `Documents/raskydesign`
+```text
+assets/optimized/
+```
 
-## Current TODOs
+Source/original images are kept in:
 
-- Add real Motion Desk exported screenshot when available.
-- Add real Raskode screenshots/docs when the concept has a dedicated local prototype.
-- Replace placeholder music/social links in `data.js`.
-- Replace contact email in `index.html`.
-- Add GitHub/portfolio links once the exact public URLs are chosen.
+```text
+assets/
+```
 
-## Deployment suggestion
+Current optimized assets include:
 
-For `raskydesign.com`, deploy the folder as static files through Netlify, Vercel, Cloudflare Pages or your existing domain host. The site has no build step, so the deployment root can be this folder.
+- Perfect Host interface
+- Motion Desk screenshot
+- EtsyCalc screenshot
+- TennisPredict mockup
+- Illusions artwork
+- Shnork artwork
+- hospitality / brand visuals
+
+## Deploy
+
+The repository is GitHub Pages compatible.
+
+Recommended Pages settings:
+
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/ (root)`
+
+The `.nojekyll` file should stay in the repo root.
+
+## Domain Notes
+
+The current footer/contact direction uses:
+
+```text
+raskyjack.com
+hello@raskyjack.com
+```
+
+If a custom domain is connected later, add a `CNAME` file at the repo root containing the final domain, for example:
+
+```text
+raskyjack.com
+```
+
+Also configure the DNS records in the domain provider to point to GitHub Pages.

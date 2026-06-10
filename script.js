@@ -1,117 +1,118 @@
 const data = window.RASKY_SITE_DATA;
 
-const projectGrid = document.querySelector("#project-grid");
-const cocktailGrid = document.querySelector("#cocktail-grid");
-const whyGrid = document.querySelector("#why-grid");
-const capabilityGrid = document.querySelector("#capability-grid");
-const timeline = document.querySelector("#timeline");
+const heroStrip = document.querySelector("#hero-strip");
+const identityStrip = document.querySelector("#identity-strip");
+const pillarList = document.querySelector("#pillar-list");
+const venuePillars = document.querySelector("#venue-pillars");
+const trackList = document.querySelector("#track-list");
 const musicLinks = document.querySelector("#music-links");
+const projectGrid = document.querySelector("#project-grid");
+const strengthGrid = document.querySelector("#strength-grid");
 
-function externalHref(value) {
-  if (!value) return "";
-  if (value.startsWith("#")) return value;
-  return `https://${value}`;
+function linkAttrs(link) {
+  if (!link) return "";
+  if (link.startsWith("#")) return `href="${link}"`;
+  return `href="${link}" target="_blank" rel="noreferrer"`;
 }
 
-function projectVisual(project) {
+heroStrip.innerHTML = data.heroPanels
+  .map(
+    (panel, index) => `
+      <article class="hero-panel ${index === 0 ? "active" : ""}">
+        <img src="${panel.image}" alt="${panel.alt}" loading="${index < 2 ? "eager" : "lazy"}" />
+        <span>${panel.title}</span>
+      </article>
+    `
+  )
+  .join("");
+
+identityStrip.innerHTML = data.identity.map((item) => `<span>${item}</span>`).join("");
+
+pillarList.innerHTML = data.pillars
+  .map(
+    (pillar) => `
+      <article class="small-pillar reveal">
+        <h3>${pillar.title}</h3>
+        <p>${pillar.text}</p>
+      </article>
+    `
+  )
+  .join("");
+
+venuePillars.innerHTML = data.venuePillars.map((item) => `<li>${item}</li>`).join("");
+
+trackList.innerHTML = data.musicTracks
+  .map(([num, title, duration]) => `<div><span>${num}</span><strong>${title}</strong><em>${duration}</em></div>`)
+  .join("");
+
+musicLinks.innerHTML = data.musicLinks
+  .map(([label, link]) => `<a ${linkAttrs(link)}>${label}</a>`)
+  .join("");
+
+function projectImage(project) {
   if (project.image) {
     return `<img src="${project.image}" alt="${project.alt}" loading="lazy" />`;
   }
 
-  const label = project.visual === "motion" ? "Motion Desk" : project.visual === "calculator" ? "EtsyCalc" : "Raskode";
-  const rows =
-    project.visual === "calculator"
-      ? ["Sale price", "Fees", "Costs", "Net profit"]
-      : project.visual === "raskode"
-        ? ["Idea capture", "Prompt stack", "Build notes", "Next action"]
-        : ["Assets", "Campaigns", "Planning", "Insights"];
-
   return `
-    <div class="mock-window ${project.visual || "default"}" aria-label="${label} interface placeholder">
-      <div class="mock-bar"><span></span><span></span><span></span></div>
-      <strong>${label}</strong>
-      <div class="mock-lines">
-        ${rows.map((row) => `<span>${row}</span>`).join("")}
-      </div>
+    <div class="code-card" aria-label="${project.title} concept visual">
+      <span>Raskode</span>
+      <code>idea.capture()</code>
+      <code>context.map()</code>
+      <code>prototype.next()</code>
     </div>
   `;
 }
 
 projectGrid.innerHTML = data.projects
   .map((project) => {
-    const href = externalHref(project.link);
-    const link = href
-      ? `<a class="project-link" href="${href}" ${href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""}>Open / view</a>`
-      : `<span class="project-link muted">Asset-led concept</span>`;
-
+    const linked = Boolean(project.link);
+    const tag = linked ? "a" : "article";
+    const attrs = linked ? `class="project-card reveal" ${linkAttrs(project.link)}` : `class="project-card reveal"`;
     return `
-      <article class="project-card reveal">
-        <div class="project-media">${projectVisual(project)}</div>
-        <div class="project-body">
-          <div class="project-meta">
-            <span>${project.category}</span>
-            <span>${project.status}</span>
-          </div>
+      <${tag} ${attrs}>
+        <div class="project-thumb">${projectImage(project)}</div>
+        <div class="project-copy">
+          <div class="project-meta"><span>${project.category}</span><span>${project.status}</span></div>
           <h3>${project.title}</h3>
           <p>${project.description}</p>
-          <div class="tag-row">
-            ${project.strengths.map((item) => `<span>${item}</span>`).join("")}
-          </div>
-          ${link}
         </div>
-      </article>
+      </${tag}>
     `;
   })
   .join("");
 
-cocktailGrid.innerHTML = data.cocktails
+strengthGrid.innerHTML = data.strengths
   .map(
-    (name, index) => `
-      <article class="cocktail-card reveal">
-        <span>0${index + 1}</span>
-        <h4>${name}</h4>
-        <p>Signature-name direction for a coastal menu with personality, quality and a clear Raskys tone.</p>
+    (strength) => `
+      <article class="strength-card reveal">
+        <h3>${strength.title}</h3>
+        <p>${strength.text}</p>
       </article>
     `
   )
   .join("");
 
-whyGrid.innerHTML = data.why
-  .map(
-    (item) => `
-      <article class="why-card reveal">
-        <span></span>
-        <p>${item}</p>
-      </article>
-    `
-  )
-  .join("");
+let activePanel = 0;
+const panels = [...document.querySelectorAll(".hero-panel")];
 
-capabilityGrid.innerHTML = data.capabilities
-  .map(
-    ([abbr, label]) => `
-      <article class="capability-card reveal">
-        <span>${abbr}</span>
-        <p>${label}</p>
-      </article>
-    `
-  )
-  .join("");
+function setPanel(nextIndex) {
+  activePanel = (nextIndex + panels.length) % panels.length;
+  panels.forEach((panel, index) => panel.classList.toggle("active", index === activePanel));
+  const panel = panels[activePanel];
+  const target =
+    panel.offsetLeft - heroStrip.clientWidth / 2 + panel.clientWidth / 2;
+  heroStrip.scrollTo({ left: target, behavior: "smooth" });
+}
 
-timeline.innerHTML = data.timeline
-  .map(
-    ([title, text]) => `
-      <article class="timeline-item reveal">
-        <h3>${title}</h3>
-        <p>${text}</p>
-      </article>
-    `
-  )
-  .join("");
+document.querySelector(".strip-prev").addEventListener("click", () => setPanel(activePanel - 1));
+document.querySelector(".strip-next").addEventListener("click", () => setPanel(activePanel + 1));
 
-musicLinks.innerHTML = data.musicLinks
-  .map(([label, href]) => `<a href="${href}" aria-label="${label} placeholder link">${label}</a>`)
-  .join("");
+let autoAdvance = window.setInterval(() => setPanel(activePanel + 1), 4500);
+heroStrip.addEventListener("pointerenter", () => window.clearInterval(autoAdvance));
+heroStrip.addEventListener("pointerleave", () => {
+  autoAdvance = window.setInterval(() => setPanel(activePanel + 1), 4500);
+});
 
 const observer = new IntersectionObserver(
   (entries) => {
