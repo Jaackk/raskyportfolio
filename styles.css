@@ -1036,6 +1036,60 @@ body.modal-open {
   height: 270px;
 }
 
+.studio-showcase-stack {
+  display: grid;
+  gap: 22px;
+}
+
+.studio-showcase {
+  align-items: center;
+}
+
+.showcase-media-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 12px;
+}
+
+.showcase-media-grid img {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.showcase-media-grid img:first-child {
+  grid-row: span 2;
+  height: 390px;
+}
+
+.showcase-media-grid img:not(:first-child) {
+  height: 189px;
+}
+
+.rockwater-previews {
+  grid-template-columns: 1fr;
+}
+
+.rockwater-previews img,
+.rockwater-previews img:first-child {
+  grid-row: auto;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.expanded-gallery {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.expanded-gallery img,
+.expanded-gallery img:nth-child(2),
+.expanded-gallery img:nth-child(3) {
+  height: 280px;
+}
+
 .raskode-large {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -1472,6 +1526,10 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 
+  .project-showcase.reverse > img {
+    order: -1;
+  }
+
   .contact-form {
     grid-template-columns: 1fr 1fr;
   }
@@ -1587,6 +1645,22 @@ body.modal-open {
     grid-row: auto;
     height: auto;
     aspect-ratio: 4 / 3;
+  }
+
+  .showcase-media-grid,
+  .expanded-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-media-grid img,
+  .showcase-media-grid img:first-child,
+  .showcase-media-grid img:not(:first-child),
+  .expanded-gallery img,
+  .expanded-gallery img:nth-child(2),
+  .expanded-gallery img:nth-child(3) {
+    grid-row: auto;
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
 
   .work-card p,
