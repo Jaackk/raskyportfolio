@@ -14,3 +14,36 @@ if (menuToggle && siteNav) {
     });
   });
 }
+
+const revealSections = document.querySelectorAll(".reveal-section");
+
+function revealVisibleSections() {
+  const trigger = window.innerHeight * 0.88;
+
+  revealSections.forEach((section) => {
+    if (section.classList.contains("is-visible")) return;
+    const rect = section.getBoundingClientRect();
+
+    if (rect.top < trigger && rect.bottom > 0) {
+      section.classList.add("is-visible");
+    }
+  });
+}
+
+revealVisibleSections();
+window.addEventListener("scroll", revealVisibleSections, { passive: true });
+window.addEventListener("resize", revealVisibleSections);
+
+const blueprintStage = document.querySelector("[data-parallax]");
+
+if (blueprintStage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const rect = blueprintStage.getBoundingClientRect();
+      const progress = (rect.top - window.innerHeight / 2) / window.innerHeight;
+      blueprintStage.style.setProperty("--parallax-y", `${Math.max(-10, Math.min(10, progress * -18))}px`);
+    },
+    { passive: true }
+  );
+}

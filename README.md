@@ -38,6 +38,17 @@ The small mobile navigation script lives in:
 script.js
 ```
 
+Main sections:
+
+- Hero
+- Core Ventures: Raskys and Raskyjack
+- Raskys hospitality vision
+- Raskyjack music and discography
+- Products & Projects
+- Dedicated project sections
+- About Jack
+- Contact
+
 ## Assets
 
 Optimized web images are in:
@@ -52,7 +63,7 @@ The lightweight Raskys venue drawing is:
 assets/raskys-blueprint.svg
 ```
 
-Current visual assets include Perfect Host, Motion Desk, EtsyCalc, TennisPredict, Raskyjack Illusions/Awaken artwork, Shnork artwork and hospitality/brand visuals.
+Current visual assets include Perfect Host, Motion Desk, EtsyCalc, TennisPredict, Raskyjack Illusions/Suffolk/Sunburst/Brick by Brick artwork, Shnork artwork, live Raskyjack photography and hospitality/brand visuals.
 
 ## Deploy
 

@@ -223,6 +223,7 @@ p {
   background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow);
   transition: transform 220ms ease, box-shadow 220ms ease;
+  animation: floatSubtle 7s ease-in-out infinite;
 }
 
 .float-card:hover {
@@ -271,6 +272,7 @@ p {
   width: 230px;
   height: 190px;
   transform: rotate(7deg);
+  animation-delay: 0.7s;
 }
 
 .card-music {
@@ -281,6 +283,7 @@ p {
   height: 260px;
   background: #07111b;
   transform: rotate(-1deg);
+  animation-delay: 1.2s;
 }
 
 .card-music span,
@@ -297,6 +300,7 @@ p {
   width: 170px;
   height: 190px;
   transform: rotate(8deg);
+  animation-delay: 1.7s;
 }
 
 .card-motion {
@@ -306,6 +310,18 @@ p {
   width: 190px;
   height: 170px;
   transform: rotate(5deg);
+  animation-delay: 2.2s;
+}
+
+@keyframes floatSubtle {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
 }
 
 .identity-strip {
@@ -340,6 +356,81 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
+}
+
+.venture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.venture-card {
+  position: relative;
+  min-height: 410px;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft);
+}
+
+.venture-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.42;
+  transition: transform 600ms ease, opacity 600ms ease;
+}
+
+.venture-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.94));
+}
+
+.venture-card.dark::after {
+  background: linear-gradient(180deg, rgba(4, 12, 20, 0.16), rgba(4, 12, 20, 0.82));
+}
+
+.venture-card:hover img {
+  transform: scale(1.035);
+  opacity: 0.52;
+}
+
+.venture-card > div {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: end;
+  min-height: 326px;
+}
+
+.venture-card h2 {
+  font-size: clamp(2.3rem, 4.4vw, 4.3rem);
+}
+
+.venture-card p {
+  max-width: 430px;
+  margin-top: 18px;
+  color: #343a3f;
+  font-size: 1rem;
+}
+
+.venture-card a {
+  width: fit-content;
+  margin-top: 26px;
+  color: var(--purple);
+  font-weight: 850;
+}
+
+.venture-card.dark h2,
+.venture-card.dark p,
+.venture-card.dark a {
+  color: #fff;
 }
 
 .pillar-card,
@@ -445,8 +536,12 @@ p {
 }
 
 .blueprint-stage {
+  position: relative;
   overflow: hidden;
   border-radius: var(--radius);
+  background: #fbfaf7;
+  transform: translateY(var(--parallax-y, 0));
+  transition: transform 180ms linear;
 }
 
 .blueprint-stage img {
@@ -454,6 +549,36 @@ p {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   opacity: 0.72;
+  transform-origin: center;
+  animation: blueprintDrift 12s ease-in-out infinite;
+}
+
+.blueprint-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.78) 44%, transparent 72%);
+  mix-blend-mode: screen;
+  transform: translateX(-120%);
+  animation: blueprintSweep 5.8s ease-in-out 0.6s both;
+  pointer-events: none;
+}
+
+@keyframes blueprintSweep {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes blueprintDrift {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.018) translateY(-4px);
+  }
 }
 
 .concept-grid {
@@ -544,6 +669,12 @@ blockquote {
   color: var(--muted);
 }
 
+.future-link {
+  margin-top: 14px;
+  color: #8a8e93;
+  font-size: 0.84rem;
+}
+
 .releases {
   margin-top: 24px;
   padding: 28px;
@@ -578,6 +709,15 @@ blockquote {
   border-radius: 12px;
   object-fit: cover;
   box-shadow: var(--shadow-soft);
+}
+
+.release-grid a {
+  display: block;
+  transition: transform 220ms ease;
+}
+
+.release-grid a:hover {
+  transform: translateY(-4px);
 }
 
 .release-grid h4 {
@@ -617,13 +757,19 @@ blockquote {
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
 .work-card {
   overflow: hidden;
   padding: 12px 12px 18px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .work-card img,
@@ -658,6 +804,100 @@ blockquote {
   background:
     linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px) 0 0 / 28px 28px,
     linear-gradient(180deg, #15191e, #050607);
+}
+
+.project-detail {
+  padding-top: 46px;
+}
+
+.project-showcase {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.75fr) minmax(420px, 1fr);
+  gap: clamp(26px, 5vw, 58px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-soft);
+}
+
+.project-showcase.reverse {
+  grid-template-columns: minmax(420px, 1fr) minmax(300px, 0.75fr);
+}
+
+.project-showcase > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-showcase p:not(.eyebrow) {
+  max-width: 520px;
+  margin-top: 22px;
+}
+
+.highlight-list {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.highlight-list li {
+  color: #3c4449;
+  font-weight: 680;
+}
+
+.highlight-list li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.design-card > p {
+  max-width: 720px;
+  margin-bottom: 26px;
+}
+
+.design-gallery {
+  display: grid;
+  grid-template-columns: 1.25fr 0.8fr 0.95fr;
+  gap: 14px;
+}
+
+.design-gallery img {
+  width: 100%;
+  height: 310px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.design-gallery img:nth-child(2) {
+  height: 230px;
+}
+
+.design-gallery img:nth-child(3) {
+  height: 270px;
+}
+
+.raskode-large {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 68% 28%, rgba(199, 164, 106, 0.22), transparent 16rem),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(180deg, #15191e, #050607);
+  box-shadow: var(--shadow-soft);
 }
 
 .shnork-section {
@@ -746,6 +986,7 @@ blockquote {
   height: 100%;
   min-height: 360px;
   object-fit: cover;
+  object-position: 50% 36%;
 }
 
 .stats-row {
@@ -826,6 +1067,33 @@ blockquote {
   color: var(--ink);
 }
 
+.reveal-section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .float-card,
+  .blueprint-stage img,
+  .blueprint-stage::after,
+  .reveal-section,
+  .release-grid a,
+  .work-card {
+    animation: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 1050px) {
   .site-header {
     grid-template-columns: 1fr auto auto;
@@ -887,6 +1155,7 @@ blockquote {
     left: 6%;
   }
 
+  .venture-grid,
   .pillar-grid,
   .concept-grid,
   .release-grid,
@@ -897,6 +1166,11 @@ blockquote {
 
   .work-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-showcase,
+  .project-showcase.reverse {
+    grid-template-columns: 1fr;
   }
 
   .contact-form {
@@ -979,6 +1253,7 @@ blockquote {
   }
 
   .identity-grid,
+  .venture-grid,
   .pillar-grid,
   .concept-grid,
   .release-grid,
@@ -992,6 +1267,7 @@ blockquote {
 
   .split-hero,
   .vision-card,
+  .project-showcase,
   .about-panel,
   .contact-panel,
   .releases,
@@ -1013,5 +1289,24 @@ blockquote {
   .work-card p,
   .process-grid p {
     min-height: 0;
+  }
+
+  .venture-card {
+    min-height: 340px;
+  }
+
+  .venture-card > div {
+    min-height: 276px;
+  }
+
+  .design-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .design-gallery img,
+  .design-gallery img:nth-child(2),
+  .design-gallery img:nth-child(3) {
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 }
