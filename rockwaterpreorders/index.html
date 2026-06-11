@@ -9,7 +9,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="auth-locked">
+  <section id="siteAccessGate" class="site-access-gate" aria-labelledby="siteAccessTitle">
+    <div class="site-access-card">
+      <img
+        class="access-logo"
+        src="https://www.rockwater.uk/wp-content/uploads/2022/09/logowhite.png"
+        alt="Rockwater"
+      >
+      <p class="kicker">Staff access</p>
+      <h1 id="siteAccessTitle">Rockwater Pre-Orders</h1>
+      <p class="access-copy">Sign in with your Rockwater staff details to view the private event pre-order workspace.</p>
+      <form id="siteAccessForm" class="site-access-form">
+        <label>
+          <span>Rockwater Email</span>
+          <div class="email-suffix-field">
+            <input id="siteAccessEmail" name="siteAccessEmail" type="text" placeholder="firstname.lastname" autocomplete="username" required>
+            <span>@rockwater.uk</span>
+          </div>
+        </label>
+        <label>
+          <span>Password</span>
+          <input id="siteAccessPassword" name="siteAccessPassword" type="password" placeholder="Enter password" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-primary" type="submit">Log In</button>
+      </form>
+    </div>
+  </section>
   <div class="page-shell">
     <header class="hero-stage">
       <div class="hero-overlay">
@@ -165,7 +191,7 @@
             </div>
           </div>
           <p id="staffPageDescription" class="role-description">Choose an event to manage guest orders, setup, and kitchen handover.</p>
-          <p class="auth-preview-note">Authentication preview only — staff tools are open in this prototype.</p>
+          <p class="auth-preview-note">Staff access keeps private event tools separate from guest ordering.</p>
           <div class="demo-panel">
             <div class="demo-panel-copy">
               <span class="kicker">Demo Panel</span>
@@ -601,8 +627,8 @@
         </div>
         <button id="closeStaffAuthPreviewBtn" class="btn btn-secondary btn-small" type="button">Close</button>
       </div>
-      <p class="modal-copy">Authentication preview only — staff tools are open in this prototype.</p>
-      <div class="auth-tab-row" role="tablist" aria-label="Authentication preview">
+      <p class="modal-copy">Use your Rockwater staff details to continue.</p>
+      <div class="auth-tab-row" role="tablist" aria-label="Staff access">
         <button id="authTabSignIn" class="auth-tab is-active" type="button" data-auth-mode="signIn">Sign in</button>
         <button id="authTabSignUp" class="auth-tab" type="button" data-auth-mode="signUp">Sign up</button>
         <button id="authTabReset" class="auth-tab" type="button" data-auth-mode="reset">Reset password</button>

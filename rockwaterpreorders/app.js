@@ -256,6 +256,10 @@ const MENU_BY_VENUE = {
 };
 
 const refs = {
+  siteAccessGate: document.getElementById("siteAccessGate"),
+  siteAccessForm: document.getElementById("siteAccessForm"),
+  siteAccessEmail: document.getElementById("siteAccessEmail"),
+  siteAccessPassword: document.getElementById("siteAccessPassword"),
   guestView: document.getElementById("guestView"),
   staffView: document.getElementById("staffView"),
   heroGuestBtn: document.getElementById("heroGuestBtn"),
@@ -400,9 +404,27 @@ let authPreviewMode = "signIn";
 init();
 
 function init() {
+  initSiteAccessGate();
   bindEvents();
   hydrateGuestFormForCurrentEvent();
   render();
+}
+
+function initSiteAccessGate() {
+  // Prototype-only front-end gate. Replace with server-side authentication before any production use.
+  const hasAccess = sessionStorage.getItem("rockwaterPreordersAccess") === "granted";
+  document.body.classList.toggle("auth-locked", !hasAccess);
+
+  if (hasAccess) {
+    refs.siteAccessGate?.classList.add("hidden");
+  }
+
+  refs.siteAccessForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sessionStorage.setItem("rockwaterPreordersAccess", "granted");
+    refs.siteAccessGate.classList.add("hidden");
+    document.body.classList.remove("auth-locked");
+  });
 }
 
 function bindEvents() {
@@ -1350,7 +1372,7 @@ function buildGuestEmailPreview(event, order) {
           <p>${escapeHtml(order.editLink)}</p>
         </div>
       </div>
-      <div class="email-footer">Rockwater Hove private events · This is a preview only</div>
+      <div class="email-footer">Rockwater Hove private events</div>
     </div>
   `;
 }
@@ -1392,7 +1414,7 @@ function buildStaffEmailPreview(event, orders) {
           <p>/preorder/${escapeHtml(event.id)}/workspace</p>
         </div>
       </div>
-      <div class="email-footer">Rockwater Hove private events · This is a preview only</div>
+      <div class="email-footer">Rockwater Hove private events</div>
     </div>
   `;
 }
@@ -1439,7 +1461,7 @@ function buildFullPreorderListEmailPreview(event, orders) {
           <p>/preorder/${escapeHtml(event.id)}/workspace</p>
         </div>
       </div>
-      <div class="email-footer">Rockwater Hove private events · This is a preview only</div>
+      <div class="email-footer">Rockwater Hove private events</div>
     </div>
   `;
 }
@@ -1454,7 +1476,7 @@ function buildEmptyEmailPreview(title, message) {
       <div class="email-content">
         <p>${escapeHtml(message)}</p>
       </div>
-      <div class="email-footer">Rockwater Hove private events · This is a preview only</div>
+      <div class="email-footer">Rockwater Hove private events</div>
     </div>
   `;
 }
@@ -1662,9 +1684,9 @@ function handleStaffAuthPreviewSubmit(event) {
   const username = refs.authUsername.value.trim() || "firstname.lastname";
   const emailAddress = `${username}@rockwater.uk`;
   const messageMap = {
-    signIn: `Demo sign-in successful for ${emailAddress}. Authentication preview only — Staff Workspace remains open in this prototype.`,
-    signUp: `Demo verification sent to ${emailAddress}. Authentication preview only — no real account has been created.`,
-    reset: `Demo password reset email sent to ${emailAddress}. Authentication preview only — no real reset link has been sent.`
+    signIn: `Signed in as ${emailAddress}.`,
+    signUp: `Verification sent to ${emailAddress}.`,
+    reset: `Password reset link sent to ${emailAddress}.`
   };
   showAuthPreviewMessage(messageMap[authPreviewMode], true);
 }

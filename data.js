@@ -123,13 +123,13 @@ window.RASKY_SITE_DATA = {
       link: "https://etsycalc.raskydesign.com"
     },
     {
-      title: "Graphic Design & Websites",
+      title: "Creative Studio",
       status: "Brand and web work",
       category: "Design",
       image: "assets/optimized/brand-restaurant-set.jpg",
       alt: "Premium restaurant branding experiment",
       description:
-        "Brand systems, hospitality visuals, Perfect Host and Rockwater Preorders collected as one design and website execution lane.",
+        "Brands, websites, hospitality tools and creative products, including Perfect Host and Rockwater Preorders.",
       link: "/design/"
     },
     {
@@ -161,8 +161,8 @@ window.RASKY_SITE_DATA = {
       text: "I can turn practical problems into tools quickly enough to test whether the idea has legs."
     },
     {
-      title: "Website / Graphic Design",
-      text: "I care about layout, visuals, tone and whether something feels credible at first glance."
+      title: "Creative Studio",
+      text: "I care about brands, websites, hospitality tools, visuals and whether something feels credible at first glance."
     },
     {
       title: "AI-Assisted Development",

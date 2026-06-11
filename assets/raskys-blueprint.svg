@@ -1,31 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Raskys venue blueprint concept</title>
-  <desc id="desc">A light architectural line drawing for a coastal hospitality venue concept.</desc>
-  <rect width="1200" height="760" fill="#fbfaf7"/>
-  <g fill="none" stroke="#bba983" stroke-width="2" opacity=".42">
-    <path d="M156 526 318 210 784 94 1048 322 888 616 386 650Z"/>
-    <path d="M318 210v346l470 60V94"/>
-    <path d="M156 526 386 650V306L318 210"/>
-    <path d="M386 306 784 168l264 154"/>
-    <path d="M386 306v344M488 274v386M590 238v426M692 202v428"/>
-    <path d="M784 94v522M860 160v424M936 224v274"/>
-    <path d="M238 488h650M282 406h692M326 326h638"/>
-    <path d="M446 508h166v106H446zM684 470h146v126H684z"/>
-    <path d="M500 506v108M746 470v126"/>
-    <path d="M902 612c26-75 80-118 158-128M956 598c8-90 42-152 104-186"/>
-    <path d="M1000 490c42 18 74 46 96 84M1030 432c26 14 47 35 64 64"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" role="img" aria-labelledby="title desc">
+  <title id="title">Raskys beachside venue blueprint concept</title>
+  <desc id="desc">A premium architectural line drawing for a future coastal restaurant, bar, music and entertainment venue called Raskys.</desc>
+  <rect width="1400" height="880" fill="#fbfaf7"/>
+  <g fill="none" stroke="#eadfc8" stroke-width="1.2" opacity=".7">
+    <path d="M70 730c118-48 208-48 326 0s210 48 330 0 212-48 330 0 188 46 274 8"/>
+    <path d="M70 770c118-48 208-48 326 0s210 48 330 0 212-48 330 0 188 46 274 8"/>
+    <path d="M76 808h1246M116 842h1150"/>
+    <path d="M146 214h1060M118 268h1144M96 322h1196M120 376h1144M152 430h1056M210 484h916"/>
+    <path d="M190 160v570M286 128v588M382 108v620M478 86v638M574 74v640M670 68v640M766 72v634M862 88v612M958 116v574M1054 154v520M1150 202v448"/>
   </g>
-  <g fill="none" stroke="#d7cdb7" stroke-width="1.2" opacity=".75">
-    <path d="M120 574h860M154 620h792M210 668h650"/>
-    <path d="M168 526 320 232M188 542 344 224M220 560 372 216"/>
-    <path d="M812 106 1040 312M828 136 1066 338M846 168 1086 368"/>
+  <g fill="none" stroke="#b6a176" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".58">
+    <path d="M170 652 262 270 548 126 938 154 1216 366 1124 650 680 724Z"/>
+    <path d="M262 270 680 340l536 26"/>
+    <path d="M548 126 680 340 680 724"/>
+    <path d="M938 154 680 340"/>
+    <path d="M170 652 680 724 1124 650"/>
+    <path d="M262 270v346M352 284v346M442 300v344M532 318v352"/>
+    <path d="M778 344v344M872 350v318M966 356v286M1060 360v264"/>
+    <path d="M242 612h882M278 548h870M314 486h856M350 424h836"/>
+    <path d="M520 130 662 42 914 72 1052 172"/>
+    <path d="M662 42 680 340M914 72 680 340"/>
+    <path d="M360 548h220v120H360z"/>
+    <path d="M414 548v120M470 548v120M526 548v120"/>
+    <path d="M812 510h222v118H812z"/>
+    <path d="M812 550h222M886 510v118M960 510v118"/>
+    <path d="M590 402c42-28 116-42 186-28s118 48 146 94"/>
+    <path d="M632 462h240"/>
+    <path d="M668 462v68M710 462v68M752 462v68M794 462v68M836 462v68"/>
+    <path d="M304 356h196c36 0 64 28 64 64v0H304z"/>
+    <path d="M328 386h66M420 386h66M512 386h52"/>
+    <path d="M1020 432c54-26 114-24 172 6"/>
+    <path d="M1046 472c48-22 94-20 138 4"/>
+    <path d="M1074 512c34-14 62-14 92 2"/>
   </g>
-  <g fill="#c7a46a" opacity=".55">
-    <rect x="575" y="185" width="12" height="314" rx="6"/>
-    <rect x="865" y="251" width="10" height="255" rx="5"/>
-    <circle cx="581" cy="174" r="16"/>
-    <circle cx="870" cy="240" r="14"/>
+  <g fill="none" stroke="#c7a46a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity=".72">
+    <path d="M596 590c46-42 126-42 174 0 46 40 46 94 0 134H596c-44-40-44-94 0-134Z"/>
+    <path d="M622 622h122M622 654h122M622 686h122"/>
+    <path d="M214 596c54-56 104-82 164-78"/>
+    <path d="M1030 332c48 18 86 50 112 96"/>
+    <path d="M1082 286c40 20 70 52 92 98"/>
+    <path d="M1130 250c32 18 56 44 72 80"/>
+    <path d="M828 252h206l84 74H786z"/>
+    <path d="M858 252v74M918 252v74M978 252v74"/>
+    <path d="M406 244h210l66 74H352z"/>
+    <path d="M448 244v74M508 244v74M568 244v74"/>
+    <circle cx="690" cy="436" r="52"/>
+    <path d="M638 436h104M690 384v104"/>
   </g>
-  <text x="102" y="126" fill="#bba983" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="8">RASKYS</text>
-  <text x="104" y="166" fill="#cbbf9f" font-family="Inter, Arial, sans-serif" font-size="18" letter-spacing="4">VENUE CONCEPT</text>
+  <g fill="none" stroke="#d1c19a" stroke-width="2" stroke-linecap="round" opacity=".8">
+    <path d="M166 714c52-42 104-42 156 0s104 42 156 0 104-42 156 0 104 42 156 0 104-42 156 0 104 42 156 0 104-42 156 0"/>
+    <path d="M106 196c44-34 88-34 132 0s88 34 132 0"/>
+    <path d="M1092 176c24-58 62-94 116-108M1134 192c8-64 32-112 72-144M1168 220c28-42 66-62 112-60"/>
+  </g>
+  <g fill="#c7a46a" opacity=".62">
+    <rect x="452" y="186" width="10" height="116" rx="5"/>
+    <rect x="888" y="192" width="10" height="118" rx="5"/>
+    <rect x="642" y="364" width="10" height="86" rx="5"/>
+    <rect x="730" y="364" width="10" height="86" rx="5"/>
+    <circle cx="457" cy="178" r="13"/>
+    <circle cx="893" cy="184" r="13"/>
+    <circle cx="647" cy="356" r="10"/>
+    <circle cx="735" cy="356" r="10"/>
+  </g>
+  <g fill="#aa966d" font-family="Inter, Arial, sans-serif" opacity=".74">
+    <text x="106" y="116" font-size="48" font-weight="800" letter-spacing="9">RASKYS</text>
+    <text x="110" y="156" font-size="17" letter-spacing="5">COASTAL VENUE CONCEPT</text>
+    <text x="370" y="704" font-size="15" letter-spacing="3">BOWLING / LEISURE</text>
+    <text x="606" y="760" font-size="15" letter-spacing="3">LIVE MUSIC STAGE</text>
+    <text x="824" y="664" font-size="15" letter-spacing="3">BARS / NIGHTLIFE</text>
+    <text x="370" y="340" font-size="15" letter-spacing="3">RESTAURANT</text>
+    <text x="830" y="220" font-size="15" letter-spacing="3">ROOFTOP TERRACE</text>
+    <text x="1030" y="560" font-size="15" letter-spacing="3">CASINO LOUNGE</text>
+  </g>
 </svg>

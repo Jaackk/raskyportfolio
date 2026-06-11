@@ -59,6 +59,7 @@ Clean GitHub Pages routes are implemented as folders with `index.html` files:
 - `/sportspredict/`
 - `/tennispredict/`
 - `/etsycalc/`
+- `/perfecthost/`
 - `/shnork/`
 - `/raskode/`
 - `/design/`
@@ -68,9 +69,9 @@ Clean GitHub Pages routes are implemented as folders with `index.html` files:
 Architecture:
 
 - Existing live sites migrated as independent websites: `/music/`, `/motiondesk/`, `/etsycalc/`, `/rockwaterpreorders/`
-- Portfolio-style project pages: `/raskys/`, `/sportspredict/`, `/tennispredict/`, `/shnork/`, `/raskode/`, `/design/`
-- Perfect Host is included inside the Graphic Design & Websites section and linked as a mobile prototype at `/perfecthost-demo/`
-- Rockwater Preorders is also included inside Graphic Design & Websites and linked to the preserved working site at `/rockwaterpreorders/`
+- Portfolio-style project pages: `/raskys/`, `/sportspredict/`, `/tennispredict/`, `/perfecthost/`, `/shnork/`, `/raskode/`, `/design/`
+- Perfect Host is included inside the Creative Studio section and has a project page at `/perfecthost/`, plus the mobile prototype at `/perfecthost-demo/`
+- Rockwater Preorders is also included inside Creative Studio and linked to the preserved working site at `/rockwaterpreorders/`
 
 Later, `music.raskyjack.com` can point to `/music/` using DNS/subdomain configuration or a redirect. This repo does not make DNS changes.
 
@@ -95,6 +96,7 @@ PDF downloads live in:
 ```text
 assets/docs/jack-ormondroyd-cv.pdf
 assets/docs/in-the-shadow-of-a-shnork-preview.pdf
+assets/docs/raskys-business-plan.pdf
 ```
 
 ## View Counter
