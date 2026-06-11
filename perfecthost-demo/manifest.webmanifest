@@ -1,0 +1,19 @@
+{
+  "name": "Perfect Host",
+  "short_name": "Perfect Host",
+  "description": "Full-screen restaurant host operations board.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#efe8dd",
+  "theme_color": "#0e6860",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

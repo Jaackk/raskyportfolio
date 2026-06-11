@@ -62,11 +62,15 @@ Clean GitHub Pages routes are implemented as folders with `index.html` files:
 - `/shnork/`
 - `/raskode/`
 - `/design/`
+- `/rockwaterpreorders/`
+- `/perfecthost-demo/`
 
 Architecture:
 
-- Existing live sites migrated as independent websites: `/music/`, `/motiondesk/`, `/etsycalc/`
+- Existing live sites migrated as independent websites: `/music/`, `/motiondesk/`, `/etsycalc/`, `/rockwaterpreorders/`
 - Portfolio-style project pages: `/raskys/`, `/sportspredict/`, `/tennispredict/`, `/shnork/`, `/raskode/`, `/design/`
+- Perfect Host is included inside the Graphic Design & Websites section and linked as a mobile prototype at `/perfecthost-demo/`
+- Rockwater Preorders is also included inside Graphic Design & Websites and linked to the preserved working site at `/rockwaterpreorders/`
 
 Later, `music.raskyjack.com` can point to `/music/` using DNS/subdomain configuration or a redirect. This repo does not make DNS changes.
 
@@ -85,6 +89,13 @@ assets/raskys-blueprint.svg
 ```
 
 Current visual assets include Perfect Host, Motion Desk, EtsyCalc, TennisPredict, Raskyjack Illusions/Suffolk/Sunburst/Brick by Brick artwork, Shnork artwork, live Raskyjack photography and hospitality/brand visuals.
+
+PDF downloads live in:
+
+```text
+assets/docs/jack-ormondroyd-cv.pdf
+assets/docs/in-the-shadow-of-a-shnork-preview.pdf
+```
 
 ## View Counter
 
@@ -107,5 +118,5 @@ Keep `.nojekyll` in the repo root.
 Live URL:
 
 ```text
-https://jaackk.github.io/raskyportfolio/
+https://raskyjack.com/
 ```

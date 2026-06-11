@@ -73,16 +73,6 @@ window.RASKY_SITE_DATA = {
   ],
   projects: [
     {
-      title: "Perfect Host",
-      status: "Hospitality prototype",
-      category: "Hospitality",
-      image: "assets/optimized/perfecthost-map.jpg",
-      alt: "Perfect Host restaurant floor management interface",
-      description:
-        "A restaurant floor-management system shaped by real service problems: table states, timing, communication and guest awareness.",
-      link: ""
-    },
-    {
       title: "Motion Desk",
       status: "Concept",
       category: "Productivity",
@@ -133,14 +123,14 @@ window.RASKY_SITE_DATA = {
       link: "https://etsycalc.raskydesign.com"
     },
     {
-      title: "Graphic / Website Design",
-      status: "Visual experiments",
-      category: "Brand",
+      title: "Graphic Design & Websites",
+      status: "Brand and web work",
+      category: "Design",
       image: "assets/optimized/brand-restaurant-set.jpg",
       alt: "Premium restaurant branding experiment",
       description:
-        "Hospitality, menu, website and visual identity experiments exploring cleaner, more premium brand directions.",
-      link: ""
+        "Brand systems, hospitality visuals, Perfect Host and Rockwater Preorders collected as one design and website execution lane.",
+      link: "/design/"
     },
     {
       title: "Raskyjack / Music",

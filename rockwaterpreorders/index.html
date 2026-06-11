@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rockwater Hove Private Event Pre-Orders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero-stage">
+      <div class="hero-overlay">
+        <div class="sticky-header">
+          <div class="topbar">
+            <div class="brand-block">
+              <img
+                class="brand-logo"
+                src="https://www.rockwater.uk/wp-content/uploads/2022/09/logowhite.png"
+                alt="Rockwater"
+              >
+              <p class="brand-sub">Hove private events</p>
+            </div>
+            <nav class="topnav" aria-label="View navigation">
+              <button id="heroGuestBtn" class="nav-role-btn is-active" type="button">Guest Ordering</button>
+              <button id="heroStaffBtn" class="nav-role-btn" type="button">Staff Workspace</button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content-shell">
+      <section id="guestView" class="role-view guest-view">
+        <div class="guest-event-card card panel">
+          <p class="kicker">Event</p>
+          <h2 id="guestEventTitle">Private event</h2>
+          <div class="event-detail-list compact-details">
+            <div class="event-detail-item">
+              <span>Date & time</span>
+              <strong id="guestEventDate">To be confirmed</strong>
+            </div>
+            <div class="event-detail-item">
+              <span>Venue</span>
+              <strong id="guestEventVenue">Rockwater Hove</strong>
+            </div>
+            <div class="event-detail-item">
+              <span>Pre-order deadline</span>
+              <strong id="guestDeadlineText">Set event to calculate</strong>
+            </div>
+            <div class="event-detail-item">
+              <span>Event contact</span>
+              <strong id="guestContactText">To be confirmed</strong>
+            </div>
+          </div>
+          <div id="guestLockNotice" class="lock-notice hidden" aria-live="polite"></div>
+        </div>
+
+        <section class="guest-form-card card panel">
+          <p class="kicker">Guest Pre-Order</p>
+          <h2>Submit your dishes</h2>
+
+          <form id="orderForm" class="form-grid guest-form">
+            <input id="editingOrderId" type="hidden">
+            <input id="menuVenue" name="menuVenue" type="hidden">
+            <label>
+              <span>Guest name</span>
+              <input id="guestName" name="guestName" type="text" placeholder="Full guest name" required>
+            </label>
+            <label>
+              <span>Email address</span>
+              <input id="guestEmail" name="guestEmail" type="email" placeholder="Optional email">
+            </label>
+            <label class="full-span subtle-check">
+              <span>Kids pre-order</span>
+              <span class="subtle-check-control">
+                <input id="kidsToggle" name="kidsToggle" type="checkbox">
+                <small>Switch to the Rockwater kids menu while keeping sides and desserts available.</small>
+              </span>
+            </label>
+            <div class="full-span locked-menu-panel">
+              <span>Menu</span>
+              <strong id="guestMenuLabel">Bar & Kitchen</strong>
+              <div class="menu-links-row">
+                <a id="selectedMenuLink" class="menu-link" href="#" target="_blank" rel="noopener noreferrer">View venue menu</a>
+                <a id="dessertMenuLink" class="menu-link" href="https://www.rockwater.uk/wp-content/uploads/2026/04/RW_DESSERT_Hove-MARCH26-WEB.pdf" target="_blank" rel="noopener noreferrer">View dessert menu</a>
+                <a id="kidsMenuLink" class="menu-link hidden" href="https://www.rockwater.uk/wp-content/uploads/2025/07/New_RW_HOVE_Kids_MAY25.pdf" target="_blank" rel="noopener noreferrer">View kids menu</a>
+              </div>
+              <a class="allergen-guide-link" href="https://allergymenu.app/menu/VES662" target="_blank" rel="noopener noreferrer">
+                View allergen guide before ordering
+              </a>
+              <p class="allergen-guide-copy">Please check the full allergen guide if you have any dietary requirements or allergies.</p>
+            </div>
+            <label>
+              <span>Starter / small plate</span>
+              <select id="starterSelect" name="starter"></select>
+            </label>
+            <label>
+              <span>Main / salad / burger</span>
+              <select id="mainSelect" name="main"></select>
+            </label>
+            <div id="starterExtrasWrap" class="full-span extras-wrap hidden">
+              <span class="extras-label">Add-ons for starter / small plate</span>
+              <div id="starterExtrasOptions" class="extras-options"></div>
+            </div>
+            <div id="mainExtrasWrap" class="full-span extras-wrap hidden">
+              <span class="extras-label">Add-ons for main</span>
+              <div id="mainExtrasOptions" class="extras-options"></div>
+            </div>
+            <div class="full-span sides-wrap">
+              <span class="extras-label">Sides</span>
+              <p class="helper-copy compact-helper">Choose any sides you would like to add.</p>
+              <div id="sidesOptions" class="sides-options"></div>
+            </div>
+            <label class="full-span">
+              <span>Dessert</span>
+              <select id="dessertSelect" name="dessert"></select>
+            </label>
+            <label class="full-span">
+              <span>Allergies or dietary requirements</span>
+              <input id="allergies" name="allergies" type="text" placeholder="Please tell us about any allergies or dietary needs">
+            </label>
+            <label class="full-span">
+              <span>Special requests</span>
+              <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Anything else we should know?"></textarea>
+            </label>
+            <div class="form-actions full-span">
+              <button id="submitOrderBtn" class="btn btn-primary" type="submit">Submit pre-order</button>
+              <button id="cancelEditBtn" class="btn btn-secondary hidden" type="button">Cancel edit</button>
+            </div>
+          </form>
+
+          <div id="guestConfirmationPanel" class="confirmation-panel hidden">
+            <p class="success-message">Thank you — your pre-order has been saved.</p>
+          </div>
+        </section>
+
+        <section class="card panel orders-panel guest-orders-panel">
+          <div class="section-heading">
+            <div>
+              <p class="kicker">Guest orders</p>
+              <h2>Guest orders</h2>
+            </div>
+          </div>
+          <div id="guestOrdersList" class="orders-list"></div>
+          <div id="guestOrdersEmptyState" class="empty-state hidden">
+            <h3>No guest orders yet</h3>
+            <p>Submitted pre-orders for this event will appear here.</p>
+          </div>
+        </section>
+      </section>
+
+      <section id="staffView" class="role-view staff-view hidden">
+        <div class="staff-toolbar card panel">
+          <div class="section-heading">
+            <div>
+              <p class="kicker">Staff Workspace</p>
+              <h2 id="staffPageTitle">Events</h2>
+            </div>
+            <div class="staff-toolbar-actions">
+              <button id="previewStaffLoginBtn" class="btn btn-secondary" type="button">Preview staff login</button>
+              <button id="addEventBtn" class="btn btn-primary" type="button">Add New Event</button>
+            </div>
+          </div>
+          <p id="staffPageDescription" class="role-description">Choose an event to manage guest orders, setup, and kitchen handover.</p>
+          <p class="auth-preview-note">Authentication preview only — staff tools are open in this prototype.</p>
+          <div class="demo-panel">
+            <div class="demo-panel-copy">
+              <span class="kicker">Demo Panel</span>
+              <p>Demo mode ignores deadline locks and uses sample data for testing.</p>
+            </div>
+            <div class="demo-panel-actions">
+              <button id="demoModeToggleBtn" class="btn btn-secondary" type="button">Demo mode: On</button>
+              <button id="loadSampleEventBtn" class="btn btn-secondary" type="button">Load sample event</button>
+              <button id="resetDemoBtn" class="btn btn-ghost" type="button">Reset demo data</button>
+            </div>
+          </div>
+        </div>
+
+        <section id="eventsScreen" class="staff-screen">
+          <div class="events-grid" id="eventsGrid"></div>
+          <div id="eventsEmptyState" class="empty-state hidden">
+            <h3>No events saved yet</h3>
+            <p>Use demo mode or create an event setup to begin collecting pre-orders.</p>
+          </div>
+        </section>
+
+        <section id="eventDetailScreen" class="staff-screen hidden">
+          <div class="detail-header card panel">
+            <div class="section-heading">
+              <div>
+                <p class="kicker">Event detail</p>
+                <h2 id="detailEventTitle">Selected event</h2>
+              </div>
+              <div class="detail-header-actions">
+                <button id="backToEventsBtn" class="btn btn-secondary" type="button">Back to events</button>
+                <button id="editSetupBtn" class="btn btn-secondary" type="button">Edit setup</button>
+                <button id="copySummaryBtn" class="btn btn-secondary" type="button">Copy event summary</button>
+                <button id="deleteEventBtn" class="btn btn-ghost" type="button">Delete event</button>
+              </div>
+            </div>
+            <div class="detail-meta-grid">
+              <div class="detail-meta-item">
+                <span>Date & time</span>
+                <strong id="detailEventDate">To be confirmed</strong>
+              </div>
+              <div class="detail-meta-item">
+                <span>Venue</span>
+                <strong id="detailVenue">Not selected</strong>
+              </div>
+              <div class="detail-meta-item">
+                <span>Guest count</span>
+                <strong id="detailGuestCount">0</strong>
+              </div>
+              <div class="detail-meta-item">
+                <span>Deadline</span>
+                <strong id="detailDeadline">Set event to calculate</strong>
+              </div>
+            </div>
+          </div>
+
+          <section class="card panel setup-mini-panel">
+            <p class="kicker">Status</p>
+            <h3>Operational notes</h3>
+            <div class="mini-meta-list">
+              <div class="mini-meta-item">
+                <span>Contact</span>
+                <strong id="detailContact">Not set</strong>
+              </div>
+              <div class="mini-meta-item">
+                <span>Deposit</span>
+                <strong id="detailDeposit">Not taken</strong>
+              </div>
+              <div class="mini-meta-item">
+                <span>Lock status</span>
+                <strong id="detailLockStatus">Awaiting event setup</strong>
+              </div>
+            </div>
+            <div id="staffLockNotice" class="lock-notice hidden"></div>
+          </section>
+
+          <div class="detail-grid">
+            <section class="card panel email-behaviour-panel">
+              <p class="kicker">Email behaviour</p>
+              <h3>Email previews</h3>
+              <label>
+                <span>Staff email delivery</span>
+                <select id="staffEmailMode" name="staffEmailMode">
+                  <option value="deadline">Send at pre-order deadline</option>
+                  <option value="manual">Manual only</option>
+                  <option value="dailyDigest">Daily digest final 7 days</option>
+                </select>
+              </label>
+              <div class="email-preview-grid">
+                <article class="email-card">
+                  <div class="email-card-topbar">
+                    <div>
+                      <p class="email-label">Guest confirmation email</p>
+                      <p class="email-meta-text">Defaults to the latest submitted guest order</p>
+                    </div>
+                    <div class="email-card-actions">
+                      <button id="sendGuestEmailBtn" class="btn btn-primary btn-small" type="button">Send Guest Email</button>
+                      <button id="toggleGuestEmailBtn" class="btn btn-secondary btn-small" type="button" aria-expanded="true">Collapse</button>
+                    </div>
+                  </div>
+                  <label class="email-control">
+                    <span>Guest to send</span>
+                    <select id="guestEmailRecipientSelect" name="guestEmailRecipientSelect"></select>
+                  </label>
+                  <div id="staffGuestEmailWrap" class="email-preview-wrap">
+                    <div id="staffGuestEmailPreview" class="email-body"></div>
+                  </div>
+                </article>
+                <article class="email-card">
+                  <div class="email-card-topbar">
+                    <div>
+                      <p class="email-label">Staff summary email</p>
+                      <p class="email-meta-text">Manual send or scheduled delivery preview</p>
+                    </div>
+                    <div class="email-card-actions">
+                      <button id="sendStaffEmailNowBtn" class="btn btn-primary btn-small" type="button">Send Staff Email</button>
+                      <button id="toggleStaffEmailBtn" class="btn btn-secondary btn-small" type="button" aria-expanded="true">Collapse</button>
+                    </div>
+                  </div>
+                  <label class="email-control">
+                    <span>Staff email type</span>
+                    <select id="staffEmailPreviewType" name="staffEmailPreviewType">
+                      <option value="summary">Summary email</option>
+                      <option value="fullList">Full pre-order list</option>
+                    </select>
+                  </label>
+                  <div id="internalEmailWrap" class="email-preview-wrap">
+                    <div id="internalEmailPreview" class="email-body"></div>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+
+          <section class="card panel orders-panel">
+            <div class="section-heading">
+              <div>
+                <p class="kicker">Guest Orders</p>
+                <h2>Guest orders</h2>
+              </div>
+              <div class="dashboard-tools">
+                <input id="searchInput" type="search" placeholder="Search guest names">
+                <select id="filterField">
+                  <option value="all">Filter any field</option>
+                  <option value="menuVenue">Venue menu</option>
+                  <option value="starter">Starter</option>
+                  <option value="main">Main</option>
+                  <option value="sides">Sides</option>
+                  <option value="dessert">Dessert</option>
+                  <option value="extras">Extras</option>
+                  <option value="allergies">Allergies / dietary</option>
+                </select>
+                <input id="filterValue" type="text" placeholder="Type filter value">
+                <select id="sortSelect">
+                  <option value="recent">Recently updated</option>
+                  <option value="name">Guest name</option>
+                </select>
+              </div>
+            </div>
+            <div id="ordersList" class="orders-list"></div>
+            <div id="ordersEmptyState" class="empty-state hidden">
+              <h3>No guest orders yet</h3>
+              <p>Guest submissions for this event will appear here.</p>
+            </div>
+          </section>
+
+          <section class="card panel kitchen-panel">
+            <div class="section-heading">
+              <div>
+                <p class="kicker">Kitchen summary</p>
+                <h2>Kitchen summary</h2>
+              </div>
+              <div class="kitchen-actions">
+                <button id="printKitchenBtn" class="btn btn-secondary" type="button">Print service sheet</button>
+                <button id="exportCsvBtn" class="btn btn-primary" type="button">Export CSV</button>
+              </div>
+            </div>
+            <div class="kitchen-grid">
+              <article class="summary-card">
+                <h3>Kitchen counts</h3>
+                <div id="kitchenCountTable" class="summary-list"></div>
+              </article>
+              <article class="summary-card">
+                <h3>Allergy summary</h3>
+                <div id="allergySummary" class="summary-list"></div>
+              </article>
+              <article class="summary-card">
+                <h3>Special requests</h3>
+                <div id="requestsSummary" class="summary-list"></div>
+              </article>
+              <article class="summary-card">
+                <h3>Course totals</h3>
+                <div class="stat-grid compact-stats">
+                  <article class="stat-card">
+                    <span>Guests</span>
+                    <strong id="totalGuests">0</strong>
+                  </article>
+                  <article class="stat-card">
+                    <span>Starters</span>
+                    <strong id="totalStarters">0</strong>
+                  </article>
+                  <article class="stat-card">
+                    <span>Mains</span>
+                    <strong id="totalMains">0</strong>
+                  </article>
+                  <article class="stat-card">
+                    <span>Sides</span>
+                    <strong id="totalSides">0</strong>
+                  </article>
+                  <article class="stat-card">
+                    <span>Desserts</span>
+                    <strong id="totalDesserts">0</strong>
+                  </article>
+                </div>
+              </article>
+              <article class="summary-card">
+                <h3>Staff notes</h3>
+                <div id="serviceNotesSummary" class="summary-list"></div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section id="eventSetupScreen" class="staff-screen hidden">
+          <div class="card panel">
+            <div class="section-heading">
+              <div>
+                <p class="kicker">Event setup</p>
+                <h2 id="setupEventTitle">Edit setup</h2>
+              </div>
+              <button id="backFromSetupBtn" class="btn btn-secondary" type="button">Back to events</button>
+            </div>
+
+            <form id="eventForm" class="form-grid">
+              <label>
+                <span>Event name</span>
+                <input id="eventName" name="eventName" type="text" placeholder="Private event name" required>
+              </label>
+              <label>
+                <span>Event date & time</span>
+                <input id="eventDate" name="eventDate" type="datetime-local" required>
+              </label>
+              <label>
+                <span>Venue</span>
+                <select id="venueArea" name="venueArea" required>
+                  <option value="">Select venue</option>
+                  <option value="barKitchen">Bar & Kitchen</option>
+                  <option value="roofTerrace">Roof Terrace</option>
+                  <option value="thePub">The Pub</option>
+                </select>
+              </label>
+              <label>
+                <span>Contact name</span>
+                <input id="contactName" name="contactName" type="text" placeholder="Event organiser">
+              </label>
+              <label>
+                <span>Contact email</span>
+                <input id="contactEmail" name="contactEmail" type="email" placeholder="events@example.com">
+              </label>
+              <label>
+                <span>Pre-order deadline (hours before event)</span>
+                <input id="deadlineHours" name="deadlineHours" type="number" min="1" value="48">
+              </label>
+              <label>
+                <span>Staff email delivery</span>
+                <select id="eventStaffEmailMode" name="eventStaffEmailMode">
+                  <option value="deadline">Send at pre-order deadline</option>
+                  <option value="manual">Manual only</option>
+                  <option value="dailyDigest">Daily digest final 7 days</option>
+                </select>
+              </label>
+              <label class="toggle-row">
+                <span>Admin override</span>
+                <button id="overrideToggle" type="button" class="toggle" aria-pressed="false">
+                  <span class="toggle-knob"></span>
+                </button>
+              </label>
+              <label class="toggle-row">
+                <span>Deposit taken</span>
+                <button id="depositToggle" type="button" class="toggle" aria-pressed="false">
+                  <span class="toggle-knob"></span>
+                </button>
+              </label>
+              <label>
+                <span>Deposit amount</span>
+                <input id="depositAmount" name="depositAmount" type="text" placeholder="£0.00">
+              </label>
+              <label class="full-span">
+                <span>Staff notes</span>
+                <textarea id="staffNotes" name="staffNotes" rows="4" placeholder="Service notes, timings, VIP details, table plan reminders..."></textarea>
+              </label>
+              <div class="form-actions full-span">
+                <button class="btn btn-primary" type="submit">Save event setup</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </section>
+
+      <section id="printSheet" class="print-sheet hidden" aria-hidden="true">
+        <div class="print-header">
+          <h1>Rockwater Hove Pre-Orders</h1>
+          <div class="print-meta">
+            <div><span>Event</span><strong id="printEventTitle">Selected event</strong></div>
+            <div><span>Date</span><strong id="printEventDate">To be confirmed</strong></div>
+            <div><span>Venue</span><strong id="printVenue">Not selected</strong></div>
+            <div><span>Guest count</span><strong id="printGuestCount">0</strong></div>
+            <div><span>Deadline</span><strong id="printDeadline">Set event to calculate</strong></div>
+          </div>
+        </div>
+        <section class="print-section">
+          <h2>Kitchen counts</h2>
+          <div id="printKitchenCounts" class="print-table"></div>
+        </section>
+        <section class="print-section">
+          <h2>Guest list</h2>
+          <div id="printGuestList" class="print-table"></div>
+        </section>
+        <section class="print-section">
+          <h2>Allergy summary</h2>
+          <div id="printAllergyList" class="print-table"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="https://www.rockwater.uk/wp-content/uploads/2018/03/logoblack.png"
+            alt="Rockwater"
+          >
+          <p>Western Esplanade | Kingsway | Hove | BN3 4FA</p>
+          <p><a href="mailto:hove@rockwater.uk">hove@rockwater.uk</a> | <a href="https://www.instagram.com/rockwaterhove/" target="_blank" rel="noopener noreferrer">@rockwaterhove</a></p>
+        </div>
+        <nav class="footer-links" aria-label="Rockwater footer links">
+          <a href="https://rockwater.uk/hove/#menus" target="_blank" rel="noopener noreferrer">Book</a>
+          <a href="https://rockwater.uk/hove/#menus" target="_blank" rel="noopener noreferrer">Menus</a>
+          <a href="https://www.rockwater.uk/hove/private-hire-events/" target="_blank" rel="noopener noreferrer">Private Hire</a>
+          <a href="https://www.rockwater.uk/hove/whats-on/" target="_blank" rel="noopener noreferrer">What’s On</a>
+          <a href="https://www.rockwater.uk/hove/open-water/" target="_blank" rel="noopener noreferrer">Open Water Membership</a>
+          <a href="https://www.rockwater.uk/hove/rockwater-life/" target="_blank" rel="noopener noreferrer">Rockwater Life</a>
+          <a href="https://rockwater.giftpro.co.uk/" target="_blank" rel="noopener noreferrer">Gift Vouchers</a>
+          <a href="https://www.rockwater.uk/" target="_blank" rel="noopener noreferrer">Locations</a>
+          <a href="https://www.facebook.com/RWHove" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/rockwaterhove/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <template id="eventCardTemplate">
+    <article class="event-card card">
+      <div class="event-card-head">
+        <div>
+          <h3 class="event-card-title"></h3>
+          <p class="event-card-meta"></p>
+        </div>
+        <button class="status-badge event-status event-open-badge" type="button">Open</button>
+      </div>
+      <div class="event-card-stats">
+        <div>
+          <span>Guests</span>
+          <strong class="event-guests"></strong>
+        </div>
+        <div>
+          <span>Allergies</span>
+          <strong class="event-allergies"></strong>
+        </div>
+      </div>
+      <div class="event-card-actions">
+        <button class="btn btn-primary btn-small view-event-btn" type="button">View event</button>
+        <button class="btn btn-secondary btn-small copy-link-btn" type="button">Copy Pre-Order Link</button>
+        <button class="btn btn-secondary btn-small edit-event-btn" type="button">Edit setup</button>
+      </div>
+    </article>
+  </template>
+
+  <template id="orderCardTemplate">
+    <article class="order-card">
+      <div class="order-card-head">
+        <div>
+          <h3 class="guest-title"></h3>
+          <p class="guest-meta"></p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary btn-small edit-order-btn" type="button">Edit</button>
+          <button class="btn btn-ghost btn-small delete-order-btn" type="button">Delete</button>
+        </div>
+      </div>
+      <div class="course-grid compact-courses">
+        <div>
+          <span>Starter / small plate</span>
+          <strong class="starter-value"></strong>
+        </div>
+        <div>
+          <span>Main</span>
+          <strong class="main-value"></strong>
+        </div>
+        <div>
+          <span>Dessert</span>
+          <strong class="dessert-value"></strong>
+        </div>
+      </div>
+      <div class="detail-stack compact-details">
+        <p class="extras-row"></p>
+        <p class="sides-row"></p>
+        <p class="allergy-row"></p>
+        <p class="request-row"></p>
+        <p class="link-row"></p>
+      </div>
+    </article>
+  </template>
+
+  <div id="deleteEventModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="deleteEventModalTitle">
+    <div class="modal-card card">
+      <p class="kicker">Delete event</p>
+      <h2 id="deleteEventModalTitle">Are you sure you want to delete this event?</h2>
+      <p id="deleteEventModalCopy" class="modal-copy">This will remove the event and all linked guest pre-orders from this demo workspace.</p>
+      <div class="modal-actions">
+        <button id="cancelDeleteEventBtn" class="btn btn-secondary" type="button">Cancel</button>
+        <button id="confirmDeleteEventBtn" class="btn btn-ghost" type="button">Delete event</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="staffAuthPreviewModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="staffAuthPreviewTitle">
+    <div class="modal-card card auth-modal-card">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Staff authentication</p>
+          <h2 id="staffAuthPreviewTitle">Rockwater staff login preview</h2>
+        </div>
+        <button id="closeStaffAuthPreviewBtn" class="btn btn-secondary btn-small" type="button">Close</button>
+      </div>
+      <p class="modal-copy">Authentication preview only — staff tools are open in this prototype.</p>
+      <div class="auth-tab-row" role="tablist" aria-label="Authentication preview">
+        <button id="authTabSignIn" class="auth-tab is-active" type="button" data-auth-mode="signIn">Sign in</button>
+        <button id="authTabSignUp" class="auth-tab" type="button" data-auth-mode="signUp">Sign up</button>
+        <button id="authTabReset" class="auth-tab" type="button" data-auth-mode="reset">Reset password</button>
+      </div>
+
+      <form id="staffAuthPreviewForm" class="auth-form">
+        <label>
+          <span>Rockwater email</span>
+          <div class="email-suffix-field">
+            <input id="authUsername" name="authUsername" type="text" placeholder="firstname.lastname">
+            <span>@rockwater.uk</span>
+          </div>
+        </label>
+
+        <label id="authPasswordLabel">
+          <span>Password</span>
+          <div class="password-field">
+            <input id="authPassword" name="authPassword" type="password" placeholder="Enter password">
+            <button id="toggleAuthPasswordBtn" class="password-toggle" type="button" aria-pressed="false">Show</button>
+          </div>
+        </label>
+
+        <label id="authConfirmPasswordLabel" class="hidden">
+          <span>Confirm password</span>
+          <div class="password-field">
+            <input id="authConfirmPassword" name="authConfirmPassword" type="password" placeholder="Confirm password">
+            <button id="toggleAuthConfirmPasswordBtn" class="password-toggle" type="button" aria-pressed="false">Show</button>
+          </div>
+        </label>
+
+        <div id="authPreviewMessage" class="auth-preview-message hidden" aria-live="polite"></div>
+
+        <div class="modal-actions">
+          <button id="submitStaffAuthPreviewBtn" class="btn btn-primary" type="submit">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="appToast" class="app-toast hidden" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

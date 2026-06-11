@@ -532,6 +532,22 @@ p {
   animation: blueprintDrift 12s ease-in-out infinite;
 }
 
+.blueprint-stage.is-blueprint-ready img {
+  opacity: 0;
+}
+
+.blueprint-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.78;
+}
+
+.blueprint-svg [data-blueprint-line] {
+  transition: stroke-dashoffset 420ms ease-out;
+}
+
 .blueprint-stage::after {
   content: "";
   position: absolute;
@@ -1081,8 +1097,14 @@ blockquote {
   align-items: center;
 }
 
+.page-hero-grid > * {
+  min-width: 0;
+}
+
 .page-hero h1 {
   max-width: 760px;
+  font-size: clamp(2.6rem, 5.2vw, 5.4rem);
+  line-height: 1.02;
 }
 
 .page-hero .lead {
@@ -1090,6 +1112,7 @@ blockquote {
 }
 
 .page-visual {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1127,6 +1150,14 @@ blockquote {
   margin-top: 12px;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.project-link-card .button {
+  margin-top: 18px;
+}
+
+.about-cv-button {
+  margin-top: 18px;
 }
 
 .media-gallery {
@@ -1280,6 +1311,14 @@ blockquote {
 
   .nav-button {
     display: none;
+  }
+
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero h1 {
+    max-width: 760px;
   }
 
   .hero {
