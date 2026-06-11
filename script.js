@@ -47,3 +47,21 @@ if (blueprintStage && !window.matchMedia("(prefers-reduced-motion: reduce)").mat
     { passive: true }
   );
 }
+
+const viewCounter = document.querySelector("[data-view-counter]");
+
+if (viewCounter) {
+  fetch("https://api.countapi.xyz/hit/raskyjack.com/site", {
+    cache: "no-store",
+    mode: "cors"
+  })
+    .then((response) => (response.ok ? response.json() : Promise.reject()))
+    .then((data) => {
+      if (typeof data.value === "number") {
+        viewCounter.textContent = `Site views ${data.value.toLocaleString()}`;
+      }
+    })
+    .catch(() => {
+      viewCounter.textContent = "Site views --";
+    });
+}
