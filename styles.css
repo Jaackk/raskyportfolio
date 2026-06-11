@@ -414,7 +414,7 @@ p {
   font-size: 1rem;
 }
 
-.venture-card a {
+.venture-link {
   width: fit-content;
   margin-top: 26px;
   color: var(--purple);
@@ -423,7 +423,7 @@ p {
 
 .venture-card.dark h2,
 .venture-card.dark p,
-.venture-card.dark a {
+.venture-card.dark .venture-link {
   color: #fff;
 }
 
@@ -784,6 +784,10 @@ blockquote {
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
+a.work-card {
+  text-decoration: none;
+}
+
 .work-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
@@ -894,7 +898,8 @@ body.modal-open {
   width: 100%;
   height: 100%;
   min-height: 360px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #f7f4ed;
 }
 
 .project-modal__content {
@@ -1272,6 +1277,22 @@ body.modal-open {
   margin-top: 18px;
 }
 
+.studio-card {
+  padding-bottom: 20px;
+}
+
+.studio-card .button {
+  margin: 18px 4px 0;
+}
+
+.studio-actions {
+  margin: 14px 4px 0;
+}
+
+.studio-actions .button {
+  margin: 0;
+}
+
 .about-cv-button {
   min-height: auto;
   margin-top: 34px;
@@ -1559,11 +1580,37 @@ body.modal-open {
   }
 
   .venture-card {
-    min-height: 340px;
+    min-height: 230px;
+    padding: 20px;
   }
 
   .venture-card > div {
-    min-height: 276px;
+    min-height: 190px;
+  }
+
+  .venture-card h2 {
+    font-size: clamp(1.85rem, 8vw, 2.45rem);
+  }
+
+  .venture-card p {
+    max-width: 310px;
+    margin-top: 10px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .venture-link {
+    margin-top: 16px;
+  }
+
+  .venture-card.dark img {
+    display: none;
+  }
+
+  .venture-card.dark::after {
+    background:
+      radial-gradient(circle at 85% 20%, rgba(115, 87, 184, 0.2), transparent 36%),
+      linear-gradient(180deg, rgba(4, 12, 20, 0.28), rgba(4, 12, 20, 0.88));
   }
 
   .design-gallery {
