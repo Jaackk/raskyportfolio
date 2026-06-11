@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Raskys venue blueprint concept</title>
+  <desc id="desc">A light architectural line drawing for a coastal hospitality venue concept.</desc>
+  <rect width="1200" height="760" fill="#fbfaf7"/>
+  <g fill="none" stroke="#bba983" stroke-width="2" opacity=".42">
+    <path d="M156 526 318 210 784 94 1048 322 888 616 386 650Z"/>
+    <path d="M318 210v346l470 60V94"/>
+    <path d="M156 526 386 650V306L318 210"/>
+    <path d="M386 306 784 168l264 154"/>
+    <path d="M386 306v344M488 274v386M590 238v426M692 202v428"/>
+    <path d="M784 94v522M860 160v424M936 224v274"/>
+    <path d="M238 488h650M282 406h692M326 326h638"/>
+    <path d="M446 508h166v106H446zM684 470h146v126H684z"/>
+    <path d="M500 506v108M746 470v126"/>
+    <path d="M902 612c26-75 80-118 158-128M956 598c8-90 42-152 104-186"/>
+    <path d="M1000 490c42 18 74 46 96 84M1030 432c26 14 47 35 64 64"/>
+  </g>
+  <g fill="none" stroke="#d7cdb7" stroke-width="1.2" opacity=".75">
+    <path d="M120 574h860M154 620h792M210 668h650"/>
+    <path d="M168 526 320 232M188 542 344 224M220 560 372 216"/>
+    <path d="M812 106 1040 312M828 136 1066 338M846 168 1086 368"/>
+  </g>
+  <g fill="#c7a46a" opacity=".55">
+    <rect x="575" y="185" width="12" height="314" rx="6"/>
+    <rect x="865" y="251" width="10" height="255" rx="5"/>
+    <circle cx="581" cy="174" r="16"/>
+    <circle cx="870" cy="240" r="14"/>
+  </g>
+  <text x="102" y="126" fill="#bba983" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="8">RASKYS</text>
+  <text x="104" y="166" fill="#cbbf9f" font-family="Inter, Arial, sans-serif" font-size="18" letter-spacing="4">VENUE CONCEPT</text>
+</svg>

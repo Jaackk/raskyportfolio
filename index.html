@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Rasky is Jack's premium personal brand across hospitality leadership, Raskyjack music, creative products, venue concepts and AI-assisted building."
+      content="Rasky is Jack Ormondroyd's premium creative brand across hospitality, Raskyjack music, products, venue concepts and creative IP."
     />
-    <title>Rasky | Hospitality, Music and Creative Products</title>
-    <link rel="preload" href="assets/optimized/brand-restaurant-set.jpg" as="image" />
+    <title>Rasky | Hospitality, Music, Products and Creative Brands</title>
+    <link rel="preload" href="assets/optimized/raskyjack-illusions.jpg" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header" aria-label="Primary navigation">
-      <a class="wordmark" href="#top" aria-label="Rasky home">Rasky</a>
-      <nav>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Rasky home">RASKY</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#hospitality">Hospitality</a>
         <a href="#music">Music</a>
@@ -22,162 +26,346 @@
         <a href="#vision">Vision</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="header-cta" href="#contact">Let's Connect <span aria-hidden="true">-&gt;</span></a>
+      <a class="nav-button" href="#contact">Let's Connect <span aria-hidden="true">-&gt;</span></a>
     </header>
 
     <main id="top">
-      <section class="hero-showcase" aria-label="Featured work visual strip">
-        <button class="strip-arrow strip-prev" type="button" aria-label="Previous work panel">‹</button>
-        <div id="hero-strip" class="hero-strip"></div>
-        <button class="strip-arrow strip-next" type="button" aria-label="Next work panel">›</button>
-      </section>
-
-      <section class="hero-copy-section">
-        <div class="shell hero-copy-grid">
-          <div>
-            <h1>Building experiences people remember.</h1>
-            <div id="identity-strip" class="identity-strip"></div>
-          </div>
-          <div class="hero-intro">
-            <p>
-              I'm Jack - a hospitality manager in Sussex, music creator as Raskyjack,
-              and creative builder turning ideas into real-world products, brands and
-              experiences.
+      <section class="hero section-pad">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Jack Ormondroyd</p>
+            <h1>Building experiences, products and brands people remember.</h1>
+            <p class="lead">
+              Hospitality leader. Music creator. Product builder. Turning ideas into
+              real-world impact.
             </p>
-            <a class="button dark" href="#work">Explore my work <span aria-hidden="true">-&gt;</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="shell about-grid">
-          <div class="section-copy">
-            <span class="kicker">About Jack</span>
-            <h2>Service mindset. Creative drive.</h2>
-            <p>
-              Years in hospitality management have taught me what actually matters:
-              people, timing, standards, atmosphere and attention to detail. Outside
-              work, I build products, make music and use modern tools and AI to learn
-              fast, prototype ideas and make things people can connect with.
-            </p>
-            <a class="button light" href="#contact">Talk to me <span aria-hidden="true">-&gt;</span></a>
-          </div>
-          <div class="portrait-card" aria-label="Rasky creative workspace portrait">
-            <img src="assets/optimized/brand-restaurant-set.jpg" alt="Premium restaurant branding visual representing Rasky's hospitality and design taste" loading="lazy" />
-          </div>
-          <div id="pillar-list" class="pillar-list"></div>
-        </div>
-      </section>
-
-      <section id="hospitality" class="section tight">
-        <div class="shell venue-card">
-          <img src="assets/optimized/perfecthost-map.jpg" alt="Perfect Host floor plan interface showing hospitality operations thinking" loading="lazy" />
-          <div class="venue-copy">
-            <span class="kicker">Hospitality vision</span>
-            <h2>Raskys. A venue with soul.</h2>
-            <p>
-              Raskys is a flexible future venue concept: premium drinks, warm service,
-              live music, events and a brand people remember. It is coastal-inspired,
-              but not locked to one city. The right high-footfall or coastal location
-              matters more than forcing the idea into a postcode.
-            </p>
-            <a class="button light" href="#vision">Explore the vision <span aria-hidden="true">-&gt;</span></a>
-          </div>
-          <ul id="venue-pillars" class="venue-pillars"></ul>
-        </div>
-      </section>
-
-      <section id="music" class="section music-section">
-        <div class="shell music-card">
-          <div class="music-lead">
-            <span class="kicker">Music</span>
-            <h2>Raskyjack. Illusions.</h2>
-            <p>
-              Music is part of the wider Rasky creative brand: emotion, visuals, release
-              discipline and audience connection. <strong>Illusions</strong> is the main
-              highlighted Raskyjack album here.
-            </p>
-            <a class="button purple" href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" target="_blank" rel="noreferrer">Listen on Spotify</a>
-          </div>
-          <div class="album-feature">
-            <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork by Raskyjack" loading="lazy" />
-            <div>
-              <h3>Illusions</h3>
-              <p>Raskyjack<br />Electronic / 2025</p>
-              <div class="waveform" aria-hidden="true"></div>
+            <div class="button-row">
+              <a class="button button-dark" href="#work">Explore My Work <span aria-hidden="true">-&gt;</span></a>
+              <a class="button button-light" href="#music">View Music <span aria-hidden="true">-&gt;</span></a>
             </div>
           </div>
-          <div id="track-list" class="track-list"></div>
-          <div id="music-links" class="music-links"></div>
+
+          <div class="hero-collage" aria-label="Rasky featured work collage">
+            <a class="float-card card-raskys" href="#hospitality">
+              <img src="assets/raskys-blueprint.svg" alt="Light blueprint drawing for the Raskys venue concept" />
+              <span>Raskys</span>
+              <small>Venue Vision</small>
+            </a>
+            <a class="float-card card-perfect" href="#work">
+              <img src="assets/optimized/perfecthost-map.jpg" alt="Perfect Host hospitality software interface" />
+              <span>Perfect Host</span>
+              <small>Hospitality Software</small>
+            </a>
+            <a class="float-card card-music" href="#music">
+              <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork by Raskyjack" />
+              <span>Raskyjack</span>
+              <small>Illusions</small>
+            </a>
+            <a class="float-card card-shnork" href="#shnork">
+              <img src="assets/optimized/shnork-cover.jpg" alt="In the Shadow of a Shnork cover art" />
+              <span>Shnork</span>
+              <small>Novel & Game World</small>
+            </a>
+            <a class="float-card card-motion" href="https://motiondesk.raskydesign.com" target="_blank" rel="noreferrer">
+              <img src="assets/optimized/motiondesk-screenshot.jpg" alt="Motion Desk creator operating system screenshot" />
+              <span>Motion Desk</span>
+              <small>Creator OS</small>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section id="work" class="section">
-        <div class="shell section-heading-row">
+      <section class="identity-strip" aria-label="Rasky identity">
+        <div class="container identity-grid">
+          <span>Hospitality Leader</span>
+          <span>Music Creator</span>
+          <span>Product Builder</span>
+          <span>Creative Entrepreneur</span>
+        </div>
+      </section>
+
+      <section id="work" class="section-pad compact">
+        <div class="container">
+          <p class="section-label">What I'm Building</p>
+          <div class="pillar-grid">
+            <article class="pillar-card">
+              <img src="assets/raskys-blueprint.svg" alt="Raskys venue blueprint concept" />
+              <div>
+                <h2>Raskys</h2>
+                <p>A future hospitality brand with soul.</p>
+                <a href="#hospitality" aria-label="Explore Raskys">-&gt;</a>
+              </div>
+            </article>
+            <article class="pillar-card dark">
+              <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions artwork" />
+              <div>
+                <h2>Raskyjack</h2>
+                <p>Music, identity and releases.</p>
+                <a href="#music" aria-label="Explore Raskyjack">-&gt;</a>
+              </div>
+            </article>
+            <article class="pillar-card">
+              <img src="assets/optimized/perfecthost-map.jpg" alt="Perfect Host interface" />
+              <div>
+                <h2>Perfect Host</h2>
+                <p>Hospitality operations software.</p>
+                <a href="#selected-work" aria-label="Explore Perfect Host">-&gt;</a>
+              </div>
+            </article>
+            <article class="pillar-card image-rich">
+              <img src="assets/optimized/shnork-cover.jpg" alt="Shnork artwork" />
+              <div>
+                <h2>Shnork</h2>
+                <p>Novel. World. Game.</p>
+                <a href="#shnork" aria-label="Explore Shnork">-&gt;</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="hospitality" class="section-pad">
+        <div class="container split-hero hospitality-panel">
+          <div class="split-copy">
+            <p class="eyebrow">Raskys</p>
+            <h2>A venue with soul.</h2>
+            <p>
+              A flexible hospitality concept blending quality drinks, warm service,
+              live music and strong visual identity. Coastal in spirit, built to travel.
+            </p>
+            <a class="button button-dark" href="#vision">Explore the Vision <span aria-hidden="true">-&gt;</span></a>
+          </div>
+          <div class="blueprint-stage">
+            <img src="assets/raskys-blueprint.svg" alt="Light architectural blueprint for the Raskys venue concept" />
+          </div>
+        </div>
+
+        <div class="container concept-grid">
+          <article>
+            <h3>Quality Drinks</h3>
+            <p>Seasonal menus, crafted cocktails and premium ingredients.</p>
+          </article>
+          <article>
+            <h3>Live Music & Events</h3>
+            <p>Curated live music, DJ sets and community events.</p>
+          </article>
+          <article>
+            <h3>Warm Hospitality</h3>
+            <p>Genuine service, attention to detail and memorable moments.</p>
+          </article>
+          <article>
+            <h3>Strong Brand</h3>
+            <p>A brand designed to scale across cities and experiences.</p>
+          </article>
+        </div>
+
+        <div id="vision" class="container vision-card">
           <div>
-            <span class="kicker">What I'm building</span>
+            <h3>The Vision</h3>
+            <p>
+              Raskys is more than a bar. It is a feeling: a place where people connect
+              over drinks, music and atmosphere.
+            </p>
+            <blockquote>"Great venues are not just built. They're felt."</blockquote>
+          </div>
+          <div class="vision-gallery">
+            <img src="assets/optimized/brand-restaurant-set.jpg" alt="Premium hospitality brand visual" />
+            <img src="assets/optimized/perfecthost-map.jpg" alt="Hospitality operations floor plan" />
+            <img src="assets/optimized/raskyjack-illusions.jpg" alt="Music identity visual" />
+            <img src="assets/optimized/brand-restaurant-set.jpg" alt="Hospitality concept detail" />
+          </div>
+        </div>
+      </section>
+
+      <section id="music" class="section-pad music-light">
+        <div class="container split-hero music-panel">
+          <div class="split-copy">
+            <p class="eyebrow">Raskyjack</p>
+            <h2>Music with emotion and energy.</h2>
+            <p>
+              Electronic music, sound design and storytelling through sound and visuals.
+              This is the creative side of Rasky.
+            </p>
+            <div class="button-row">
+              <a class="button button-dark" href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" target="_blank" rel="noreferrer">Listen on Spotify <span aria-hidden="true">-&gt;</span></a>
+              <a class="button button-light" href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" target="_blank" rel="noreferrer">View Artist Page <span aria-hidden="true">-&gt;</span></a>
+            </div>
+          </div>
+          <div class="album-card">
+            <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork by Raskyjack" />
+            <div>
+              <h3>Illusions</h3>
+              <p>2025 · Album</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container releases">
+          <div class="section-heading-row">
+            <h3>Releases</h3>
+            <a href="https://www.youtube.com/@raskyjackmusic/releases" target="_blank" rel="noreferrer">View all music <span aria-hidden="true">-&gt;</span></a>
+          </div>
+          <div class="release-grid">
+            <article>
+              <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork" />
+              <h4>Illusions</h4>
+              <p>2025</p>
+            </article>
+            <article>
+              <div class="release-placeholder signal"></div>
+              <h4>Awaken The Signal</h4>
+              <p>Upcoming · 2026</p>
+            </article>
+            <article>
+              <div class="release-placeholder mono"></div>
+              <h4>Signals</h4>
+              <p>2024</p>
+            </article>
+            <article>
+              <div class="release-placeholder glow"></div>
+              <h4>Moments</h4>
+              <p>2023</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="selected-work" class="section-pad selected-work">
+        <div class="container section-heading-row">
+          <div>
+            <p class="section-label">Selected Work</p>
             <h2>Ideas. Built.</h2>
           </div>
-          <a href="#contact">Build with me <span aria-hidden="true">-&gt;</span></a>
+          <a href="#contact">View all projects <span aria-hidden="true">-&gt;</span></a>
         </div>
-        <div id="project-grid" class="shell project-grid"></div>
+        <div class="container work-grid">
+          <article class="work-card">
+            <img src="assets/optimized/motiondesk-screenshot.jpg" alt="Motion Desk screenshot" />
+            <h3>Motion Desk</h3>
+            <p>Creator operating system for modern workflows.</p>
+            <a href="https://motiondesk.raskydesign.com" target="_blank" rel="noreferrer">Open site</a>
+          </article>
+          <article class="work-card">
+            <img src="assets/optimized/tennispredict-mockup.jpg" alt="SportsPredictions / TennisPredict mockup" />
+            <h3>SportsPredictions</h3>
+            <p>Data-driven predictions and analytics.</p>
+          </article>
+          <article class="work-card">
+            <div class="raskode-visual" aria-hidden="true"></div>
+            <h3>Raskode</h3>
+            <p>AI assistant for ideas, projects and productivity.</p>
+          </article>
+          <article class="work-card">
+            <img src="assets/optimized/etsycalc-screenshot.jpg" alt="EtsyCalc screenshot" />
+            <h3>EtsyCalc</h3>
+            <p>Tools for Etsy sellers to price with confidence.</p>
+            <a href="https://etsycalc.raskydesign.com" target="_blank" rel="noreferrer">Open site</a>
+          </article>
+          <article class="work-card">
+            <img src="assets/optimized/brand-restaurant-set.jpg" alt="Design and branding work" />
+            <h3>Design Work</h3>
+            <p>Brands, websites and visual identities.</p>
+          </article>
+        </div>
       </section>
 
-      <section id="shnork" class="section shnork-section">
-        <div class="shell shnork-grid">
-          <div class="shnork-art">
-            <img src="assets/optimized/shnork-cover.jpg" alt="In the Shadow of a Shnork cover artwork" loading="lazy" />
-            <img src="assets/optimized/shnork-characters.jpg" alt="Shnork character design showing base and evolved forms" loading="lazy" />
-          </div>
-          <div class="section-copy">
-            <span class="kicker">Novel to game world</span>
+      <section id="shnork" class="section-pad shnork-section">
+        <div class="container split-hero shnork-hero">
+          <div class="split-copy">
+            <p class="eyebrow">Shnork</p>
             <h2>In the Shadow of a Shnork.</h2>
             <p>
-              Shnork began as a fantasy novel and has grown into a game-world direction:
-              characters, atmosphere, status effects, visual systems and Unity prototype
-              material. It is not being presented as a finished game - it is a serious
-              long-term IP experiment with a lot of room to grow.
+              A fantasy novel that expanded into artwork, worldbuilding and a Unity game
+              prototype. A long-term creative IP.
             </p>
+            <a class="button button-dark" href="#contact">Explore Shnork <span aria-hidden="true">-&gt;</span></a>
+          </div>
+          <div class="shnork-main-art">
+            <img src="assets/optimized/shnork-cover.jpg" alt="In the Shadow of a Shnork cover artwork" />
+          </div>
+        </div>
+
+        <div class="container process-card">
+          <h3>From novel to game world</h3>
+          <div class="process-grid">
+            <article>
+              <span>01</span>
+              <h4>The Novel</h4>
+              <p>A complete fantasy novel and universe.</p>
+              <img src="assets/optimized/shnork-cover.jpg" alt="Shnork novel artwork" />
+            </article>
+            <article>
+              <span>02</span>
+              <h4>Worldbuilding</h4>
+              <p>Expanding the world, lore and characters.</p>
+              <img src="assets/optimized/shnork-characters.jpg" alt="Shnork character sheet" />
+            </article>
+            <article>
+              <span>03</span>
+              <h4>Artwork</h4>
+              <p>Bringing the world to life visually.</p>
+              <img src="assets/optimized/shnork-cover.jpg" alt="Shnork visual development" />
+            </article>
+            <article>
+              <span>04</span>
+              <h4>Unity Prototype</h4>
+              <p>Early gameplay and systems.</p>
+              <img src="assets/optimized/shnork-characters.jpg" alt="Shnork prototype character art" />
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="vision" class="section bring-section">
-        <div class="shell section-heading-row">
-          <div>
-            <span class="kicker">What I bring</span>
-            <h2>Useful range, grounded in real experience.</h2>
+      <section id="about" class="section-pad about-section">
+        <div class="container about-panel">
+          <div class="about-copy">
+            <p class="eyebrow">About Jack</p>
+            <h2>Service mindset. Creative drive.</h2>
+            <p>
+              Years in hospitality taught me what truly matters: people, timing,
+              standards, atmosphere and attention to detail. Outside of that, I build,
+              create and explore - using modern tools and AI to learn fast, prototype
+              ideas and turn creative energy into useful work.
+            </p>
+            <p class="signature">Jack</p>
+          </div>
+          <div class="about-image">
+            <img src="assets/optimized/brand-restaurant-set.jpg" alt="Rasky hospitality and design mood image" />
+          </div>
+          <div class="stats-row">
+            <article><strong>10+</strong><span>Years in Hospitality</span></article>
+            <article><strong>Music</strong><span>Producer & Artist</span></article>
+            <article><strong>Product</strong><span>Builder</span></article>
+            <article><strong>Creative</strong><span>Entrepreneur</span></article>
           </div>
         </div>
-        <div id="strength-grid" class="shell strength-grid"></div>
       </section>
 
       <section id="contact" class="contact-section">
-        <div class="shell contact-grid">
+        <div class="container contact-panel">
           <div>
             <h2>Let's build something worth remembering.</h2>
             <p>Open to collaborations, partnerships and serious conversations around venues, music, products, brands and new ideas.</p>
           </div>
           <form class="contact-form" action="mailto:hello@raskyjack.com" method="post" enctype="text/plain">
-            <input name="name" type="text" placeholder="Your name" aria-label="Your name" />
-            <input name="email" type="email" placeholder="you@example.com" aria-label="Your email" />
-            <input name="message" type="text" placeholder="Tell me about your idea..." aria-label="Your message" />
-            <button class="button dark" type="submit">Send Message <span aria-hidden="true">-&gt;</span></button>
+            <input type="text" name="name" placeholder="Your name" aria-label="Your name" />
+            <input type="email" name="email" placeholder="you@example.com" aria-label="Your email" />
+            <input type="text" name="message" placeholder="Tell me about your idea..." aria-label="Your message" />
+            <button class="button button-dark" type="submit">Send Message <span aria-hidden="true">-&gt;</span></button>
           </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-grid">
-        <span class="wordmark">Rasky</span>
-        <span>© 2026 Rasky / Jack. All rights reserved.</span>
+      <div class="container footer-inner">
+        <span class="wordmark">RASKY</span>
+        <span>&copy; 2026 Rasky / Jack Ormondroyd</span>
         <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>
         <span>raskyjack.com</span>
       </div>
     </footer>
 
-    <script src="data.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
