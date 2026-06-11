@@ -220,15 +220,18 @@ let lastFocusedElement = null;
 
 function setModalContent(project) {
   const image = modalShell.querySelector("[data-project-modal-image]");
+  const media = modalShell.querySelector(".project-modal__media");
   modalShell.querySelector("[data-project-modal-kicker]").textContent = project.kicker;
   modalShell.querySelector("[data-project-modal-title]").textContent = project.title;
   modalShell.querySelector("[data-project-modal-description]").textContent = project.description;
   image.alt = project.alt || "";
   if (project.image) {
     image.src = project.image;
+    media.style.setProperty("--modal-image", `url("${project.image}")`);
     image.parentElement.style.display = "";
   } else {
     image.src = transparentPixel;
+    media.style.removeProperty("--modal-image");
     image.parentElement.style.display = "none";
   }
 
