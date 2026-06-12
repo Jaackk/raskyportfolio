@@ -1,0 +1,20 @@
+{
+  "title": "Rasky | Hospitality, Music and Creative Ventures",
+  "description": "Rasky is Jack Ormondroyd's premium creative brand across hospitality, Raskyjack music, products, venue concepts and creative IP.",
+  "brand": "RASKY",
+  "contactEmail": "hello@raskyjack.com",
+  "homeUrl": "/",
+  "musicUrl": "/music/",
+  "musicExternalUrl": "https://music.raskydesign.com",
+  "viewCounterLabel": "Site views",
+  "footerLinks": [
+    {
+      "label": "raskyjack.com",
+      "href": "/"
+    },
+    {
+      "label": "Music",
+      "href": "/music/"
+    }
+  ]
+}

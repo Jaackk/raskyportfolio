@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "label": "Jack Ormondroyd",
+    "headline": "Building experiences people remember.",
+    "body": "Hospitality, music, products and creative ventures shaped with taste, practical energy and a bias toward building.",
+    "primaryButton": {
+      "label": "Explore Raskys",
+      "href": "/raskys/"
+    },
+    "secondaryButton": {
+      "label": "Explore Music",
+      "href": "/music/"
+    },
+    "cards": [
+      {
+        "title": "Raskys",
+        "label": "Venue Vision",
+        "link": "/raskys/",
+        "image": {
+          "src": "assets/raskys-blueprint.svg",
+          "alt": "Light blueprint drawing for the Raskys venue concept"
+        }
+      },
+      {
+        "title": "Raskyjack",
+        "label": "Music",
+        "link": "/music/",
+        "image": {
+          "src": "assets/optimized/raskyjack-illusions.jpg",
+          "alt": "Illusions album artwork by Raskyjack"
+        }
+      },
+      {
+        "title": "More Projects",
+        "label": "Products & Projects",
+        "link": "#selected-work",
+        "image": {
+          "src": "assets/optimized/motiondesk-screenshot.jpg",
+          "alt": "Motion Desk creator operating system screenshot"
+        }
+      }
+    ]
+  },
+  "coreVentures": [
+    {
+      "title": "Raskys",
+      "description": "A future hospitality venue concept built around premium service, quality drinks, live music, community, events and atmosphere.",
+      "buttonLabel": "Explore Raskys",
+      "link": "/raskys/",
+      "image": {
+        "src": "assets/raskys-blueprint.svg",
+        "alt": "Architectural concept drawing for Raskys"
+      }
+    },
+    {
+      "title": "Raskyjack",
+      "description": "Artist project, music releases, visual identity and creative direction across sound, artwork and live energy.",
+      "buttonLabel": "Explore Music",
+      "link": "/music/",
+      "image": {
+        "src": "assets/optimized/raskyjack-illusions.jpg",
+        "alt": "Illusions artwork by Raskyjack"
+      }
+    }
+  ],
+  "contact": {
+    "headline": "Let's build something worth remembering.",
+    "body": "Open to collaborations, partnerships and serious conversations around venues, music, products, brands and new ideas.",
+    "buttonLabel": "Send Message"
+  }
+}

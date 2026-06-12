@@ -1,0 +1,108 @@
+{
+  "cards": [
+    {
+      "title": "Motion Desk",
+      "description": "Creator workspace for assets, planning and release management.",
+      "buttonLabel": "View Project",
+      "modalKey": "motiondesk",
+      "projectType": "modal-live-site",
+      "image": {
+        "src": "assets/optimized/motiondesk-screenshot.jpg",
+        "alt": "Motion Desk screenshot"
+      }
+    },
+    {
+      "title": "SportsPredict / TennisPredict",
+      "description": "Prediction and analytics thinking for sports data.",
+      "buttonLabel": "View Project",
+      "projectType": "project-page",
+      "link": "/sportspredict/",
+      "image": {
+        "src": "assets/optimized/tennispredict-mockup.jpg",
+        "alt": "SportsPredict / TennisPredict mockup"
+      }
+    },
+    {
+      "title": "Creative Studio",
+      "description": "Brands, websites, hospitality tools and creative products.",
+      "buttonLabel": "View Project",
+      "projectType": "project-page",
+      "link": "/design/",
+      "image": {
+        "src": "assets/optimized/brand-restaurant-set.jpg",
+        "alt": "Creative Studio brand and website examples"
+      }
+    },
+    {
+      "title": "EtsyCalc",
+      "description": "Real utility for Etsy sellers and business decisions.",
+      "buttonLabel": "View Project",
+      "modalKey": "etsycalc",
+      "projectType": "modal-live-site",
+      "image": {
+        "src": "assets/optimized/etsycalc-screenshot.jpg",
+        "alt": "EtsyCalc screenshot"
+      }
+    },
+    {
+      "title": "In the Shadow of a Shnork",
+      "description": "Novel, worldbuilding, artwork and Unity prototype.",
+      "buttonLabel": "View Project",
+      "projectType": "project-page",
+      "link": "/shnork/",
+      "image": {
+        "src": "assets/optimized/shnork-cover.jpg",
+        "alt": "In the Shadow of a Shnork cover artwork"
+      }
+    },
+    {
+      "title": "Raskode",
+      "description": "Personal AI development project for learning and automation.",
+      "buttonLabel": "View Project",
+      "projectType": "project-page",
+      "link": "/raskode/",
+      "image": {
+        "src": "",
+        "alt": ""
+      }
+    }
+  ],
+  "modals": {
+    "motiondesk": {
+      "kicker": "Motion Desk",
+      "title": "Creator workspace for organised output.",
+      "image": "assets/optimized/motiondesk-screenshot.jpg",
+      "alt": "Motion Desk interface screenshot",
+      "description": "Motion Desk explores how creators can manage assets, campaign ideas, planning, analytics and release activity in one calmer workspace.",
+      "highlights": [
+        "Asset management and project organisation",
+        "Planning views for campaigns, ideas and releases",
+        "Analytics-led thinking for creative workflow"
+      ],
+      "links": [
+        {
+          "label": "Visit Website",
+          "href": "/motiondesk/"
+        }
+      ]
+    },
+    "etsycalc": {
+      "kicker": "EtsyCalc",
+      "title": "Useful tools for real business decisions.",
+      "image": "assets/optimized/etsycalc-screenshot.jpg",
+      "alt": "EtsyCalc interface screenshot",
+      "description": "EtsyCalc is a practical web tool for sellers who need clearer pricing, fee awareness and confidence before listing products.",
+      "highlights": [
+        "Clear utility for a real seller problem",
+        "Pricing, fees and business thinking",
+        "Simple interface designed for repeat use"
+      ],
+      "links": [
+        {
+          "label": "Visit Website",
+          "href": "/etsycalc/"
+        }
+      ]
+    }
+  }
+}

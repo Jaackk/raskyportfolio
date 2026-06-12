@@ -1,6 +1,58 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
 
+const contentBase = "/content/";
+
+function normalizeAssetPath(path) {
+  if (!path) return "";
+  if (/^(https?:|mailto:|#|\/)/.test(path)) return path;
+  return `/${path.replace(/^\.?\//, "")}`;
+}
+
+function setText(selector, value, root = document) {
+  const element = root.querySelector(selector);
+  if (element && value !== undefined) {
+    element.textContent = value;
+  }
+}
+
+function setHtmlText(selector, value, root = document) {
+  const element = root.querySelector(selector);
+  if (element && value !== undefined) {
+    element.textContent = value;
+  }
+}
+
+function setLink(selector, link, root = document) {
+  const element = root.querySelector(selector);
+  if (!element || !link) return;
+  if (link.label !== undefined) element.textContent = link.label;
+  if (link.href) element.setAttribute("href", normalizeAssetPath(link.href));
+  if (link.external) {
+    element.setAttribute("target", "_blank");
+    element.setAttribute("rel", "noreferrer");
+  }
+}
+
+function setImage(selector, image, root = document) {
+  const element = root.querySelector(selector);
+  if (!element || !image) return;
+  const src = typeof image === "string" ? image : image.src;
+  const alt = typeof image === "string" ? "" : image.alt;
+  if (src) element.setAttribute("src", normalizeAssetPath(src));
+  if (alt !== undefined) element.setAttribute("alt", alt);
+}
+
+function renderButton(link, className = "button button-light") {
+  if (!link) return "";
+  const target = link.external ? ' target="_blank" rel="noreferrer"' : "";
+  return `<a class="${className}" href="${normalizeAssetPath(link.href || "#")}"${target}>${link.label || "Open"}</a>`;
+}
+
+function renderHighlights(items = []) {
+  return items.map((item) => `<li>${item}</li>`).join("");
+}
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
@@ -114,7 +166,7 @@ function prepareBlueprintStage(stage) {
 blueprintDrawStages.forEach(prepareBlueprintStage);
 requestBlueprintUpdate();
 
-const projectModalData = {
+let projectModalData = {
   motiondesk: {
     kicker: "Motion Desk",
     title: "Creator workspace for organised output.",
@@ -214,7 +266,6 @@ const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAA
 
 const modalShell = document.querySelector("[data-project-modal-shell]");
 const modalPanel = document.querySelector(".project-modal__panel");
-const modalTriggers = document.querySelectorAll("[data-project-modal]");
 const modalCloseTriggers = document.querySelectorAll("[data-project-modal-close]");
 let lastFocusedElement = null;
 
@@ -226,8 +277,9 @@ function setModalContent(project) {
   modalShell.querySelector("[data-project-modal-description]").textContent = project.description;
   image.alt = project.alt || "";
   if (project.image) {
-    image.src = project.image;
-    media.style.setProperty("--modal-image", `url("${project.image}")`);
+    const imageSrc = normalizeAssetPath(project.image);
+    image.src = imageSrc;
+    media.style.setProperty("--modal-image", `url("${imageSrc}")`);
     image.parentElement.style.display = "";
   } else {
     image.src = transparentPixel;
@@ -243,7 +295,7 @@ function setModalContent(project) {
     .map((link, index) => {
       const externalAttrs = link.external ? ' target="_blank" rel="noreferrer"' : "";
       const className = index === 0 ? "button button-dark" : "button button-light";
-      return `<a class="${className}" href="${link.href}"${externalAttrs}>${link.label}</a>`;
+      return `<a class="${className}" href="${normalizeAssetPath(link.href)}"${externalAttrs}>${link.label}</a>`;
     })
     .join("");
 
@@ -274,9 +326,15 @@ function closeProjectModal() {
   }
 }
 
-modalTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => openProjectModal(trigger.dataset.projectModal));
-});
+function bindProjectModalTriggers() {
+  document.querySelectorAll("[data-project-modal]").forEach((trigger) => {
+    if (trigger.dataset.modalBound === "true") return;
+    trigger.dataset.modalBound = "true";
+    trigger.addEventListener("click", () => openProjectModal(trigger.dataset.projectModal));
+  });
+}
+
+bindProjectModalTriggers();
 
 modalCloseTriggers.forEach((trigger) => {
   trigger.addEventListener("click", closeProjectModal);
@@ -289,6 +347,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 const viewCounter = document.querySelector("[data-view-counter]");
+let viewCounterLabel = "Site views";
 
 if (viewCounter) {
   fetch("https://api.countapi.xyz/hit/raskyjack.com/site", {
@@ -298,10 +357,247 @@ if (viewCounter) {
     .then((response) => (response.ok ? response.json() : Promise.reject()))
     .then((data) => {
       if (typeof data.value === "number") {
-        viewCounter.textContent = `Site views ${data.value.toLocaleString()}`;
+        viewCounter.textContent = `${viewCounterLabel} ${data.value.toLocaleString()}`;
       }
     })
     .catch(() => {
-      viewCounter.textContent = "Site views --";
+      viewCounter.textContent = `${viewCounterLabel} --`;
     });
 }
+
+function applySiteSettings(site) {
+  if (!site) return;
+  if (site.title) document.title = site.title;
+  if (site.description) {
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", site.description);
+  }
+  document.querySelectorAll(".site-footer .wordmark").forEach((el) => {
+    if (site.brand) el.textContent = site.brand;
+  });
+  document.querySelectorAll(".site-footer a[href^='mailto:']").forEach((el) => {
+    if (site.contactEmail) {
+      el.textContent = site.contactEmail;
+      el.setAttribute("href", `mailto:${site.contactEmail}`);
+    }
+  });
+  document.querySelectorAll(".contact-form").forEach((form) => {
+    if (site.contactEmail) form.setAttribute("action", `mailto:${site.contactEmail}`);
+  });
+  if (site.footerLinks?.length) {
+    const footerLinks = [...document.querySelectorAll(".site-footer a:not([href^='mailto:'])")];
+    site.footerLinks.forEach((link, index) => {
+      if (!footerLinks[index]) return;
+      footerLinks[index].textContent = link.label;
+      footerLinks[index].setAttribute("href", normalizeAssetPath(link.href));
+    });
+  }
+  if (site.viewCounterLabel) {
+    viewCounterLabel = site.viewCounterLabel;
+    if (viewCounter && viewCounter.textContent.includes("--")) {
+      viewCounter.textContent = `${viewCounterLabel} --`;
+    }
+  }
+}
+
+function applyHomepageContent(homepage) {
+  if (!homepage || !document.querySelector(".hero")) return;
+  setText(".hero-copy .eyebrow", homepage.hero?.label);
+  setText(".hero-copy h1", homepage.hero?.headline);
+  setText(".hero-copy .lead", homepage.hero?.body);
+  setLink(".hero-copy .button-row a:nth-child(1)", homepage.hero?.primaryButton);
+  setLink(".hero-copy .button-row a:nth-child(2)", homepage.hero?.secondaryButton);
+
+  (homepage.hero?.cards || []).forEach((card, index) => {
+    const element = document.querySelectorAll(".hero-collage .float-card")[index];
+    if (!element) return;
+    if (card.link) element.setAttribute("href", normalizeAssetPath(card.link));
+    setImage("img", card.image, element);
+    setText("span", card.title, element);
+    setText("small", card.label, element);
+  });
+
+  (homepage.coreVentures || []).forEach((venture, index) => {
+    const element = document.querySelectorAll(".venture-card")[index];
+    if (!element) return;
+    if (venture.link) element.setAttribute("href", normalizeAssetPath(venture.link));
+    setImage("img", venture.image, element);
+    setText("h2", venture.title, element);
+    setHtmlText("p", venture.description, element);
+    setText(".venture-link", venture.buttonLabel, element);
+  });
+
+  setText("#contact h2", homepage.contact?.headline);
+  setText("#contact p", homepage.contact?.body);
+  setText(".contact-form button", homepage.contact?.buttonLabel);
+}
+
+function applyRaskysContent(raskys) {
+  if (!raskys) return;
+  setText("#hospitality .split-copy .eyebrow", raskys.label);
+  setText("#hospitality .split-copy h2", raskys.headline);
+  setText("#hospitality .split-copy p", raskys.description);
+  setLink("#hospitality .split-copy .button", raskys.button);
+  const stage = document.querySelector("#hospitality [data-blueprint]");
+  if (stage && raskys.blueprintImage?.src) {
+    const src = normalizeAssetPath(raskys.blueprintImage.src);
+    stage.dataset.blueprintSrc = src;
+    setImage("img", raskys.blueprintImage, stage);
+  }
+  (raskys.concepts || []).forEach((concept, index) => {
+    const card = document.querySelectorAll("#hospitality .concept-grid article")[index];
+    if (!card) return;
+    setText("h3", concept.title, card);
+    setText("p", concept.description, card);
+  });
+  setText("#vision h3", raskys.vision?.title);
+  setText("#vision p", raskys.vision?.description);
+  setText("#vision blockquote", raskys.vision?.quote);
+  (raskys.vision?.images || []).forEach((image, index) => {
+    const img = document.querySelectorAll("#vision .vision-gallery img")[index];
+    if (!img) return;
+    setImage("", image, { querySelector: () => img });
+  });
+
+  if (document.body.contains(document.querySelector(".page-hero")) && location.pathname.includes("/raskys")) {
+    setText(".page-hero .eyebrow", raskys.label);
+    setText(".page-hero h1", raskys.pageHeadline || raskys.headline);
+    setText(".page-hero .lead", raskys.pageDescription || raskys.description);
+    setLink(".page-hero .button-row a:nth-child(1)", raskys.pagePrimaryButton);
+    setLink(".page-hero .button-row a:nth-child(2)", raskys.businessPlanButton);
+  }
+}
+
+function applyMusicContent(music) {
+  if (!music || !document.querySelector("#music")) return;
+  setText("#music .split-copy .eyebrow", music.label);
+  setText("#music .split-copy h2", music.headline);
+  setText("#music .split-copy p", music.description);
+  setLink("#music .split-copy .button-row a:nth-child(1)", music.primaryButton);
+  setLink("#music .split-copy .button-row a:nth-child(2)", music.secondaryButton);
+  if (music.featuredRelease) {
+    setImage(".featured-release img", music.featuredRelease.image);
+    setText(".featured-release h3", music.featuredRelease.title);
+    setText(".featured-release p", music.featuredRelease.subtitle);
+  }
+  setText(".releases .section-label", music.discographyLabel);
+  setText(".releases h3", music.discographyTitle);
+  setLink(".releases .section-heading-row a", music.allMusicLink);
+  const grid = document.querySelector(".release-grid");
+  if (grid && Array.isArray(music.releases)) {
+    grid.innerHTML = music.releases
+      .map((release) => `
+        <a href="${normalizeAssetPath(release.link || "#")}"${release.external ? ' target="_blank" rel="noreferrer"' : ""}>
+          <img src="${normalizeAssetPath(release.image?.src || release.image || "")}" alt="${release.image?.alt || `${release.title} album artwork`}" />
+          <h4>${release.title}</h4>
+          <p>${release.subtitle || "Raskyjack"}</p>
+        </a>
+      `)
+      .join("");
+  }
+}
+
+function renderProductsProjects(projects) {
+  if (!projects?.cards || !document.querySelector(".ordered-work")) return;
+  const grid = document.querySelector(".ordered-work");
+  grid.innerHTML = projects.cards
+    .map((project) => {
+      const media = project.image?.src
+        ? `<img src="${normalizeAssetPath(project.image.src)}" alt="${project.image.alt || `${project.title} preview`}" />`
+        : '<div class="raskode-visual" aria-hidden="true"></div>';
+      const body = `
+        ${media}
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <span class="work-card-link">${project.buttonLabel || "View Project"}</span>
+      `;
+      if (project.modalKey) {
+        return `<button class="work-card" type="button" data-project-modal="${project.modalKey}">${body}</button>`;
+      }
+      return `<a class="work-card" href="${normalizeAssetPath(project.link || "#")}">${body}</a>`;
+    })
+    .join("");
+
+  if (projects.modals) {
+    projectModalData = { ...projectModalData, ...projects.modals };
+  }
+  bindProjectModalTriggers();
+}
+
+function applyDocumentsContent(documents) {
+  if (!documents) return;
+  const cv = documents.cvPdf;
+  if (cv) document.querySelectorAll(".about-cv-button").forEach((link) => link.setAttribute("href", normalizeAssetPath(cv)));
+  if (documents.raskysBusinessPlanPdf) {
+    document.querySelectorAll('a[href$="raskys-business-plan.pdf"]').forEach((link) => {
+      link.setAttribute("href", normalizeAssetPath(documents.raskysBusinessPlanPdf));
+    });
+  }
+  if (documents.shnorkPreviewPdf) {
+    document.querySelectorAll('a[href$="in-the-shadow-of-a-shnork-preview.pdf"]').forEach((link) => {
+      link.setAttribute("href", normalizeAssetPath(documents.shnorkPreviewPdf));
+    });
+  }
+}
+
+function applyCreativeStudioContent(content) {
+  if (!content || !location.pathname.includes("/design")) return;
+  setText(".page-hero .eyebrow", content.hero?.label);
+  setText(".page-hero h1", content.hero?.headline);
+  setText(".page-hero .lead", content.hero?.body);
+  setLink(".page-hero .button-row a:nth-child(1)", content.hero?.primaryButton);
+  setLink(".page-hero .button-row a:nth-child(2)", content.hero?.secondaryButton);
+  setImage(".page-visual img", content.hero?.image);
+
+  (content.sections || []).forEach((section, index) => {
+    const card = document.querySelectorAll(".studio-showcase")[index];
+    if (!card) return;
+    setText(".eyebrow", section.label, card);
+    setText("h2", section.title, card);
+    const paragraph = [...card.querySelectorAll("p")].find((p) => !p.classList.contains("eyebrow") && !p.classList.contains("future-link"));
+    if (paragraph && section.description) paragraph.textContent = section.description;
+    const note = card.querySelector(".future-link");
+    if (note && section.note !== undefined) note.textContent = section.note;
+    const highlights = card.querySelector(".highlight-list");
+    if (highlights && section.highlights) highlights.innerHTML = renderHighlights(section.highlights);
+    (section.images || []).forEach((image, imageIndex) => {
+      const img = card.querySelectorAll("img")[imageIndex];
+      if (img) setImage("", image, { querySelector: () => img });
+    });
+    const row = card.querySelector(".button-row");
+    if (row && section.buttons) {
+      row.innerHTML = section.buttons.map((button, buttonIndex) => renderButton(button, buttonIndex === 0 ? "button button-dark" : "button button-light")).join("");
+    }
+  });
+}
+
+async function loadJson(path) {
+  const response = await fetch(`${contentBase}${path}`, { cache: "no-store" });
+  if (!response.ok) throw new Error(path);
+  return response.json();
+}
+
+async function loadEditableContent() {
+  try {
+    const [site, homepage, raskys, music, projects, creativeStudio, documents] = await Promise.all([
+      loadJson("site.json"),
+      loadJson("homepage.json"),
+      loadJson("raskys.json"),
+      loadJson("music.json"),
+      loadJson("projects.json"),
+      loadJson("creative-studio.json"),
+      loadJson("documents.json")
+    ]);
+    applySiteSettings(site);
+    applyHomepageContent(homepage);
+    applyRaskysContent(raskys);
+    applyMusicContent(music);
+    renderProductsProjects(projects);
+    applyCreativeStudioContent(creativeStudio);
+    applyDocumentsContent(documents);
+  } catch (error) {
+    // Keep the static HTML fallback if editable content is unavailable.
+  }
+}
+
+loadEditableContent();

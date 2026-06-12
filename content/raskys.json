@@ -1,0 +1,66 @@
+{
+  "label": "Raskys",
+  "headline": "A future hospitality brand.",
+  "description": "Raskys is a flexible venue concept for the right coastal or high-footfall location. It is inspired by great hospitality: quality drinks, warm service, live music, community, events and a memorable atmosphere.",
+  "button": {
+    "label": "Explore the Vision",
+    "href": "/raskys/"
+  },
+  "blueprintImage": {
+    "src": "assets/raskys-blueprint.svg",
+    "alt": "Light architectural blueprint for the Raskys venue concept"
+  },
+  "businessPlanPdf": "assets/docs/raskys-business-plan.pdf",
+  "pageHeadline": "A future venue brand with soul.",
+  "pageDescription": "A flexible hospitality concept for the right coastal or high-footfall location: premium restaurant energy, quality drinks, live music, events, warm service, rooftop atmosphere and memorable moments.",
+  "pagePrimaryButton": {
+    "label": "Discuss Raskys",
+    "href": "mailto:hello@raskyjack.com"
+  },
+  "businessPlanButton": {
+    "label": "Business Plan",
+    "href": "/assets/docs/raskys-business-plan.pdf",
+    "external": true
+  },
+  "concepts": [
+    {
+      "title": "Quality Drinks",
+      "description": "Seasonal menus, crafted cocktails, wine, premium ingredients and a clear point of view."
+    },
+    {
+      "title": "Live Music & Events",
+      "description": "Curated live music, DJ sets, intimate events and reasons for people to return."
+    },
+    {
+      "title": "Warm Hospitality",
+      "description": "Genuine service, timing, detail and the feeling that guests are looked after properly."
+    },
+    {
+      "title": "Strong Brand",
+      "description": "A visual and operational concept designed to scale in the right location."
+    }
+  ],
+  "vision": {
+    "title": "The Vision",
+    "description": "A premium coastal destination with soul: restaurant energy, multiple bar moments, live music, events, rooftop atmosphere and a brand strong enough to travel to the right location.",
+    "quote": "\"Great venues are not just built. They're felt.\"",
+    "images": [
+      {
+        "src": "assets/optimized/brand-restaurant-set.jpg",
+        "alt": "Premium hospitality brand visual"
+      },
+      {
+        "src": "assets/optimized/perfecthost-map.jpg",
+        "alt": "Hospitality operations floor plan"
+      },
+      {
+        "src": "assets/optimized/jack-performance.jpg",
+        "alt": "Live music and hospitality atmosphere"
+      },
+      {
+        "src": "assets/optimized/brand-restaurant-set.jpg",
+        "alt": "Hospitality concept detail"
+      }
+    ]
+  }
+}

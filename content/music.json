@@ -1,0 +1,70 @@
+{
+  "label": "Raskyjack",
+  "headline": "Music with emotion and energy.",
+  "description": "Raskyjack is the music side of the wider Rasky world: releases, visuals, live performance and creative direction shaped around feeling and memory.",
+  "primaryButton": {
+    "label": "Listen on Spotify",
+    "href": "https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG",
+    "external": true
+  },
+  "secondaryButton": {
+    "label": "Visit Music Page",
+    "href": "/music/"
+  },
+  "featuredRelease": {
+    "title": "Illusions",
+    "subtitle": "Highlighted release / Raskyjack",
+    "image": {
+      "src": "assets/optimized/raskyjack-illusions.jpg",
+      "alt": "Illusions album artwork by Raskyjack"
+    }
+  },
+  "discographyLabel": "Discography",
+  "discographyTitle": "Releases",
+  "allMusicLink": {
+    "label": "View all music",
+    "href": "/music/"
+  },
+  "releases": [
+    {
+      "title": "Illusions",
+      "subtitle": "Raskyjack",
+      "link": "https://open.spotify.com/album/3LITyJwxlLSSI64YffbX2R",
+      "external": true,
+      "image": {
+        "src": "assets/optimized/raskyjack-illusions.jpg",
+        "alt": "Illusions album artwork"
+      }
+    },
+    {
+      "title": "Suffolk",
+      "subtitle": "Raskyjack",
+      "link": "https://open.spotify.com/album/0dR3wqrTTScMnSR9JYx89x",
+      "external": true,
+      "image": {
+        "src": "assets/optimized/raskyjack-suffolk.jpg",
+        "alt": "Suffolk album artwork"
+      }
+    },
+    {
+      "title": "Sunburst",
+      "subtitle": "Raskyjack",
+      "link": "https://open.spotify.com/album/1NXYx7mNXmgkKtPz0bN3df",
+      "external": true,
+      "image": {
+        "src": "assets/optimized/raskyjack-sunburst.jpg",
+        "alt": "Sunburst album artwork"
+      }
+    },
+    {
+      "title": "Brick by Brick",
+      "subtitle": "Raskyjack",
+      "link": "https://open.spotify.com/album/4NgNCBjDEt7N4KzkC7A9Rq",
+      "external": true,
+      "image": {
+        "src": "assets/optimized/raskyjack-brick-by-brick.jpg",
+        "alt": "Brick by Brick album artwork"
+      }
+    }
+  ]
+}

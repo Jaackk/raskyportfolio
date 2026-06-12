@@ -20,7 +20,29 @@ The site is plain HTML, CSS and JavaScript. There is no build step.
 
 ## Edit Content
 
-The page structure and copy live in:
+Small public-site edits are now managed through Decap CMS content files.
+
+Admin route:
+
+```text
+https://raskyjack.com/admin/
+```
+
+Editable content files live in:
+
+```text
+content/site.json
+content/homepage.json
+content/raskys.json
+content/music.json
+content/projects.json
+content/creative-studio.json
+content/documents.json
+```
+
+The public site loads those JSON files with `script.js`. If a content file is unavailable, the static HTML remains as the fallback so the live site still renders.
+
+The original page structure still lives in:
 
 ```text
 index.html
@@ -48,6 +70,70 @@ Main sections:
 - Dedicated project sections
 - About Jack
 - Contact
+
+## Decap CMS Admin
+
+Decap CMS files:
+
+```text
+admin/index.html
+admin/config.yml
+```
+
+Current CMS collections:
+
+- Site Settings: title, contact email, footer links, music URLs, view counter label
+- Homepage: hero text, buttons, hero cards, Core Ventures, contact copy
+- Raskys: homepage section, concept cards, blueprint image, Raskys page copy, business plan link
+- Music: music section copy, Spotify/music links, featured release, discography items and album artwork
+- Products & Projects: project cards and modal content for live-site previews
+- Creative Studio: hero, Graphic & Web Design, Perfect Host, Restaurant Pre-Order System, gallery items
+- Documents: CV, Raskys business plan and Shnork preview PDF paths
+
+Media uploads:
+
+```text
+assets/uploads/
+```
+
+Document/PDF uploads from the Documents collection:
+
+```text
+assets/docs/
+```
+
+When replacing images, use optimized web images where possible. GitHub Pages will serve whatever is committed, so very large uncompressed uploads will slow the site down.
+
+### Authentication Setup
+
+The admin route is present, but secure login is not automatic on GitHub Pages alone.
+
+Decap CMS with the `github` backend requires a real GitHub OAuth flow. A static GitHub Pages site cannot safely store the OAuth client secret, so you must connect one of these before using `/admin/` securely:
+
+- a small OAuth proxy such as the official Decap/Netlify CMS GitHub OAuth server
+- Netlify Identity + Git Gateway, if the site is later hosted on Netlify
+- another trusted serverless OAuth gateway that stores the GitHub OAuth secret server-side
+
+Do not add a public username/password to this repo. Do not put OAuth secrets in `admin/config.yml`, JavaScript, or any public file.
+
+Typical GitHub OAuth setup:
+
+1. Create a GitHub OAuth App.
+2. Set the callback URL to the callback route required by your chosen OAuth gateway.
+3. Store the OAuth client secret only in that gateway's private environment variables.
+4. Configure `admin/config.yml` with the gateway `base_url` if your gateway requires it.
+5. Visit `https://raskyjack.com/admin/` and log in with a GitHub account that has write access to `Jaackk/raskyportfolio`.
+
+Publishing model:
+
+- Decap edits the JSON files and media files in this repository.
+- Saved changes become Git commits or editorial-workflow pull requests depending on the configured backend support.
+- GitHub Pages redeploys from `main`.
+
+Current limitation:
+
+- `/admin/` loads the CMS interface, but editing will not be secure or usable until GitHub OAuth/auth gateway setup is completed.
+- The existing migrated websites (`/music/`, `/motiondesk/`, `/etsycalc/`, `/rockwaterpreorders/`) are intentionally not converted into CMS-managed pages.
 
 ## Internal Pages
 

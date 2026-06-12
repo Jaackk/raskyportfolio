@@ -1,0 +1,307 @@
+backend:
+  name: github
+  repo: Jaackk/raskyportfolio
+  branch: main
+
+site_url: https://raskyjack.com
+display_url: https://raskyjack.com
+logo_url: /assets/optimized/rasky-logo.jpg
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+publish_mode: editorial_workflow
+
+editor:
+  preview: false
+
+collections:
+  - name: settings
+    label: Site Settings
+    files:
+      - name: site
+        label: Site Settings
+        file: content/site.json
+        format: json
+        fields:
+          - { label: Site Title, name: title, widget: string }
+          - { label: Meta Description, name: description, widget: text }
+          - { label: Brand Text, name: brand, widget: string }
+          - { label: Contact Email, name: contactEmail, widget: string }
+          - { label: Home URL, name: homeUrl, widget: string }
+          - { label: Main Music URL, name: musicUrl, widget: string }
+          - { label: External Music Site URL, name: musicExternalUrl, widget: string, required: false }
+          - { label: View Counter Label, name: viewCounterLabel, widget: string }
+          - label: Footer Links
+            name: footerLinks
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Link, name: href, widget: string }
+
+  - name: homepage
+    label: Homepage
+    files:
+      - name: homepage
+        label: Homepage
+        file: content/homepage.json
+        format: json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Body Text, name: body, widget: text }
+              - label: Primary Button
+                name: primaryButton
+                widget: object
+                fields: &button_fields
+                  - { label: Label, name: label, widget: string }
+                  - { label: Link, name: href, widget: string }
+                  - { label: Opens New Tab, name: external, widget: boolean, required: false, default: false }
+              - label: Secondary Button
+                name: secondaryButton
+                widget: object
+                fields: *button_fields
+              - label: Hero Cards
+                name: cards
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Small Label, name: label, widget: string }
+                  - { label: Link, name: link, widget: string }
+                  - label: Image
+                    name: image
+                    widget: object
+                    fields: &image_fields
+                      - { label: Image, name: src, widget: image, required: false }
+                      - { label: Alt Text, name: alt, widget: string, required: false }
+          - label: Core Ventures
+            name: coreVentures
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Button Label, name: buttonLabel, widget: string }
+              - { label: Link, name: link, widget: string }
+              - label: Image
+                name: image
+                widget: object
+                fields: *image_fields
+          - label: Contact Section
+            name: contact
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Body Text, name: body, widget: text }
+              - { label: Button Label, name: buttonLabel, widget: string }
+
+  - name: raskys
+    label: Raskys
+    files:
+      - name: raskys
+        label: Raskys
+        file: content/raskys.json
+        format: json
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: Homepage Headline, name: headline, widget: string }
+          - { label: Homepage Description, name: description, widget: text }
+          - label: Homepage Button
+            name: button
+            widget: object
+            fields: *button_fields
+          - label: Blueprint Image
+            name: blueprintImage
+            widget: object
+            fields: *image_fields
+          - { label: Business Plan PDF Path, name: businessPlanPdf, widget: file, required: false }
+          - { label: Raskys Page Headline, name: pageHeadline, widget: string, required: false }
+          - { label: Raskys Page Description, name: pageDescription, widget: text, required: false }
+          - label: Page Primary Button
+            name: pagePrimaryButton
+            widget: object
+            fields: *button_fields
+          - label: Business Plan Button
+            name: businessPlanButton
+            widget: object
+            fields: *button_fields
+          - label: Concept Cards
+            name: concepts
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - label: Vision Card
+            name: vision
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Quote, name: quote, widget: string }
+              - label: Images
+                name: images
+                widget: list
+                fields: *image_fields
+
+  - name: music
+    label: Music
+    files:
+      - name: music
+        label: Music
+        file: content/music.json
+        format: json
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: Headline, name: headline, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Primary Button
+            name: primaryButton
+            widget: object
+            fields: *button_fields
+          - label: Secondary Button
+            name: secondaryButton
+            widget: object
+            fields: *button_fields
+          - label: Featured Release
+            name: featuredRelease
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - label: Image
+                name: image
+                widget: object
+                fields: *image_fields
+          - { label: Discography Label, name: discographyLabel, widget: string }
+          - { label: Discography Title, name: discographyTitle, widget: string }
+          - label: All Music Link
+            name: allMusicLink
+            widget: object
+            fields: *button_fields
+          - label: Releases
+            name: releases
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Link, name: link, widget: string }
+              - { label: Opens New Tab, name: external, widget: boolean, default: true }
+              - label: Image
+                name: image
+                widget: object
+                fields: *image_fields
+
+  - name: projects
+    label: Products & Projects
+    files:
+      - name: projects
+        label: Products & Projects
+        file: content/projects.json
+        format: json
+        fields:
+          - label: Project Cards
+            name: cards
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Button Label, name: buttonLabel, widget: string }
+              - { label: Project Type, name: projectType, widget: select, options: [modal-live-site, project-page] }
+              - { label: Direct Link, name: link, widget: string, required: false }
+              - { label: Modal Key, name: modalKey, widget: string, required: false }
+              - label: Image
+                name: image
+                widget: object
+                fields: *image_fields
+          - label: Modal Content
+            name: modals
+            widget: object
+            collapsed: false
+            fields:
+              - label: Motion Desk
+                name: motiondesk
+                widget: object
+                fields: &modal_fields
+                  - { label: Kicker, name: kicker, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Image, name: image, widget: image, required: false }
+                  - { label: Alt Text, name: alt, widget: string, required: false }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Highlights, name: highlights, widget: list, field: { label: Highlight, name: highlight, widget: string } }
+                  - label: Links
+                    name: links
+                    widget: list
+                    fields: *button_fields
+                  - { label: Note, name: note, widget: string, required: false }
+              - label: EtsyCalc
+                name: etsycalc
+                widget: object
+                fields: *modal_fields
+
+  - name: creative_studio
+    label: Creative Studio
+    files:
+      - name: creative_studio
+        label: Creative Studio
+        file: content/creative-studio.json
+        format: json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Body Text, name: body, widget: text }
+              - label: Primary Button
+                name: primaryButton
+                widget: object
+                fields: *button_fields
+              - label: Secondary Button
+                name: secondaryButton
+                widget: object
+                fields: *button_fields
+              - label: Image
+                name: image
+                widget: object
+                fields: *image_fields
+          - label: Showcase Sections
+            name: sections
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Note, name: note, widget: string, required: false }
+              - { label: Highlights, name: highlights, widget: list, required: false, field: { label: Highlight, name: highlight, widget: string } }
+              - label: Images
+                name: images
+                widget: list
+                fields: *image_fields
+              - label: Buttons
+                name: buttons
+                widget: list
+                fields: *button_fields
+          - label: Design Gallery Items
+            name: gallery
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Image, name: image, widget: image }
+
+  - name: documents
+    label: Documents
+    media_folder: assets/docs
+    public_folder: /assets/docs
+    files:
+      - name: documents
+        label: Documents
+        file: content/documents.json
+        format: json
+        fields:
+          - { label: CV PDF, name: cvPdf, widget: file, required: false }
+          - { label: Raskys Business Plan PDF, name: raskysBusinessPlanPdf, widget: file, required: false }
+          - { label: Shnork Preview PDF, name: shnorkPreviewPdf, widget: file, required: false }

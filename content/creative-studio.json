@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "label": "Creative Studio",
+    "headline": "Brands, websites, hospitality tools and creative products.",
+    "body": "A curated project area for visual identity, menus, hospitality interfaces, website design, client-style projects and practical digital products.",
+    "primaryButton": {
+      "label": "Discuss Design",
+      "href": "mailto:hello@raskyjack.com"
+    },
+    "secondaryButton": {
+      "label": "Back to Projects",
+      "href": "/#selected-work"
+    },
+    "image": {
+      "src": "assets/optimized/brand-restaurant-set.jpg",
+      "alt": "Premium restaurant branding example"
+    }
+  },
+  "sections": [
+    {
+      "label": "Creative Studio",
+      "title": "Graphic & Web Design",
+      "description": "Graphic design, website creation, branding, visual identity, menus and digital presentation shaped with a clean, premium standard. This section collects the visual work behind venue concepts, product interfaces and brand-ready creative direction.",
+      "note": "All websites and graphics designed and curated by Jack.",
+      "images": [
+        {
+          "src": "assets/optimized/brand-restaurant-set.jpg",
+          "alt": "Hospitality branding and menu design example"
+        },
+        {
+          "src": "assets/optimized/motiondesk-screenshot.jpg",
+          "alt": "Website and product interface example"
+        },
+        {
+          "src": "assets/optimized/rasky-logo.jpg",
+          "alt": "Rasky logo and identity asset"
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Open Design Gallery",
+          "href": "/design-gallery/"
+        }
+      ]
+    },
+    {
+      "label": "Hospitality Application",
+      "title": "Perfect Host Application",
+      "description": "A hospitality floor-planning and host workflow concept built around table management, guest notes, service timing, live table states and the practical pressure points of real service.",
+      "highlights": [
+        "Floor planning and table status systems",
+        "Guest notes, timing and service awareness",
+        "Built from real hospitality workflow"
+      ],
+      "note": "Best experienced on mobile.",
+      "images": [
+        {
+          "src": "assets/optimized/perfecthost-map.jpg",
+          "alt": "Perfect Host floor plan and table management interface"
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Open Project Page",
+          "href": "/perfecthost/"
+        },
+        {
+          "label": "Open Mobile Prototype",
+          "href": "/perfecthost-demo/"
+        }
+      ]
+    },
+    {
+      "label": "Hospitality Operations",
+      "title": "Restaurant Pre-Order System",
+      "description": "A working event pre-order website for hospitality teams: guest selections, allergies and notes, staff workspace, kitchen summaries and service handover in one operational flow.",
+      "highlights": [
+        "Event preorders and guest selections",
+        "Allergies, notes and staff workspace",
+        "Kitchen and service summary workflows"
+      ],
+      "note": "Locked by Rockwater email login.",
+      "images": [
+        {
+          "src": "assets/optimized/rockwater-guest.png",
+          "alt": "Rockwater Preorders guest ordering website view"
+        },
+        {
+          "src": "assets/optimized/rockwater-staff.png",
+          "alt": "Rockwater Preorders staff workspace website view"
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Visit Website",
+          "href": "/rockwaterpreorders/"
+        }
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "title": "Restaurant branding",
+      "image": "assets/optimized/brand-restaurant-set.jpg"
+    },
+    {
+      "title": "Motion Desk website",
+      "image": "assets/optimized/motiondesk-screenshot.jpg"
+    },
+    {
+      "title": "EtsyCalc interface",
+      "image": "assets/optimized/etsycalc-screenshot.jpg"
+    },
+    {
+      "title": "Rockwater guest ordering",
+      "image": "assets/optimized/rockwater-guest.png"
+    },
+    {
+      "title": "Rockwater staff workspace",
+      "image": "assets/optimized/rockwater-staff.png"
+    },
+    {
+      "title": "Rasky identity",
+      "image": "assets/optimized/rasky-logo.jpg"
+    }
+  ]
+}
