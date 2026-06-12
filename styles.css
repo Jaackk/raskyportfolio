@@ -1683,28 +1683,53 @@ body.modal-open {
     min-height: 220px;
   }
 
+  #focus.section-pad.compact {
+    padding-top: 26px;
+    padding-bottom: 34px;
+  }
+
+  #focus .section-label {
+    margin-bottom: 14px;
+  }
+
+  .venture-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
   .venture-card {
-    min-height: 230px;
-    padding: 20px;
+    min-height: 164px;
+    padding: 14px;
+    border-radius: 14px;
   }
 
   .venture-card > div {
-    min-height: 190px;
+    min-height: 136px;
   }
 
   .venture-card h2 {
-    font-size: clamp(1.85rem, 8vw, 2.45rem);
+    font-size: clamp(1.35rem, 5.8vw, 1.72rem);
   }
 
   .venture-card p {
-    max-width: 310px;
-    margin-top: 10px;
-    font-size: 0.92rem;
-    line-height: 1.55;
+    display: -webkit-box;
+    max-width: 190px;
+    margin-top: 7px;
+    overflow: hidden;
+    color: rgba(18, 24, 27, 0.78);
+    font-size: 0.76rem;
+    line-height: 1.38;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   .venture-link {
-    margin-top: 16px;
+    margin-top: 10px;
+    font-size: 0.74rem;
+  }
+
+  .venture-card:not(.dark)::after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.9));
   }
 
   .venture-card.dark img {
@@ -1715,6 +1740,55 @@ body.modal-open {
     background:
       radial-gradient(circle at 85% 20%, rgba(115, 87, 184, 0.2), transparent 36%),
       linear-gradient(180deg, rgba(4, 12, 20, 0.28), rgba(4, 12, 20, 0.88));
+  }
+
+  .music-light {
+    padding-top: 38px;
+    padding-bottom: 42px;
+  }
+
+  .music-panel {
+    min-height: auto;
+    gap: 18px;
+  }
+
+  .music-panel .featured-release {
+    display: none;
+  }
+
+  .music-panel .split-copy .button {
+    margin-top: 18px;
+  }
+
+  .releases {
+    margin-top: 14px;
+    padding: 18px;
+  }
+
+  .releases .section-heading-row {
+    margin-bottom: 16px;
+  }
+
+  .release-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 14px;
+    margin: 0 -18px;
+    padding: 0 18px 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-padding-inline: 18px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .release-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .release-grid a {
+    flex: 0 0 min(68vw, 230px);
+    scroll-snap-align: start;
   }
 
   .design-gallery {
@@ -1746,5 +1820,19 @@ body.modal-open {
     height: auto;
     grid-row: auto;
     aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 360px) {
+  .venture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venture-card {
+    min-height: 150px;
+  }
+
+  .venture-card > div {
+    min-height: 122px;
   }
 }
