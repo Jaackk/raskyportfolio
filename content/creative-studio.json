@@ -101,27 +101,45 @@
   "gallery": [
     {
       "title": "Restaurant branding",
-      "image": "assets/optimized/brand-restaurant-set.jpg"
+      "image": "assets/optimized/brand-restaurant-set.jpg",
+      "description": "Hospitality branding, menu presentation and visual identity direction.",
+      "category": "Graphic Design & Branding",
+      "link": ""
     },
     {
       "title": "Motion Desk website",
-      "image": "assets/optimized/motiondesk-screenshot.jpg"
+      "image": "assets/optimized/motiondesk-screenshot.jpg",
+      "description": "Website and product interface presentation for a creator workspace concept.",
+      "category": "Website Design",
+      "link": "/motiondesk/"
     },
     {
       "title": "EtsyCalc interface",
-      "image": "assets/optimized/etsycalc-screenshot.jpg"
+      "image": "assets/optimized/etsycalc-screenshot.jpg",
+      "description": "Practical product interface for pricing, fees and small-business decisions.",
+      "category": "Website Design",
+      "link": "/etsycalc/"
     },
     {
       "title": "Rockwater guest ordering",
-      "image": "assets/optimized/rockwater-guest.png"
+      "image": "assets/optimized/rockwater-guest.png",
+      "description": "Guest-facing pre-order flow for hospitality events and menu selections.",
+      "category": "Hospitality Tool",
+      "link": "/rockwaterpreorders/"
     },
     {
       "title": "Rockwater staff workspace",
-      "image": "assets/optimized/rockwater-staff.png"
+      "image": "assets/optimized/rockwater-staff.png",
+      "description": "Staff workspace for guest choices, notes, allergies and service preparation.",
+      "category": "Hospitality Tool",
+      "link": "/rockwaterpreorders/"
     },
     {
       "title": "Rasky identity",
-      "image": "assets/optimized/rasky-logo.jpg"
+      "image": "assets/optimized/rasky-logo.jpg",
+      "description": "Identity asset for the Rasky personal brand and wider creative world.",
+      "category": "Brand Identity",
+      "link": ""
     }
   ]
 }

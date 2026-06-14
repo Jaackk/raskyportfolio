@@ -1,6 +1,8 @@
 {
   "cards": [
     {
+      "visible": true,
+      "order": 1,
       "title": "Motion Desk",
       "description": "Creator workspace for assets, planning and release management.",
       "buttonLabel": "View Project",
@@ -12,6 +14,8 @@
       }
     },
     {
+      "visible": true,
+      "order": 2,
       "title": "SportsPredict / TennisPredict",
       "description": "Prediction and analytics thinking for sports data.",
       "buttonLabel": "View Project",
@@ -23,6 +27,8 @@
       }
     },
     {
+      "visible": true,
+      "order": 3,
       "title": "Creative Studio",
       "description": "Brands, websites, hospitality tools and creative products.",
       "buttonLabel": "View Project",
@@ -34,6 +40,8 @@
       }
     },
     {
+      "visible": true,
+      "order": 4,
       "title": "EtsyCalc",
       "description": "Real utility for Etsy sellers and business decisions.",
       "buttonLabel": "View Project",
@@ -45,6 +53,8 @@
       }
     },
     {
+      "visible": true,
+      "order": 5,
       "title": "In the Shadow of a Shnork",
       "description": "Novel, worldbuilding, artwork and Unity prototype.",
       "buttonLabel": "View Project",
@@ -56,6 +66,8 @@
       }
     },
     {
+      "visible": true,
+      "order": 6,
       "title": "Raskode",
       "description": "Personal AI development project for learning and automation.",
       "buttonLabel": "View Project",

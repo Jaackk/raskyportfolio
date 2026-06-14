@@ -67,7 +67,6 @@ Main sections:
 - Raskys hospitality vision
 - Raskyjack music and discography
 - Products & Projects
-- Dedicated project sections
 - About Jack
 - Contact
 
@@ -80,15 +79,23 @@ admin/index.html
 admin/config.yml
 ```
 
+Go to:
+
+```text
+https://raskyjack.com/admin/
+```
+
+Log in with the invited Netlify Identity account, choose a collection, edit the fields, then save/publish. Decap commits the change back to GitHub through Netlify Git Gateway and Netlify redeploys the site.
+
 Current CMS collections:
 
-- Site Settings: title, contact email, footer links, music URLs, view counter label
-- Homepage: hero text, buttons, hero cards, Core Ventures, contact copy
-- Raskys: homepage section, concept cards, blueprint image, Raskys page copy, business plan link
-- Music: music section copy, Spotify/music links, featured release, discography items and album artwork
-- Products & Projects: project cards and modal content for live-site previews
-- Creative Studio: hero, Graphic & Web Design, Perfect Host, Restaurant Pre-Order System, gallery items
-- Documents: CV, Raskys business plan and Shnork preview PDF paths
+- Site Settings: browser title, contact email, footer links, music URLs and view counter label
+- Homepage: hero text, hero buttons, floating hero cards, Core Ventures and contact CTA
+- Raskys: homepage copy, blueprint image, concept cards, Raskys page copy and business plan link
+- Music: section copy, artist links, featured release, releases/discography, artwork and streaming links
+- Products & Projects: six homepage cards, order/show controls, card images, project links and modal content
+- Creative Studio: hero, wide showcase sections, Perfect Host, Rockwater Preorders and design gallery items
+- Documents & PDFs: CV, Raskys business plan, Shnork preview and other downloadable files
 
 Media uploads:
 
@@ -103,6 +110,26 @@ assets/docs/
 ```
 
 When replacing images, use optimized web images where possible. Very large uncompressed uploads will slow the site down.
+
+### Editing Workflow
+
+1. Open `/admin/` and log in.
+2. Pick the section you want, for example `Homepage` or `Products & Projects`.
+3. Edit the clearly labelled fields.
+4. For images, use the Media picker or upload a new optimized JPG/PNG/WebP.
+5. For PDFs, use `Documents & PDFs`; those uploads are stored in `assets/docs/`.
+6. Click Save, then publish the entry.
+7. Wait for the Netlify deploy to finish, then check the live page.
+
+Useful rules:
+
+- Internal links should look like `/music/`, `/raskys/` or `/design/`.
+- External links should include `https://`.
+- General image uploads go to `assets/uploads/`.
+- PDF/document uploads go to `assets/docs/`.
+- Use the `Show this card/release` toggles to hide content without deleting it.
+- Use `Display order` fields to reorder project cards or music releases.
+- Avoid editing migrated website files manually unless you are intentionally changing those standalone sites.
 
 ### Authentication Setup
 

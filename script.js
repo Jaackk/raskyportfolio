@@ -53,6 +53,23 @@ function renderHighlights(items = []) {
   return items.map((item) => `<li>${item}</li>`).join("");
 }
 
+function visibleOrderedItems(items = []) {
+  return items
+    .filter((item) => item?.visible !== false)
+    .map((item, index) => ({ ...item, _originalIndex: index }))
+    .sort((a, b) => {
+      const aOrder = Number.isFinite(Number(a.order)) ? Number(a.order) : a._originalIndex + 1;
+      const bOrder = Number.isFinite(Number(b.order)) ? Number(b.order) : b._originalIndex + 1;
+      return aOrder - bOrder;
+    });
+}
+
+function isCurrentRoute(route) {
+  const normalizedRoute = route.replace(/\/+$/, "") || "/";
+  const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  return normalizedPath === normalizedRoute;
+}
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
@@ -485,14 +502,18 @@ function applyMusicContent(music) {
   setLink(".releases .section-heading-row a", music.allMusicLink);
   const grid = document.querySelector(".release-grid");
   if (grid && Array.isArray(music.releases)) {
-    grid.innerHTML = music.releases
-      .map((release) => `
-        <a href="${normalizeAssetPath(release.link || "#")}"${release.external ? ' target="_blank" rel="noreferrer"' : ""}>
+    grid.innerHTML = visibleOrderedItems(music.releases)
+      .map((release) => {
+        const href = release.link || release.spotifyLink || "#";
+        const subtitle = release.subtitle || [release.type, release.year].filter(Boolean).join(" / ") || "Raskyjack";
+        return `
+        <a href="${normalizeAssetPath(href)}"${release.external ? ' target="_blank" rel="noreferrer"' : ""}>
           <img src="${normalizeAssetPath(release.image?.src || release.image || "")}" alt="${release.image?.alt || `${release.title} album artwork`}" />
           <h4>${release.title}</h4>
-          <p>${release.subtitle || "Raskyjack"}</p>
+          <p>${subtitle}</p>
         </a>
-      `)
+      `;
+      })
       .join("");
   }
 }
@@ -500,7 +521,7 @@ function applyMusicContent(music) {
 function renderProductsProjects(projects) {
   if (!projects?.cards || !document.querySelector(".ordered-work")) return;
   const grid = document.querySelector(".ordered-work");
-  grid.innerHTML = projects.cards
+  grid.innerHTML = visibleOrderedItems(projects.cards)
     .map((project) => {
       const media = project.image?.src
         ? `<img src="${normalizeAssetPath(project.image.src)}" alt="${project.image.alt || `${project.title} preview`}" />`
@@ -511,7 +532,7 @@ function renderProductsProjects(projects) {
         <p>${project.description}</p>
         <span class="work-card-link">${project.buttonLabel || "View Project"}</span>
       `;
-      if (project.modalKey) {
+      if (project.projectType === "modal-live-site" && project.modalKey) {
         return `<button class="work-card" type="button" data-project-modal="${project.modalKey}">${body}</button>`;
       }
       return `<a class="work-card" href="${normalizeAssetPath(project.link || "#")}">${body}</a>`;
@@ -541,7 +562,7 @@ function applyDocumentsContent(documents) {
 }
 
 function applyCreativeStudioContent(content) {
-  if (!content || !location.pathname.includes("/design")) return;
+  if (!content || !isCurrentRoute("/design")) return;
   setText(".page-hero .eyebrow", content.hero?.label);
   setText(".page-hero h1", content.hero?.headline);
   setText(".page-hero .lead", content.hero?.body);
@@ -571,6 +592,22 @@ function applyCreativeStudioContent(content) {
   });
 }
 
+function applyDesignGalleryContent(content) {
+  if (!content || !isCurrentRoute("/design-gallery") || !Array.isArray(content.gallery)) return;
+  const gallery = document.querySelector(".expanded-gallery");
+  if (!gallery) return;
+  gallery.innerHTML = content.gallery
+    .filter((item) => item?.image)
+    .map((item) => {
+      const image = normalizeAssetPath(item.image);
+      const alt = item.description || item.title || "Creative Studio gallery image";
+      const imageMarkup = `<img src="${image}" alt="${alt}" />`;
+      if (!item.link) return imageMarkup;
+      return `<a href="${normalizeAssetPath(item.link)}">${imageMarkup}</a>`;
+    })
+    .join("");
+}
+
 async function loadJson(path) {
   const response = await fetch(`${contentBase}${path}`, { cache: "no-store" });
   if (!response.ok) throw new Error(path);
@@ -594,6 +631,7 @@ async function loadEditableContent() {
     applyMusicContent(music);
     renderProductsProjects(projects);
     applyCreativeStudioContent(creativeStudio);
+    applyDesignGalleryContent(creativeStudio);
     applyDocumentsContent(documents);
   } catch (error) {
     // Keep the static HTML fallback if editable content is unavailable.

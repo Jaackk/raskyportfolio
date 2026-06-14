@@ -1084,6 +1084,14 @@ body.modal-open {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.expanded-gallery a {
+  display: block;
+}
+
+.expanded-gallery a img {
+  display: block;
+}
+
 .expanded-gallery img,
 .expanded-gallery img:nth-child(2),
 .expanded-gallery img:nth-child(3) {

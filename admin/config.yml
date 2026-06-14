@@ -16,291 +16,605 @@ editor:
 
 collections:
   - name: settings
-    label: Site Settings
+    label: "Site Settings: Footer + Contact"
+    description: "Global text, contact details, footer links and small site labels."
     files:
       - name: site
-        label: Site Settings
+        label: "Site Settings"
         file: content/site.json
         format: json
         fields:
-          - { label: Site Title, name: title, widget: string }
-          - { label: Meta Description, name: description, widget: text }
-          - { label: Brand Text, name: brand, widget: string }
-          - { label: Contact Email, name: contactEmail, widget: string }
-          - { label: Home URL, name: homeUrl, widget: string }
-          - { label: Main Music URL, name: musicUrl, widget: string }
-          - { label: External Music Site URL, name: musicExternalUrl, widget: string, required: false }
-          - { label: View Counter Label, name: viewCounterLabel, widget: string }
-          - label: Footer Links
+          - label: "Browser title"
+            name: title
+            widget: string
+            hint: "Appears in the browser tab and search previews."
+          - label: "Meta description"
+            name: description
+            widget: text
+            hint: "Short search/social description for the main site."
+          - label: "Header brand text"
+            name: brand
+            widget: string
+          - label: "Contact email"
+            name: contactEmail
+            widget: string
+            hint: "Used in footer/contact mail links. Example: hello@raskyjack.com"
+          - label: "Home URL"
+            name: homeUrl
+            widget: string
+            hint: "Usually /"
+          - label: "Main music page URL"
+            name: musicUrl
+            widget: string
+            hint: "Use /music/ for the current internal music page."
+          - label: "External music site URL"
+            name: musicExternalUrl
+            widget: string
+            required: false
+            hint: "Optional old/current music website. External links should include https://"
+          - label: "View counter label"
+            name: viewCounterLabel
+            widget: string
+            hint: "Small footer label only. Example: Site views"
+          - label: "Footer links"
             name: footerLinks
             widget: list
+            summary: "{{fields.label}}"
+            collapsed: false
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Link, name: href, widget: string }
+              - label: "Footer link label"
+                name: label
+                widget: string
+              - label: "Footer link destination"
+                name: href
+                widget: string
+                hint: "Use /internal-page/ or a full https:// URL."
 
   - name: homepage
-    label: Homepage
+    label: "Homepage: Hero, Cards, Core Ventures, Contact"
+    description: "Main landing page content. Keep this concise and high-level."
     files:
       - name: homepage
-        label: Homepage
+        label: "Homepage"
         file: content/homepage.json
         format: json
         fields:
-          - label: Hero
+          - label: "Hero section"
             name: hero
             widget: object
+            collapsed: false
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Headline, name: headline, widget: string }
-              - { label: Body Text, name: body, widget: text }
-              - label: Primary Button
+              - label: "Small hero label"
+                name: label
+                widget: string
+                hint: "Short uppercase line above the headline."
+              - label: "Hero headline"
+                name: headline
+                widget: string
+              - label: "Hero intro text"
+                name: body
+                widget: text
+              - label: "Primary hero button"
                 name: primaryButton
                 widget: object
                 fields: &button_fields
-                  - { label: Label, name: label, widget: string }
-                  - { label: Link, name: href, widget: string }
-                  - { label: Opens New Tab, name: external, widget: boolean, required: false, default: false }
-              - label: Secondary Button
+                  - label: "Button text"
+                    name: label
+                    widget: string
+                    hint: "Leave blank only if this button should appear empty."
+                  - label: "Button destination URL"
+                    name: href
+                    widget: string
+                    hint: "Use /internal-page/ or https://external-site.com"
+                  - label: "Open in new tab"
+                    name: external
+                    widget: boolean
+                    required: false
+                    default: false
+              - label: "Secondary hero button"
                 name: secondaryButton
                 widget: object
                 fields: *button_fields
-              - label: Hero Cards
+              - label: "Floating hero cards"
                 name: cards
                 widget: list
+                summary: "{{fields.title}}"
+                hint: "Top floating cards in the hero. Recommended: three cards max."
                 fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Small Label, name: label, widget: string }
-                  - { label: Link, name: link, widget: string }
-                  - label: Image
+                  - label: "Card title"
+                    name: title
+                    widget: string
+                  - label: "Small card label"
+                    name: label
+                    widget: string
+                  - label: "Card destination URL"
+                    name: link
+                    widget: string
+                  - label: "Card image"
                     name: image
                     widget: object
                     fields: &image_fields
-                      - { label: Image, name: src, widget: image, required: false }
-                      - { label: Alt Text, name: alt, widget: string, required: false }
-          - label: Core Ventures
+                      - label: "Image / replacement image"
+                        name: src
+                        widget: image
+                        required: false
+                        hint: "Upload/select from Media. Existing paths such as assets/optimized/example.jpg still work."
+                      - label: "Alt text"
+                        name: alt
+                        widget: string
+                        required: false
+                        hint: "Describe the image for accessibility."
+          - label: "Core Ventures cards"
             name: coreVentures
             widget: list
+            summary: "{{fields.title}}"
+            hint: "Main venture cards on the homepage. Keep to Raskys and Raskyjack unless the homepage structure changes."
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Button Label, name: buttonLabel, widget: string }
-              - { label: Link, name: link, widget: string }
-              - label: Image
+              - label: "Venture title"
+                name: title
+                widget: string
+              - label: "Short venture description"
+                name: description
+                widget: text
+              - label: "Button text"
+                name: buttonLabel
+                widget: string
+              - label: "Card/button destination URL"
+                name: link
+                widget: string
+              - label: "Venture image"
                 name: image
                 widget: object
                 fields: *image_fields
-          - label: Contact Section
+          - label: "Footer contact CTA"
             name: contact
             widget: object
             fields:
-              - { label: Headline, name: headline, widget: string }
-              - { label: Body Text, name: body, widget: text }
-              - { label: Button Label, name: buttonLabel, widget: string }
+              - label: "Contact headline"
+                name: headline
+                widget: string
+              - label: "Contact intro text"
+                name: body
+                widget: text
+              - label: "Contact form button text"
+                name: buttonLabel
+                widget: string
 
   - name: raskys
-    label: Raskys
+    label: "Raskys: Venue Vision"
+    description: "Homepage Raskys section plus the Raskys project page copy, PDF link and concept cards."
     files:
       - name: raskys
-        label: Raskys
+        label: "Raskys"
         file: content/raskys.json
         format: json
         fields:
-          - { label: Label, name: label, widget: string }
-          - { label: Homepage Headline, name: headline, widget: string }
-          - { label: Homepage Description, name: description, widget: text }
-          - label: Homepage Button
+          - label: "Homepage section label"
+            name: label
+            widget: string
+          - label: "Homepage Raskys headline"
+            name: headline
+            widget: string
+          - label: "Homepage Raskys description"
+            name: description
+            widget: text
+          - label: "Homepage Raskys button"
             name: button
             widget: object
             fields: *button_fields
-          - label: Blueprint Image
+          - label: "Blueprint image"
             name: blueprintImage
             widget: object
             fields: *image_fields
-          - { label: Business Plan PDF Path, name: businessPlanPdf, widget: file, required: false }
-          - { label: Raskys Page Headline, name: pageHeadline, widget: string, required: false }
-          - { label: Raskys Page Description, name: pageDescription, widget: text, required: false }
-          - label: Page Primary Button
+          - label: "Business plan PDF path"
+            name: businessPlanPdf
+            widget: string
+            required: false
+            hint: "Use Documents to upload PDFs into /assets/docs/, then paste the path here if needed."
+          - label: "Raskys page headline"
+            name: pageHeadline
+            widget: string
+            required: false
+          - label: "Raskys page description"
+            name: pageDescription
+            widget: text
+            required: false
+          - label: "Raskys page primary button"
             name: pagePrimaryButton
             widget: object
             fields: *button_fields
-          - label: Business Plan Button
+          - label: "Business plan button"
             name: businessPlanButton
             widget: object
             fields: *button_fields
-          - label: Concept Cards
+          - label: "Concept cards"
             name: concepts
             widget: list
+            summary: "{{fields.title}}"
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-          - label: Vision Card
+              - label: "Concept card title"
+                name: title
+                widget: string
+              - label: "Concept card description"
+                name: description
+                widget: text
+          - label: "Raskys page vision card"
             name: vision
             widget: object
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Quote, name: quote, widget: string }
-              - label: Images
+              - label: "Vision title"
+                name: title
+                widget: string
+              - label: "Vision description"
+                name: description
+                widget: text
+              - label: "Vision quote"
+                name: quote
+                widget: string
+              - label: "Vision gallery images"
                 name: images
                 widget: list
+                summary: "{{fields.alt}}"
                 fields: *image_fields
 
   - name: music
-    label: Music
+    label: "Music: Raskyjack"
+    description: "Homepage music section, featured release, streaming links and release list."
     files:
       - name: music
-        label: Music
+        label: "Music"
         file: content/music.json
         format: json
         fields:
-          - { label: Label, name: label, widget: string }
-          - { label: Headline, name: headline, widget: string }
-          - { label: Description, name: description, widget: text }
-          - label: Primary Button
+          - label: "Music section label"
+            name: label
+            widget: string
+          - label: "Music headline"
+            name: headline
+            widget: string
+          - label: "Music intro text"
+            name: description
+            widget: text
+          - label: "Spotify/main listening button"
             name: primaryButton
             widget: object
             fields: *button_fields
-          - label: Secondary Button
+          - label: "Music page button"
             name: secondaryButton
             widget: object
             fields: *button_fields
-          - label: Featured Release
+          - label: "Artist streaming/social links"
+            name: artistLinks
+            widget: object
+            required: false
+            fields:
+              - { label: "Spotify artist URL", name: spotify, widget: string, required: false, hint: "External links should include https://" }
+              - { label: "Apple Music URL", name: appleMusic, widget: string, required: false }
+              - { label: "YouTube URL", name: youtube, widget: string, required: false }
+              - { label: "SoundCloud URL", name: soundCloud, widget: string, required: false }
+              - { label: "TikTok URL", name: tiktok, widget: string, required: false }
+              - { label: "Instagram URL", name: instagram, widget: string, required: false }
+          - label: "Featured release"
             name: featuredRelease
             widget: object
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Subtitle, name: subtitle, widget: string }
-              - label: Image
+              - label: "Featured release title"
+                name: title
+                widget: string
+              - label: "Featured release subtitle"
+                name: subtitle
+                widget: string
+              - label: "Featured release artwork"
                 name: image
                 widget: object
                 fields: *image_fields
-          - { label: Discography Label, name: discographyLabel, widget: string }
-          - { label: Discography Title, name: discographyTitle, widget: string }
-          - label: All Music Link
+          - label: "Discography small label"
+            name: discographyLabel
+            widget: string
+          - label: "Discography heading"
+            name: discographyTitle
+            widget: string
+          - label: "All music link"
             name: allMusicLink
             widget: object
             fields: *button_fields
-          - label: Releases
+          - label: "Releases / discography"
             name: releases
             widget: list
+            summary: "{{fields.order}}. {{fields.title}}"
+            collapsed: true
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Subtitle, name: subtitle, widget: string }
-              - { label: Link, name: link, widget: string }
-              - { label: Opens New Tab, name: external, widget: boolean, default: true }
-              - label: Image
+              - label: "Show this release"
+                name: visible
+                widget: boolean
+                required: false
+                default: true
+              - label: "Display order"
+                name: order
+                widget: number
+                required: false
+                value_type: int
+                min: 1
+                hint: "Lower numbers appear first."
+              - label: "Release title"
+                name: title
+                widget: string
+              - label: "Release year"
+                name: year
+                widget: string
+                required: false
+              - label: "Release type"
+                name: type
+                widget: select
+                required: false
+                options: ["Album", "Single", "EP", "Upcoming", "Visual", "Other"]
+              - label: "Displayed subtitle"
+                name: subtitle
+                widget: string
+                required: false
+                hint: "If blank, the site uses Type / Year where available."
+              - label: "Main release link"
+                name: link
+                widget: string
+                required: false
+                hint: "Usually Spotify. External links should include https://"
+              - label: "Open main release link in new tab"
+                name: external
+                widget: boolean
+                default: true
+              - label: "Spotify link"
+                name: spotifyLink
+                widget: string
+                required: false
+              - label: "Apple Music link"
+                name: appleMusicLink
+                widget: string
+                required: false
+              - label: "YouTube link"
+                name: youtubeLink
+                widget: string
+                required: false
+              - label: "Album artwork"
                 name: image
                 widget: object
                 fields: *image_fields
 
   - name: projects
-    label: Products & Projects
+    label: "Products & Projects: Cards + Modals"
+    description: "Controls the six homepage project cards and modal previews for live websites."
     files:
       - name: projects
-        label: Products & Projects
+        label: "Products & Projects"
         file: content/projects.json
         format: json
         fields:
-          - label: Project Cards
+          - label: "Homepage project cards"
             name: cards
             widget: list
+            summary: "{{fields.order}}. {{fields.title}}"
+            hint: "Keep the public homepage to the six intended cards unless you deliberately change the layout."
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Button Label, name: buttonLabel, widget: string }
-              - { label: Project Type, name: projectType, widget: select, options: [modal-live-site, project-page] }
-              - { label: Direct Link, name: link, widget: string, required: false }
-              - { label: Modal Key, name: modalKey, widget: string, required: false }
-              - label: Image
+              - label: "Show this card"
+                name: visible
+                widget: boolean
+                required: false
+                default: true
+              - label: "Display order"
+                name: order
+                widget: number
+                required: false
+                value_type: int
+                min: 1
+              - label: "Project name"
+                name: title
+                widget: string
+              - label: "Short card description"
+                name: description
+                widget: text
+              - label: "Button/link text"
+                name: buttonLabel
+                widget: string
+              - label: "Card behaviour"
+                name: projectType
+                widget: select
+                options:
+                  - { label: "Open modal first, then link to live website", value: "modal-live-site" }
+                  - { label: "Go directly to project page", value: "project-page" }
+              - label: "Direct destination URL"
+                name: link
+                widget: string
+                required: false
+                hint: "Required for project-page cards. Use /design/, /shnork/ or https://..."
+              - label: "Modal key"
+                name: modalKey
+                widget: string
+                required: false
+                hint: "Only for modal-live-site cards. Match a modal name below, e.g. motiondesk or etsycalc."
+              - label: "Project card image"
                 name: image
                 widget: object
                 fields: *image_fields
-          - label: Modal Content
+          - label: "Modal content for live websites"
             name: modals
             widget: object
             collapsed: false
+            hint: "Only Motion Desk and EtsyCalc currently use modals from the homepage."
             fields:
-              - label: Motion Desk
+              - label: "Motion Desk modal"
                 name: motiondesk
                 widget: object
                 fields: &modal_fields
-                  - { label: Kicker, name: kicker, widget: string }
-                  - { label: Title, name: title, widget: string }
-                  - { label: Image, name: image, widget: image, required: false }
-                  - { label: Alt Text, name: alt, widget: string, required: false }
-                  - { label: Description, name: description, widget: text }
-                  - { label: Highlights, name: highlights, widget: list, field: { label: Highlight, name: highlight, widget: string } }
-                  - label: Links
+                  - label: "Small modal label"
+                    name: kicker
+                    widget: string
+                  - label: "Modal headline"
+                    name: title
+                    widget: string
+                  - label: "Large modal screenshot"
+                    name: image
+                    widget: image
+                    required: false
+                    hint: "Use a wide screenshot where possible."
+                  - label: "Modal image alt text"
+                    name: alt
+                    widget: string
+                    required: false
+                  - label: "Modal description"
+                    name: description
+                    widget: text
+                  - label: "Key highlights"
+                    name: highlights
+                    widget: list
+                    field: { label: "Highlight", name: highlight, widget: string }
+                  - label: "Modal buttons/links"
                     name: links
                     widget: list
+                    summary: "{{fields.label}}"
                     fields: *button_fields
-                  - { label: Note, name: note, widget: string, required: false }
-              - label: EtsyCalc
+                  - label: "Small note"
+                    name: note
+                    widget: string
+                    required: false
+              - label: "EtsyCalc modal"
                 name: etsycalc
                 widget: object
                 fields: *modal_fields
 
   - name: creative_studio
-    label: Creative Studio
+    label: "Creative Studio: Design + Hospitality Tools"
+    description: "Creative Studio page content, wide showcase cards and design gallery."
     files:
       - name: creative_studio
-        label: Creative Studio
+        label: "Creative Studio"
         file: content/creative-studio.json
         format: json
         fields:
-          - label: Hero
+          - label: "Creative Studio hero"
             name: hero
             widget: object
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Headline, name: headline, widget: string }
-              - { label: Body Text, name: body, widget: text }
-              - label: Primary Button
+              - label: "Hero label"
+                name: label
+                widget: string
+              - label: "Hero headline"
+                name: headline
+                widget: string
+              - label: "Hero intro text"
+                name: body
+                widget: text
+              - label: "Primary button"
                 name: primaryButton
                 widget: object
                 fields: *button_fields
-              - label: Secondary Button
+              - label: "Secondary button"
                 name: secondaryButton
                 widget: object
                 fields: *button_fields
-              - label: Image
+              - label: "Hero image"
                 name: image
                 widget: object
                 fields: *image_fields
-          - label: Showcase Sections
+          - label: "Wide showcase sections"
             name: sections
             widget: list
+            summary: "{{fields.title}}"
+            hint: "Graphic & Web Design, Perfect Host Application and Restaurant Pre-Order System."
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Note, name: note, widget: string, required: false }
-              - { label: Highlights, name: highlights, widget: list, required: false, field: { label: Highlight, name: highlight, widget: string } }
-              - label: Images
+              - label: "Section label"
+                name: label
+                widget: string
+              - label: "Section title"
+                name: title
+                widget: string
+              - label: "Section description"
+                name: description
+                widget: text
+              - label: "Small note"
+                name: note
+                widget: string
+                required: false
+              - label: "Highlights"
+                name: highlights
+                widget: list
+                required: false
+                field: { label: "Highlight", name: highlight, widget: string }
+              - label: "Section images"
                 name: images
                 widget: list
+                summary: "{{fields.alt}}"
                 fields: *image_fields
-              - label: Buttons
+              - label: "Section buttons"
                 name: buttons
                 widget: list
+                summary: "{{fields.label}}"
                 fields: *button_fields
-          - label: Design Gallery Items
+          - label: "Design gallery items"
             name: gallery
             widget: list
+            summary: "{{fields.title}}"
+            hint: "Used by /design-gallery/. Add curated examples rather than dumping everything."
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Image, name: image, widget: image }
+              - label: "Gallery item title"
+                name: title
+                widget: string
+              - label: "Gallery image"
+                name: image
+                widget: image
+                hint: "Upload/select the image for this gallery item."
+              - label: "Short description"
+                name: description
+                widget: text
+                required: false
+              - label: "Category"
+                name: category
+                widget: string
+                required: false
+                hint: "Example: Branding, Website, Hospitality Tool"
+              - label: "Optional link"
+                name: link
+                widget: string
+                required: false
+                hint: "Use only if this gallery item should link somewhere."
 
   - name: documents
-    label: Documents
+    label: "Documents & PDFs"
+    description: "Replace downloadable PDF files. Uploads from this section go into /assets/docs/."
     media_folder: assets/docs
     public_folder: /assets/docs
     files:
       - name: documents
-        label: Documents
+        label: "Documents"
         file: content/documents.json
         format: json
         fields:
-          - { label: CV PDF, name: cvPdf, widget: file, required: false }
-          - { label: Raskys Business Plan PDF, name: raskysBusinessPlanPdf, widget: file, required: false }
-          - { label: Shnork Preview PDF, name: shnorkPreviewPdf, widget: file, required: false }
+          - label: "CV PDF"
+            name: cvPdf
+            widget: file
+            required: false
+            hint: "Upload the latest CV PDF. Public link stays subtle on the About section."
+          - label: "Raskys business plan PDF"
+            name: raskysBusinessPlanPdf
+            widget: file
+            required: false
+            hint: "Used by the Raskys page business plan link."
+          - label: "Shnork preview PDF"
+            name: shnorkPreviewPdf
+            widget: file
+            required: false
+            hint: "Used by the Shnork preview/read buttons."
+          - label: "Other downloadable files"
+            name: otherFiles
+            widget: list
+            required: false
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Document title"
+                name: title
+                widget: string
+              - label: "PDF/document file"
+                name: file
+                widget: file
+              - label: "Notes"
+                name: notes
+                widget: text
+                required: false
