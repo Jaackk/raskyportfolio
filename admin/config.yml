@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: Jaackk/raskyportfolio
+  name: git-gateway
   branch: main
 
 site_url: https://raskyjack.com

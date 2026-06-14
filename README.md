@@ -102,37 +102,39 @@ Document/PDF uploads from the Documents collection:
 assets/docs/
 ```
 
-When replacing images, use optimized web images where possible. GitHub Pages will serve whatever is committed, so very large uncompressed uploads will slow the site down.
+When replacing images, use optimized web images where possible. Very large uncompressed uploads will slow the site down.
 
 ### Authentication Setup
 
-The admin route is present, but secure login is not automatic on GitHub Pages alone.
+The admin route uses Netlify Identity and Git Gateway:
 
-Decap CMS with the `github` backend requires a real GitHub OAuth flow. A static GitHub Pages site cannot safely store the OAuth client secret, so you must connect one of these before using `/admin/` securely:
+```yml
+backend:
+  name: git-gateway
+  branch: main
+```
 
-- a small OAuth proxy such as the official Decap/Netlify CMS GitHub OAuth server
-- Netlify Identity + Git Gateway, if the site is later hosted on Netlify
-- another trusted serverless OAuth gateway that stores the GitHub OAuth secret server-side
+Netlify must have Identity and Git Gateway enabled for the deployed site. The Git Gateway service is authorised through GitHub and commits CMS edits back to this repository.
 
 Do not add a public username/password to this repo. Do not put OAuth secrets in `admin/config.yml`, JavaScript, or any public file.
 
-Typical GitHub OAuth setup:
+Manual setup checklist:
 
-1. Create a GitHub OAuth App.
-2. Set the callback URL to the callback route required by your chosen OAuth gateway.
-3. Store the OAuth client secret only in that gateway's private environment variables.
-4. Configure `admin/config.yml` with the gateway `base_url` if your gateway requires it.
-5. Visit `https://raskyjack.com/admin/` and log in with a GitHub account that has write access to `Jaackk/raskyportfolio`.
+1. Deploy this repository through Netlify.
+2. Enable Netlify Identity.
+3. Enable Git Gateway and connect it to GitHub.
+4. Invite the editor email address as an Identity user.
+5. Confirm the invite and log in at `https://raskyjack.com/admin/`.
 
 Publishing model:
 
 - Decap edits the JSON files and media files in this repository.
-- Saved changes become Git commits or editorial-workflow pull requests depending on the configured backend support.
-- GitHub Pages redeploys from `main`.
+- Saved changes become Git commits through Netlify Git Gateway.
+- The public site redeploys from `main`.
 
 Current limitation:
 
-- `/admin/` loads the CMS interface, but editing will not be secure or usable until GitHub OAuth/auth gateway setup is completed.
+- `/admin/` requires a valid Netlify Identity user. If login fails, check Netlify Identity invitations, Git Gateway status, and the deployed Netlify site URL/domain settings.
 - The existing migrated websites (`/music/`, `/motiondesk/`, `/etsycalc/`, `/rockwaterpreorders/`) are intentionally not converted into CMS-managed pages.
 
 ## Internal Pages
