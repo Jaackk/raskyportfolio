@@ -333,6 +333,51 @@
       </div>
     </footer>
 
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      (() => {
+        const identityTokenPattern = /(?:invite_token|recovery_token|confirmation_token)=/;
+        let identityInitialized = false;
+
+        function initializeIdentity() {
+          if (identityInitialized || !window.netlifyIdentity) return false;
+
+          identityInitialized = true;
+
+          window.netlifyIdentity.on("init", () => {
+            if (identityTokenPattern.test(window.location.hash)) {
+              window.netlifyIdentity.open();
+            }
+          });
+
+          window.netlifyIdentity.on("login", () => {
+            if (identityTokenPattern.test(window.location.hash)) {
+              window.location.href = "/admin/";
+            }
+          });
+
+          window.netlifyIdentity.init();
+
+          if (identityTokenPattern.test(window.location.hash)) {
+            window.setTimeout(() => window.netlifyIdentity.open(), 250);
+          }
+
+          return true;
+        }
+
+        if (!initializeIdentity()) {
+          window.addEventListener("load", () => {
+            let attempts = 0;
+            const retryIdentity = window.setInterval(() => {
+              attempts += 1;
+              if (initializeIdentity() || attempts >= 20) {
+                window.clearInterval(retryIdentity);
+              }
+            }, 250);
+          });
+        }
+      })();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
