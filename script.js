@@ -436,7 +436,7 @@ function applyRaskysContent(raskys) {
   if (!raskys) return;
   setText("#hospitality .split-copy .eyebrow", raskys.label);
   setText("#hospitality .split-copy h2", raskys.headline);
-  setText("#hospitality .split-copy p", raskys.description);
+  setText("#hospitality .split-copy p:not(.eyebrow)", raskys.description);
   setLink("#hospitality .split-copy .button", raskys.button);
   const stage = document.querySelector("#hospitality [data-blueprint]");
   if (stage && raskys.blueprintImage?.src) {
@@ -472,7 +472,7 @@ function applyMusicContent(music) {
   if (!music || !document.querySelector("#music")) return;
   setText("#music .split-copy .eyebrow", music.label);
   setText("#music .split-copy h2", music.headline);
-  setText("#music .split-copy p", music.description);
+  setText("#music .split-copy p:not(.eyebrow)", music.description);
   setLink("#music .split-copy .button-row a:nth-child(1)", music.primaryButton);
   setLink("#music .split-copy .button-row a:nth-child(2)", music.secondaryButton);
   if (music.featuredRelease) {
