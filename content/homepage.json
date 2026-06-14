@@ -9,7 +9,8 @@
     },
     "secondaryButton": {
       "label": "Explore Music",
-      "href": "/music/"
+      "href": "/music/",
+      "external": true
     },
     "cards": [
       {
