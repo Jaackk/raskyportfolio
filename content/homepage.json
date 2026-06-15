@@ -18,8 +18,8 @@
         "label": "Venue Vision",
         "link": "/raskys/",
         "image": {
-          "src": "assets/raskys-blueprint.svg",
-          "alt": "Light blueprint drawing for the Raskys venue concept"
+          "src": "assets/optimized/raskys-hero-venue.jpg",
+          "alt": "Raskys concept venue exterior with club, casino and bowling signage"
         }
       },
       {
@@ -27,8 +27,8 @@
         "label": "Music",
         "link": "/music/",
         "image": {
-          "src": "assets/optimized/raskyjack-illusions.jpg",
-          "alt": "Illusions album artwork by Raskyjack"
+          "src": "assets/optimized/raskyjack-performance-hero.jpg",
+          "alt": "Jack performing guitar live as Raskyjack"
         }
       },
       {

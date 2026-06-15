@@ -407,7 +407,11 @@ const demoPatterns = {
 
 function stopActiveDemo() {
   if (!activeDemo) return;
-  activeDemo.nodes.forEach((node) => {
+  if (activeDemo.audio) {
+    activeDemo.audio.pause();
+    activeDemo.audio.src = "";
+  }
+  (activeDemo.nodes || []).forEach((node) => {
     try {
       node.stop();
     } catch (error) {
@@ -416,21 +420,19 @@ function stopActiveDemo() {
   });
   activeDemo.card.classList.remove("is-playing");
   activeDemo.card.style.setProperty("--demo-progress", "0");
-  window.cancelAnimationFrame(activeDemo.frame);
+  if (activeDemo.frame) {
+    window.cancelAnimationFrame(activeDemo.frame);
+  }
   activeDemo = null;
 }
 
-function playDemoRelease(card) {
+function playGeneratedDemoRelease(card) {
   const releaseKey = card.dataset.demoRelease || "illusions";
-  if (activeDemo?.card === card) {
-    stopActiveDemo();
+  const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextConstructor) {
+    card.classList.remove("is-playing");
     return;
   }
-
-  stopActiveDemo();
-
-  const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
-  if (!AudioContextConstructor) return;
   demoAudioContext = demoAudioContext || new AudioContextConstructor();
   if (demoAudioContext.state === "suspended") {
     demoAudioContext.resume();
@@ -484,6 +486,64 @@ function playDemoRelease(card) {
   }
 
   activeDemo.frame = window.requestAnimationFrame(updateDemoProgress);
+}
+
+function playAudioRelease(card, audioSrc) {
+  const audio = new Audio(audioSrc);
+  audio.preload = "auto";
+  card.classList.add("is-playing");
+  card.style.setProperty("--demo-progress", "0");
+
+  activeDemo = {
+    card,
+    audio,
+    nodes: [],
+    frame: null
+  };
+
+  function updateAudioProgress() {
+    if (!activeDemo || activeDemo.card !== card || activeDemo.audio !== audio) return;
+    const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 1;
+    card.style.setProperty("--demo-progress", String(Math.min(1, audio.currentTime / duration)));
+    if (audio.ended) {
+      stopActiveDemo();
+      return;
+    }
+    activeDemo.frame = window.requestAnimationFrame(updateAudioProgress);
+  }
+
+  audio.addEventListener("ended", stopActiveDemo, { once: true });
+  audio.play()
+    .then(() => {
+      if (activeDemo?.audio === audio) {
+        activeDemo.frame = window.requestAnimationFrame(updateAudioProgress);
+      }
+    })
+    .catch(() => {
+      if (activeDemo?.audio === audio) {
+        activeDemo = null;
+        card.classList.remove("is-playing");
+        card.style.setProperty("--demo-progress", "0");
+        playGeneratedDemoRelease(card);
+      }
+    });
+}
+
+function playDemoRelease(card) {
+  if (activeDemo?.card === card) {
+    stopActiveDemo();
+    return;
+  }
+
+  stopActiveDemo();
+
+  const audioSrc = card.dataset.audioSrc;
+  if (audioSrc) {
+    playAudioRelease(card, audioSrc);
+    return;
+  }
+
+  playGeneratedDemoRelease(card);
 }
 
 function bindDemoReleasePlayers() {
@@ -713,10 +773,10 @@ function applyMusicContent(music) {
         const subtitle = release.subtitle || [release.type, release.year].filter(Boolean).join(" / ") || "Raskyjack";
         const key = release.demoKey || slugify(release.title);
         return `
-        <article class="release-card" data-demo-release="${key}" data-release-link="${normalizeAssetPath(href)}">
-          <button class="release-art" type="button" aria-label="Play ${release.title} demo preview">
+        <article class="release-card" data-demo-release="${key}" data-audio-src="${normalizeAssetPath(release.audioSrc || "")}" data-release-link="${normalizeAssetPath(href)}">
+          <button class="release-art" type="button" aria-label="Play ${release.title} preview">
             <img src="${normalizeAssetPath(release.image?.src || release.image || "")}" alt="${release.image?.alt || `${release.title} album artwork`}" />
-            <span class="release-play-label">Play Demo</span>
+            <span class="release-play-label">Play</span>
           </button>
           <div class="release-player" aria-hidden="true">
             <span class="release-player__bar"><span></span></span>
@@ -820,6 +880,47 @@ function applyDesignGalleryContent(content) {
     })
     .join("");
 }
+
+let activeLightbox = null;
+
+function closeImageLightbox() {
+  if (!activeLightbox) return;
+  activeLightbox.remove();
+  activeLightbox = null;
+  document.body.classList.remove("modal-open");
+}
+
+function openImageLightbox(src, alt = "") {
+  closeImageLightbox();
+  const shell = document.createElement("div");
+  shell.className = "image-lightbox";
+  shell.innerHTML = `
+    <button class="image-lightbox__backdrop" type="button" aria-label="Close image preview"></button>
+    <div class="image-lightbox__panel" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
+      <button class="image-lightbox__close" type="button" aria-label="Close image preview">×</button>
+      <img src="${normalizeAssetPath(src)}" alt="${alt}" />
+    </div>
+  `;
+  document.body.appendChild(shell);
+  document.body.classList.add("modal-open");
+  activeLightbox = shell;
+  shell.querySelector(".image-lightbox__panel").focus();
+  shell.querySelector(".image-lightbox__backdrop").addEventListener("click", closeImageLightbox);
+  shell.querySelector(".image-lightbox__close").addEventListener("click", closeImageLightbox);
+}
+
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-lightbox-src]");
+  if (!trigger) return;
+  event.preventDefault();
+  openImageLightbox(trigger.dataset.lightboxSrc, trigger.dataset.lightboxAlt || trigger.querySelector("img")?.alt || "");
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeImageLightbox();
+  }
+});
 
 async function loadJson(path) {
   const response = await fetch(`${contentBase}${path}`, { cache: "no-store" });

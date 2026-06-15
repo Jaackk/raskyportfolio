@@ -358,6 +358,11 @@ collections:
                 widget: string
                 required: false
                 hint: "If blank, the site uses Type / Year where available."
+              - label: "Playable audio file"
+                name: audioSrc
+                widget: file
+                required: false
+                hint: "Optional MP3/M4A preview played when visitors click the release artwork."
               - label: "Main release link"
                 name: link
                 widget: string
