@@ -9,6 +9,36 @@ function normalizeAssetPath(path) {
   return `/${path.replace(/^\.?\//, "")}`;
 }
 
+const standaloneWebsiteRoutes = new Set([
+  "/music",
+  "/motiondesk",
+  "/etsycalc",
+  "/rockwaterpreorders",
+  "/music/",
+  "/motiondesk/",
+  "/etsycalc/",
+  "/rockwaterpreorders/"
+]);
+
+function shouldOpenInNewTab(link) {
+  if (!link) return false;
+  const href = typeof link === "string" ? link : link.href;
+  if (!href || href.startsWith("#") || href.startsWith("mailto:")) return false;
+  const normalizedHref = normalizeAssetPath(href);
+  return Boolean(link.external) || /^https?:\/\//.test(normalizedHref) || standaloneWebsiteRoutes.has(normalizedHref);
+}
+
+function applyTargetAttributes(element, shouldOpen) {
+  if (!element) return;
+  if (shouldOpen) {
+    element.setAttribute("target", "_blank");
+    element.setAttribute("rel", "noreferrer");
+  } else {
+    element.removeAttribute("target");
+    element.removeAttribute("rel");
+  }
+}
+
 function setText(selector, value, root = document) {
   const element = root.querySelector(selector);
   if (element && value !== undefined) {
@@ -44,10 +74,7 @@ function setLink(selector, link, root = document) {
   if (!element || !link) return;
   if (link.label !== undefined) element.textContent = link.label;
   if (link.href) element.setAttribute("href", normalizeAssetPath(link.href));
-  if (link.external) {
-    element.setAttribute("target", "_blank");
-    element.setAttribute("rel", "noreferrer");
-  }
+  applyTargetAttributes(element, shouldOpenInNewTab(link));
 }
 
 function setImage(selector, image, root = document) {
@@ -61,7 +88,7 @@ function setImage(selector, image, root = document) {
 
 function renderButton(link, className = "button button-light") {
   if (!link) return "";
-  const target = link.external ? ' target="_blank" rel="noreferrer"' : "";
+  const target = shouldOpenInNewTab(link) ? ' target="_blank" rel="noreferrer"' : "";
   return `<a class="${className}" href="${normalizeAssetPath(link.href || "#")}"${target}>${link.label || "Open"}</a>`;
 }
 
@@ -219,10 +246,11 @@ function updateBlueprintProgress() {
     if (!paths.length) return;
 
     const rect = stage.getBoundingClientRect();
-    const start = window.innerHeight * 0.58;
-    const end = -rect.height * 0.28;
+    const start = window.innerHeight * 0.5;
+    const end = -rect.height * 0.36;
     const rawProgress = (start - rect.top) / (start - end);
-    const progress = Math.max(0, Math.min(1, rawProgress));
+    const clampedProgress = Math.max(0, Math.min(1, rawProgress));
+    const progress = 1 - Math.pow(1 - clampedProgress, 2.4);
 
     paths.forEach((path) => {
       const length = Number(path.dataset.blueprintLength || 0);
@@ -492,7 +520,7 @@ function setModalContent(project) {
   const links = modalShell.querySelector("[data-project-modal-links]");
   links.innerHTML = project.links
     .map((link, index) => {
-      const externalAttrs = link.external ? ' target="_blank" rel="noreferrer"' : "";
+      const externalAttrs = shouldOpenInNewTab(link) ? ' target="_blank" rel="noreferrer"' : "";
       const className = index === 0 ? "button button-dark" : "button button-light";
       return `<a class="${className}" href="${normalizeAssetPath(link.href)}"${externalAttrs}>${link.label}</a>`;
     })
@@ -590,6 +618,7 @@ function applySiteSettings(site) {
       if (!footerLinks[index]) return;
       footerLinks[index].textContent = link.label;
       footerLinks[index].setAttribute("href", normalizeAssetPath(link.href));
+      applyTargetAttributes(footerLinks[index], shouldOpenInNewTab(link));
     });
   }
   if (site.viewCounterLabel) {
@@ -611,7 +640,10 @@ function applyHomepageContent(homepage) {
   (homepage.hero?.cards || []).forEach((card, index) => {
     const element = document.querySelectorAll(".hero-collage .float-card")[index];
     if (!element) return;
-    if (card.link) element.setAttribute("href", normalizeAssetPath(card.link));
+    if (card.link) {
+      element.setAttribute("href", normalizeAssetPath(card.link));
+      applyTargetAttributes(element, shouldOpenInNewTab(card.link));
+    }
     setImage("img", card.image, element);
     setText("span", card.title, element);
     setText("small", card.label, element);

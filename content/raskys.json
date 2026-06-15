@@ -46,20 +46,24 @@
     "quote": "\"Great venues are not just built. They're felt.\"",
     "images": [
       {
-        "src": "assets/optimized/brand-restaurant-set.jpg",
-        "alt": "Premium hospitality brand visual"
+        "src": "assets/optimized/raskys-logo.jpg",
+        "alt": "Raskys red neon venue logo"
       },
       {
-        "src": "assets/optimized/perfecthost-map.jpg",
-        "alt": "Hospitality operations floor plan"
+        "src": "assets/optimized/raskys-venue-casino-bowling.jpg",
+        "alt": "Raskys venue exterior with casino and bowling signage"
       },
       {
-        "src": "assets/optimized/jack-performance.jpg",
-        "alt": "Live music and hospitality atmosphere"
+        "src": "assets/optimized/raskys-venue-cocktail-casino.jpg",
+        "alt": "Raskys cocktail bar and casino venue exterior"
       },
       {
-        "src": "assets/optimized/brand-restaurant-set.jpg",
-        "alt": "Hospitality concept detail"
+        "src": "assets/optimized/raskys-venue-bar-front.jpg",
+        "alt": "Raskys intimate bar frontage with warm lighting"
+      },
+      {
+        "src": "assets/optimized/raskys-venue-club-bowling.jpg",
+        "alt": "Raskys larger club, casino and bowling destination venue"
       }
     ]
   }
