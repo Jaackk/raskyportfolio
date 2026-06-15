@@ -339,6 +339,11 @@ collections:
               - label: "Release title"
                 name: title
                 widget: string
+              - label: "Demo preview key"
+                name: demoKey
+                widget: string
+                required: false
+                hint: "Optional generated demo pattern key. Existing options: illusions, suffolk, sunburst, brick-by-brick."
               - label: "Release year"
                 name: year
                 widget: string

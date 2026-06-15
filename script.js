@@ -23,6 +23,22 @@ function setHtmlText(selector, value, root = document) {
   }
 }
 
+function escapeHtml(value = "") {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function setHeroHeadline(selector, value, root = document) {
+  const element = root.querySelector(selector);
+  if (!element || value === undefined) return;
+  const safeValue = escapeHtml(value);
+  element.innerHTML = safeValue.replace(/experiences/i, (match) => `<span class="text-gradient">${match}</span>`);
+}
+
 function setLink(selector, link, root = document) {
   const element = root.querySelector(selector);
   if (!element || !link) return;
@@ -70,6 +86,13 @@ function isCurrentRoute(route) {
   return normalizedPath === normalizedRoute;
 }
 
+function slugify(value = "") {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
@@ -85,6 +108,14 @@ if (menuToggle && siteNav) {
 }
 
 const revealSections = document.querySelectorAll(".reveal-section");
+const sectionRail = document.querySelector("[data-section-rail]");
+const sectionRailProgress = document.querySelector("[data-section-rail-progress]");
+const sectionRailItems = [...document.querySelectorAll("[data-section-target]")];
+const sectionRailSections = sectionRailItems
+  .map((item) => document.getElementById(item.dataset.sectionTarget))
+  .filter(Boolean);
+const uniqueSectionRailSections = [...new Map(sectionRailSections.map((section) => [section.id, section])).values()];
+let sectionRailFrame = null;
 
 function revealVisibleSections() {
   const trigger = window.innerHeight * 0.88;
@@ -102,6 +133,57 @@ function revealVisibleSections() {
 revealVisibleSections();
 window.addEventListener("scroll", revealVisibleSections, { passive: true });
 window.addEventListener("resize", revealVisibleSections);
+
+function updateSectionRail() {
+  sectionRailFrame = null;
+  if (!sectionRail || !sectionRailItems.length) return;
+
+  const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollMax > 0 ? window.scrollY / scrollMax : 0;
+  sectionRail.style.setProperty("--section-progress", String(Math.max(0, Math.min(1, progress))));
+
+  const nearTop = window.scrollY < Math.max(220, window.innerHeight * 0.26);
+  const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 12;
+  const scrollPosition = window.scrollY;
+  let activeId = uniqueSectionRailSections[0]?.id;
+
+  uniqueSectionRailSections.forEach((section, index) => {
+    const nextSection = uniqueSectionRailSections[index + 1];
+    const sectionStart = index === 0 ? 0 : section.offsetTop - window.innerHeight * 0.65;
+    const sectionEnd = nextSection ? nextSection.offsetTop - window.innerHeight * 0.65 : document.documentElement.scrollHeight;
+
+    if (scrollPosition >= sectionStart && scrollPosition < sectionEnd) {
+      activeId = section.id;
+    }
+  });
+
+  if (nearTop) activeId = "top";
+  if (nearBottom) activeId = "contact";
+
+  const activatedTargets = new Set();
+  sectionRailItems.forEach((item) => {
+    const isDuplicate = activatedTargets.has(item.dataset.sectionTarget);
+    const isActive = item.dataset.sectionTarget === activeId && !isDuplicate;
+    item.classList.toggle("is-active", isActive);
+    if (isActive) activatedTargets.add(item.dataset.sectionTarget);
+  });
+}
+
+function requestSectionRailUpdate() {
+  if (sectionRailFrame) return;
+  sectionRailFrame = window.requestAnimationFrame(updateSectionRail);
+}
+
+if (sectionRail) {
+  updateSectionRail();
+  sectionRailItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      sectionRailItems.forEach((link) => link.classList.toggle("is-active", link === item));
+    });
+  });
+  window.addEventListener("scroll", requestSectionRailUpdate, { passive: true });
+  window.addEventListener("resize", requestSectionRailUpdate);
+}
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const blueprintStages = document.querySelectorAll("[data-parallax]");
@@ -285,6 +367,106 @@ const modalShell = document.querySelector("[data-project-modal-shell]");
 const modalPanel = document.querySelector(".project-modal__panel");
 const modalCloseTriggers = document.querySelectorAll("[data-project-modal-close]");
 let lastFocusedElement = null;
+let demoAudioContext = null;
+let activeDemo = null;
+
+const demoPatterns = {
+  illusions: [196, 247, 294, 370, 330, 247],
+  suffolk: [164, 196, 220, 247, 220, 196],
+  sunburst: [220, 277, 330, 415, 370, 330],
+  "brick-by-brick": [147, 185, 220, 277, 220, 185]
+};
+
+function stopActiveDemo() {
+  if (!activeDemo) return;
+  activeDemo.nodes.forEach((node) => {
+    try {
+      node.stop();
+    } catch (error) {
+      // Oscillators may already have completed naturally.
+    }
+  });
+  activeDemo.card.classList.remove("is-playing");
+  activeDemo.card.style.setProperty("--demo-progress", "0");
+  window.cancelAnimationFrame(activeDemo.frame);
+  activeDemo = null;
+}
+
+function playDemoRelease(card) {
+  const releaseKey = card.dataset.demoRelease || "illusions";
+  if (activeDemo?.card === card) {
+    stopActiveDemo();
+    return;
+  }
+
+  stopActiveDemo();
+
+  const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextConstructor) return;
+  demoAudioContext = demoAudioContext || new AudioContextConstructor();
+  if (demoAudioContext.state === "suspended") {
+    demoAudioContext.resume();
+  }
+
+  const now = demoAudioContext.currentTime;
+  const duration = 7.2;
+  const gain = demoAudioContext.createGain();
+  const filter = demoAudioContext.createBiquadFilter();
+  const pattern = demoPatterns[releaseKey] || demoPatterns.illusions;
+  const nodes = [];
+
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(1200, now);
+  gain.gain.setValueAtTime(0.0001, now);
+  gain.gain.exponentialRampToValueAtTime(0.075, now + 0.18);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+  filter.connect(gain);
+  gain.connect(demoAudioContext.destination);
+
+  pattern.forEach((frequency, index) => {
+    const osc = demoAudioContext.createOscillator();
+    osc.type = index % 2 ? "triangle" : "sine";
+    osc.frequency.setValueAtTime(frequency, now + index * 0.42);
+    osc.connect(filter);
+    osc.start(now + index * 0.42);
+    osc.stop(now + duration);
+    nodes.push(osc);
+  });
+
+  card.classList.add("is-playing");
+  card.style.setProperty("--demo-progress", "0");
+
+  activeDemo = {
+    card,
+    nodes,
+    frame: null,
+    startedAt: now,
+    duration
+  };
+
+  function updateDemoProgress() {
+    if (!activeDemo || activeDemo.card !== card) return;
+    const progress = Math.min(1, (demoAudioContext.currentTime - activeDemo.startedAt) / activeDemo.duration);
+    card.style.setProperty("--demo-progress", String(progress));
+    if (progress >= 1) {
+      stopActiveDemo();
+      return;
+    }
+    activeDemo.frame = window.requestAnimationFrame(updateDemoProgress);
+  }
+
+  activeDemo.frame = window.requestAnimationFrame(updateDemoProgress);
+}
+
+function bindDemoReleasePlayers() {
+  document.querySelectorAll("[data-demo-release]").forEach((card) => {
+    if (card.dataset.demoBound === "true") return;
+    card.dataset.demoBound = "true";
+    const trigger = card.querySelector(".release-art");
+    if (!trigger) return;
+    trigger.addEventListener("click", () => playDemoRelease(card));
+  });
+}
 
 function setModalContent(project) {
   const image = modalShell.querySelector("[data-project-modal-image]");
@@ -352,6 +534,7 @@ function bindProjectModalTriggers() {
 }
 
 bindProjectModalTriggers();
+bindDemoReleasePlayers();
 
 modalCloseTriggers.forEach((trigger) => {
   trigger.addEventListener("click", closeProjectModal);
@@ -420,7 +603,7 @@ function applySiteSettings(site) {
 function applyHomepageContent(homepage) {
   if (!homepage || !document.querySelector(".hero")) return;
   setText(".hero-copy .eyebrow", homepage.hero?.label);
-  setText(".hero-copy h1", homepage.hero?.headline);
+  setHeroHeadline(".hero-copy h1", homepage.hero?.headline);
   setText(".hero-copy .lead", homepage.hero?.body);
   setLink(".hero-copy .button-row a:nth-child(1)", homepage.hero?.primaryButton);
   setLink(".hero-copy .button-row a:nth-child(2)", homepage.hero?.secondaryButton);
@@ -432,16 +615,6 @@ function applyHomepageContent(homepage) {
     setImage("img", card.image, element);
     setText("span", card.title, element);
     setText("small", card.label, element);
-  });
-
-  (homepage.coreVentures || []).forEach((venture, index) => {
-    const element = document.querySelectorAll(".venture-card")[index];
-    if (!element) return;
-    if (venture.link) element.setAttribute("href", normalizeAssetPath(venture.link));
-    setImage("img", venture.image, element);
-    setText("h2", venture.title, element);
-    setHtmlText("p", venture.description, element);
-    setText(".venture-link", venture.buttonLabel, element);
   });
 
   setText("#contact h2", homepage.contact?.headline);
@@ -506,15 +679,23 @@ function applyMusicContent(music) {
       .map((release) => {
         const href = release.link || release.spotifyLink || "#";
         const subtitle = release.subtitle || [release.type, release.year].filter(Boolean).join(" / ") || "Raskyjack";
+        const key = release.demoKey || slugify(release.title);
         return `
-        <a href="${normalizeAssetPath(href)}"${release.external ? ' target="_blank" rel="noreferrer"' : ""}>
-          <img src="${normalizeAssetPath(release.image?.src || release.image || "")}" alt="${release.image?.alt || `${release.title} album artwork`}" />
+        <article class="release-card" data-demo-release="${key}" data-release-link="${normalizeAssetPath(href)}">
+          <button class="release-art" type="button" aria-label="Play ${release.title} demo preview">
+            <img src="${normalizeAssetPath(release.image?.src || release.image || "")}" alt="${release.image?.alt || `${release.title} album artwork`}" />
+            <span class="release-play-label">Play Demo</span>
+          </button>
+          <div class="release-player" aria-hidden="true">
+            <span class="release-player__bar"><span></span></span>
+          </div>
           <h4>${release.title}</h4>
           <p>${subtitle}</p>
-        </a>
+        </article>
       `;
       })
       .join("");
+    bindDemoReleasePlayers();
   }
 }
 

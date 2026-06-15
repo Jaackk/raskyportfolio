@@ -28,12 +28,42 @@
       <a class="nav-button" href="#contact">Let's Connect</a>
     </header>
 
+    <nav class="section-rail" aria-label="Page section progress" data-section-rail>
+      <span class="section-rail__track" aria-hidden="true">
+        <span class="section-rail__progress" data-section-rail-progress></span>
+      </span>
+      <a class="section-rail__item" href="#top" data-section-target="top">
+        <span class="section-rail__dot"></span>
+        <span>Home</span>
+      </a>
+      <a class="section-rail__item" href="#hospitality" data-section-target="hospitality">
+        <span class="section-rail__dot"></span>
+        <span>Raskys</span>
+      </a>
+      <a class="section-rail__item" href="#music" data-section-target="music">
+        <span class="section-rail__dot"></span>
+        <span>Music</span>
+      </a>
+      <a class="section-rail__item" href="#selected-work" data-section-target="selected-work">
+        <span class="section-rail__dot"></span>
+        <span>Projects</span>
+      </a>
+      <a class="section-rail__item" href="#about" data-section-target="about">
+        <span class="section-rail__dot"></span>
+        <span>About</span>
+      </a>
+      <a class="section-rail__item" href="#contact" data-section-target="contact">
+        <span class="section-rail__dot"></span>
+        <span>Contact</span>
+      </a>
+    </nav>
+
     <main id="top">
       <section class="hero section-pad">
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Jack Ormondroyd</p>
-            <h1>Building experiences people remember.</h1>
+            <h1>Building <span class="text-gradient">experiences</span> people remember.</h1>
             <p class="lead">
               Hospitality, music, products and creative ventures shaped with taste,
               practical energy and a bias toward building.
@@ -59,36 +89,6 @@
               <img src="assets/optimized/motiondesk-screenshot.jpg" alt="Motion Desk creator operating system screenshot" />
               <span>More Projects</span>
               <small>Products & Projects</small>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="focus" class="section-pad compact reveal-section">
-        <div class="container">
-          <p class="section-label">Core Ventures</p>
-          <div class="venture-grid">
-            <a class="venture-card" href="/raskys/" aria-label="Explore Raskys">
-              <img src="assets/raskys-blueprint.svg" alt="Architectural concept drawing for Raskys" />
-              <div>
-                <h2>Raskys</h2>
-                <p>
-                  A future hospitality venue concept built around premium service,
-                  quality drinks, live music, community, events and atmosphere.
-                </p>
-                <span class="venture-link">Explore Raskys</span>
-              </div>
-            </a>
-            <a class="venture-card dark" href="/music/" aria-label="Explore Raskyjack music">
-              <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions artwork by Raskyjack" />
-              <div>
-                <h2>Raskyjack</h2>
-                <p>
-                  Artist project, music releases, visual identity and creative
-                  direction across sound, artwork and live energy.
-                </p>
-                <span class="venture-link">Explore Music</span>
-              </div>
             </a>
           </div>
         </div>
@@ -181,26 +181,50 @@
             <a href="/music/">View all music</a>
           </div>
           <div class="release-grid">
-            <a href="https://open.spotify.com/album/3LITyJwxlLSSI64YffbX2R" target="_blank" rel="noreferrer">
-              <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork" />
+            <article class="release-card" data-demo-release="illusions">
+              <button class="release-art" type="button" aria-label="Play Illusions demo preview">
+                <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork" />
+                <span class="release-play-label">Play Demo</span>
+              </button>
+              <div class="release-player" aria-hidden="true">
+                <span class="release-player__bar"><span></span></span>
+              </div>
               <h4>Illusions</h4>
               <p>Raskyjack</p>
-            </a>
-            <a href="https://open.spotify.com/album/0dR3wqrTTScMnSR9JYx89x" target="_blank" rel="noreferrer">
-              <img src="assets/optimized/raskyjack-suffolk.jpg" alt="Suffolk album artwork" />
+            </article>
+            <article class="release-card" data-demo-release="suffolk">
+              <button class="release-art" type="button" aria-label="Play Suffolk demo preview">
+                <img src="assets/optimized/raskyjack-suffolk.jpg" alt="Suffolk album artwork" />
+                <span class="release-play-label">Play Demo</span>
+              </button>
+              <div class="release-player" aria-hidden="true">
+                <span class="release-player__bar"><span></span></span>
+              </div>
               <h4>Suffolk</h4>
               <p>Raskyjack</p>
-            </a>
-            <a href="https://open.spotify.com/album/1NXYx7mNXmgkKtPz0bN3df" target="_blank" rel="noreferrer">
-              <img src="assets/optimized/raskyjack-sunburst.jpg" alt="Sunburst album artwork" />
+            </article>
+            <article class="release-card" data-demo-release="sunburst">
+              <button class="release-art" type="button" aria-label="Play Sunburst demo preview">
+                <img src="assets/optimized/raskyjack-sunburst.jpg" alt="Sunburst album artwork" />
+                <span class="release-play-label">Play Demo</span>
+              </button>
+              <div class="release-player" aria-hidden="true">
+                <span class="release-player__bar"><span></span></span>
+              </div>
               <h4>Sunburst</h4>
               <p>Raskyjack</p>
-            </a>
-            <a href="https://open.spotify.com/album/4NgNCBjDEt7N4KzkC7A9Rq" target="_blank" rel="noreferrer">
-              <img src="assets/optimized/raskyjack-brick-by-brick.jpg" alt="Brick by Brick album artwork" />
+            </article>
+            <article class="release-card" data-demo-release="brick-by-brick">
+              <button class="release-art" type="button" aria-label="Play Brick by Brick demo preview">
+                <img src="assets/optimized/raskyjack-brick-by-brick.jpg" alt="Brick by Brick album artwork" />
+                <span class="release-play-label">Play Demo</span>
+              </button>
+              <div class="release-player" aria-hidden="true">
+                <span class="release-player__bar"><span></span></span>
+              </div>
               <h4>Brick by Brick</h4>
               <p>Raskyjack</p>
-            </a>
+            </article>
           </div>
         </div>
       </section>
