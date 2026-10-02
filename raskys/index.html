@@ -1,159 +1,211 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Raskys is a future hospitality venue concept built around drinks, music, service, events and atmosphere." />
-    <title>Raskys Venue Concept | Rasky</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Raskys: a bar people remember | Rasky</title>
+    <meta name="description" content="Raskys is the cocktail, wine, music and social venue Jack Ormondroyd is planning: the idea, the draft menu and the plan." />
+    <link rel="canonical" href="https://raskyjack.com/raskys/" />
+    <meta name="theme-color" content="#110d0c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rasky" />
+    <meta property="og:title" content="Raskys: a bar people remember | Rasky" />
+    <meta property="og:description" content="Raskys is the cocktail, wine, music and social venue Jack Ormondroyd is planning: the idea, the draft menu and the plan." />
+    <meta property="og:url" content="https://raskyjack.com/raskys/" />
+    <meta property="og:image" content="https://raskyjack.com/assets/og/rasky-og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:wght@400..600&display=swap" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
-  <body>
-    <header class="site-header">
-      <a class="wordmark" href="/">RASKY</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="/raskys/">Raskys</a><a href="/music/" target="_blank" rel="noreferrer">Music</a><a href="/#selected-work">Projects</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav>
-      <a class="nav-button" href="mailto:hello@raskyjack.com">Let's Connect</a>
+  <body data-page-tone="dark">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Jack Ormondroyd</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/raskys/" aria-current="page">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/shnork/">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="/#about">About</a>
+          <a class="nav-cta" href="/#contact">Say hello</a>
+        </nav>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+          Menu <span class="bars" aria-hidden="true"></span>
+        </button>
+      </div>
     </header>
-    <main>
-      <section class="page-hero section-pad">
-        <div class="container page-hero-grid">
+
+    <div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu" data-menu>
+      <div class="menu-sheet__top">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <button class="menu-close" type="button" data-menu-close>Close <span class="x" aria-hidden="true"></span></button>
+      </div>
+      <ol>
+        <li><a href="/raskys/">Raskys <small>a venue in the making</small></a></li>
+        <li><a href="/#building">Building <small>software &amp; tools</small></a></li>
+        <li><a href="/shnork/">Shnork <small>novel &amp; game</small></a></li>
+        <li><a href="/music/">Music <small>Raskyjack</small></a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Say hello</a></li>
+      </ol>
+      <div class="menu-sheet__foot">
+        <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>
+        <a href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" rel="noopener">Spotify</a>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="raskys-hero on-dark" data-dark-hero aria-labelledby="raskys-title">
+        <div class="bg"><picture><source type="image/webp" srcset="/assets/optimized/raskys-hero-venue.webp" /><img src="/assets/optimized/raskys-hero-venue.jpg" width="1400" height="933" fetchpriority="high" alt="" /></picture></div>
+        <span class="concept-badge">Concept visualisation, not a real venue</span>
+        <div class="wrap">
+          <a class="back" href="/#raskys"><span class="arrow" aria-hidden="true">&larr;</span> Home</a>
+          <p class="kicker">Raskys &middot; a venue in the making</p>
+          <h1 class="display" id="raskys-title">A bar people <em>remember</em>.</h1>
+          <p class="lede">Raskys is the cocktail, wine, music and social venue I'm planning. This page is the thinking so far: the idea, the menu and the plan. Nothing here has been built yet, and every image of a venue is concept work.</p>
+          <div class="actions">
+            <a class="btn btn--solid" href="/assets/docs/raskys-business-plan.pdf" data-doc="raskysBusinessPlanPdf">Read the business plan (PDF)</a>
+            <a class="btn" href="mailto:hello@raskyjack.com?subject=Raskys">Talk to me about Raskys</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="room" aria-labelledby="idea-title">
+        <div class="wrap split">
           <div>
-            <p class="eyebrow">Raskys</p>
-            <h1>A future venue brand with soul.</h1>
-            <p class="lead">A flexible hospitality concept for the right coastal or high-footfall location: premium restaurant energy, quality drinks, live music, events, warm service, rooftop atmosphere and memorable moments.</p>
-            <div class="button-row"><a class="button button-dark" href="mailto:hello@raskyjack.com">Discuss Raskys</a><a class="button button-light" href="/assets/docs/raskys-business-plan.pdf" target="_blank" rel="noreferrer">Business Plan</a><a class="button button-light" href="/#hospitality">Back to Homepage Vision</a></div>
+            <p class="kicker"><span class="num">01</span> The idea</p>
+            <h2 class="h-xl" id="idea-title">Somewhere people go to connect, celebrate and <em>remember</em>.</h2>
           </div>
-          <div class="blueprint-stage page-visual" data-parallax data-blueprint data-blueprint-src="../assets/raskys-blueprint.svg"><img src="../assets/raskys-blueprint.svg" alt="Architectural blueprint concept for Raskys" /></div>
+          <div class="prose" data-reveal>
+            <p>Raskys is not just somewhere to drink. It starts as a cocktail and wine bar with live music and events, built around warm, personal service and a brand you'd recognise from across the street.</p>
+            <p>The first version of the idea was a Brighton-style coastal bar. It isn't tied to one city: the plan suits anywhere coastal, leisure-led or busy at night, wherever the right site turns up.</p>
+            <p>Premium without being cold. Exciting and social, but still somewhere you can relax.</p>
+          </div>
         </div>
-      </section>
-      <section class="page-section section-pad compact">
-        <div class="container detail-grid">
-          <article class="detail-card"><h3>Premium Hospitality</h3><p>Restaurant service, cocktail bars, wine, seasonal menus and drinks designed as part of the experience.</p></article>
-          <article class="detail-card"><h3>Music, Events & Energy</h3><p>Live music stages, DJ sets, intimate moments, community events and reasons for people to return.</p></article>
-          <article class="detail-card"><h3>Destination Potential</h3><p>A coastal-inspired idea with room for rooftop atmosphere, private events, bowling or casino-inspired entertainment and a brand that can travel.</p></article>
-        </div>
-      </section>
-
-      <section class="raskys-showcase section-pad">
-        <div class="container raskys-editorial-card signature-cocktails reveal-section">
-          <div class="raskys-copy-block">
-            <p class="eyebrow">Signature Cocktails</p>
-            <h2>Drinks guests remember.</h2>
-            <p>Raskys uses a signature cocktail programme to create memorable experiences and a drink menu guests associate specifically with the venue.</p>
-            <p>From the Rasky Maria to the Charming Rask, every cocktail is designed as part of the brand.</p>
-            <button class="button button-dark" type="button" data-lightbox-src="../assets/optimized/raskys-cocktail-menu.jpg" data-lightbox-alt="Raskys signature cocktail menu">View Cocktail Menu</button>
-          </div>
-          <div class="cocktail-composition">
-            <button class="image-button cocktail-main" type="button" data-lightbox-src="../assets/optimized/raskys-cocktails-lineup.jpg" data-lightbox-alt="Raskys signature cocktail lineup">
-              <img src="../assets/optimized/raskys-cocktails-lineup.jpg" alt="Raskys signature cocktail lineup" loading="lazy" />
-            </button>
-            <button class="image-button cocktail-tile tile-one" type="button" data-lightbox-src="../assets/optimized/raskys-cocktail-service.jpg" data-lightbox-alt="Raskys bartenders preparing cocktails">
-              <img src="../assets/optimized/raskys-cocktail-service.jpg" alt="Raskys bartenders preparing cocktails" loading="lazy" />
-            </button>
-            <button class="image-button cocktail-tile tile-two" type="button" data-lightbox-src="../assets/optimized/raskys-cocktail-table.jpg" data-lightbox-alt="Raskys cocktails arranged on a table">
-              <img src="../assets/optimized/raskys-cocktail-table.jpg" alt="Raskys cocktails arranged on a table" loading="lazy" />
-            </button>
-          </div>
+        <div class="wrap" style="margin-top:clamp(56px,7vw,96px)">
+          <ul class="notes" data-reveal>
+            <li><h3>Young professionals</h3><p>After-work drinks, dates, celebrations and evenings out somewhere with some style.</p></li>
+            <li><h3>Locals</h3><p>A reliable, good-quality bar with personality to come back to every week.</p></li>
+            <li><h3>Visitors</h3><p>Tourists looking for somewhere distinctive in a lively part of town.</p></li>
+            <li><h3>Students &amp; younger guests</h3><p>Events, offers and premium drinks that still feel affordable.</p></li>
+            <li><h3>Music &amp; events crowds</h3><p>People who come for live music, DJs, themed nights and tastings.</p></li>
+          </ul>
         </div>
       </section>
 
-      <section class="raskys-night section-pad reveal-section">
-        <div class="container nightlife-panel">
-          <div class="nightlife-image" data-parallax>
-            <img src="../assets/optimized/raskys-nightlife-collage.jpg" alt="Raskys nightlife, live music, bowling, cocktails and casino concept collage" loading="lazy" />
-          </div>
-          <div class="nightlife-content">
-            <p class="eyebrow">More Than A Bar</p>
-            <h2>Music. Cocktails. Atmosphere.</h2>
-            <div class="night-feature-grid">
-              <article><span>♪</span><h3>Live Music</h3><p>Stages, DJ sets and live moments that create a reason to stay.</p></article>
-              <article><span>◌</span><h3>Cocktail Culture</h3><p>Signature drinks designed to become part of the venue memory.</p></article>
-              <article><span>✦</span><h3>Late-Night Energy</h3><p>A richer evening flow, from early drinks to a full night out.</p></article>
-              <article><span>◎</span><h3>Memorable Experiences</h3><p>Hospitality, entertainment and atmosphere working together.</p></article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="raskys-showcase section-pad">
-        <div class="container entertainment-panel reveal-section">
-          <div class="raskys-copy-block">
-            <p class="eyebrow">Casino & Entertainment</p>
-            <h2>Entertainment that keeps people coming back.</h2>
-            <p>Raskys combines hospitality, entertainment and atmosphere into a destination rather than simply a venue.</p>
-            <ul class="feature-list">
-              <li>Roulette & Blackjack</li>
-              <li>Boutique Bowling</li>
-              <li>Live Performances</li>
-              <li>Premium Bar Experience</li>
-            </ul>
-          </div>
-          <div class="raskys-masonry">
-            <button class="image-button wide" type="button" data-lightbox-src="../assets/optimized/raskys-entertainment-collage.jpg" data-lightbox-alt="Raskys casino, bar, stage and bowling concept collage"><img src="../assets/optimized/raskys-entertainment-collage.jpg" alt="Raskys casino, bar, stage and bowling concept collage" loading="lazy" /></button>
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-venue-casino-bowling.jpg" data-lightbox-alt="Raskys exterior with casino and bowling signage"><img src="../assets/optimized/raskys-venue-casino-bowling.jpg" alt="Raskys exterior with casino and bowling signage" loading="lazy" /></button>
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-venue-bar-front.jpg" data-lightbox-alt="Raskys intimate bar frontage"><img src="../assets/optimized/raskys-venue-bar-front.jpg" alt="Raskys intimate bar frontage" loading="lazy" /></button>
-          </div>
-        </div>
-      </section>
-
-      <section class="raskys-experience section-pad reveal-section">
-        <div class="container">
-          <div class="section-heading-row">
+      <section class="room room--raskys on-dark" id="menu" aria-labelledby="menu-title" data-dark>
+        <div class="wrap">
+          <div class="split split--wide-left">
             <div>
-              <p class="section-label">The Raskys Experience</p>
-              <h2>How the night unfolds.</h2>
+              <p class="kicker"><span class="num">02</span> The draft menu</p>
+              <h2 class="h-xl" id="menu-title">Thirteen drinks, each with a <em>name</em> to remember.</h2>
+              <p class="lede">A signature list gives a venue its personality: drinks people ask for by name and associate with one place. Prices are from the plan and will change.</p>
             </div>
+            <figure class="figure-dark" data-reveal>
+              <button class="image-button" type="button" data-lightbox-src="/assets/optimized/raskys-cocktail-menu.jpg" data-lightbox-alt="The printed Raskys signature cocktail menu design">
+                <picture><source type="image/webp" srcset="/assets/optimized/raskys-cocktail-menu.webp" /><img src="/assets/optimized/raskys-cocktail-menu.jpg" width="1024" height="1536" loading="lazy" decoding="async" alt="The Raskys signature cocktail menu, designed as a printed card" /></picture>
+              </button>
+              <figcaption>The printed menu, designed for the brand. Tap to enlarge.</figcaption>
+            </figure>
           </div>
-          <div class="experience-timeline">
-            <article><img src="../assets/optimized/raskys-hero-venue.jpg" alt="Raskys venue arrival concept" loading="lazy" /><h3>Arrive</h3><p>A clear brand moment from the street: warm light, energy and a place that feels alive.</p></article>
-            <article><img src="../assets/optimized/raskys-cocktail-table.jpg" alt="Raskys cocktail selection" loading="lazy" /><h3>Signature Cocktails</h3><p>Drinks with names, colour and theatre that make the venue easier to remember.</p></article>
-            <article><img src="../assets/optimized/raskyjack-performance-hero.jpg" alt="Live guitar performance" loading="lazy" /><h3>Live Music</h3><p>Curated performances that give the room its emotional centre.</p></article>
-            <article><img src="../assets/optimized/raskys-entertainment-collage.jpg" alt="Raskys entertainment concept" loading="lazy" /><h3>Entertainment</h3><p>Casino-inspired play, boutique bowling and social experiences that extend the night.</p></article>
-            <article><img src="../assets/optimized/raskys-nightlife-collage.jpg" alt="Raskys late-night atmosphere" loading="lazy" /><h3>Late Night Atmosphere</h3><p>Music, service and energy building into a full destination experience.</p></article>
-          </div>
+          <ul class="drinks drinks--full" style="margin-top:clamp(48px,6vw,88px)">
+              <li><strong>Rasky Maria</strong><span>A bold twist on a Bloody Mary. Vodka, tomato juice, lime, roasted red pepper purée, Worcestershire sauce, hot sauce. Celery and jalapeño. <em class="price">£7.99</em></span></li>
+              <li><strong>Raskarita</strong><span>A mango-led Margarita. Silver tequila, orange liqueur, lime, fresh mango purée. Lime wheel, salted rim. <em class="price">£7.99</em></span></li>
+              <li><strong>Ye Old Rask</strong><span>The Raskys Old Fashioned. Bourbon or rye, sugar cube, Angostura bitters, a splash of soda. Orange peel, cherry. <em class="price">£6.99</em></span></li>
+              <li><strong>Pina Raskalada</strong><span>A lighter Piña Colada. Coconut rum, pineapple juice, lime, club soda. Pineapple wedge, mint. <em class="price">£7.99</em></span></li>
+              <li><strong>Rasky Rosé</strong><span>Light and sparkling. Rosé wine, fresh grapefruit juice, soda water. Grapefruit, mint. <em class="price">£5.99</em></span></li>
+              <li><strong>Rasky Refresh</strong><span>Crisp cucumber and lime. Cucumber-infused vodka, lime, tonic. Cucumber ribbons, lime. <em class="price">£5.99</em></span></li>
+              <li><strong>Raskberry Delight</strong><span>Raspberry and gin. Raspberry liqueur, gin, lemon, soda. Fresh raspberries. <em class="price">£7.99</em></span></li>
+              <li><strong>Raskito Twist</strong><span>A mojito with elderflower. White rum, elderflower liqueur, lime, mint, soda. <em class="price">£6.99</em></span></li>
+              <li><strong>Tequila Sunrask</strong><span>The Raskys Tequila Sunrise. Tequila, orange juice, grenadine. Orange slice, cherry. <em class="price">£5.99</em></span></li>
+              <li><strong>Tropical Raskcooler</strong><span>Coconut, pineapple, cranberry. Coconut rum, pineapple juice, cranberry juice. <em class="price">£6.99</em></span></li>
+              <li><strong>Rasky Sparkler</strong><span>Prosecco and elderflower. Prosecco, elderflower cordial, lemon. Edible flowers. <em class="price">£4.99</em></span></li>
+              <li><strong>Raskys Garden Elixir</strong><span>Gin, basil and lemon. Gin, basil syrup, lemon, soda. Fresh basil. <em class="price">£5.99</em></span></li>
+              <li><strong>Charming Rask</strong><span>Champagne and raspberry. Champagne, raspberry liqueur, lemon. Fresh berries. <em class="price">£8.99</em></span></li>
+          </ul>
+          <p class="meta" style="margin-top:20px">Every drink also has a two-for price in the plan. Planned discounts: 10% for students and NHS staff, 15% with a Blue Light Card.</p>
         </div>
       </section>
 
-      <section class="destination-panel section-pad reveal-section">
-        <div class="container">
-          <div class="destination-image" style="--destination-image: url('../assets/optimized/raskys-nightlife-collage.jpg')">
-            <p class="eyebrow">Destination Potential</p>
-            <h2>Designed To Become A Destination</h2>
-            <p>Great venues are not built.<br />They're felt.</p>
+      <section class="room room--paper-2" aria-labelledby="service-title">
+        <div class="wrap split">
+          <div>
+            <p class="kicker"><span class="num">03</span> Service</p>
+            <h2 class="h-xl" id="service-title">The drinks are only half of it.</h2>
+            <p class="lede">I've spent my working life on bar and restaurant floors. The bit guests remember is usually how they were looked after.</p>
           </div>
+          <ol class="notes" data-reveal>
+            <li><h3>Know the menu</h3><p>Staff who can recommend a drink properly and explain what's in it.</p></li>
+            <li><h3>Make it personal</h3><p>Remember regulars, their names and what they like.</p></li>
+            <li><h3>Keep it moving</h3><p>Efficient service that doesn't feel rushed, even when it's busy.</p></li>
+            <li><h3>Give reasons to stay</h3><p>Music, seasonal events and a room designed for people to linger.</p></li>
+          </ol>
         </div>
       </section>
 
-      <section class="raskys-gallery-section section-pad reveal-section">
-        <div class="container">
-          <div class="section-heading-row">
-            <div>
-              <p class="section-label">Concept Gallery</p>
-              <h2>Raskys in pictures.</h2>
-            </div>
+      <section class="room" aria-labelledby="events-title">
+        <div class="wrap split split--wide-left">
+          <div>
+            <p class="kicker"><span class="num">04</span> Events</p>
+            <h2 class="h-xl" id="events-title">A calendar, not just a bar.</h2>
+            <p class="lede">Events are how people hear about a place and why they come back. The plan starts with:</p>
           </div>
-          <div class="raskys-gallery">
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-hero-venue.jpg" data-lightbox-alt="Raskys club, casino and bowling venue"><img src="../assets/optimized/raskys-hero-venue.jpg" alt="Raskys club, casino and bowling venue" loading="lazy" /></button>
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-cocktails-lineup.jpg" data-lightbox-alt="Raskys cocktail lineup"><img src="../assets/optimized/raskys-cocktails-lineup.jpg" alt="Raskys cocktail lineup" loading="lazy" /></button>
-            <button class="image-button tall" type="button" data-lightbox-src="../assets/optimized/raskys-cocktail-menu.jpg" data-lightbox-alt="Raskys cocktail menu"><img src="../assets/optimized/raskys-cocktail-menu.jpg" alt="Raskys cocktail menu" loading="lazy" /></button>
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-cocktail-service.jpg" data-lightbox-alt="Raskys cocktail service"><img src="../assets/optimized/raskys-cocktail-service.jpg" alt="Raskys cocktail service" loading="lazy" /></button>
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-cocktail-table.jpg" data-lightbox-alt="Raskys cocktails on a table"><img src="../assets/optimized/raskys-cocktail-table.jpg" alt="Raskys cocktails on a table" loading="lazy" /></button>
-            <button class="image-button wide" type="button" data-lightbox-src="../assets/optimized/raskys-nightlife-collage.jpg" data-lightbox-alt="Raskys nightlife collage"><img src="../assets/optimized/raskys-nightlife-collage.jpg" alt="Raskys nightlife collage" loading="lazy" /></button>
-            <button class="image-button wide" type="button" data-lightbox-src="../assets/optimized/raskys-entertainment-collage.jpg" data-lightbox-alt="Raskys entertainment collage"><img src="../assets/optimized/raskys-entertainment-collage.jpg" alt="Raskys entertainment collage" loading="lazy" /></button>
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-venue-casino-bowling.jpg" data-lightbox-alt="Raskys casino and bowling exterior"><img src="../assets/optimized/raskys-venue-casino-bowling.jpg" alt="Raskys casino and bowling exterior" loading="lazy" /></button>
-            <button class="image-button" type="button" data-lightbox-src="../assets/optimized/raskys-venue-cocktail-casino.jpg" data-lightbox-alt="Raskys cocktail bar and casino exterior"><img src="../assets/optimized/raskys-venue-cocktail-casino.jpg" alt="Raskys cocktail bar and casino exterior" loading="lazy" /></button>
-          </div>
+          <ul class="notes" data-reveal>
+            <li><h3>Live music</h3><p>Bands and solo sets, plus DJs later in the evening.</p></li>
+            <li><h3>Mixology classes</h3><p>Learn to make the house drinks.</p></li>
+            <li><h3>Tastings</h3><p>Seasonal cocktails and wines.</p></li>
+            <li><h3>Themed &amp; student nights</h3><p>Regular nights with a reason to show up.</p></li>
+            <li><h3>Charity &amp; community</h3><p>Nights that tie the bar to the area around it.</p></li>
+            <li><h3>Private hire</h3><p>Birthdays, celebrations and company events.</p></li>
+          </ul>
         </div>
       </section>
 
-      <section class="page-section section-pad compact">
-        <div class="container vision-card">
-          <div><h3>Scalable in the right location</h3><p>Raskys is coastal-inspired, but not locked to one city. The concept could grow as a beachside destination or high-footfall venue with a premium restaurant, multiple bars, live music, rooftop moments, bowling or casino-inspired entertainment, while keeping the same service standard and brand feel.</p><blockquote>"Great venues are not just built. They're felt."</blockquote></div>
-          <div class="vision-gallery"><img src="../assets/optimized/raskys-logo.jpg" alt="Raskys red neon venue logo" /><img src="../assets/optimized/raskys-venue-casino-bowling.jpg" alt="Raskys venue exterior with casino and bowling signage" /><img src="../assets/optimized/raskys-venue-cocktail-casino.jpg" alt="Raskys cocktail bar and casino venue exterior" /><img src="../assets/optimized/raskys-venue-bar-front.jpg" alt="Raskys intimate bar frontage with warm lighting" /><img src="../assets/optimized/raskys-venue-club-bowling.jpg" alt="Raskys larger club, casino and bowling destination venue" /></div>
+      <section class="room room--raskys on-dark" aria-labelledby="future-title" data-dark>
+        <div class="wrap">
+          <p class="kicker"><span class="num">05</span> Where it could go</p>
+          <h2 class="h-xl" id="future-title">From a bar to a <em>destination</em>.</h2>
+          <p class="lede">Once the bar works, the long-term version is bigger: a restaurant, several bars, live music stages, a rooftop, boutique bowling, casino-style games and private event space, all under the same name and the same standard of service.</p>
+          <figure class="concept-figure" data-reveal>
+            <picture><source type="image/webp" srcset="/assets/optimized/raskys-cocktails-lineup.webp" /><img src="/assets/optimized/raskys-cocktails-lineup.jpg" width="1400" height="1120" loading="lazy" decoding="async" alt="Concept visualisation of a row of colourful cocktails on a dark bar under a red neon Raskys sign" /></picture>
+            <span class="concept-badge">Concept visualisation</span>
+            <figcaption><span>The mood I'm aiming for behind the bar.</span><span>A render, not a photograph.</span></figcaption>
+          </figure>
+          <div class="actions" style="margin-top:clamp(56px,7vw,96px)">
+            <a class="btn btn--solid" href="mailto:hello@raskyjack.com?subject=Raskys">Talk to me about Raskys</a>
+            <a class="link" href="/assets/docs/raskys-business-plan.pdf" data-doc="raskysBusinessPlanPdf">Read the business plan (PDF)</a>
+          </div>
+          <p class="meta" style="margin-top:28px;max-width:40em">If you have a site, run venues, play live or just think this should exist, I'd like to hear from you.</p>
         </div>
       </section>
     </main>
-    <footer class="site-footer"><div class="container footer-inner"><span class="wordmark">RASKY</span><span>&copy; 2026 Rasky / Jack Ormondroyd</span><a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a><a href="/">raskyjack.com</a><a href="/music/" target="_blank" rel="noreferrer">Music</a><span class="view-counter" data-view-counter>Site views --</span></div></footer>
-    <script src="../script.js"></script>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <nav aria-label="Footer">
+          <a href="/raskys/">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/shnork/">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="/design/">Design</a>
+          <a href="mailto:hello@raskyjack.com" data-contact-email>hello@raskyjack.com</a>
+        </nav>
+        <span>&copy; 2026 Jack Ormondroyd</span>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
   </body>
 </html>

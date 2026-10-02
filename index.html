@@ -1,429 +1,377 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Rasky is Jack Ormondroyd's premium creative brand across hospitality, Raskyjack music, products, venue concepts and creative IP."
-    />
-    <title>Rasky | Hospitality, Music and Creative Ventures</title>
-    <link rel="preload" href="assets/optimized/raskyjack-illusions.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Rasky: Jack Ormondroyd — hospitality, music, software and a novel</title>
+    <meta name="description" content="Jack Ormondroyd, aka Rasky. Hospitality by trade; songs as Raskyjack, software, a fantasy novel and Raskys, a venue in the making." />
+    <link rel="canonical" href="https://raskyjack.com/" />
+    <meta name="theme-color" content="#f3eee5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rasky" />
+    <meta property="og:title" content="Rasky: Jack Ormondroyd" />
+    <meta property="og:description" content="Hospitality by trade. Songs, software and a novel about a Shnork the rest of the time." />
+    <meta property="og:url" content="https://raskyjack.com/" />
+    <meta property="og:image" content="https://raskyjack.com/assets/og/rasky-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:wght@400..600&display=swap" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jack Ormondroyd",
+        "alternateName": ["Rasky", "Raskyjack"],
+        "url": "https://raskyjack.com/",
+        "sameAs": ["https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG"]
+      }
+    </script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Rasky home">RASKY</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="/raskys/">Raskys</a>
-        <a href="/music/" target="_blank" rel="noreferrer">Music</a>
-        <a href="#selected-work">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="nav-button" href="#contact">Let's Connect</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Jack Ormondroyd</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#raskys">Raskys</a>
+          <a href="#building">Building</a>
+          <a href="#shnork">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="#about">About</a>
+          <a class="nav-cta" href="#contact">Say hello</a>
+        </nav>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+          Menu <span class="bars" aria-hidden="true"></span>
+        </button>
+      </div>
     </header>
 
-    <nav class="section-rail" aria-label="Page section progress" data-section-rail>
-      <span class="section-rail__track" aria-hidden="true">
-        <span class="section-rail__progress" data-section-rail-progress></span>
-      </span>
-      <a class="section-rail__item" href="#top" data-section-target="top">
-        <span class="section-rail__dot"></span>
-        <span>Home</span>
-      </a>
-      <a class="section-rail__item" href="#hospitality" data-section-target="hospitality">
-        <span class="section-rail__dot"></span>
-        <span>Raskys</span>
-      </a>
-      <a class="section-rail__item" href="#music" data-section-target="music">
-        <span class="section-rail__dot"></span>
-        <span>Music</span>
-      </a>
-      <a class="section-rail__item" href="#selected-work" data-section-target="selected-work">
-        <span class="section-rail__dot"></span>
-        <span>Projects</span>
-      </a>
-      <a class="section-rail__item" href="#about" data-section-target="about">
-        <span class="section-rail__dot"></span>
-        <span>About</span>
-      </a>
-      <a class="section-rail__item" href="#contact" data-section-target="contact">
-        <span class="section-rail__dot"></span>
-        <span>Contact</span>
-      </a>
-    </nav>
+    <div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu" data-menu>
+      <div class="menu-sheet__top">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <button class="menu-close" type="button" data-menu-close>Close <span class="x" aria-hidden="true"></span></button>
+      </div>
+      <ol>
+        <li><a href="#raskys">Raskys <small>a venue in the making</small></a></li>
+        <li><a href="#building">Building <small>software &amp; tools</small></a></li>
+        <li><a href="#shnork">Shnork <small>novel &amp; game</small></a></li>
+        <li><a href="/music/">Music <small>Raskyjack</small></a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Say hello</a></li>
+      </ol>
+      <div class="menu-sheet__foot">
+        <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>
+        <a href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" rel="noopener">Spotify</a>
+      </div>
+    </div>
 
-    <main id="top">
-      <section class="hero section-pad">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Jack Ormondroyd</p>
-            <h1>Building <span class="text-gradient">experiences</span> people remember.</h1>
-            <p class="lead">
-              Hospitality, music, products and creative ventures shaped with taste,
-              practical energy and a bias toward building.
-            </p>
-            <div class="button-row">
-              <a class="button button-dark" href="/raskys/">Explore Raskys</a>
-              <a class="button button-light" href="/music/" target="_blank" rel="noreferrer">Explore Music</a>
-            </div>
-          </div>
-
-          <div class="hero-collage" aria-label="Rasky featured work collage">
-            <a class="float-card card-raskys" href="/raskys/">
-              <img src="assets/optimized/raskys-hero-venue.jpg" alt="Raskys concept venue exterior with club, casino and bowling signage" />
-              <span>Raskys</span>
-              <small>Venue Vision</small>
-            </a>
-            <a class="float-card card-music" href="/music/" target="_blank" rel="noreferrer">
-              <img src="assets/optimized/raskyjack-performance-hero.jpg" alt="Jack performing guitar live as Raskyjack" />
-              <span>Raskyjack</span>
-              <small>Music</small>
-            </a>
-            <a class="float-card card-more" href="#selected-work">
-              <img src="assets/optimized/motiondesk-screenshot.jpg" alt="Motion Desk creator operating system screenshot" />
-              <span>More Projects</span>
-              <small>Products & Projects</small>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="hospitality" class="section-pad reveal-section">
-        <div class="container split-hero hospitality-panel">
-          <div class="split-copy">
-            <p class="eyebrow">Raskys</p>
-            <h2>A future hospitality brand.</h2>
-            <p>
-              Raskys is a flexible venue concept for the right coastal or high-footfall
-              location. It is inspired by great hospitality: quality drinks, warm
-              service, live music, community, events and a memorable atmosphere.
-            </p>
-            <a class="button button-dark" href="/raskys/">Explore the Vision</a>
-          </div>
-          <div class="raskys-home-visual">
-            <div class="venue-image-card" data-parallax>
-              <img src="assets/optimized/raskys-hero-venue.jpg" alt="Raskys destination venue concept exterior" />
-            </div>
-            <div class="blueprint-stage" data-parallax data-blueprint data-blueprint-src="assets/raskys-blueprint.svg">
-              <img src="assets/raskys-blueprint.svg" alt="Light architectural blueprint for the Raskys venue concept" />
-            </div>
-          </div>
-        </div>
-
-        <div class="container concept-grid">
-          <article>
-            <h3>Quality Drinks</h3>
-            <p>Seasonal menus, crafted cocktails, wine, premium ingredients and a clear point of view.</p>
-          </article>
-          <article>
-            <h3>Live Music & Events</h3>
-            <p>Curated live music, DJ sets, intimate events and reasons for people to return.</p>
-          </article>
-          <article>
-            <h3>Warm Hospitality</h3>
-            <p>Genuine service, timing, detail and the feeling that guests are looked after properly.</p>
-          </article>
-          <article>
-            <h3>Strong Brand</h3>
-            <p>A visual and operational concept designed to scale in the right location.</p>
-          </article>
-        </div>
-
-        <div id="vision" class="container vision-card">
-          <div>
-            <h3>The Vision</h3>
-            <p>
-              A premium coastal destination with soul: restaurant energy, multiple bar
-              moments, live music, events, rooftop atmosphere and a brand strong enough
-              to travel to the right location.
-            </p>
-            <blockquote>"Great venues are not just built. They're felt."</blockquote>
-          </div>
-          <div class="vision-gallery">
-            <img src="assets/optimized/raskys-logo.jpg" alt="Raskys red neon venue logo" />
-            <img src="assets/optimized/raskys-venue-casino-bowling.jpg" alt="Raskys venue exterior with casino and bowling signage" />
-            <img src="assets/optimized/raskys-venue-cocktail-casino.jpg" alt="Raskys cocktail bar and casino venue exterior" />
-            <img src="assets/optimized/raskys-venue-bar-front.jpg" alt="Raskys intimate bar frontage with warm lighting" />
-            <img src="assets/optimized/raskys-venue-club-bowling.jpg" alt="Raskys larger club, casino and bowling destination venue" />
-          </div>
-        </div>
-      </section>
-
-      <section id="music" class="section-pad music-light reveal-section">
-        <div class="container split-hero music-panel">
-          <div class="split-copy">
-            <p class="eyebrow">Raskyjack</p>
-            <h2>Music with emotion and energy.</h2>
-            <p>
-              Raskyjack is the music side of the wider Rasky world: releases, visuals,
-              live performance and creative direction shaped around feeling and memory.
-            </p>
-            <div class="button-row">
-              <a class="button button-dark" href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" target="_blank" rel="noreferrer">Listen on Spotify</a>
-              <a class="button button-light" href="/music/" target="_blank" rel="noreferrer">Visit Music Page</a>
-            </div>
-          </div>
-          <div class="album-card featured-release">
-            <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork by Raskyjack" />
-            <div class="music-motion" aria-hidden="true">
-              <svg viewBox="0 0 340 150" focusable="false">
-                <path class="music-motion__wave" d="M18 92 C62 50 94 122 138 82 S216 46 260 78 302 120 326 60" />
-                <path class="music-motion__wave music-motion__wave--soft" d="M20 112 C76 84 100 110 148 100 S224 68 270 98 304 116 326 96" />
-                <g class="music-motion__guitar">
-                  <path d="M92 94 C62 82 54 52 78 34 C98 18 122 30 128 52 C151 48 169 63 166 86 C162 116 126 126 110 104 C104 100 98 97 92 94 Z" />
-                  <circle cx="112" cy="72" r="13" />
-                  <path d="M123 62 L276 22" />
-                  <path d="M129 76 L282 36" />
-                  <path d="M132 90 L286 50" />
-                  <path d="M270 18 L306 8" />
-                  <path d="M278 34 L314 24" />
-                  <path d="M284 50 L320 40" />
-                </g>
-              </svg>
-            </div>
+    <main id="main">
+      <!-- Intro ----------------------------------------------------------- -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap">
+          <div class="hero-grid">
             <div>
-              <h3>Illusions</h3>
-              <p>Highlighted release / Raskyjack</p>
+              <p class="kicker" data-cms="homepage.hero.label">Jack Ormondroyd, aka Rasky</p>
+              <h1 class="display" id="hero-title" data-cms-rich="homepage.hero.headline">Hospitality by trade. Songs, software and a novel about a <em>Shnork</em> the rest of the time.</h1>
+              <p class="lede" data-cms="homepage.hero.body">I've worked in pubs, bars and restaurants since 2019. Outside of that I write songs, build software and keep a fantasy novel going. This is where all of it lives.</p>
             </div>
+            <figure class="hero-photo" data-reveal>
+              <picture>
+                <source type="image/webp" srcset="/assets/photo/jack-live-lamps-720.webp 720w, /assets/photo/jack-live-lamps-full.webp 853w" sizes="(max-width: 860px) 100vw, 30vw" />
+                <img src="/assets/photo/jack-live-lamps-720.jpg" srcset="/assets/photo/jack-live-lamps-720.jpg 720w, /assets/photo/jack-live-lamps-full.jpg 853w" sizes="(max-width: 860px) 100vw, 30vw" width="720" height="1080" alt="Jack playing a sunburst electric guitar on stage under warm hanging lamps" fetchpriority="high" />
+              </picture>
+              <figcaption class="caption">Playing live as Raskyjack.</figcaption>
+            </figure>
           </div>
-        </div>
 
-        <div class="container releases">
-          <div class="section-heading-row">
+          <ol class="worlds" aria-label="What's here">
+            <li><a href="#raskys" data-world="raskys"><span class="num">01</span><strong>Raskys <span class="arrow" aria-hidden="true">&rarr;</span></strong><span class="desc">A venue I'm planning. Not built yet.</span></a></li>
+            <li><a href="#building" data-world="build"><span class="num">02</span><strong>Building <span class="arrow" aria-hidden="true">&rarr;</span></strong><span class="desc">Software, mostly for hospitality.</span></a></li>
+            <li><a href="#shnork" data-world="shnork"><span class="num">03</span><strong>Shnork <span class="arrow" aria-hidden="true">&rarr;</span></strong><span class="desc">A novel, a forest and an early game.</span></a></li>
+            <li><a href="#music" data-world="music"><span class="num">04</span><strong>Raskyjack <span class="arrow" aria-hidden="true">&rarr;</span></strong><span class="desc">Songs I write, play and release.</span></a></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 01 Raskys ------------------------------------------------------- -->
+      <section class="room room--raskys on-dark" id="raskys" aria-labelledby="raskys-title" data-dark>
+        <div class="wrap">
+          <div class="raskys-head">
             <div>
-              <p class="section-label">Discography</p>
-              <h3>Releases</h3>
+              <p class="kicker"><span class="num">01</span> <span data-cms="raskys.label">Raskys</span></p>
+              <h2 class="h-xl" id="raskys-title" data-cms-rich="raskys.headline">Not just somewhere to <em>drink</em>.</h2>
             </div>
-            <a href="/music/" target="_blank" rel="noreferrer">View all music</a>
+            <p class="lede" data-cms="raskys.description" data-reveal>Raskys is the venue I want to open: cocktails, wine, live music and the kind of service that makes people feel remembered. It doesn't exist yet. The plan does.</p>
           </div>
-          <div class="release-grid">
-            <article class="release-card" data-demo-release="illusions" data-audio-src="assets/audio/illusions.mp3">
-              <button class="release-art" type="button" aria-label="Play Illusions preview">
-                <img src="assets/optimized/raskyjack-illusions.jpg" alt="Illusions album artwork" />
-                <span class="release-play-label">Play</span>
-              </button>
-              <div class="release-player" aria-hidden="true">
-                <span class="release-player__bar"><span></span></span>
+
+          <figure class="concept-figure" data-reveal>
+            <picture>
+              <source type="image/webp" srcset="/assets/optimized/raskys-hero-venue.webp" />
+              <img src="/assets/optimized/raskys-hero-venue.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="Concept visualisation of a Raskys venue at night: a curved frontage with a red neon Raskys sign, Casino, Club and Bowling signage, and warm light through tall windows" />
+            </picture>
+            <span class="concept-badge">Concept visualisation</span>
+            <figcaption>
+              <span>How Raskys could look at full size: club, casino-style games and bowling under one sign.</span>
+              <span>A render, not a photograph. Raskys hasn't been built.</span>
+            </figcaption>
+          </figure>
+
+          <div class="phases">
+            <div class="phase" data-reveal>
+              <p class="meta">Where it starts</p>
+              <h3 class="h-md">A cocktail and wine bar with a stage</h3>
+              <p>Signature cocktails, carefully chosen wine, seasonal menus, live music, DJs, tastings and mixology classes, with seating that gets people talking. The first idea was Brighton; the plan suits anywhere coastal with real footfall.</p>
+            </div>
+            <div class="phase" data-reveal="2">
+              <p class="meta" data-cms="raskys.vision.title">Where it could go</p>
+              <h3 class="h-md">A destination</h3>
+              <p data-cms="raskys.vision.description">A larger venue with a restaurant, several bars, live stages, a rooftop, boutique bowling, casino-style games and space for private events.</p>
+            </div>
+          </div>
+
+          <div class="menu-card" data-reveal>
+            <div>
+              <h3 class="h-md">From the draft menu</h3>
+              <p class="meta" style="margin-top:14px">Every drink on the Raskys list is meant to be remembered by name.</p>
+              <div class="actions">
+                <a class="link" href="/raskys/#menu">See the full menu <span class="arrow" aria-hidden="true">&rarr;</span></a>
               </div>
-              <h4>Illusions</h4>
-              <p>Raskyjack</p>
-            </article>
-            <article class="release-card" data-demo-release="suffolk" data-audio-src="assets/audio/suffolk.mp3">
-              <button class="release-art" type="button" aria-label="Play Suffolk preview">
-                <img src="assets/optimized/raskyjack-suffolk.jpg" alt="Suffolk album artwork" />
-                <span class="release-play-label">Play</span>
-              </button>
-              <div class="release-player" aria-hidden="true">
-                <span class="release-player__bar"><span></span></span>
-              </div>
-              <h4>Suffolk</h4>
-              <p>Raskyjack</p>
-            </article>
-            <article class="release-card" data-demo-release="sunburst" data-audio-src="assets/audio/sunburst.mp3">
-              <button class="release-art" type="button" aria-label="Play Sunburst preview">
-                <img src="assets/optimized/raskyjack-sunburst.jpg" alt="Sunburst album artwork" />
-                <span class="release-play-label">Play</span>
-              </button>
-              <div class="release-player" aria-hidden="true">
-                <span class="release-player__bar"><span></span></span>
-              </div>
-              <h4>Sunburst</h4>
-              <p>Raskyjack</p>
-            </article>
-            <article class="release-card" data-demo-release="brick-by-brick">
-              <button class="release-art" type="button" aria-label="Play Brick by Brick preview">
-                <img src="assets/optimized/raskyjack-brick-by-brick.jpg" alt="Brick by Brick album artwork" />
-                <span class="release-play-label">Play</span>
-              </button>
-              <div class="release-player" aria-hidden="true">
-                <span class="release-player__bar"><span></span></span>
-              </div>
-              <h4>Brick by Brick</h4>
-              <p>Raskyjack</p>
-            </article>
+            </div>
+            <ul class="drinks">
+              <li><strong>Rasky Maria</strong><span>Vodka, tomato, lime, roasted red pepper, hot sauce</span></li>
+              <li><strong>Raskarita</strong><span>Silver tequila, orange liqueur, lime, fresh mango</span></li>
+              <li><strong>Ye Old Rask</strong><span>Bourbon or rye, sugar, Angostura, orange peel</span></li>
+              <li><strong>Pina Raskalada</strong><span>Coconut rum, pineapple, lime, soda</span></li>
+              <li><strong>Raskberry Delight</strong><span>Gin, raspberry liqueur, lemon, soda</span></li>
+              <li><strong>Charming Rask</strong><span>Champagne, raspberry liqueur, lemon</span></li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn--solid" href="/raskys/" data-cms-link="raskys.button">Explore Raskys <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="link" href="/assets/docs/raskys-business-plan.pdf" data-doc="raskysBusinessPlanPdf">Read the business plan (PDF)</a>
           </div>
         </div>
       </section>
 
-      <section id="selected-work" class="section-pad selected-work reveal-section">
-        <div class="container section-heading-row">
-          <div>
-            <p class="section-label">Execution</p>
-            <h2>Products & Projects</h2>
+      <!-- 02 Building ----------------------------------------------------- -->
+      <section class="room room--paper-2" id="building" aria-labelledby="building-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker"><span class="num">02</span> Things I'm building</p>
+            <h2 class="h-xl" id="building-title">A lot of it starts on a <em>shift</em>.</h2>
+            <p class="lede">I build websites and small software tools, often for problems I've seen up close in hospitality. Some are working, some are prototypes, a couple are early ideas with a front end.</p>
           </div>
-        </div>
-        <div class="container work-grid ordered-work">
-          <button class="work-card" type="button" data-project-modal="motiondesk">
-            <img src="assets/optimized/motiondesk-screenshot.jpg" alt="Motion Desk screenshot" />
-            <h3>Motion Desk</h3>
-            <p>Creator workspace for assets, planning and release management.</p>
-            <span class="work-card-link">View Project</span>
-          </button>
-          <a class="work-card" href="/sportspredict/">
-            <img src="assets/optimized/tennispredict-mockup.jpg" alt="SportsPredict / TennisPredict mockup" />
-            <h3>SportsPredict / TennisPredict</h3>
-            <p>Prediction and analytics thinking for sports data.</p>
-            <span class="work-card-link">View Project</span>
-          </a>
-          <a class="work-card" href="/design/">
-            <img src="assets/optimized/brand-restaurant-set.jpg" alt="Creative Studio brand and website examples" />
-            <h3>Creative Studio</h3>
-            <p>Brands, websites, hospitality tools and creative products.</p>
-            <span class="work-card-link">View Project</span>
-          </a>
-          <button class="work-card" type="button" data-project-modal="etsycalc">
-            <img src="assets/optimized/etsycalc-screenshot.jpg" alt="EtsyCalc screenshot" />
-            <h3>EtsyCalc</h3>
-            <p>Real utility for Etsy sellers and business decisions.</p>
-            <span class="work-card-link">View Project</span>
-          </button>
-          <a class="work-card" href="/shnork/">
-            <img src="assets/optimized/shnork-cover.jpg" alt="In the Shadow of a Shnork cover artwork" />
-            <h3>In the Shadow of a Shnork</h3>
-            <p>Novel, worldbuilding, artwork and Unity prototype.</p>
-            <span class="work-card-link">View Project</span>
-          </a>
-          <a class="work-card" href="/raskode/">
-            <div class="raskode-visual" aria-hidden="true"></div>
-            <h3>Raskode</h3>
-            <p>Personal AI development project for learning and automation.</p>
-            <span class="work-card-link">View Project</span>
-          </a>
+
+          <article class="feature" aria-labelledby="rockwater-title" data-reveal>
+            <div class="feature-media pair">
+              <a class="shot" href="/rockwaterpreorders/" tabindex="-1" aria-hidden="true">
+                <picture><source type="image/webp" srcset="/assets/optimized/rockwater-guest.webp" /><img src="/assets/optimized/rockwater-guest.png" width="1400" height="982" loading="lazy" decoding="async" alt="" /></picture>
+              </a>
+              <a class="shot" href="/rockwaterpreorders/" tabindex="-1" aria-hidden="true">
+                <picture><source type="image/webp" srcset="/assets/optimized/rockwater-staff.webp" /><img src="/assets/optimized/rockwater-staff.png" width="1400" height="972" loading="lazy" decoding="async" alt="" /></picture>
+              </a>
+            </div>
+            <div class="feature-copy">
+              <span class="tag status--live">Working site &middot; staff login</span>
+              <h3 class="h-lg" id="rockwater-title">Event pre-orders for Rockwater</h3>
+              <dl class="qa">
+                <div><dt>What</dt><dd>A pre-order site for private events. Guests choose their dishes and note allergies; staff see every choice, with kitchen and service summaries.</dd></div>
+                <div><dt>Why</dt><dd>Pre-orders by email and spreadsheet are slow and easy to get wrong. I work at Rockwater in Hove, so I built a simpler way.</dd></div>
+                <div><dt>Built</dt><dd>Guest ordering, a staff workspace, event setup and kitchen summaries. Access is locked to Rockwater logins.</dd></div>
+              </dl>
+              <div class="actions">
+                <a class="link" href="/rockwaterpreorders/">Visit the site <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature feature--flip" aria-labelledby="perfecthost-title" data-reveal>
+            <div class="feature-media">
+              <a class="shot shot--tall" href="/perfecthost-demo/" tabindex="-1" aria-hidden="true">
+                <picture><source type="image/webp" srcset="/assets/optimized/perfecthost-map.webp" /><img src="/assets/optimized/perfecthost-map.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="" /></picture>
+              </a>
+            </div>
+            <div class="feature-copy">
+              <span class="tag status--proto">Prototype &middot; best on a phone</span>
+              <h3 class="h-lg" id="perfecthost-title">Perfect Host</h3>
+              <dl class="qa">
+                <div><dt>What</dt><dd>A floor plan and host tool: live table states, guest notes, timings and requests at a glance.</dd></div>
+                <div><dt>Why</dt><dd>Hosting a busy room is mostly about not missing small signals. This puts them on one screen.</dd></div>
+                <div><dt>Built</dt><dd>An interactive mobile prototype with a full restaurant floor plan.</dd></div>
+              </dl>
+              <div class="actions">
+                <a class="link" href="/perfecthost-demo/">Try the prototype <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                <a class="link" href="/perfecthost/">About it</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="index-head">
+            <h3 class="h-md">And the rest</h3>
+            <p class="meta">Smaller tools, experiments and design work.</p>
+          </div>
+          <ul class="project-index" data-project-index>
+            <li><a class="project-row" href="/etsycalc/"><h4>EtsyCalc</h4><p>A profit calculator for UK Etsy sellers: fees, shipping and the real margin.</p><span class="tag status--live">Working tool</span><span class="arrow" aria-hidden="true">&rarr;</span><img class="peek" src="/assets/optimized/etsycalc-screenshot.webp" alt="" loading="lazy" /></a></li>
+            <li><a class="project-row" href="/sportspredict/"><h4>SportsPredict</h4><p>A tennis prediction and analytics prototype.</p><span class="tag status--proto">Prototype</span><span class="arrow" aria-hidden="true">&rarr;</span><img class="peek" src="/assets/optimized/tennispredict-mockup.webp" alt="" loading="lazy" /></a></li>
+            <li><a class="project-row" href="/motiondesk/"><h4>Motion Desk</h4><p>A workspace for creators to plan releases, campaigns and assets.</p><span class="tag status--wip">Early</span><span class="arrow" aria-hidden="true">&rarr;</span><img class="peek" src="/assets/optimized/motiondesk-screenshot.webp" alt="" loading="lazy" /></a></li>
+            <li><a class="project-row" href="/raskode/"><h4>Raskode</h4><p>My own AI tooling for automation and memory. A learning project.</p><span class="tag status--wip">In progress</span><span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+            <li><a class="project-row" href="/design/"><h4>Design work</h4><p>Branding, menus and websites, including everything on this site.</p><span class="tag status--design">Design</span><span class="arrow" aria-hidden="true">&rarr;</span><img class="peek" src="/assets/optimized/raskys-cocktail-menu.webp" alt="" loading="lazy" /></a></li>
+          </ul>
         </div>
       </section>
 
-      <section id="about" class="section-pad about-section reveal-section">
-        <div class="container about-panel">
+      <!-- 03 Shnork ------------------------------------------------------- -->
+      <section class="room room--shnork on-dark" id="shnork" aria-labelledby="shnork-title" data-dark>
+        <div class="wrap">
+          <div class="shnork-grid">
+            <div>
+              <p class="kicker"><span class="num">03</span> In the Shadow of a Shnork</p>
+              <h2 class="h-xl" id="shnork-title">A novel that kept <em>growing</em>.</h2>
+              <p class="lede">It started as a book about a creature waking up in a forest that changes it. It has grown into illustrated pages, a system of buffs and curses, and an early Unity prototype.</p>
+              <blockquote class="book-quote" data-reveal>
+                <p>&ldquo;The question is not just: Can you survive? But: What will survival make of you?&rdquo;</p>
+                <cite>From the novel</cite>
+              </blockquote>
+              <div class="actions">
+                <a class="btn btn--solid" href="/assets/docs/in-the-shadow-of-a-shnork-preview.pdf" data-doc="shnorkPreviewPdf">Read the first chapters (PDF)</a>
+                <a class="link" href="/shnork/">Into the forest <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              </div>
+            </div>
+            <div class="shnork-plates">
+              <figure class="plate" data-reveal>
+                <picture><source type="image/webp" srcset="/assets/optimized/shnork-cover.webp" /><img src="/assets/optimized/shnork-cover.jpg" width="1024" height="1536" loading="lazy" decoding="async" alt="Book cover: In the Shadow of a Shnork, a green creature in a feathered headdress holding a glowing sword and a round shield" /></picture>
+                <figcaption>The cover</figcaption>
+              </figure>
+              <figure class="plate plate--offset" data-reveal="2">
+                <picture><source type="image/webp" srcset="/assets/photo/shnork-page-31-720.webp" /><img src="/assets/photo/shnork-page-31-720.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="Illustration of a large green hand holding three glowing mushrooms in a dark forest" /></picture>
+                <figcaption>Illustrated page 31</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <ul class="strands">
+            <li><h3>The novel</h3><p>Told in the first person. The first chapters are free to read.</p></li>
+            <li><h3>Illustrations</h3><p>Painted pages that set the light and mood of the forest.</p></li>
+            <li><h3>Buffs &amp; curses</h3><p>Eighteen effects, from Rage to Corruption, written into the story and the game.</p></li>
+            <li><h3>The game</h3><p>A Unity prototype. Early, and honestly still in progress.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 04 Music -------------------------------------------------------- -->
+      <section class="room room--music on-dark" id="music" aria-labelledby="music-title" data-dark>
+        <div class="wrap">
+          <div class="music-grid">
+            <figure class="music-photo" data-reveal>
+              <picture>
+                <source type="image/webp" srcset="/assets/photo/jack-live-window-720.webp 720w, /assets/photo/jack-live-window-full.webp 853w" sizes="(max-width: 860px) 100vw, 36vw" />
+                <img src="/assets/photo/jack-live-window-720.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="Jack playing guitar and singing in front of a big window with the street lights behind him, a drummer to his side" />
+              </picture>
+              <figcaption class="caption">Live, with the band.</figcaption>
+            </figure>
+            <div>
+              <p class="kicker"><span class="num">04</span> <span data-cms="music.label">Raskyjack</span></p>
+              <h2 class="h-xl" id="music-title" data-cms-rich="music.headline">Songs I write, play and <em>release</em>.</h2>
+              <p class="lede" data-cms="music.description">Raskyjack is my music: guitar-led songs, released on Spotify and played live whenever I get the chance. The music site has everything.</p>
+              <ul class="releases" data-release-grid aria-label="Releases">
+                <li class="release-card" data-demo-release="illusions" data-audio-src="/assets/audio/illusions.mp3">
+                  <button class="release-art" type="button" aria-label="Play a preview of Illusions"><img src="/assets/optimized/raskyjack-illusions.webp" width="1024" height="1024" loading="lazy" decoding="async" alt="" /><span class="release-play-label">Preview</span></button>
+                  <div class="release-player" aria-hidden="true"><span class="release-player__bar"></span></div>
+                  <h4>Illusions</h4><p>Album</p>
+                </li>
+                <li class="release-card" data-demo-release="suffolk" data-audio-src="/assets/audio/suffolk.mp3">
+                  <button class="release-art" type="button" aria-label="Play a preview of Suffolk"><img src="/assets/optimized/raskyjack-suffolk.webp" width="1024" height="1024" loading="lazy" decoding="async" alt="" /><span class="release-play-label">Preview</span></button>
+                  <div class="release-player" aria-hidden="true"><span class="release-player__bar"></span></div>
+                  <h4>Suffolk</h4><p>Single</p>
+                </li>
+                <li class="release-card" data-demo-release="sunburst" data-audio-src="/assets/audio/sunburst.mp3">
+                  <button class="release-art" type="button" aria-label="Play a preview of Sunburst"><img src="/assets/optimized/raskyjack-sunburst.webp" width="1024" height="1024" loading="lazy" decoding="async" alt="" /><span class="release-play-label">Preview</span></button>
+                  <div class="release-player" aria-hidden="true"><span class="release-player__bar"></span></div>
+                  <h4>Sunburst</h4><p>Single</p>
+                </li>
+                <li class="release-card">
+                  <a class="release-art" href="https://open.spotify.com/album/4NgNCBjDEt7N4KzkC7A9Rq" rel="noopener" aria-label="Brick by Brick on Spotify"><img src="/assets/optimized/raskyjack-brick-by-brick.webp" width="1024" height="1024" loading="lazy" decoding="async" alt="" /><span class="release-play-label">Spotify</span></a>
+                  <div class="release-player" aria-hidden="true"><span class="release-player__bar"></span></div>
+                  <h4>Brick by Brick</h4><p>Single</p>
+                </li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn--solid" href="/music/" data-cms-link="music.secondaryButton">Open the music site <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                <a class="btn" href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" rel="noopener" data-cms-link="music.primaryButton">Listen on Spotify</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About ----------------------------------------------------------- -->
+      <section class="room" id="about" aria-labelledby="about-title">
+        <div class="wrap about-grid">
+          <figure class="about-photo" data-reveal>
+            <picture>
+              <source type="image/webp" srcset="/assets/photo/jack-live-close-720.webp 720w, /assets/photo/jack-live-close-full.webp 853w" sizes="(max-width: 860px) 100vw, 30vw" />
+              <img src="/assets/photo/jack-live-close-720.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="Close-up of Jack mid-song, tattooed forearm across a sunburst guitar, lit in blue and amber" />
+            </picture>
+          </figure>
           <div class="about-copy">
-            <p class="eyebrow">About Jack</p>
-            <h2>Service mindset. Creative drive.</h2>
-            <p>
-              Years in hospitality taught me what truly matters: people, timing,
-              standards, atmosphere and attention to detail. Outside of that, I build,
-              create and explore - using modern tools and AI to learn fast, prototype
-              ideas and turn creative energy into useful work.
-            </p>
-            <p class="signature">Jack</p>
-            <a class="button button-light about-cv-button" href="/assets/docs/jack-ormondroyd-cv.pdf" target="_blank" rel="noreferrer">CV</a>
-          </div>
-          <div class="about-image">
-            <img src="assets/optimized/jack-performance.jpg" alt="Jack performing live as Raskyjack" />
-          </div>
-          <div class="stats-row">
-            <article><strong>10+</strong><span>Years in Hospitality</span></article>
-            <article><strong>Music</strong><span>Producer & Artist</span></article>
-            <article><strong>Product</strong><span>Builder</span></article>
-            <article><strong>Creative</strong><span>Entrepreneur</span></article>
+            <p class="kicker"><span class="num">05</span> About</p>
+            <h2 class="h-xl" id="about-title">Hospitality taught me most of what I <em>know</em>.</h2>
+            <p>I've worked in hospitality since 2019, from a pub in Suffolk to management roles on the south coast. I'm now assistant manager at Rockwater in Hove. It's where I learned how a room feels, how to read people, and what timing does to a night.</p>
+            <p>The rest of my time goes on making things. I write and record music as Raskyjack. I build websites and software, often for problems I've met at work. And I'm writing a fantasy novel about a Shnork, which has slowly turned into a game as well.</p>
+            <p>Raskys is where it's all heading: a venue with good drinks, live music and the kind of service I'd want to receive myself.</p>
+            <ol class="timeline" aria-label="A few dates">
+              <li><span class="when">2016</span><span>Creative Media Production, Suffolk New College (Distinction)</span></li>
+              <li><span class="when">2019</span><span>First bar job, The Red Lion, Woodbridge</span></li>
+              <li><span class="when">2022</span><span>Bar manager, Blue Salt, Woodbridge</span></li>
+              <li><span class="when">2023</span><span>The Unruly Pig, then the move to Brighton</span></li>
+              <li><span class="when">2026</span><span>Assistant manager, Rockwater, Hove</span></li>
+            </ol>
+            <div class="actions">
+              <a class="link" href="/assets/docs/jack-ormondroyd-cv.pdf" data-doc="cvPdf">Download my CV (PDF)</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="contact-section reveal-section">
-        <div class="container contact-panel">
-          <div>
-            <h2>Let's build something worth remembering.</h2>
-            <p>Open to collaborations, partnerships and serious conversations around venues, music, products, brands and new ideas.</p>
-          </div>
-          <form class="contact-form" action="mailto:hello@raskyjack.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your name" aria-label="Your name" />
-            <input type="email" name="email" placeholder="you@example.com" aria-label="Your email" />
-            <textarea name="message" placeholder="Tell me about your idea..." aria-label="Your message"></textarea>
-            <button class="button button-dark" type="submit">Send Message</button>
-          </form>
+      <!-- Contact --------------------------------------------------------- -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap">
+          <p class="kicker">Say hello</p>
+          <h2 class="visually-hidden" id="contact-title">Contact</h2>
+          <p data-cms="homepage.contact.body">For Raskys, music, a project, or something that doesn't fit any of those.</p>
+          <a class="contact-mail" href="mailto:hello@raskyjack.com" data-contact-email>hello@raskyjack.com</a>
         </div>
       </section>
     </main>
 
-    <div class="project-modal" data-project-modal-shell hidden>
-      <div class="project-modal__backdrop" data-project-modal-close></div>
-      <section
-        class="project-modal__panel"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="project-modal-title"
-        tabindex="-1"
-      >
-        <button class="project-modal__close" type="button" aria-label="Close project details" data-project-modal-close>
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M5 5l10 10M15 5 5 15" />
-          </svg>
-        </button>
-        <div class="project-modal__media">
-          <img data-project-modal-image src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" />
-        </div>
-        <div class="project-modal__content">
-          <p class="eyebrow" data-project-modal-kicker></p>
-          <h2 id="project-modal-title" data-project-modal-title></h2>
-          <p data-project-modal-description></p>
-          <ul class="highlight-list" data-project-modal-highlights></ul>
-          <div class="button-row" data-project-modal-links></div>
-          <p class="future-link" data-project-modal-note></p>
-        </div>
-      </section>
-    </div>
-
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <span class="wordmark">RASKY</span>
-        <span>&copy; 2026 Rasky / Jack Ormondroyd</span>
-        <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>
-        <a href="/">raskyjack.com</a>
-        <a href="/music/" target="_blank" rel="noreferrer">Music</a>
-        <span class="view-counter" data-view-counter>Site views --</span>
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <nav aria-label="Footer">
+          <a href="/raskys/">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/shnork/">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="/design/">Design</a>
+          <a href="mailto:hello@raskyjack.com" data-contact-email>hello@raskyjack.com</a>
+        </nav>
+        <span>&copy; 2026 Jack Ormondroyd</span>
       </div>
     </footer>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      (() => {
-        const identityTokenPattern = /(?:invite_token|recovery_token|confirmation_token)=/;
-        let identityInitialized = false;
-
-        function initializeIdentity() {
-          if (identityInitialized || !window.netlifyIdentity) return false;
-
-          identityInitialized = true;
-
-          window.netlifyIdentity.on("init", () => {
-            if (identityTokenPattern.test(window.location.hash)) {
-              window.netlifyIdentity.open();
-            }
-          });
-
-          window.netlifyIdentity.on("login", () => {
-            if (identityTokenPattern.test(window.location.hash)) {
-              window.location.href = "/admin/";
-            }
-          });
-
-          window.netlifyIdentity.init();
-
-          if (identityTokenPattern.test(window.location.hash)) {
-            window.setTimeout(() => window.netlifyIdentity.open(), 250);
-          }
-
-          return true;
-        }
-
-        if (!initializeIdentity()) {
-          window.addEventListener("load", () => {
-            let attempts = 0;
-            const retryIdentity = window.setInterval(() => {
-              attempts += 1;
-              if (initializeIdentity() || attempts >= 20) {
-                window.clearInterval(retryIdentity);
-              }
-            }, 250);
-          });
-        }
-      })();
-    </script>
-    <script src="script.js"></script>
+    <script src="/script.js" defer></script>
   </body>
 </html>

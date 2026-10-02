@@ -1,14 +1,14 @@
 {
   "label": "Raskyjack",
-  "headline": "Music with emotion and energy.",
-  "description": "Raskyjack is the music side of the wider Rasky world: releases, visuals, live performance and creative direction shaped around feeling and memory.",
+  "headline": "Songs I write, play and *release*.",
+  "description": "Raskyjack is my music: guitar-led songs, released on Spotify and played live whenever I get the chance. The music site has everything.",
   "primaryButton": {
     "label": "Listen on Spotify",
     "href": "https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG",
     "external": true
   },
   "secondaryButton": {
-    "label": "Visit Music Page",
+    "label": "Open the music site",
     "href": "/music/"
   },
   "artistLinks": {
@@ -49,7 +49,7 @@
       "appleMusicLink": "",
       "youtubeLink": "",
       "image": {
-        "src": "assets/optimized/raskyjack-illusions.jpg",
+        "src": "assets/optimized/raskyjack-illusions.webp",
         "alt": "Illusions album artwork"
       }
     },
@@ -68,7 +68,7 @@
       "appleMusicLink": "",
       "youtubeLink": "",
       "image": {
-        "src": "assets/optimized/raskyjack-suffolk.jpg",
+        "src": "assets/optimized/raskyjack-suffolk.webp",
         "alt": "Suffolk album artwork"
       }
     },
@@ -87,7 +87,7 @@
       "appleMusicLink": "",
       "youtubeLink": "",
       "image": {
-        "src": "assets/optimized/raskyjack-sunburst.jpg",
+        "src": "assets/optimized/raskyjack-sunburst.webp",
         "alt": "Sunburst album artwork"
       }
     },
@@ -105,7 +105,7 @@
       "appleMusicLink": "",
       "youtubeLink": "",
       "image": {
-        "src": "assets/optimized/raskyjack-brick-by-brick.jpg",
+        "src": "assets/optimized/raskyjack-brick-by-brick.webp",
         "alt": "Brick by Brick album artwork"
       }
     }

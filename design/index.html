@@ -1,85 +1,133 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Creative Studio brings together brand identity, websites, hospitality tools and creative products by Rasky." />
-    <title>Creative Studio | Rasky</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Design work | Rasky</title>
+    <meta name="description" content="Menus, brands and interfaces designed by Jack Ormondroyd: the Raskys menu, Rockwater pre-orders, Perfect Host, EtsyCalc and this site." />
+    <link rel="canonical" href="https://raskyjack.com/design/" />
+    <meta name="theme-color" content="#f3eee5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rasky" />
+    <meta property="og:title" content="Design work | Rasky" />
+    <meta property="og:description" content="Menus, brands and interfaces designed by Jack Ormondroyd: the Raskys menu, Rockwater pre-orders, Perfect Host, EtsyCalc and this site." />
+    <meta property="og:url" content="https://raskyjack.com/design/" />
+    <meta property="og:image" content="https://raskyjack.com/assets/og/rasky-og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:wght@400..600&display=swap" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
-    <header class="site-header"><a class="wordmark" href="/">RASKY</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button><nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="/raskys/">Raskys</a><a href="/music/">Music</a><a href="/#selected-work">Projects</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav><a class="nav-button" href="mailto:hello@raskyjack.com">Let's Connect</a></header>
-    <main>
-      <section class="page-hero section-pad">
-        <div class="container page-hero-grid">
-          <div>
-            <p class="eyebrow">Creative Studio</p>
-            <h1>Brands, websites, hospitality tools and creative products.</h1>
-            <p class="lead">A curated project area for visual identity, menus, hospitality interfaces, website design, client-style projects and practical digital products.</p>
-            <div class="button-row"><a class="button button-dark" href="mailto:hello@raskyjack.com">Discuss Design</a><a class="button button-light" href="/#selected-work">Back to Projects</a></div>
-          </div>
-          <div class="page-visual"><img src="../assets/optimized/brand-restaurant-set.jpg" alt="Premium restaurant branding example" /></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Jack Ormondroyd</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#raskys">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/shnork/">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="/#about">About</a>
+          <a class="nav-cta" href="/#contact">Say hello</a>
+        </nav>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+          Menu <span class="bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu" data-menu>
+      <div class="menu-sheet__top">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <button class="menu-close" type="button" data-menu-close>Close <span class="x" aria-hidden="true"></span></button>
+      </div>
+      <ol>
+        <li><a href="/raskys/">Raskys <small>a venue in the making</small></a></li>
+        <li><a href="/#building">Building <small>software &amp; tools</small></a></li>
+        <li><a href="/shnork/">Shnork <small>novel &amp; game</small></a></li>
+        <li><a href="/music/">Music <small>Raskyjack</small></a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Say hello</a></li>
+      </ol>
+      <div class="menu-sheet__foot">
+        <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>
+        <a href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" rel="noopener">Spotify</a>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="page-intro" aria-labelledby="design-title">
+        <div class="wrap">
+          <a class="back" href="/#building"><span class="arrow" aria-hidden="true">&larr;</span> Things I&rsquo;m building</a>
+          <p class="kicker">Design work</p>
+          <h1 class="display" id="design-title">Menus, brands and the <em>sites</em> they live on.</h1>
+          <p class="lede">I design most things myself: the Raskys identity and menu, the interfaces of the tools I build, and this website. A small, honest selection.</p>
         </div>
       </section>
 
-      <section class="page-section section-pad compact">
-        <div class="container studio-showcase-stack">
-          <article class="project-showcase studio-showcase">
-            <div class="showcase-media-grid">
-              <img src="../assets/optimized/brand-restaurant-set.jpg" alt="Hospitality branding and menu design example" />
-              <img src="../assets/optimized/motiondesk-screenshot.jpg" alt="Website and product interface example" />
-              <img src="../assets/optimized/rasky-logo.jpg" alt="Rasky logo and identity asset" />
+      <section class="room" style="padding-top:0" aria-label="Selected design work">
+        <div class="wrap">
+          <div class="gallery">
+            <figure class="g-5" data-reveal>
+              <button class="image-button" type="button" data-lightbox-src="/assets/optimized/raskys-cocktail-menu.jpg" data-lightbox-alt="Raskys signature cocktail menu"><picture><source type="image/webp" srcset="/assets/optimized/raskys-cocktail-menu.webp" /><img src="/assets/optimized/raskys-cocktail-menu.jpg" width="1024" height="1536" loading="lazy" decoding="async" alt="The Raskys signature cocktail menu: thirteen illustrated drinks on a cream card with red type" /></picture></button>
+              <figcaption class="caption"><strong>Raskys cocktail menu.</strong> Print design for the venue concept.</figcaption>
+            </figure>
+            <div class="g-7" style="display:grid;gap:clamp(14px,2vw,24px)">
+              <figure data-reveal>
+                <a class="shot" href="/rockwaterpreorders/"><picture><source type="image/webp" srcset="/assets/optimized/rockwater-guest.webp" /><img src="/assets/optimized/rockwater-guest.png" width="1400" height="982" loading="lazy" decoding="async" alt="Rockwater pre-order website: guest view for choosing dishes for a private event" /></picture></a>
+                <figcaption class="caption"><strong>Rockwater pre-orders.</strong> Guest ordering flow for private events at a Hove venue.</figcaption>
+              </figure>
+              <figure data-reveal="2">
+                <a class="shot" href="/etsycalc/"><picture><source type="image/webp" srcset="/assets/optimized/etsycalc-screenshot.webp" /><img src="/assets/optimized/etsycalc-screenshot.jpg" width="1400" height="972" loading="lazy" decoding="async" alt="EtsyCalc interface showing profit, margin and fee breakdown" /></picture></a>
+                <figcaption class="caption"><strong>EtsyCalc.</strong> Interface for a seller's profit calculator.</figcaption>
+              </figure>
             </div>
-            <div>
-              <p class="eyebrow">Creative Studio</p>
-              <h2>Graphic & Web Design</h2>
-              <p>Graphic design, website creation, branding, visual identity, menus and digital presentation shaped with a clean, premium standard. This section collects the visual work behind venue concepts, product interfaces and brand-ready creative direction.</p>
-              <p class="future-link">All websites and graphics designed and curated by Jack.</p>
-              <div class="button-row"><a class="button button-dark" href="/design-gallery/">Open Design Gallery</a></div>
-            </div>
-          </article>
-
-          <article class="project-showcase studio-showcase reverse">
-            <div>
-              <p class="eyebrow">Hospitality Application</p>
-              <h2>Perfect Host Application</h2>
-              <p>A hospitality floor-planning and host workflow concept built around table management, guest notes, service timing, live table states and the practical pressure points of real service.</p>
-              <ul class="highlight-list">
-                <li>Floor planning and table status systems</li>
-                <li>Guest notes, timing and service awareness</li>
-                <li>Built from real hospitality workflow</li>
-              </ul>
-              <div class="button-row">
-                <a class="button button-dark" href="/perfecthost/">Open Project Page</a>
-                <a class="button button-light" href="/perfecthost-demo/">Open Mobile Prototype</a>
-              </div>
-              <p class="future-link">Best experienced on mobile.</p>
-            </div>
-            <img src="../assets/optimized/perfecthost-map.jpg" alt="Perfect Host floor plan and table management interface" />
-          </article>
-
-          <article class="project-showcase studio-showcase">
-            <div class="showcase-media-grid rockwater-previews">
-              <img src="../assets/optimized/rockwater-guest.png" alt="Rockwater Preorders guest ordering website view" />
-              <img src="../assets/optimized/rockwater-staff.png" alt="Rockwater Preorders staff workspace website view" />
-            </div>
-            <div>
-              <p class="eyebrow">Hospitality Operations</p>
-              <h2>Restaurant Pre-Order System</h2>
-              <p>A working event pre-order website for hospitality teams: guest selections, allergies and notes, staff workspace, kitchen summaries and service handover in one operational flow.</p>
-              <ul class="highlight-list">
-                <li>Event preorders and guest selections</li>
-                <li>Allergies, notes and staff workspace</li>
-                <li>Kitchen and service summary workflows</li>
-              </ul>
-              <div class="button-row"><a class="button button-dark" href="/rockwaterpreorders/">Visit Website</a></div>
-              <p class="future-link">Locked by Rockwater email login.</p>
-            </div>
-          </article>
+            <figure class="g-7" data-reveal>
+              <a class="shot" href="/perfecthost-demo/"><picture><source type="image/webp" srcset="/assets/optimized/perfecthost-map.webp" /><img src="/assets/optimized/perfecthost-map.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="Perfect Host floor plan with numbered tables and live status colours" /></picture></a>
+              <figcaption class="caption"><strong>Perfect Host.</strong> A dark, glanceable floor plan for busy service.</figcaption>
+            </figure>
+            <figure class="g-5" data-reveal="2">
+              <div class="blueprint" style="display:grid;place-items:center;aspect-ratio:16/10.5"><img src="/assets/brand/rasky-mark-160.png" width="483" height="160" alt="The Rasky wordmark in angular, interlocking letters" style="width:62%" loading="lazy" /></div>
+              <figcaption class="caption"><strong>Rasky wordmark.</strong> The mark used across this site.</figcaption>
+            </figure>
+            <figure class="g-12" data-reveal>
+              <a class="shot" href="/motiondesk/" style="max-width:860px"><picture><source type="image/webp" srcset="/assets/optimized/motiondesk-screenshot.webp" /><img src="/assets/optimized/motiondesk-screenshot.jpg" width="1400" height="972" loading="lazy" decoding="async" alt="Motion Desk landing page: Create. Plan. Analyze." /></picture></a>
+              <figcaption class="caption"><strong>Motion Desk.</strong> Landing page for an early creator-tools idea.</figcaption>
+            </figure>
+          </div>
+          <div class="actions" style="margin-top:clamp(48px,6vw,80px)">
+            <a class="btn btn--solid" href="mailto:hello@raskyjack.com?subject=Design">Ask about design work</a>
+            <a class="link" href="/#building">Back to the projects</a>
+          </div>
         </div>
       </section>
     </main>
-    <footer class="site-footer"><div class="container footer-inner"><span class="wordmark">RASKY</span><span>&copy; 2026 Rasky / Jack Ormondroyd</span><a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a><a href="/">raskyjack.com</a><a href="/music/">Music</a><span class="view-counter" data-view-counter>Site views --</span></div></footer>
-    <script src="../script.js"></script>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <nav aria-label="Footer">
+          <a href="/raskys/">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/shnork/">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="/design/">Design</a>
+          <a href="mailto:hello@raskyjack.com" data-contact-email>hello@raskyjack.com</a>
+        </nav>
+        <span>&copy; 2026 Jack Ormondroyd</span>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
   </body>
 </html>

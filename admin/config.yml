@@ -26,14 +26,17 @@ collections:
         fields:
           - label: "Browser title"
             name: title
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
             hint: "Appears in the browser tab and search previews."
           - label: "Meta description"
             name: description
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: text
             hint: "Short search/social description for the main site."
           - label: "Header brand text"
             name: brand
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
           - label: "Contact email"
             name: contactEmail
@@ -41,23 +44,28 @@ collections:
             hint: "Used in footer/contact mail links. Example: hello@raskyjack.com"
           - label: "Home URL"
             name: homeUrl
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
             hint: "Usually /"
           - label: "Main music page URL"
             name: musicUrl
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
             hint: "Use /music/ for the current internal music page."
           - label: "External music site URL"
             name: musicExternalUrl
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
             required: false
             hint: "Optional old/current music website. External links should include https://"
           - label: "View counter label"
             name: viewCounterLabel
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
             hint: "Small footer label only. Example: Site views"
           - label: "Footer links"
             name: footerLinks
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: list
             summary: "{{fields.label}}"
             collapsed: false
@@ -90,12 +98,14 @@ collections:
                 hint: "Short uppercase line above the headline."
               - label: "Hero headline"
                 name: headline
+                hint: "Wrap one word in *asterisks* to set it in italic colour, e.g. Not just somewhere to *drink*."
                 widget: string
               - label: "Hero intro text"
                 name: body
                 widget: text
               - label: "Primary hero button"
                 name: primaryButton
+                hint: "Not shown in the current site design (kept so older content still loads)."
                 widget: object
                 fields: &button_fields
                   - label: "Button text"
@@ -113,10 +123,12 @@ collections:
                     default: false
               - label: "Secondary hero button"
                 name: secondaryButton
+                hint: "Not shown in the current site design (kept so older content still loads)."
                 widget: object
                 fields: *button_fields
               - label: "Floating hero cards"
                 name: cards
+                hint: "Not shown in the current site design (kept so older content still loads)."
                 widget: list
                 summary: "{{fields.title}}"
                 hint: "Top floating cards in the hero. Recommended: three cards max."
@@ -146,6 +158,7 @@ collections:
                         hint: "Describe the image for accessibility."
           - label: "Core Ventures cards"
             name: coreVentures
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: list
             summary: "{{fields.title}}"
             hint: "Main venture cards on the homepage. Keep to Raskys and Raskyjack unless the homepage structure changes."
@@ -158,6 +171,7 @@ collections:
                 widget: text
               - label: "Button text"
                 name: buttonLabel
+                hint: "Not shown in the current site design (kept so older content still loads)."
                 widget: string
               - label: "Card/button destination URL"
                 name: link
@@ -178,6 +192,7 @@ collections:
                 widget: text
               - label: "Contact form button text"
                 name: buttonLabel
+                hint: "Not shown in the current site design (kept so older content still loads)."
                 widget: string
 
   - name: raskys
@@ -194,41 +209,50 @@ collections:
             widget: string
           - label: "Homepage Raskys headline"
             name: headline
+            hint: "Wrap one word in *asterisks* to set it in italic colour, e.g. Not just somewhere to *drink*."
             widget: string
           - label: "Homepage Raskys description"
             name: description
             widget: text
           - label: "Homepage Raskys button"
             name: button
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: object
             fields: *button_fields
           - label: "Blueprint image"
             name: blueprintImage
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: object
             fields: *image_fields
           - label: "Business plan PDF path"
             name: businessPlanPdf
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
             required: false
             hint: "Use Documents to upload PDFs into /assets/docs/, then paste the path here if needed."
           - label: "Raskys page headline"
             name: pageHeadline
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
             required: false
           - label: "Raskys page description"
             name: pageDescription
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: text
             required: false
           - label: "Raskys page primary button"
             name: pagePrimaryButton
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: object
             fields: *button_fields
           - label: "Business plan button"
             name: businessPlanButton
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: object
             fields: *button_fields
           - label: "Concept cards"
             name: concepts
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: list
             summary: "{{fields.title}}"
             fields:
@@ -250,9 +274,11 @@ collections:
                 widget: text
               - label: "Vision quote"
                 name: quote
+                hint: "Not shown in the current site design (kept so older content still loads)."
                 widget: string
               - label: "Vision gallery images"
                 name: images
+                hint: "Not shown in the current site design (kept so older content still loads)."
                 widget: list
                 summary: "{{fields.alt}}"
                 fields: *image_fields
@@ -271,6 +297,7 @@ collections:
             widget: string
           - label: "Music headline"
             name: headline
+            hint: "Wrap one word in *asterisks* to set it in italic colour, e.g. Not just somewhere to *drink*."
             widget: string
           - label: "Music intro text"
             name: description
@@ -285,6 +312,7 @@ collections:
             fields: *button_fields
           - label: "Artist streaming/social links"
             name: artistLinks
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: object
             required: false
             fields:
@@ -296,6 +324,7 @@ collections:
               - { label: "Instagram URL", name: instagram, widget: string, required: false }
           - label: "Featured release"
             name: featuredRelease
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: object
             fields:
               - label: "Featured release title"
@@ -310,12 +339,15 @@ collections:
                 fields: *image_fields
           - label: "Discography small label"
             name: discographyLabel
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
           - label: "Discography heading"
             name: discographyTitle
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: string
           - label: "All music link"
             name: allMusicLink
+            hint: "Not shown in the current site design (kept so older content still loads)."
             widget: object
             fields: *button_fields
           - label: "Releases / discography"
@@ -390,21 +422,20 @@ collections:
                 fields: *image_fields
 
   - name: projects
-    label: "Products & Projects: Cards + Modals"
-    description: "Controls the six homepage project cards and modal previews for live websites."
+    label: "Things I'm building: project list"
+    description: "The 'And the rest' list on the homepage. Rockwater and Perfect Host are featured separately in the page itself."
     files:
       - name: projects
-        label: "Products & Projects"
+        label: "Project list"
         file: content/projects.json
         format: json
         fields:
-          - label: "Homepage project cards"
+          - label: "Projects"
             name: cards
             widget: list
-            summary: "{{fields.order}}. {{fields.title}}"
-            hint: "Keep the public homepage to the six intended cards unless you deliberately change the layout."
+            summary: "{{fields.order}}. {{fields.title}} ({{fields.status}})"
             fields:
-              - label: "Show this card"
+              - label: "Show this project"
                 name: visible
                 widget: boolean
                 required: false
@@ -418,173 +449,33 @@ collections:
               - label: "Project name"
                 name: title
                 widget: string
-              - label: "Short card description"
+              - label: "One-line description"
                 name: description
                 widget: text
-              - label: "Button/link text"
-                name: buttonLabel
+                hint: "One honest sentence: what it is."
+              - label: "Status label"
+                name: status
                 widget: string
-              - label: "Card behaviour"
-                name: projectType
+                required: false
+                hint: "e.g. Working tool, Prototype, Early, In progress, Design"
+              - label: "Status colour"
+                name: statusKind
                 widget: select
+                required: false
                 options:
-                  - { label: "Open modal first, then link to live website", value: "modal-live-site" }
-                  - { label: "Go directly to project page", value: "project-page" }
-              - label: "Direct destination URL"
+                  - { label: "Working / live (green)", value: "live" }
+                  - { label: "Prototype (amber)", value: "prototype" }
+                  - { label: "Early / in progress (violet)", value: "early" }
+                  - { label: "Design (red)", value: "design" }
+              - label: "Link"
                 name: link
                 widget: string
-                required: false
-                hint: "Required for project-page cards. Use /design/, /shnork/ or https://..."
-              - label: "Modal key"
-                name: modalKey
-                widget: string
-                required: false
-                hint: "Only for modal-live-site cards. Match a modal name below, e.g. motiondesk or etsycalc."
-              - label: "Project card image"
+                hint: "e.g. /etsycalc/ or https://..."
+              - label: "Hover preview image (desktop)"
                 name: image
                 widget: object
+                required: false
                 fields: *image_fields
-          - label: "Modal content for live websites"
-            name: modals
-            widget: object
-            collapsed: false
-            hint: "Only Motion Desk and EtsyCalc currently use modals from the homepage."
-            fields:
-              - label: "Motion Desk modal"
-                name: motiondesk
-                widget: object
-                fields: &modal_fields
-                  - label: "Small modal label"
-                    name: kicker
-                    widget: string
-                  - label: "Modal headline"
-                    name: title
-                    widget: string
-                  - label: "Large modal screenshot"
-                    name: image
-                    widget: image
-                    required: false
-                    hint: "Use a wide screenshot where possible."
-                  - label: "Modal image alt text"
-                    name: alt
-                    widget: string
-                    required: false
-                  - label: "Modal description"
-                    name: description
-                    widget: text
-                  - label: "Key highlights"
-                    name: highlights
-                    widget: list
-                    field: { label: "Highlight", name: highlight, widget: string }
-                  - label: "Modal buttons/links"
-                    name: links
-                    widget: list
-                    summary: "{{fields.label}}"
-                    fields: *button_fields
-                  - label: "Small note"
-                    name: note
-                    widget: string
-                    required: false
-              - label: "EtsyCalc modal"
-                name: etsycalc
-                widget: object
-                fields: *modal_fields
-
-  - name: creative_studio
-    label: "Creative Studio: Design + Hospitality Tools"
-    description: "Creative Studio page content, wide showcase cards and design gallery."
-    files:
-      - name: creative_studio
-        label: "Creative Studio"
-        file: content/creative-studio.json
-        format: json
-        fields:
-          - label: "Creative Studio hero"
-            name: hero
-            widget: object
-            fields:
-              - label: "Hero label"
-                name: label
-                widget: string
-              - label: "Hero headline"
-                name: headline
-                widget: string
-              - label: "Hero intro text"
-                name: body
-                widget: text
-              - label: "Primary button"
-                name: primaryButton
-                widget: object
-                fields: *button_fields
-              - label: "Secondary button"
-                name: secondaryButton
-                widget: object
-                fields: *button_fields
-              - label: "Hero image"
-                name: image
-                widget: object
-                fields: *image_fields
-          - label: "Wide showcase sections"
-            name: sections
-            widget: list
-            summary: "{{fields.title}}"
-            hint: "Graphic & Web Design, Perfect Host Application and Restaurant Pre-Order System."
-            fields:
-              - label: "Section label"
-                name: label
-                widget: string
-              - label: "Section title"
-                name: title
-                widget: string
-              - label: "Section description"
-                name: description
-                widget: text
-              - label: "Small note"
-                name: note
-                widget: string
-                required: false
-              - label: "Highlights"
-                name: highlights
-                widget: list
-                required: false
-                field: { label: "Highlight", name: highlight, widget: string }
-              - label: "Section images"
-                name: images
-                widget: list
-                summary: "{{fields.alt}}"
-                fields: *image_fields
-              - label: "Section buttons"
-                name: buttons
-                widget: list
-                summary: "{{fields.label}}"
-                fields: *button_fields
-          - label: "Design gallery items"
-            name: gallery
-            widget: list
-            summary: "{{fields.title}}"
-            hint: "Used by /design-gallery/. Add curated examples rather than dumping everything."
-            fields:
-              - label: "Gallery item title"
-                name: title
-                widget: string
-              - label: "Gallery image"
-                name: image
-                widget: image
-                hint: "Upload/select the image for this gallery item."
-              - label: "Short description"
-                name: description
-                widget: text
-                required: false
-              - label: "Category"
-                name: category
-                widget: string
-                required: false
-                hint: "Example: Branding, Website, Hospitality Tool"
-              - label: "Optional link"
-                name: link
-                widget: string
-                required: false
-                hint: "Use only if this gallery item should link somewhere."
 
   - name: documents
     label: "Documents & PDFs"

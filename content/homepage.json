@@ -1,8 +1,8 @@
 {
   "hero": {
-    "label": "Jack Ormondroyd",
-    "headline": "Building experiences people remember.",
-    "body": "Hospitality, music, products and creative ventures shaped with taste, practical energy and a bias toward building.",
+    "label": "Jack Ormondroyd, aka Rasky",
+    "headline": "Hospitality by trade. Songs, software and a novel about a *Shnork* the rest of the time.",
+    "body": "I've worked in pubs, bars and restaurants since 2019. Outside of that I write songs, build software and keep a fantasy novel going. This is where all of it lives.",
     "primaryButton": {
       "label": "Explore Raskys",
       "href": "/raskys/"
@@ -65,8 +65,8 @@
     }
   ],
   "contact": {
-    "headline": "Let's build something worth remembering.",
-    "body": "Open to collaborations, partnerships and serious conversations around venues, music, products, brands and new ideas.",
+    "headline": "Say hello",
+    "body": "For Raskys, music, a project, or something that doesn't fit any of those.",
     "buttonLabel": "Send Message"
   }
 }

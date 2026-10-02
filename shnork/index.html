@@ -1,19 +1,184 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="In the Shadow of a Shnork is a fantasy novel, worldbuilding and Unity prototype project by Rasky." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>In the Shadow of a Shnork | Rasky</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <meta name="description" content="A fantasy novel by Jack Ormondroyd that grew into illustrated pages, a system of buffs and curses, and an early Unity prototype. Read the first seven chapters." />
+    <link rel="canonical" href="https://raskyjack.com/shnork/" />
+    <meta name="theme-color" content="#161a10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rasky" />
+    <meta property="og:title" content="In the Shadow of a Shnork | Rasky" />
+    <meta property="og:description" content="A fantasy novel by Jack Ormondroyd that grew into illustrated pages, a system of buffs and curses, and an early Unity prototype. Read the first seven chapters." />
+    <meta property="og:url" content="https://raskyjack.com/shnork/" />
+    <meta property="og:image" content="https://raskyjack.com/assets/og/rasky-og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:wght@400..600&display=swap" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
-  <body>
-    <header class="site-header"><a class="wordmark" href="/">RASKY</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button><nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="/raskys/">Raskys</a><a href="/music/">Music</a><a href="/#selected-work">Projects</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav><a class="nav-button" href="mailto:hello@raskyjack.com">Let's Connect</a></header>
-    <main>
-      <section class="page-hero section-pad"><div class="container page-hero-grid"><div><p class="eyebrow">In the Shadow of a Shnork</p><h1>Novel, worldbuilding and creative IP.</h1><p class="lead">In the Shadow of a Shnork began as a fantasy novel and has grown into artwork, worldbuilding and a Unity game prototype. Read the first 7 chapters in the preview edition.</p><div class="button-row"><a class="button button-dark" href="/assets/docs/in-the-shadow-of-a-shnork-preview.pdf" target="_blank" rel="noreferrer">Read Preview</a><a class="button button-light" href="/#selected-work">Back to Projects</a></div></div><div class="page-visual"><img src="../assets/optimized/shnork-cover.jpg" alt="In the Shadow of a Shnork cover artwork" /></div></div></section>
-      <section class="page-section section-pad compact"><div class="container process-card"><h3>From novel to game world</h3><div class="process-grid"><article><span>01</span><h4>The Novel</h4><p>A complete fantasy novel and universe.</p><img src="../assets/optimized/shnork-cover.jpg" alt="Shnork cover artwork" /></article><article><span>02</span><h4>Worldbuilding</h4><p>Lore, characters and atmosphere expanding beyond the book.</p><img src="../assets/optimized/shnork-characters.jpg" alt="Shnork character sheet" /></article><article><span>03</span><h4>Artwork</h4><p>Visual development for a more cinematic creative world.</p><img src="../assets/optimized/shnork-cover.jpg" alt="Shnork visual development" /></article><article><span>04</span><h4>Unity Prototype</h4><p>Early gameplay and systems exploration, honestly in progress.</p><img src="../assets/optimized/shnork-characters.jpg" alt="Shnork prototype character art" /></article></div></div></section>
+  <body data-page-tone="dark" style="background:#161a10">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Jack Ormondroyd</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#raskys">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/shnork/" aria-current="page">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="/#about">About</a>
+          <a class="nav-cta" href="/#contact">Say hello</a>
+        </nav>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+          Menu <span class="bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu" data-menu>
+      <div class="menu-sheet__top">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <button class="menu-close" type="button" data-menu-close>Close <span class="x" aria-hidden="true"></span></button>
+      </div>
+      <ol>
+        <li><a href="/raskys/">Raskys <small>a venue in the making</small></a></li>
+        <li><a href="/#building">Building <small>software &amp; tools</small></a></li>
+        <li><a href="/shnork/">Shnork <small>novel &amp; game</small></a></li>
+        <li><a href="/music/">Music <small>Raskyjack</small></a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Say hello</a></li>
+      </ol>
+      <div class="menu-sheet__foot">
+        <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>
+        <a href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" rel="noopener">Spotify</a>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="room--shnork on-dark shnork-hero" data-dark-hero aria-labelledby="shnork-title">
+        <div class="wrap split split--center">
+          <div>
+            <a class="back" href="/#shnork"><span class="arrow" aria-hidden="true">&larr;</span> Home</a>
+            <p class="kicker">A novel &middot; a world &middot; an early game</p>
+            <h1 class="display" id="shnork-title">In the Shadow of a <em>Shnork</em></h1>
+            <p class="lede">A fantasy novel about a creature waking up in a forest that changes him. I've been writing it for a while, and it keeps growing: illustrated pages, a system of buffs and curses, and a Unity prototype.</p>
+            <div class="actions">
+              <a class="btn btn--solid" href="/assets/docs/in-the-shadow-of-a-shnork-preview.pdf" data-doc="shnorkPreviewPdf">Read the first seven chapters (PDF)</a>
+            </div>
+          </div>
+          <figure class="cover" data-reveal>
+            <picture><source type="image/webp" srcset="/assets/optimized/shnork-cover.webp" /><img src="/assets/optimized/shnork-cover.jpg" width="1024" height="1536" fetchpriority="high" alt="Book cover: In the Shadow of a Shnork, a green creature in a feathered headdress holding a glowing sword and shield" /></picture>
+          </figure>
+        </div>
+      </section>
+
+      <section class="room room--shnork on-dark" aria-labelledby="opening-title" data-dark>
+        <div class="wrap split">
+          <div>
+            <p class="kicker"><span class="num">01</span> From the book</p>
+            <h2 class="h-lg" id="opening-title">The forest gives, and it takes.</h2>
+          </div>
+          <div class="prose" data-reveal>
+            <blockquote class="book-quote" style="margin-top:0">
+              <p>&ldquo;At first, just the feeling of being held, somewhere between waking and not. A quiet hum filled the edges of thought, soft and low, like roots shifting beneath the ground. Then, breath.&rdquo;</p>
+              <p style="margin-top:1em">&ldquo;I lay still for a while, unsure whether I had returned&hellip; or begun.&rdquo;</p>
+              <cite>In the Shadow of a Shnork</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="room room--shnork on-dark" aria-labelledby="pages-title" data-dark style="padding-top:0">
+        <div class="wrap">
+          <p class="kicker"><span class="num">02</span> Illustrated pages</p>
+          <h2 class="h-lg" id="pages-title" style="max-width:16em">The book is illustrated, a page at a time.</h2>
+          <div class="gallery" style="margin-top:clamp(40px,5vw,72px)">
+            <figure class="plate g-4" data-reveal><picture><source type="image/webp" srcset="/assets/photo/shnork-page-31-720.webp" /><img src="/assets/photo/shnork-page-31-720.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="A large green hand holding three glowing mushrooms in a dark forest" /></picture><figcaption>Page 31</figcaption></figure>
+            <figure class="plate g-4" data-reveal="2" style="margin-top:clamp(0px,6vw,96px)"><picture><source type="image/webp" srcset="/assets/photo/shnork-page-33-720.webp" /><img src="/assets/photo/shnork-page-33-720.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="Two Shnorks crouched over a cluster of glowing mushrooms on the forest floor" /></picture><figcaption>Page 33</figcaption></figure>
+            <figure class="plate g-4" data-reveal="3"><picture><source type="image/webp" srcset="/assets/photo/shnork-page-40-720.webp" /><img src="/assets/photo/shnork-page-40-720.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="A large Shnork and a small one sitting together, looking out at mountains beyond the forest" /></picture><figcaption>Page 40</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="room room--shnork on-dark" aria-labelledby="effects-title" data-dark style="padding-top:0">
+        <div class="wrap split">
+          <div>
+            <p class="kicker"><span class="num">03</span> Buffs &amp; curses</p>
+            <h2 class="h-lg" id="effects-title">Eighteen ways the forest changes you.</h2>
+            <p class="lede">Written for the book first, then turned into the status-effect system for the game. Some help you survive. Others make you wonder if survival is still enough.</p>
+            <figure class="figure-dark" style="margin-top:32px;max-width:340px" data-reveal><picture><source type="image/webp" srcset="/assets/photo/shnork-status-effects-720.webp" /><img src="/assets/photo/shnork-status-effects-720.jpg" width="677" height="992" loading="lazy" decoding="async" alt="Game design board titled Status Effects with nine buff icons and nine debuff icons on a wooden signpost" /></picture><figcaption>The status-effects board from the game design.</figcaption></figure>
+          </div>
+          <div class="split" style="gap:32px" data-reveal>
+            <div><p class="meta" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:16px">Buffs</p><ul class="effects" style="columns:1">
+              <li><strong>Healing</strong>Restores vitality and mends wounds.</li>
+              <li><strong>Strength</strong>Roots crack, stone yields.</li>
+              <li><strong>Regeneration</strong>The forest mends you in silence.</li>
+              <li><strong>Awareness</strong>Eyes see further, ears hear whispers.</li>
+              <li><strong>Energy</strong>Speed, action and clarity.</li>
+              <li><strong>Defence</strong>Thickened bark and unseen shields.</li>
+              <li><strong>Rage</strong>Green flame licking at your mind.</li>
+              <li><strong>Precision</strong>Every move lands true.</li>
+              <li><strong>Focus</strong>Time bends to your discipline.</li>
+            </ul></div>
+            <div><p class="meta" style="color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:16px">Curses</p><ul class="effects" style="columns:1">
+              <li><strong>Poisoned</strong>Each breath a slow sting.</li>
+              <li><strong>Frozen</strong>Icy vines clutch your limbs.</li>
+              <li><strong>Sleepy</strong>Dreams press from beneath.</li>
+              <li><strong>Pain</strong>Sharp, constant, unwelcome.</li>
+              <li><strong>Hunger</strong>The forest offers nothing.</li>
+              <li><strong>Stunned</strong>Balance flees your grasp.</li>
+              <li><strong>Disoriented</strong>Left feels like right.</li>
+              <li><strong>Bound</strong>Movement is only memory.</li>
+              <li><strong>Corruption</strong>Something black and crawling takes root.</li>
+            </ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="room room--shnork on-dark" aria-labelledby="game-title" data-dark style="padding-top:0">
+        <div class="wrap split">
+          <div>
+            <p class="kicker"><span class="num">04</span> The game</p>
+            <h2 class="h-lg" id="game-title">An early prototype, honestly.</h2>
+          </div>
+          <div class="prose" data-reveal>
+            <p>I've started turning the forest into a game in Unity: characters, a HUD and the first pieces of the world. It's early, and I'd rather say so than dress it up. The novel comes first.</p>
+            <p>If you're into fantasy writing, game design or just want to say what you thought of the first chapters, I'd like to hear it.</p>
+            <div class="actions">
+              <a class="btn btn--solid" href="/assets/docs/in-the-shadow-of-a-shnork-preview.pdf" data-doc="shnorkPreviewPdf">Read the first seven chapters</a>
+              <a class="link" href="mailto:hello@raskyjack.com?subject=Shnork">Tell me what you thought</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="site-footer"><div class="container footer-inner"><span class="wordmark">RASKY</span><span>&copy; 2026 Rasky / Jack Ormondroyd</span><a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a><a href="/">raskyjack.com</a><a href="/music/">Music</a><span class="view-counter" data-view-counter>Site views --</span></div></footer>
-    <script src="../script.js"></script>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <nav aria-label="Footer">
+          <a href="/raskys/">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/shnork/">Shnork</a>
+          <a href="/music/">Music</a>
+          <a href="/design/">Design</a>
+          <a href="mailto:hello@raskyjack.com" data-contact-email>hello@raskyjack.com</a>
+        </nav>
+        <span>&copy; 2026 Jack Ormondroyd</span>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
   </body>
 </html>

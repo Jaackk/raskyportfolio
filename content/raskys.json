@@ -1,9 +1,9 @@
 {
   "label": "Raskys",
-  "headline": "A future hospitality brand.",
-  "description": "Raskys is a flexible venue concept for the right coastal or high-footfall location. It is inspired by great hospitality: quality drinks, warm service, live music, community, events and a memorable atmosphere.",
+  "headline": "Not just somewhere to *drink*.",
+  "description": "Raskys is the venue I want to open: cocktails, wine, live music and the kind of service that makes people feel remembered. It doesn't exist yet. The plan does.",
   "button": {
-    "label": "Explore the Vision",
+    "label": "Explore Raskys",
     "href": "/raskys/"
   },
   "blueprintImage": {
@@ -24,25 +24,25 @@
   },
   "concepts": [
     {
-      "title": "Quality Drinks",
-      "description": "Seasonal menus, crafted cocktails, wine, premium ingredients and a clear point of view."
+      "title": "Quality drinks",
+      "description": "Seasonal menus, signature cocktails, good wine and a clear point of view."
     },
     {
-      "title": "Live Music & Events",
-      "description": "Curated live music, DJ sets, intimate events and reasons for people to return."
+      "title": "Live music & events",
+      "description": "Bands, DJ sets, tastings and community nights: reasons to come back."
     },
     {
-      "title": "Warm Hospitality",
-      "description": "Genuine service, timing, detail and the feeling that guests are looked after properly."
+      "title": "Warm service",
+      "description": "Staff who know the menu, remember faces and get the timing right."
     },
     {
-      "title": "Strong Brand",
-      "description": "A visual and operational concept designed to scale in the right location."
+      "title": "A brand that travels",
+      "description": "Built to work in the right location, not just one street."
     }
   ],
   "vision": {
-    "title": "The Vision",
-    "description": "A premium coastal destination with soul: restaurant energy, multiple bar moments, live music, events, rooftop atmosphere and a brand strong enough to travel to the right location.",
+    "title": "Where it could go",
+    "description": "A larger venue with a restaurant, several bars, live stages, a rooftop, boutique bowling, casino-style games and space for private events.",
     "quote": "\"Great venues are not just built. They're felt.\"",
     "images": [
       {

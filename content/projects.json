@@ -3,118 +3,67 @@
     {
       "visible": true,
       "order": 1,
-      "title": "Motion Desk",
-      "description": "Creator workspace for assets, planning and release management.",
-      "buttonLabel": "View Project",
-      "modalKey": "motiondesk",
-      "projectType": "modal-live-site",
+      "title": "EtsyCalc",
+      "description": "A profit calculator for UK Etsy sellers: fees, shipping and the real margin.",
+      "status": "Working tool",
+      "statusKind": "live",
+      "link": "/etsycalc/",
       "image": {
-        "src": "assets/optimized/motiondesk-screenshot.jpg",
-        "alt": "Motion Desk screenshot"
+        "src": "assets/optimized/etsycalc-screenshot.webp",
+        "alt": ""
       }
     },
     {
       "visible": true,
       "order": 2,
-      "title": "SportsPredict / TennisPredict",
-      "description": "Prediction and analytics thinking for sports data.",
-      "buttonLabel": "View Project",
-      "projectType": "project-page",
+      "title": "SportsPredict",
+      "description": "A tennis prediction and analytics prototype.",
+      "status": "Prototype",
+      "statusKind": "prototype",
       "link": "/sportspredict/",
       "image": {
-        "src": "assets/optimized/tennispredict-mockup.jpg",
-        "alt": "SportsPredict / TennisPredict mockup"
+        "src": "assets/optimized/tennispredict-mockup.webp",
+        "alt": ""
       }
     },
     {
       "visible": true,
       "order": 3,
-      "title": "Creative Studio",
-      "description": "Brands, websites, hospitality tools and creative products.",
-      "buttonLabel": "View Project",
-      "projectType": "project-page",
-      "link": "/design/",
+      "title": "Motion Desk",
+      "description": "A workspace for creators to plan releases, campaigns and assets.",
+      "status": "Early",
+      "statusKind": "early",
+      "link": "/motiondesk/",
       "image": {
-        "src": "assets/optimized/brand-restaurant-set.jpg",
-        "alt": "Creative Studio brand and website examples"
+        "src": "assets/optimized/motiondesk-screenshot.webp",
+        "alt": ""
       }
     },
     {
       "visible": true,
       "order": 4,
-      "title": "EtsyCalc",
-      "description": "Real utility for Etsy sellers and business decisions.",
-      "buttonLabel": "View Project",
-      "modalKey": "etsycalc",
-      "projectType": "modal-live-site",
-      "image": {
-        "src": "assets/optimized/etsycalc-screenshot.jpg",
-        "alt": "EtsyCalc screenshot"
-      }
-    },
-    {
-      "visible": true,
-      "order": 5,
-      "title": "In the Shadow of a Shnork",
-      "description": "Novel, worldbuilding, artwork and Unity prototype.",
-      "buttonLabel": "View Project",
-      "projectType": "project-page",
-      "link": "/shnork/",
-      "image": {
-        "src": "assets/optimized/shnork-cover.jpg",
-        "alt": "In the Shadow of a Shnork cover artwork"
-      }
-    },
-    {
-      "visible": true,
-      "order": 6,
       "title": "Raskode",
-      "description": "Personal AI development project for learning and automation.",
-      "buttonLabel": "View Project",
-      "projectType": "project-page",
+      "description": "My own AI tooling for automation and memory. A learning project.",
+      "status": "In progress",
+      "statusKind": "early",
       "link": "/raskode/",
       "image": {
         "src": "",
         "alt": ""
       }
-    }
-  ],
-  "modals": {
-    "motiondesk": {
-      "kicker": "Motion Desk",
-      "title": "Creator workspace for organised output.",
-      "image": "assets/optimized/motiondesk-screenshot.jpg",
-      "alt": "Motion Desk interface screenshot",
-      "description": "Motion Desk explores how creators can manage assets, campaign ideas, planning, analytics and release activity in one calmer workspace.",
-      "highlights": [
-        "Asset management and project organisation",
-        "Planning views for campaigns, ideas and releases",
-        "Analytics-led thinking for creative workflow"
-      ],
-      "links": [
-        {
-          "label": "Visit Website",
-          "href": "/motiondesk/"
-        }
-      ]
     },
-    "etsycalc": {
-      "kicker": "EtsyCalc",
-      "title": "Useful tools for real business decisions.",
-      "image": "assets/optimized/etsycalc-screenshot.jpg",
-      "alt": "EtsyCalc interface screenshot",
-      "description": "EtsyCalc is a practical web tool for sellers who need clearer pricing, fee awareness and confidence before listing products.",
-      "highlights": [
-        "Clear utility for a real seller problem",
-        "Pricing, fees and business thinking",
-        "Simple interface designed for repeat use"
-      ],
-      "links": [
-        {
-          "label": "Visit Website",
-          "href": "/etsycalc/"
-        }
-      ]
+    {
+      "visible": true,
+      "order": 5,
+      "title": "Design work",
+      "description": "Branding, menus and websites, including everything on this site.",
+      "status": "Design",
+      "statusKind": "design",
+      "link": "/design/",
+      "image": {
+        "src": "assets/optimized/raskys-cocktail-menu.webp",
+        "alt": ""
+      }
     }
-  }
+  ]
 }
