@@ -1437,6 +1437,71 @@ a.shot:hover img {
 }
 
 /* --------------------------------------------------------------------------
+   Home: quiet "on the side" band (Shnork)
+   -------------------------------------------------------------------------- */
+
+.aside-band {
+  padding: clamp(48px, 6vw, 80px) 0;
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.aside-grid {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 46rem);
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+}
+
+.aside-cover {
+  display: block;
+}
+
+.aside-cover img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 18px 30px -18px rgba(23, 19, 15, 0.55);
+  transition: transform var(--med) var(--ease);
+}
+
+.aside-cover:hover img {
+  transform: rotate(-2deg) translateY(-2px);
+}
+
+.aside-label {
+  margin: 0 0 8px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.aside-band h2 em {
+  font-style: italic;
+  color: #6b5414;
+}
+
+.aside-text {
+  margin: 10px 0 0;
+  color: var(--ink-2);
+  max-width: 40em;
+}
+
+.aside-actions {
+  margin-top: 14px;
+}
+
+@media (max-width: 600px) {
+  .aside-grid {
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Home: about & contact
    -------------------------------------------------------------------------- */
 
