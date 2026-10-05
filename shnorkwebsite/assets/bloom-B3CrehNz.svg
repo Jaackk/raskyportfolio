@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="58%" r="55%"><stop offset="0" stop-color="#3a3416"/><stop offset="1" stop-color="#0a0b07"/></radialGradient>
+    <radialGradient id="c" cx="45%" cy="30%" r="80%"><stop offset="0" stop-color="#fffbea"/><stop offset="1" stop-color="#e3d2a2"/></radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <path d="M30.5 50 C31 42 31.5 36 32.5 31 L35.5 31 C35 36 34.8 42 35.5 50 Z" fill="#e8dcb8"/>
+  <path d="M15 33 C16 21 25 15 34 15 C43 15 51 21 51 31 C51 33 49 34 46 33.5 C38 32 28 32 19 34.5 C16.5 35.2 15 34.5 15 33 Z" fill="url(#c)"/>
+  <path d="M20 51 C20.5 47 20.8 44 21.6 41.5 L23.6 41.5 C23.3 44 23.3 47 23.8 51 Z" fill="#e0d3ad"/>
+  <path d="M13.5 43 C14 37.5 18 35 22.6 35 C27 35 30 38 30 42 C30 43 29 43.4 27.5 43.2 C23 42.6 18.5 42.8 15.5 43.8 C14.2 44.2 13.5 43.8 13.5 43 Z" fill="url(#c)"/>
+  <path d="M42 51 C42.3 48.5 42.6 46.5 43.1 45 L44.6 45 C44.4 46.5 44.4 48.5 44.8 51 Z" fill="#e0d3ad"/>
+  <path d="M37.5 46 C38 42.5 40.5 40.8 43.6 40.8 C46.6 40.8 48.6 42.8 48.6 45.2 C48.6 45.9 47.9 46.2 46.8 46 C44 45.6 41.4 45.7 39.4 46.4 C38.3 46.8 37.5 46.6 37.5 46 Z" fill="url(#c)"/>
+  <ellipse cx="32" cy="51.5" rx="21" ry="2.2" fill="#000" opacity=".35"/>
+</svg>

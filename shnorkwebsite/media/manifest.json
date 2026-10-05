@@ -1,0 +1,471 @@
+{
+ "novel/p07": {
+  "w": 1003,
+  "h": 1444,
+  "sizes": [
+   768,
+   1024,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p11": {
+  "w": 883,
+  "h": 1331,
+  "sizes": [
+   768,
+   1024,
+   1331
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p12": {
+  "w": 997,
+  "h": 1420,
+  "sizes": [
+   768,
+   1024,
+   1420
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p13": {
+  "w": 1009,
+  "h": 1438,
+  "sizes": [
+   768,
+   1024,
+   1438
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p15": {
+  "w": 1016,
+  "h": 1450,
+  "sizes": [
+   768,
+   1024,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p16": {
+  "w": 1007,
+  "h": 1434,
+  "sizes": [
+   768,
+   1024,
+   1434
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p17": {
+  "w": 1005,
+  "h": 1432,
+  "sizes": [
+   768,
+   1024,
+   1432
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p19": {
+  "w": 767,
+  "h": 1095,
+  "sizes": [
+   768,
+   1024,
+   1095
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p21": {
+  "w": 1011,
+  "h": 1440,
+  "sizes": [
+   768,
+   1024,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p29": {
+  "w": 1011,
+  "h": 1440,
+  "sizes": [
+   768,
+   1024,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p35": {
+  "w": 995,
+  "h": 1416,
+  "sizes": [
+   768,
+   1024,
+   1416
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p37": {
+  "w": 773,
+  "h": 1101,
+  "sizes": [
+   768,
+   1024,
+   1101
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p40": {
+  "w": 999,
+  "h": 1423,
+  "sizes": [
+   768,
+   1024,
+   1423
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p43": {
+  "w": 1000,
+  "h": 1424,
+  "sizes": [
+   768,
+   1024,
+   1424
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "novel/p09": {
+  "w": 978,
+  "h": 1394,
+  "sizes": [
+   480,
+   768
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p14": {
+  "w": 1007,
+  "h": 1434,
+  "sizes": [
+   480,
+   768
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p20": {
+  "w": 1005,
+  "h": 1433,
+  "sizes": [
+   480,
+   768
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p24": {
+  "w": 1021,
+  "h": 1456,
+  "sizes": [
+   480,
+   768
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p32": {
+  "w": 1000,
+  "h": 1424,
+  "sizes": [
+   480,
+   768
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p38": {
+  "w": 1003,
+  "h": 1430,
+  "sizes": [
+   480,
+   768
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "novel/p44": {
+  "w": 989,
+  "h": 1410,
+  "sizes": [
+   480,
+   768
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "art/cover": {
+  "w": 695,
+  "h": 1001,
+  "sizes": [
+   640,
+   1001
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false
+ },
+ "game/light": {
+  "w": 3840,
+  "h": 2160,
+  "sizes": [
+   720,
+   1080,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "game/stream": {
+  "w": 3840,
+  "h": 2160,
+  "sizes": [
+   720,
+   1080,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "game/moon": {
+  "w": 3840,
+  "h": 2160,
+  "sizes": [
+   720,
+   1080,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "game/canopy": {
+  "w": 3840,
+  "h": 2160,
+  "sizes": [
+   720,
+   1080,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "game/lane": {
+  "w": 3840,
+  "h": 2160,
+  "sizes": [
+   720,
+   1080,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "game/vista": {
+  "w": 3840,
+  "h": 2160,
+  "sizes": [
+   720,
+   1080,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "game/moon-sky": {
+  "w": 3840,
+  "h": 2160,
+  "sizes": [
+   720,
+   1080,
+   1440
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": true
+ },
+ "seq/walk": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   540,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "seq": {
+   "count": 48,
+   "widths": [
+    1280,
+    854
+   ]
+  }
+ },
+ "seq/crane": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   540,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "seq": {
+   "count": 48,
+   "widths": [
+    1280,
+    854
+   ]
+  }
+ }
+}
