@@ -59,21 +59,6 @@
   ],
   "depth": true
  },
- "novel/p15": {
-  "w": 1016,
-  "h": 1450,
-  "sizes": [
-   768,
-   1024,
-   1440
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": true
- },
  "novel/p16": {
   "w": 1007,
   "h": 1434,
@@ -193,21 +178,6 @@
    "jpg"
   ],
   "depth": false
- },
- "novel/p43": {
-  "w": 1000,
-  "h": 1424,
-  "sizes": [
-   768,
-   1024,
-   1424
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": true
  },
  "novel/p09": {
   "w": 978,
@@ -351,52 +321,7 @@
   ],
   "depth": true
  },
- "game/moon": {
-  "w": 3840,
-  "h": 2160,
-  "sizes": [
-   720,
-   1080,
-   1440
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": true
- },
- "game/canopy": {
-  "w": 3840,
-  "h": 2160,
-  "sizes": [
-   720,
-   1080,
-   1440
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": true
- },
  "game/lane": {
-  "w": 3840,
-  "h": 2160,
-  "sizes": [
-   720,
-   1080,
-   1440
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": true
- },
- "game/vista": {
   "w": 3840,
   "h": 2160,
   "sizes": [
@@ -426,11 +351,11 @@
   ],
   "depth": true
  },
- "seq/walk": {
+ "vid/walk": {
   "w": 1920,
   "h": 1080,
   "sizes": [
-   540,
+   720,
    1080
   ],
   "formats": [
@@ -439,19 +364,17 @@
    "jpg"
   ],
   "depth": false,
-  "seq": {
-   "count": 48,
-   "widths": [
-    1280,
-    854
-   ]
-  }
+  "video": {
+   "large": "vid/walk-1080.mp4",
+   "small": "vid/walk-720.mp4"
+  },
+  "seconds": 10
  },
- "seq/crane": {
+ "vid/floor": {
   "w": 1920,
   "h": 1080,
   "sizes": [
-   540,
+   720,
    1080
   ],
   "formats": [
@@ -460,12 +383,139 @@
    "jpg"
   ],
   "depth": false,
-  "seq": {
-   "count": 48,
-   "widths": [
-    1280,
-    854
-   ]
-  }
+  "video": {
+   "large": "vid/floor-1080.mp4",
+   "small": "vid/floor-720.mp4"
+  },
+  "seconds": 6.83
+ },
+ "vid/stream": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/stream-1080.mp4",
+   "small": "vid/stream-720.mp4"
+  },
+  "seconds": 8
+ },
+ "vid/falls": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/falls-1080.mp4",
+   "small": "vid/falls-720.mp4"
+  },
+  "seconds": 8
+ },
+ "vid/river": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/river-1080.mp4",
+   "small": "vid/river-720.mp4"
+  },
+  "seconds": 6.83
+ },
+ "vid/night": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/night-1080.mp4",
+   "small": "vid/night-720.mp4"
+  },
+  "seconds": 10
+ },
+ "vid/crane": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/crane-1080.mp4",
+   "small": "vid/crane-720.mp4"
+  },
+  "seconds": 10
+ },
+ "vid/canopy": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/canopy-1080.mp4",
+   "small": "vid/canopy-720.mp4"
+  },
+  "seconds": 8
+ },
+ "pano/glade": {
+  "w": 4096,
+  "h": 2048,
+  "sizes": [
+   1024,
+   2048
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "pano": true
  }
 }
