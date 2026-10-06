@@ -370,25 +370,6 @@
   },
   "seconds": 10
  },
- "vid/floor": {
-  "w": 1920,
-  "h": 1080,
-  "sizes": [
-   720,
-   1080
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": false,
-  "video": {
-   "large": "vid/floor-1080.mp4",
-   "small": "vid/floor-720.mp4"
-  },
-  "seconds": 6.83
- },
  "vid/stream": {
   "w": 1920,
   "h": 1080,
@@ -407,44 +388,6 @@
    "small": "vid/stream-720.mp4"
   },
   "seconds": 8
- },
- "vid/falls": {
-  "w": 1920,
-  "h": 1080,
-  "sizes": [
-   720,
-   1080
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": false,
-  "video": {
-   "large": "vid/falls-1080.mp4",
-   "small": "vid/falls-720.mp4"
-  },
-  "seconds": 8
- },
- "vid/river": {
-  "w": 1920,
-  "h": 1080,
-  "sizes": [
-   720,
-   1080
-  ],
-  "formats": [
-   "avif",
-   "webp",
-   "jpg"
-  ],
-  "depth": false,
-  "video": {
-   "large": "vid/river-1080.mp4",
-   "small": "vid/river-720.mp4"
-  },
-  "seconds": 6.83
  },
  "vid/night": {
   "w": 1920,
@@ -465,7 +408,7 @@
   },
   "seconds": 10
  },
- "vid/crane": {
+ "vid/run-spawn": {
   "w": 1920,
   "h": 1080,
   "sizes": [
@@ -479,12 +422,12 @@
   ],
   "depth": false,
   "video": {
-   "large": "vid/crane-1080.mp4",
-   "small": "vid/crane-720.mp4"
+   "large": "vid/run-spawn-1080.mp4",
+   "small": "vid/run-spawn-720.mp4"
   },
-  "seconds": 10
+  "seconds": 5.52
  },
- "vid/canopy": {
+ "vid/run-north": {
   "w": 1920,
   "h": 1080,
   "sizes": [
@@ -498,10 +441,48 @@
   ],
   "depth": false,
   "video": {
-   "large": "vid/canopy-1080.mp4",
-   "small": "vid/canopy-720.mp4"
+   "large": "vid/run-north-1080.mp4",
+   "small": "vid/run-north-720.mp4"
   },
-  "seconds": 8
+  "seconds": 3.6
+ },
+ "vid/run-fungus": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/run-fungus-1080.mp4",
+   "small": "vid/run-fungus-720.mp4"
+  },
+  "seconds": 8.1
+ },
+ "vid/walk-bank": {
+  "w": 1920,
+  "h": 1080,
+  "sizes": [
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp",
+   "jpg"
+  ],
+  "depth": false,
+  "video": {
+   "large": "vid/walk-bank-1080.mp4",
+   "small": "vid/walk-bank-720.mp4"
+  },
+  "seconds": 6.68
  },
  "pano/glade": {
   "w": 4096,
