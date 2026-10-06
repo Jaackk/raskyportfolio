@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>In the Shadow of a Shnork — the novel and the game</title>
+    <meta name="description" content="A forgotten past. A rising force. A truth buried in the dark. An illustrated novel, and a game set in its forest, being built so you can walk into it.">
+    <meta name="theme-color" content="#0a0b07">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="In the Shadow of a Shnork — the novel and the game">
+    <meta property="og:description" content="A forgotten past. A rising force. A truth buried in the dark. An illustrated novel, and a game set in its forest, being built so you can walk into it.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://raskyjack.com/shnorkgame/">
+    <meta property="og:url" content="https://raskyjack.com/shnorkgame/">
+    <meta property="og:image" content="https://raskyjack.com/shnorkgame/og/journey.jpg">
+    <meta name="twitter:image" content="https://raskyjack.com/shnorkgame/og/journey.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Book","name":"In the Shadow of a Shnork","description":"In a land haunted by echoes of its own wildness, one creature awakens to memories not fully his own. Born from shadow, shaped by mystery, he must uncover what lies between beast and hero… before the dark returns.","inLanguage":"en","url":"https://raskyjack.com/shnorkgame/novel/"},{"@type":"VideoGame","name":"In the Shadow of a Shnork","description":"The game is the forest of the book, built to be walked through. The current private build covers the first chapters: waking in the moss, hunger, the stream and the gouges, building a nest, the silent night and the chase, the scrap of hide, the Others — and the first offering.","url":"https://raskyjack.com/shnorkgame/game/"}]}</script>
+    <script>
+      // Choose the experience before first paint: cinematic (WebGL2, motion allowed) or pages.
+      (function () {
+        var d = document.documentElement, m = null, gl = false
+        try { m = localStorage.getItem('shnork-mode') } catch (e) {}
+        var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches
+        try { gl = !!document.createElement('canvas').getContext('webgl2') } catch (e) {}
+        var cinematic = gl && m !== 'static' && (!rm || m === 'cinematic')
+        d.classList.remove('no-js')
+        d.classList.add(cinematic ? 'cinematic' : 'static')
+      })()
+    </script>
+    <script type="module" crossorigin src="./assets/index-DU1bsP6w.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/analytics-DmG8i-fe.js">
+    <link rel="stylesheet" crossorigin href="./assets/analytics-N-2P5LwU.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-aQJ-3ilF.css">
+  </head>
+  <body>
+    <a class="skip" href="./novel/">Skip the journey — go to the novel</a>
+    <canvas id="stage" aria-hidden="true"></canvas>
+    <div class="veil" aria-hidden="true"></div>
+
+    <header class="chrome">
+      <a class="wordmark" href="./#awakening" data-nav="awakening" aria-label="In the Shadow of a Shnork — back to the beginning">In the Shadow of a Shnork</a>
+      <div class="controls">
+        <button id="sound" class="ui-btn sound" type="button" aria-pressed="false"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="label">Sound off</span></button>
+        <button id="menu-open" class="ui-btn" type="button" aria-expanded="false" aria-controls="menu">Contents</button>
+      </div>
+    </header>
+    <div id="rail" class="rail" aria-hidden="true"><span class="line"><span class="fill"></span></span></div>
+    <div class="opening-ui" aria-label="Start">
+      <button class="play-big" type="button" data-film-play><span class="tri" aria-hidden="true"></span><span class="pl">Play</span><span class="sub">the whole journey · about three minutes · sound on</span></button>
+      <p class="or">or scroll to explore it yourself</p>
+    </div>
+    <div id="film-bar" class="film-bar" aria-label="Film controls">
+      <button class="ui-btn film-toggle" type="button" data-film-play><span class="when-playing">Pause</span><span class="when-paused">Resume</span></button>
+      <span class="film-line" aria-hidden="true"><span class="fill"></span></span>
+      <button id="film-exit" class="ui-btn" type="button">Explore freely</button>
+    </div>
+    <button id="replay" class="ui-btn replay" type="button" hidden>Hear this line again</button>
+
+    <main id="journey">
+      <div class="track" aria-hidden="true"></div>
+<div class="layer">
+<section class="scene" data-scene="awakening" id="awakening">
+<figure class="still" style="--ar:1.333;--py:16.2%"><picture><source type="image/avif" data-srcset="./media/novel/p11-768.avif 509w, ./media/novel/p11-1024.avif 679w, ./media/novel/p11-1331.avif 883w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p11-768.webp 509w, ./media/novel/p11-1024.webp 679w, ./media/novel/p11-1331.webp 883w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p11-1331.jpg" alt="Painted forest at first light, sun falling in shafts between the trunks." width="883" height="1331" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p11-1331.jpg" alt="Painted forest at first light, sun falling in shafts between the trunks." width="883" height="1331"></noscript></figure><div class="beats"><p class="beat k-whisper p-c m-c" data-a="0" data-b="0.14" data-pos="c" data-m="c" data-kind="whisper" data-cue="awakening-01">“I have to ask… how did you find your way here?”</p>
+<p class="beat k-prose p-c m-c" data-a="0.18" data-b="0.32" data-pos="c" data-m="c" data-kind="prose" data-cue="awakening-02">At first, just the feeling of being held, somewhere between waking and not.</p>
+<p class="beat k-big p-c m-c" data-a="0.33" data-b="0.42" data-pos="c" data-m="c" data-kind="big" data-cue="awakening-03">Then, breath.</p>
+<p class="beat k-line p-bl m-b" data-a="0.42" data-b="0.6" data-pos="bl" data-m="b" data-kind="line" data-cue="awakening-04">I blinked.<span class="w" data-at="0.47"> Once.</span><span class="w" data-at="0.53"> Twice.</span></p>
+<p class="beat k-big p-lc m-b" data-a="0.8" data-b="0.99" data-pos="lc" data-m="b" data-kind="big" data-cue="awakening-05">“What am I?”</p></div>
+</section>
+<section class="scene" data-scene="title">
+<figure class="still" style="--ar:1.333;--py:12.4%"><picture><source type="image/avif" data-srcset="./media/novel/p07-768.avif 533w, ./media/novel/p07-1024.avif 711w, ./media/novel/p07-1440.avif 1000w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p07-768.webp 533w, ./media/novel/p07-1024.webp 711w, ./media/novel/p07-1440.webp 1000w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p07-1440.jpg" alt="A golden trail of light rising through a painted forest." width="1003" height="1444" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p07-1440.jpg" alt="A golden trail of light rising through a painted forest." width="1003" height="1444"></noscript></figure><div class="beats"><h1 class="beat k-title p-c m-c" data-a="0.1" data-b="0.94" data-pos="c" data-m="c" data-kind="title"><span class="t1">In the Shadow</span> <span class="t2">of a</span> <span class="t3">Shnork</span></h1>
+<p class="beat k-note p-c m-c" data-a="0.4" data-b="0.92" data-pos="c" data-m="c" data-kind="note">A forgotten past. A rising force. A truth buried in the dark.</p></div>
+</section>
+<section class="scene" data-scene="forest" id="forest">
+<figure class="still" style="--ar:1.333;--py:50.0%"><picture><source type="image/avif" data-srcset="./media/novel/p13-768.avif 539w, ./media/novel/p13-1024.avif 719w, ./media/novel/p13-1438.avif 1009w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p13-768.webp 539w, ./media/novel/p13-1024.webp 719w, ./media/novel/p13-1438.webp 1009w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p13-1438.jpg" alt="A painted path of moss and light between ancient trees." width="1009" height="1438" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p13-1438.jpg" alt="A painted path of moss and light between ancient trees." width="1009" height="1438"></noscript></figure><div class="beats"><p class="beat k-line p-c m-b" data-a="0.04" data-b="0.26" data-pos="c" data-m="b" data-kind="line" data-cue="forest-01">I took my first step.</p>
+<p class="beat k-line p-l m-t" data-a="0.38" data-b="0.64" data-pos="l" data-m="t" data-kind="line">The book was the story.<br><em>This is the forest.</em></p>
+<p class="beat k-prose p-r m-b" data-a="0.7" data-b="0.96" data-pos="r" data-m="b" data-kind="prose" data-cue="forest-03">The forest had no paths—only choices.</p></div><figure class="still"><picture><source type="image/avif" data-srcset="./media/vid/gp-north-720.avif 1280w, ./media/vid/gp-north-1080.avif 1920w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/vid/gp-north-720.webp 1280w, ./media/vid/gp-north-1080.webp 1920w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/vid/gp-north-1080.jpg" alt="Game footage: running north out of the first glade, past boulders, mushrooms and a shaft of sun." width="2560" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/vid/gp-north-1080.jpg" alt="Game footage: running north out of the first glade, past boulders, mushrooms and a shaft of sun." width="2560" height="1440"></noscript></figure>
+</section>
+<section class="scene" data-scene="floor">
+<figure class="still"><picture><source type="image/avif" data-srcset="./media/vid/eye-west-720.avif 1280w, ./media/vid/eye-west-1080.avif 1920w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/vid/eye-west-720.webp 1280w, ./media/vid/eye-west-1080.webp 1920w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/vid/eye-west-1080.jpg" alt="In the game: running west through the woods at eye level, past boulders and mushrooms." width="2560" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/vid/eye-west-1080.jpg" alt="In the game: running west through the woods at eye level, past boulders and mushrooms." width="2560" height="1440"></noscript></figure><div class="beats"><p class="beat k-prose p-tl m-t" data-a="0.1" data-b="0.9" data-pos="tl" data-m="t" data-kind="prose" data-cue="floor-01">A beetle scurried nearby. A cluster of mushrooms swayed in the shadows of a log.</p></div>
+</section>
+<section class="scene" data-scene="look" id="look">
+<figure class="still pano"><picture><source type="image/avif" data-srcset="./media/pano/mushrooms-1024.avif 2048w, ./media/pano/mushrooms-2048.avif 4096w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/pano/mushrooms-1024.webp 2048w, ./media/pano/mushrooms-2048.webp 4096w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/pano/mushrooms-2048.jpg" alt="In the game: a 360° view of the mushroom patch — a fallen log, ferns, boulders and old stone; drag to look around." width="4096" height="2048" loading="lazy" decoding="async"></picture><noscript><img src="./media/pano/mushrooms-2048.jpg" alt="In the game: a 360° view of the mushroom patch — a fallen log, ferns, boulders and old stone; drag to look around." width="4096" height="2048"></noscript></figure><div class="beats"><p class="beat k-prose p-tl m-t" data-a="0.08" data-b="0.5" data-pos="tl" data-m="t" data-kind="prose" data-cue="look-01">Just wilderness, stretched out in every direction, uncaring and untouched.</p>
+<p class="beat k-play p-b m-b" data-a="0.12" data-b="0.86" data-pos="b" data-m="b" data-kind="play" data-touch="Swipe sideways to look around" aria-hidden="true">Drag to look around</p></div>
+</section>
+<section class="scene" data-scene="river">
+<figure class="still"><picture><source type="image/avif" data-srcset="./media/vid/gp-upstream-720.avif 1280w, ./media/vid/gp-upstream-1080.avif 1920w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/vid/gp-upstream-720.webp 1280w, ./media/vid/gp-upstream-1080.webp 1920w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/vid/gp-upstream-1080.jpg" alt="Game footage: walking upstream along the bank to the drinking place." width="2560" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/vid/gp-upstream-1080.jpg" alt="Game footage: walking upstream along the bank to the drinking place." width="2560" height="1440"></noscript></figure><div class="beats"><p class="beat k-prose p-tl m-t" data-a="0.1" data-b="0.9" data-pos="tl" data-m="t" data-kind="prose" data-cue="river-01">I moved toward the sound of trickling water, faint and erratic, like the forest couldn’t decide if it wanted to hide the stream or reveal it.</p></div>
+</section>
+<section class="scene" data-scene="stream" id="stream">
+<figure class="still"><picture><source type="image/avif" data-srcset="./media/vid/gp-south-720.avif 1280w, ./media/vid/gp-south-1080.avif 1920w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/vid/gp-south-720.webp 1280w, ./media/vid/gp-south-1080.webp 1920w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/vid/gp-south-1080.jpg" alt="Game footage: running along the southern stream past a cluster of mushrooms." width="2560" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/vid/gp-south-1080.jpg" alt="Game footage: running along the southern stream past a cluster of mushrooms." width="2560" height="1440"></noscript></figure><div class="beats"><p class="beat k-prose p-tr m-b" data-a="0.12" data-b="0.88" data-pos="tr" data-m="b" data-kind="prose" data-cue="stream-01">…cold water filling the hollow place in my chest.</p></div>
+</section>
+<section class="scene" data-scene="marks">
+<figure class="still" style="--ar:1.333;--py:33.1%"><picture><source type="image/avif" data-srcset="./media/novel/p16-768.avif 539w, ./media/novel/p16-1024.avif 719w, ./media/novel/p16-1434.avif 1007w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p16-768.webp 539w, ./media/novel/p16-1024.webp 719w, ./media/novel/p16-1434.webp 1007w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p16-1434.jpg" alt="Three long gouges torn into a tree beside the stream. Far down the path, something stands in the dark." width="1007" height="1434" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p16-1434.jpg" alt="Three long gouges torn into a tree beside the stream. Far down the path, something stands in the dark." width="1007" height="1434"></noscript></figure><div class="beats"><p class="beat k-line p-l m-b" data-a="0.06" data-b="0.46" data-pos="l" data-m="b" data-kind="line" data-cue="marks-01">…three gouges, long and clean. Not random.</p>
+<p class="beat k-prose p-l m-b" data-a="0.56" data-b="0.94" data-pos="l" data-m="b" data-kind="prose" data-cue="marks-02">Something that knew these woods better. Something that watched.</p></div>
+</section>
+<section class="scene" data-scene="night" id="night">
+<figure class="still"><picture><source type="image/avif" data-srcset="./media/vid/gp-night-720.avif 1280w, ./media/vid/gp-night-1080.avif 1920w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/vid/gp-night-720.webp 1280w, ./media/vid/gp-night-1080.webp 1920w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/vid/gp-night-1080.jpg" alt="Game footage at night: walking through the woods east of the stream; light falls only where you look." width="2560" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/vid/gp-night-1080.jpg" alt="Game footage at night: walking through the woods east of the stream; light falls only where you look." width="2560" height="1440"></noscript></figure><div class="beats"><p class="beat k-prose p-tl m-t" data-a="0.06" data-b="0.34" data-pos="tl" data-m="t" data-kind="prose" data-cue="night-01">Stars blinked between the leaves.</p>
+<p class="beat k-play p-b m-b" data-a="0.18" data-b="0.62" data-pos="b" data-m="b" data-kind="play" data-touch="Touch to look" aria-hidden="true">Move to look · click to wake the fireflies</p>
+<p class="beat k-prose p-tl m-t" data-a="0.36" data-b="0.56" data-pos="tl" data-m="t" data-kind="prose" data-sfx="howl" data-cue="night-03">A distant howl echoed through the trees.</p>
+<p class="beat k-big p-c m-c" data-a="0.64" data-b="0.97" data-pos="c" data-m="c" data-kind="big" data-cue="night-04">And everything inside it had teeth.</p></div>
+</section>
+<section class="scene" data-scene="silence" id="silence">
+<figure class="still" style="--ar:1.401;--py:0.0%"><picture><source type="image/avif" data-srcset="./media/novel/p19-768.avif 538w, ./media/novel/p19-1024.avif 717w, ./media/novel/p19-1095.avif 767w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p19-768.webp 538w, ./media/novel/p19-1024.webp 717w, ./media/novel/p19-1095.webp 767w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p19-1095.jpg" alt="Total darkness. Two burning red eyes." width="767" height="1095" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p19-1095.jpg" alt="Total darkness. Two burning red eyes." width="767" height="1095"></noscript></figure><div class="beats"><p class="beat k-prose p-c m-c" data-a="0.06" data-b="0.26" data-pos="c" data-m="c" data-kind="prose" data-cue="silence-01">No sound. No wind. The forest had stopped breathing.</p>
+<p class="beat k-stac p-l m-b" data-a="0.32" data-b="0.41" data-pos="l" data-m="b" data-kind="stac" data-sfx="snap" data-cue="silence-02">Snap. A branch.</p>
+<p class="beat k-stac p-r m-b" data-a="0.42" data-b="0.52" data-pos="r" data-m="b" data-kind="stac" data-sfx="snap2" data-cue="silence-03">Another. Closer.</p>
+<p class="beat k-line p-bl m-b" data-a="0.6" data-b="0.78" data-pos="bl" data-m="b" data-kind="line" data-sfx="growl" data-cue="silence-04">Eyes burning red.</p>
+<p class="beat k-caps p-c m-c" data-a="0.84" data-b="0.99" data-pos="c" data-m="c" data-kind="caps" data-sfx="roar" data-cue="silence-05">Then it charged.</p></div>
+</section>
+<section class="scene" data-scene="hunt">
+<figure class="still" style="--ar:1.333;--py:14.1%"><picture><source type="image/avif" data-srcset="./media/novel/p21-768.avif 539w, ./media/novel/p21-1024.avif 719w, ./media/novel/p21-1440.avif 1011w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p21-768.webp 539w, ./media/novel/p21-1024.webp 719w, ./media/novel/p21-1440.webp 1011w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p21-1440.jpg" alt="A huge dark beast lunges through the trees at a small figure scrambling below it." width="1011" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p21-1440.jpg" alt="A huge dark beast lunges through the trees at a small figure scrambling below it." width="1011" height="1440"></noscript></figure><div class="beats"><p class="beat k-stac p-l m-t" data-a="0.02" data-b="0.3" data-pos="l" data-m="t" data-kind="stac" data-sfx="step" data-cue="hunt-01">It was fast.</p>
+<p class="beat k-line p-r m-t" data-a="0.3" data-b="0.6" data-pos="r" data-m="t" data-kind="line" data-cue="hunt-02">It was hunting me.</p>
+<p class="beat k-big p-c m-c" data-a="0.68" data-b="0.99" data-pos="c" data-m="c" data-kind="big" data-cue="hunt-03">Can you survive?</p></div>
+</section>
+<section class="scene" data-scene="others" id="others">
+<figure class="still" style="--ar:1.333;--py:37.3%"><picture><source type="image/avif" data-srcset="./media/novel/p29-768.avif 539w, ./media/novel/p29-1024.avif 719w, ./media/novel/p29-1440.avif 1011w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p29-768.webp 539w, ./media/novel/p29-1024.webp 719w, ./media/novel/p29-1440.webp 1011w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p29-1440.jpg" alt="A clearing full of pale, wrinkled, pig-snouted creatures — squatting, sniffing, staring at nothing." width="1011" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p29-1440.jpg" alt="A clearing full of pale, wrinkled, pig-snouted creatures — squatting, sniffing, staring at nothing." width="1011" height="1440"></noscript></figure><div class="beats"><p class="beat k-prose p-l m-t" data-a="0.05" data-b="0.3" data-pos="l" data-m="t" data-kind="prose" data-sfx="grunt" data-cue="others-01">There was something else in this forest.</p>
+<p class="beat k-stac p-l m-t" data-a="0.36" data-b="0.58" data-pos="l" data-m="t" data-kind="stac" data-sfx="murmur" data-cue="others-02">Three.<span class="w" data-at="0.43"> Four.</span><span class="w" data-at="0.5"> Five.</span></p>
+<p class="beat k-big p-lc m-b" data-a="0.66" data-b="0.97" data-pos="lc" data-m="b" data-kind="big" data-cue="others-03">They didn’t live.<br>They lasted.</p></div>
+</section>
+<section class="scene" data-scene="bloom" id="bloom">
+<figure class="still" style="--ar:1.405;--py:22.0%"><picture><source type="image/avif" data-srcset="./media/novel/p35-768.avif 540w, ./media/novel/p35-1024.avif 720w, ./media/novel/p35-1416.avif 995w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p35-768.webp 540w, ./media/novel/p35-1024.webp 720w, ./media/novel/p35-1416.webp 995w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p35-1416.jpg" alt="A large green hand cradles a small cluster of pale, softly glowing mushrooms." width="995" height="1416" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p35-1416.jpg" alt="A large green hand cradles a small cluster of pale, softly glowing mushrooms." width="995" height="1416"></noscript></figure><div class="beats"><p class="beat k-line p-l m-t" data-a="0.06" data-b="0.4" data-pos="l" data-m="t" data-kind="line" data-cue="bloom-01">Pale. Soft. Almost glowing.</p>
+<p class="beat k-play p-b m-b" data-a="0.24" data-b="0.8" data-pos="b" data-m="b" data-kind="play" data-touch="Tap the bloom" aria-hidden="true">Touch the bloom</p>
+<p class="beat k-whisper p-l m-t" data-a="0.46" data-b="0.7" data-pos="l" data-m="t" data-kind="whisper" data-cue="bloom-03">The forest’s fruit.</p>
+<p class="beat k-whisper p-lc m-t" data-a="0.74" data-b="0.98" data-pos="lc" data-m="t" data-kind="whisper" data-cue="bloom-04">“Let this be enough,” I whispered.</p></div>
+</section>
+<section class="scene" data-scene="awake">
+<figure class="still" style="--ar:1.404;--py:6.0%"><picture><source type="image/avif" data-srcset="./media/novel/p37-768.avif 539w, ./media/novel/p37-1024.avif 719w, ./media/novel/p37-1101.avif 773w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/novel/p37-768.webp 539w, ./media/novel/p37-1024.webp 719w, ./media/novel/p37-1101.webp 773w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/novel/p37-1101.jpg" alt="A small creature sits upright in a column of light, hand on its chest, looking up at the sky." width="773" height="1101" loading="lazy" decoding="async"></picture><noscript><img src="./media/novel/p37-1101.jpg" alt="A small creature sits upright in a column of light, hand on its chest, looking up at the sky." width="773" height="1101"></noscript></figure><div class="beats"><p class="beat k-line p-r m-t" data-a="0.08" data-b="0.5" data-pos="r" data-m="t" data-kind="line" data-cue="awake-01">It just looked upward.<br>Toward the sky.</p>
+<p class="beat k-big p-rc m-b" data-a="0.58" data-b="0.97" data-pos="rc" data-m="b" data-kind="big" data-cue="awake-02">And in that moment, I knew I wasn’t alone.</p></div>
+</section>
+<section class="scene kind-world" data-scene="world" id="world">
+<figure class="still"><picture><source type="image/avif" data-srcset="./media/vid/gp-glade-720.avif 1280w, ./media/vid/gp-glade-1080.avif 1920w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/vid/gp-glade-720.webp 1280w, ./media/vid/gp-glade-1080.webp 1920w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/vid/gp-glade-1080.jpg" alt="Game footage: running past orange mushrooms and boulders to the mushrooms by the stream." width="2560" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/vid/gp-glade-1080.jpg" alt="Game footage: running past orange mushrooms and boulders to the mushrooms by the stream." width="2560" height="1440"></noscript></figure><div class="beats"><p class="beat k-line p-c m-c" data-a="0.06" data-b="0.34" data-pos="c" data-m="c" data-kind="line">The story became a world.</p>
+<h2 class="beat k-wordmark p-c m-c" data-a="0.42" data-b="1" data-pos="c" data-m="c" data-kind="wordmark">The game</h2>
+<p class="beat k-note p-c m-c" data-a="0.52" data-b="1" data-pos="c" data-m="c" data-kind="note">A world you can walk into · In development</p></div>
+</section>
+<section class="scene kind-end" data-scene="doors" id="doors">
+<figure class="still"><picture><source type="image/avif" data-srcset="./media/vid/eye-sw-720.avif 1280w, ./media/vid/eye-sw-1080.avif 1920w" sizes="(max-width: 900px) 100vw, 60vw"><source type="image/webp" data-srcset="./media/vid/eye-sw-720.webp 1280w, ./media/vid/eye-sw-1080.webp 1920w" sizes="(max-width: 900px) 100vw, 60vw"><img data-src="./media/vid/eye-sw-1080.jpg" alt="In the game: walking on into the woods south-west of the glade, at eye level." width="2560" height="1440" loading="lazy" decoding="async"></picture><noscript><img src="./media/vid/eye-sw-1080.jpg" alt="In the game: walking on into the woods south-west of the glade, at eye level." width="2560" height="1440"></noscript></figure><div class="beats"></div><nav class="doors" aria-label="Where next">
+  <a class="door" href="./novel/" data-track="novel_clicked"><span class="eyebrow">The novel</span><span class="name">In the Shadow of a Shnork</span><span class="more">Read the beginning</span></a>
+  <a class="door" href="./game/" data-track="game_clicked"><span class="eyebrow">The game</span><span class="name">Walk into the forest</span><span class="more">In development — step inside</span></a>
+  <footer class="foot"><p>© 2026 In the Shadow of a Shnork. All rights reserved.</p><p><a href="./credits/">Credits &amp; licences</a></p></footer>
+</nav>
+</section>
+</div>
+    </main>
+    <div id="menu" class="menu" role="dialog" aria-modal="true" aria-label="Contents" hidden>
+  <button id="menu-close" class="ui-btn close" type="button">Close</button>
+  <div class="menu-in">
+    <div class="col">
+      <p class="eyebrow">The journey</p>
+      <ol class="chapters"><li><a href="./#awakening" data-nav="awakening"><span class="num">01</span><span class="t">Awakening</span></a></li><li><a href="./#forest" data-nav="forest"><span class="num">02</span><span class="t">Into the forest</span></a></li><li><a href="./#look" data-nav="look"><span class="num">03</span><span class="t">Look around</span></a></li><li><a href="./#stream" data-nav="stream"><span class="num">04</span><span class="t">The stream</span></a></li><li><a href="./#night" data-nav="night"><span class="num">05</span><span class="t">Night</span></a></li><li><a href="./#silence" data-nav="silence"><span class="num">06</span><span class="t">Silence</span></a></li><li><a href="./#others" data-nav="others"><span class="num">07</span><span class="t">The Others</span></a></li><li><a href="./#bloom" data-nav="bloom"><span class="num">08</span><span class="t">The Pale Bloom</span></a></li><li><a href="./#world" data-nav="world"><span class="num">09</span><span class="t">The game</span></a></li><li><a href="./#doors" data-nav="doors"><span class="num">10</span><span class="t">Where next</span></a></li></ol>
+    </div>
+    <div class="col">
+      <p class="eyebrow">Pages</p>
+      <ul class="pages">
+        <li><a href="./novel/">The Novel</a></li>
+        <li><a href="./novel/#opening">Read the opening</a></li>
+        <li><a href="./game/">The Game</a></li>
+        <li><a href="./credits/">Credits &amp; licences</a></li>
+      </ul>
+      <button id="mode-toggle" class="ui-btn mode" type="button">Read as pages (reduced motion)</button>
+    </div>
+  </div>
+</div>
+  </body>
+</html>

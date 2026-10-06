@@ -349,6 +349,18 @@ h2 + .lede {
   margin-top: 2rem;
 }
 
+/* buttons one under the other (Shnork hero: read the chapters, then the game) */
+.actions--stack {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+  .actions--stack {
+    align-items: stretch;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Header & navigation
    -------------------------------------------------------------------------- */
