@@ -1,37 +1,37 @@
-# Rockwater disciplinary meeting reference
+# RWDEF disciplinary defence
 
-A static, local-first meeting workspace at https://raskyjack.com/rwdef/ .
+Open https://raskyjack.com/rwdef/ . Five screens: Defend me, My case, If they say, Notes and Sources. The private interface supports the employee’s strongest truthful position; only Source view is intended for management.
 
-## Open
+## Fast meeting flow
 
-Visit the URL once online, wait for “Offline reference ready”, and export a JSON backup before the meeting. All entered case information stays in this browser profile. The app has no account, AI service, analytics, telemetry, microphone or recording.
+Tap What do I say, then a claim. Seven common claims are immediate buttons; 55 scenarios are searchable offline. The response shows SAY and ASK. WHY expands the source and a private warning. Show source replaces private content; Return to defence restores the response. Ctrl+K opens response search; Ctrl+Shift+S opens neutral sources; Escape closes a dialog.
 
-For a separate local copy, download this repository, open this directory and run `START-DEFENCE-TOOL.cmd` (Python 3 required). Open http://localhost:4298/ . `BUILD.cmd` validates the JavaScript using Node; there is no compilation or package installation. These files are the production build. The standalone `disciplinary-quick-reference.html` also opens directly without a server or JavaScript.
+My case keeps accepted facts, disputed points, missing explanations and mitigation together. Expand Update what is established to record the identified incident and factual assessments. An employer allegation alone does not establish a fact. Evidence-supported states need a reference. These entries drive a deterministic five-stage position guide, not an automated legal finding or winning percentage. Stronger evidence changes the recommended emphasis. A denial of intoxication appears only if the incident is identified and the user disputes intoxication; accepted facts are not contradicted by suggestions.
 
-## During the hearing
+Procedure problem gives a sentence, source and timestamp action. Notes has an autosaving field and eight event categories. Before they come back collects the current risk, argument, unanswered questions and unsaid mitigation. Help me close produces a short statement from the recorded position. Outcome and appeal remain contextual. A written appeal is due within five working days of the decision under the handbook; record and confirm the actual deadline, including bank holidays. This is not a tribunal deadline.
 
-Use the dashboard for the allegation, key provisions, quick responses and a timestamped event. Ctrl+K searches the complete public source corpus. Ctrl+Shift+S immediately switches to the neutral view. Escape closes a drawer. Source cards can open directly in neutral share view.
+## iPhone
 
-“Share screen” replaces the private interface and persists through a refresh in the same tab. Only source wording, official guidance and meeting facts you explicitly selected appear there. Selected facts retain their status and source. Private notes, evidence notes, comparators, draft appeals and preparation do not render in share mode. Return to the private workspace deliberately. The neutral view is a presentation aid, not an access password or encryption.
+Use the bottom five-tab navigation. Large touch targets and 16px form text avoid involuntary input zoom. The top ellipsis opens backups and more. Source view removes private navigation, strategy, notes and warnings. The layout was checked using the iPhone 13 WebKit profile, not a physical iPhone.
 
-Record sources and positions separately. Employee acceptance is not treated as agreement by both. Produced evidence is distinct from an allegation about evidence. Checklists default to not confirmed, not a finding of breach. Drafts use selected or entered information and never submit anything. Click Update draft/summary after editing generated workspaces.
+Open once online before relying on offline use. Wait for offline readiness in Backup & more. Browser storage can be removed by private browsing, storage clearing or device policies; keep a JSON backup and original files separately.
 
-## Saving, backup and printing
+## Local data and preservation
 
-Fields autosave in localStorage. Original files attached in Backup & sources stay in IndexedDB; no file is uploaded. JSON backup contains the case and event audit, but not attached original binary files. Keep originals separately. Import validates the data and requires a deliberate restore action before replacing the case. Browser storage and JSON backups are not encrypted. Protect your device and backup files.
+The existing rwdef.case.v1 storage key is preserved. New defence fields are additive. Earlier evidence, facts, mitigation, notes, events, attachments and other fields are retained in backups. The earlier case record is readable underneath My case. Old fields are not silently converted into new admissions or assessments.
 
-Private summary and notes can export to text. Print the current view or choose Save as PDF in the browser. Neutral printing only includes what is permitted in the neutral view. The quick-reference HTML is a separate clean source pack. Clear data removes this app’s case and original-file storage after a typed confirmation.
+Backup & more exports and restores JSON with a deliberate replacement action. Original attachments remain in the existing IndexedDB store, never uploaded. They are excluded from JSON backup. TXT export and private printing include the meeting record. Neutral printing contains only sources. Clear case requires typed confirmation and clears this app’s case and original-file storage.
 
-## Sources and limits
+No runtime AI, analytics, telemetry, microphone, recording or cloud note storage. The website and policy corpus are public. Entered records are browser-local and not encrypted; this is not authenticated confidential hosting. Other code on the same origin, extensions or access to the device are outside this privacy boundary. Use a localhost copy for a separate origin if preferred.
 
-All four supplied employment documents were read. The public corpus excludes personal contact details, pay, signatures and e-sign audit records. PDF page locators reflect source pages; DOCX uses stable paragraph locations rather than fabricated pages. Some handbook template placeholders are unresolved in the supplied document and remain visible. The handbook’s statements about legislation are historical documentary wording, not independent verification of current law; use ACAS & law for checked official references.
+## Sources
 
-Official Great Britain legal references were checked on 7 October 2026. These are dated information, not automated legal advice. Northern Ireland has a separate regime. Check linked official sources for later changes, individual eligibility and deadlines. The appeal date helper excludes weekends only: verify the handbook’s trigger date, bank holidays and the communicated deadline. It is not a tribunal deadline.
+All four originals were freshly extracted again on 8 October 2026. All 55 curated quotations match their source after whitespace normalisation. Page locators apply to PDFs; the handbook uses paragraph anchors. Personal contact, pay, signatures and e-sign audit records remain excluded from public data.
 
-The website and extracted policy library are public. Search indexing is discouraged, which does not provide access control. Entered notes are local to the browser, not pushed to GitHub. Browser extensions, other scripts with the same origin, device access and device/browser backups are outside this app’s protection. Use a localhost copy for a separate origin if preferred. The offline service worker caches this app’s public assets, never the case or attached originals. External legal links require internet access.
+The current ACAS Code, hearing/outcome/appeal guidance and statutory accompaniment provisions used by the new responses were rechecked on 8 October. Other retained background cards preserve their earlier verification dates. Source wording and summaries are distinguished. Both alcohol gross-misconduct clauses, non-contractual drink-benefit wording, non-exhaustive examples, broader safety rules and remaining security duties are retained. Refer to SOURCE-AUDIT.md and ASSUMPTIONS-AUDIT.md.
 
-## Maintenance
+## Local launch and maintenance
 
-Review `SOURCE-AUDIT.md` and `ASSUMPTIONS-AUDIT.md`. Amend source quotes only after checking exact underlying wording. Update the verification date when official material is rechecked. Bump the cache name in `sw.js` for every deployment changing assets. Preserve the localStorage key and migration support when changing the state schema.
+Run START-DEFENCE-TOOL.cmd with Python 3 available, then open http://localhost:4298/ . There is no compilation: these files are the production build. BUILD.cmd checks the JavaScript with Node. The standalone disciplinary-quick-reference.html is a printable source fallback with no private case data.
 
-Only `/rwdef/` and the corresponding robots exclusion are part of this change; the rest of the portfolio is independent.
+The active interface is cockpit.js/cockpit.css. defence.js contains original scenario prompts, documents.js the redacted employment sources, and legal.js official reference cards. Preserve state compatibility and increment the service-worker cache version when changing assets. Only /rwdef is changed by this redesign.

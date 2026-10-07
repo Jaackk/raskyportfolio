@@ -1,12 +1,12 @@
 @echo off
 cd /d "%~dp0"
-node --check app.js
+node --check cockpit.js
 if errorlevel 1 exit /b 1
 node --check documents.js
 if errorlevel 1 exit /b 1
 node --check legal.js
 if errorlevel 1 exit /b 1
-node --check workspaces.js
+node --check defence.js
 if errorlevel 1 exit /b 1
 node --check sw.js
 if errorlevel 1 exit /b 1

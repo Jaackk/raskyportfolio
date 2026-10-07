@@ -48,3 +48,13 @@ England and Wales bank holidays are **not** excluded. The user is told to check 
 ## Remaining limitations
 
 User entries can be incomplete or inaccurate; a confirmation flag is the user’s classification, not independent verification. Manual source and evidence review remains necessary. No probability of dismissal or success, legal liability determination, automatic credibility finding, or automatic equivalence between comparator cases is produced.
+
+## Redesign state and migration — 8 October 2026
+
+The new `defence` object is additive under the existing version-1 storage key. All earlier case data is preserved; earlier evidence is not silently recast as accepted facts. Initially the incident is unconfirmed; each factual assessment is Not established; all accepted/disputed/mitigation text is empty; promises and acknowledgement-of-error flags are false; no outcome or appeal ground is selected.
+
+Level 1 means the incident or core facts remain unestablished. Level 2 requires consumption accepted or evidence-supported in the identified incident. Level 3 also requires working time/responsibility accepted or supported. Level 4 requires the user’s strong-risk assessment and source. Level 5 follows a dismissal outcome explicitly entered by the user. The guide can move backwards when facts are corrected. It never gives a success percentage or determines that dismissal is lawful or unlawful.
+
+Support by evidence requires an entered reference; acceptance is the employee’s own admission, not independent proof. An entered serious-risk reference is not assessed for quality by an AI model. Notes are not semantically interpreted into admissions. Meeting-memory event types and unanswered-question flags are explicit and editable. Original event creation times are retained on edits.
+
+No new personal case statement is preloaded beyond the allegation supplied by the user. Previous reported lateness matters remain background in the existing record and scenario library; there is no assumed clean record. Closing statements refer only to the recorded defence stage and explicitly confirmed commitments or raised mitigation. Appeal drafts require a selected ground, explanatory text and supporting source. Uncompleted grounds are excluded.

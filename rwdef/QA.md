@@ -29,3 +29,11 @@ Automated in Microsoft Edge using Playwright, plus visual screenshot review.
 ## Operational limits
 
 Browser tests use synthetic records, not a real hearing. No legal outcome is predicted. Case data and originals are local to one browser profile; back up the JSON and keep original files separately. Search-index exclusion is not access control. Browser storage is not encrypted. The indicative internal appeal calculation excludes weekends only and must be checked for bank holidays and the employer’s counting basis. External official sources require a connection; offline reference is a dated snapshot.
+
+## Version 2 redesign QA — 8 October 2026
+
+The five-screen defence-first interface supersedes the original screen inventory above. Automated Edge tests covered all primary routes, source privacy including refresh, old-case migration, notes, timestamped event editing, JSON backup/restore, clear data, conditional intoxication wording, evidence-referenced appeal drafts and dismissal mode. Seven specified hearing scenarios were each reached by two automated taps in 61–123 ms on the local loaded app; this is interface response timing, not a measurement of human reading or mobile-network loading. The seven full spoken phrases selected the intended response. No JavaScript page errors occurred.
+
+Visual review included the phone home, live response, source view and laptop home/response. SAY and ASK fitted in the iPhone 13 WebKit viewport. WebKit tests confirmed touch controls, source-only display and notes persistence. This was an emulated device, not a physical iPhone. Playwright’s Windows WebKit backend returned an internal navigation error under forced offline mode and intercepted navigation before cache handling under network routing; a successful WebKit offline reload is therefore not claimed. Offline reload and response lookup passed in Chromium/Edge. The standard scoped service worker and complete asset cache are retained.
+
+Private-note printing and neutral-source printing were inspected separately. Private sentinel text did not appear in Source view or its DOM after refresh. Existing local records and the IndexedDB store remain compatible. All 55 scenario references resolve; all 55 curated quotes were reverified against freshly extracted originals. Only files under /rwdef changed in this redesign.

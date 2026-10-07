@@ -102,7 +102,7 @@ window.RW_DOCUMENTS = [
       }
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "locatorNote": "PDF page numbers refer to file page order. Extraction normalises whitespace; consult local original for layout.",
     "privacyNote": "Personal names, contact details, pay, addresses and signatures are redacted. Original files remain on the user’s device. Source template placeholders are preserved as written.",
     "redacted": true
@@ -137,7 +137,7 @@ window.RW_DOCUMENTS = [
       }
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "locatorNote": "PDF page numbers refer to file page order. Extraction normalises whitespace; consult local original for layout.",
     "privacyNote": "Personal names, contact details, pay, addresses and signatures are redacted. Original files remain on the user’s device. Source template placeholders are preserved as written.",
     "redacted": true
@@ -202,7 +202,7 @@ window.RW_DOCUMENTS = [
       }
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "locatorNote": "PDF page numbers refer to file page order. Extraction normalises whitespace; consult local original for layout.",
     "privacyNote": "Personal names, contact details, pay, addresses and signatures are redacted. Original files remain on the user’s device. Source template placeholders are preserved as written.",
     "redacted": true
@@ -15724,7 +15724,7 @@ window.RW_DOCUMENTS = [
       }
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "locatorNote": "DOCX paragraph numbers count all original body paragraphs, including blank paragraphs. They are stable extraction anchors, not page numbers. Table locators use row numbers.",
     "privacyNote": "Personal names, contact details, pay, addresses and signatures are redacted. Original files remain on the user’s device. Source template placeholders are preserved as written.",
     "redacted": false
@@ -15744,7 +15744,7 @@ window.RW_QUOTES = [
       "disciplinary"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Alcohol and drugs — use during working hours",
     "sectionId": "para-1407",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15764,7 +15764,7 @@ window.RW_QUOTES = [
       "impairment"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Alcohol and drugs — influence during working hours",
     "sectionId": "para-1409",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15785,7 +15785,7 @@ window.RW_QUOTES = [
       "other employees"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Employee Code of Conduct — gross misconduct",
     "sectionId": "para-1277",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15807,7 +15807,7 @@ window.RW_QUOTES = [
       "other employees"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — gross misconduct",
     "sectionId": "para-574",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15828,7 +15828,7 @@ window.RW_QUOTES = [
       "extenuating circumstances"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — policy and purpose",
     "sectionId": "para-526",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15847,7 +15847,7 @@ window.RW_QUOTES = [
       "know case"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — employee rights",
     "sectionId": "para-528",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15866,7 +15866,7 @@ window.RW_QUOTES = [
       "disciplinary"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — Reply",
     "sectionId": "para-529",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15885,7 +15885,7 @@ window.RW_QUOTES = [
       "disciplinary"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — Due consideration",
     "sectionId": "para-530",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15904,7 +15904,7 @@ window.RW_QUOTES = [
       "disciplinary"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — Accompaniment",
     "sectionId": "para-531",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15923,7 +15923,7 @@ window.RW_QUOTES = [
       "disciplinary"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — Appeal",
     "sectionId": "para-532",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15942,7 +15942,7 @@ window.RW_QUOTES = [
       "contractual status"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — non-contractual status",
     "sectionId": "para-534",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15963,7 +15963,7 @@ window.RW_QUOTES = [
       "interviews"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — investigation",
     "sectionId": "para-537",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -15983,7 +15983,7 @@ window.RW_QUOTES = [
       "pay"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — investigation and suspension",
     "sectionId": "para-539",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16003,7 +16003,7 @@ window.RW_QUOTES = [
       "warning"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — informal warning",
     "sectionId": "para-544",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16023,7 +16023,7 @@ window.RW_QUOTES = [
       "disciplinary stages"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — progression",
     "sectionId": "para-548",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16043,7 +16043,7 @@ window.RW_QUOTES = [
       "work colleague"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — accompaniment",
     "sectionId": "para-550",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16064,7 +16064,7 @@ window.RW_QUOTES = [
       "appeal"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — facts, mitigation and warnings",
     "sectionId": "para-552",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16084,7 +16084,7 @@ window.RW_QUOTES = [
       "six months"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "First written warning — step one",
     "sectionId": "para-557",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16104,7 +16104,7 @@ window.RW_QUOTES = [
       "twelve months"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Final written warning — step two",
     "sectionId": "para-560",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16127,7 +16127,7 @@ window.RW_QUOTES = [
       "first offence"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Dismissal or action short of dismissal — step three",
     "sectionId": "para-563",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16147,7 +16147,7 @@ window.RW_QUOTES = [
       "serious breach"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — gross misconduct / safety",
     "sectionId": "para-571",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16167,7 +16167,7 @@ window.RW_QUOTES = [
       "duties"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — reasonable instructions",
     "sectionId": "para-569",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16187,7 +16187,7 @@ window.RW_QUOTES = [
       "notice"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — examples not exhaustive",
     "sectionId": "para-579",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16209,7 +16209,7 @@ window.RW_QUOTES = [
       "dismissal"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Disciplinary procedure — appeals",
     "sectionId": "para-582",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16229,7 +16229,7 @@ window.RW_QUOTES = [
       "policy context"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Grievance and Dispute Policy — ACAS Code",
     "sectionId": "para-605",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16248,7 +16248,7 @@ window.RW_QUOTES = [
       "appeal"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Grievance and Dispute Policy — disciplinary appeals",
     "sectionId": "para-597",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16434,7 +16434,7 @@ window.RW_QUOTES = [
       "timekeeping"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Employee Code of Conduct — attendance and timekeeping",
     "sectionId": "para-1316",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16454,7 +16454,7 @@ window.RW_QUOTES = [
       "timekeeping"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Employee Code of Conduct — early departure",
     "sectionId": "para-1318",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16475,7 +16475,7 @@ window.RW_QUOTES = [
       "clock record"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Employee Code of Conduct — signing in and out",
     "sectionId": "para-1321",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16496,7 +16496,7 @@ window.RW_QUOTES = [
       "management responsibilities"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Handling Money, Stock and Security — end-of-day duties",
     "sectionId": "para-1436",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16516,7 +16516,7 @@ window.RW_QUOTES = [
       "senior managers"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Offering Complimentary Drinks, Food and Services",
     "sectionId": "para-1439",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16535,7 +16535,7 @@ window.RW_QUOTES = [
       "gross misconduct"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Health and safety — breaches",
     "sectionId": "para-1452",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16554,7 +16554,7 @@ window.RW_QUOTES = [
       "work-related events"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Employee Code of Conduct — conduct outside work",
     "sectionId": "para-1296",
     "filename": "Rockwater Group Employee Handbook (April 2026).docx",
@@ -16574,7 +16574,7 @@ window.RW_QUOTES = [
       "forty hours"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Working hours",
     "sectionId": "p2",
     "filename": "Conditions of Employment .pdf",
@@ -16594,7 +16594,7 @@ window.RW_QUOTES = [
       "evidence"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Working hours — records",
     "sectionId": "p2",
     "filename": "Conditions of Employment .pdf",
@@ -16615,7 +16615,7 @@ window.RW_QUOTES = [
       "authorisation"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Benefits — discretionary post-shift drink",
     "sectionId": "p4",
     "filename": "Conditions of Employment .pdf",
@@ -16635,7 +16635,7 @@ window.RW_QUOTES = [
       "contractual status"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Benefits — non-contractual status",
     "sectionId": "p4",
     "filename": "Conditions of Employment .pdf",
@@ -16656,7 +16656,7 @@ window.RW_QUOTES = [
       "authorisation"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Compensation and Benefits — discretionary post-shift drink",
     "sectionId": "p1",
     "filename": "Job Offer.pdf",
@@ -16676,7 +16676,7 @@ window.RW_QUOTES = [
       "contractual status"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Compensation and Benefits — non-contractual status",
     "sectionId": "p1",
     "filename": "Job Offer.pdf",
@@ -16695,7 +16695,7 @@ window.RW_QUOTES = [
       "staff drinks"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Variation — unchanged terms",
     "sectionId": "p1",
     "filename": "Updated Contract Rockwater 40hours.pdf",
@@ -16714,7 +16714,7 @@ window.RW_QUOTES = [
       "working hours"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Variation — new terms",
     "sectionId": "p1",
     "filename": "Updated Contract Rockwater 40hours.pdf",
@@ -16732,7 +16732,7 @@ window.RW_QUOTES = [
       "contract variations"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Variation — new terms",
     "sectionId": "p1",
     "filename": "Updated Contract Rockwater 40hours.pdf",
@@ -16751,7 +16751,7 @@ window.RW_QUOTES = [
       "notice"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Variation of Contract and Handbook",
     "sectionId": "p1",
     "filename": "Updated Contract Rockwater 40hours.pdf",
@@ -16770,7 +16770,7 @@ window.RW_QUOTES = [
       "disciplinary"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Probationary period",
     "sectionId": "p3",
     "filename": "Conditions of Employment .pdf",
@@ -16789,7 +16789,7 @@ window.RW_QUOTES = [
       "contractual status"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Grievance and disciplinary procedure",
     "sectionId": "p7",
     "filename": "Conditions of Employment .pdf",
@@ -16808,7 +16808,7 @@ window.RW_QUOTES = [
       "start date"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Employment commencement",
     "sectionId": "p1",
     "filename": "Conditions of Employment .pdf",
@@ -16827,7 +16827,7 @@ window.RW_QUOTES = [
       "management responsibilities"
     ],
     "status": "DOCUMENTED FACT",
-    "verified": "2026-10-07",
+    "verified": "2026-10-08",
     "title": "Role",
     "sectionId": "p1",
     "filename": "Conditions of Employment .pdf",
