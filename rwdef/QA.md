@@ -1,0 +1,31 @@
+# Verification record
+
+Completed 8 October 2026, Europe/London. Official law and ACAS verification date: 7 October 2026.
+
+## Source checks
+
+- All four supplied employment reference files extracted and inspected.
+- 55 curated Rockwater provisions verified as source substrings after whitespace normalisation. Relevant PDF pages visually reviewed; handbook locators are paragraph anchors, not invented page numbers.
+- 27 official legal reference cards and 30 deterministic response scenarios; source IDs resolved.
+- Both differing alcohol gross-misconduct examples retained. Discretionary/non-contractual benefit wording, source placeholders, grievance context and possible separate staff-drink instructions retained.
+- Public source dataset scanned for personal contact, pay, signature and e-sign audit identifiers. Original private documents and raw extraction were not committed.
+
+## Browser checks
+
+Automated in Microsoft Edge using Playwright, plus visual screenshot review.
+
+- All 29 private workspaces rendered without JavaScript page errors or horizontal page overflow.
+- Laptop layouts checked at 1440 × 1000 and 1366 × 768; mobile at 390 × 844.
+- Home, source library, response search, legal references, procedure, mitigation, outcome, appeal, shift, neutral share and print layouts inspected.
+- Notes persisted after refresh. Meeting events saved, mitigation summaries and appeal drafts used entered/selected content.
+- JSON export downloaded and restored; clear-data confirmation removed notes and local files.
+- Original source attached to IndexedDB without upload.
+- Private sentinel text absent from neutral DOM, neutral search, neutral print and neutral reload. Share mode persisted through reload. Panic keyboard shortcut worked.
+- Long private notes printed through complete text rather than a clipped textarea; HTML-looking user text remained escaped.
+- App and references cached; offline reload and response search passed.
+- Standalone quick-reference screen and print layouts inspected.
+- JavaScript syntax checks and Git whitespace checks passed.
+
+## Operational limits
+
+Browser tests use synthetic records, not a real hearing. No legal outcome is predicted. Case data and originals are local to one browser profile; back up the JSON and keep original files separately. Search-index exclusion is not access control. Browser storage is not encrypted. The indicative internal appeal calculation excludes weekends only and must be checked for bank holidays and the employer’s counting basis. External official sources require a connection; offline reference is a dated snapshot.
