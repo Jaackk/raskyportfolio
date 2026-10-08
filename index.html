@@ -23,6 +23,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:wght@400..600&display=swap" />
     <link rel="stylesheet" href="/styles.css" />
+    <style>
+      #about .about-details li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+      #about .cv-options { display: grid; gap: 16px; }
+      #about .cv-options p { margin: 6px 0 0; font-size: 0.95rem; color: var(--ink-2); }
+      #building .game-note { margin-top: 32px; max-width: 44em; }
+      #building .game-note p { margin: 12px 0; color: var(--ink-2); }
+    </style>
     <script>document.documentElement.classList.add("js");</script>
     <script type="application/ld+json">
       {
@@ -227,6 +234,11 @@
             <li><a class="project-row" href="/raskode/"><h4>Raskode</h4><p>My own AI tooling for automation and memory. A learning project.</p><span class="tag status--wip">In progress</span><span class="arrow" aria-hidden="true">&rarr;</span></a></li>
             <li><a class="project-row" href="/design/"><h4>Design work</h4><p>Branding, menus and websites, including everything on this site.</p><span class="tag status--design">Design</span><span class="arrow" aria-hidden="true">&rarr;</span><img class="peek" src="/assets/optimized/raskys-cocktail-menu.webp" alt="" loading="lazy" /></a></li>
           </ul>
+          <article class="game-note" aria-labelledby="game-note-title">
+            <h3 class="h-md" id="game-note-title">Building worlds, not just websites.</h3>
+            <p>I use AI-assisted development tools to bring ideas to life, from Java-based multiplayer RPG systems and Unity games to interactive experiences, mobile applications and creative software. I shape the ideas, direct the tools, and test and refine what we build.</p>
+            <a class="link" href="/assets/docs/Jack_Ormondroyd_Creative_Technology_CV.pdf">View Creative Technology &amp; Games CV (PDF)</a>
+          </article>
         </div>
       </section>
 
@@ -307,16 +319,21 @@
             <p class="kicker"><span class="num">04</span> About</p>
             <h2 class="h-xl" id="about-title">Good nights are my <em>trade</em>.</h2>
             <p>I've worked in hospitality for 10+ years, from pubs and restaurants in Suffolk to management roles on the south coast. These days I'm an assistant manager at a beachside venue in Hove. I know how to look after a room, and how to give people a good night.</p>
-            <p>The rest of my time goes on making things. I write and record music as Raskyjack. I build websites and software, often for problems I've met at work. And when there's time, I write.</p>
+            <p>The rest of my time goes on making things: music as Raskyjack, games and interactive worlds, and AI-assisted websites and software, often for problems I've met at work. And when there's time, I write.</p>
             <p>Raskys is where it's all heading: a venue with good drinks, live music and the kind of service I'd want to receive myself.</p>
-            <ol class="timeline" aria-label="A few dates">
-              <li><span class="when">2016</span><span>Creative Media Production, Suffolk New College (Distinction)</span></li>
-              <li><span class="when">2022</span><span>Bar manager, Blue Salt, Woodbridge</span></li>
-              <li><span class="when">2023</span><span>The Unruly Pig, then the move to Brighton</span></li>
-              <li><span class="when">2026</span><span>Assistant manager, Rockwater, Hove</span></li>
-            </ol>
-            <div class="actions">
-              <a class="link" href="/assets/docs/jack-ormondroyd-cv.pdf" data-doc="cvPdf">Download my CV (PDF)</a>
+            <ul class="timeline about-details" aria-label="Background">
+              <li><strong>10+ Years in Hospitality</strong><span>Experience managing restaurants, bars and hospitality venues across Suffolk and Sussex, including award-winning gastropubs and beachside venues.</span></li>
+              <li><strong>Creative Media Production — Distinction</strong><span>Suffolk New College, 2016.</span></li>
+            </ul>
+            <div class="actions cv-options">
+              <div>
+                <a class="link" href="/assets/docs/jack-ormondroyd-cv.pdf" data-doc="cvPdf" aria-label="Hospitality &amp; Management CV (PDF)">Hospitality &amp; Management CV</a>
+                <p>Venue operations, leadership, team development and customer experience.</p>
+              </div>
+              <div>
+                <a class="link" href="/assets/docs/Jack_Ormondroyd_Creative_Technology_CV.pdf" aria-label="Creative Technology &amp; Games CV (PDF)">Creative Technology &amp; Games CV</a>
+                <p>AI-assisted development, game creation, visual design and software testing.</p>
+              </div>
             </div>
           </div>
         </div>
