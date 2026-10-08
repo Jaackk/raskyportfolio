@@ -1,4 +1,4 @@
-const CACHE='rwdef-v2-20261008-3';
+const CACHE='rwdef-v3-20261008-2';
 const FILES=['./','index.html','cockpit.css','cockpit.js','defence.js','documents.js','legal.js','icon.svg','manifest.json','disciplinary-quick-reference.html','SOURCE-AUDIT.md','ASSUMPTIONS-AUDIT.md','README.md'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('rwdef-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
