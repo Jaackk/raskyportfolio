@@ -138,3 +138,9 @@ Re-read the official [ACAS hearing guidance](https://www.acas.org.uk/disciplinar
 Re-read original Handbook paragraphs 526, 528–530, 537 and 539 directly from the supplied DOCX. Existing exact extracts cover the employee’s version and extenuating circumstances, knowledge of the case, reply, due consideration, thorough investigation and proper investigation as integral to the process. Paragraph 552 supplies mitigation support. No source quotation was altered for the new flow.
 
 The 60 general responses plus contextual evidence-review and WhatsApp responses use existing verified source IDs. The additional WhatsApp circumstances come from the employee’s new account, not from ACAS or the supplied employment documents. The reported message itself has not been provided or independently verified. The four-document absence of a Friday–Sunday restriction remains a limited document-search finding, not proof that a separate instruction did not exist. Contextual wording warns that workplace WhatsApp communication can matter and that a manager may be expected to read instructions.
+
+## 8 October 2026 — practical polish / sanction options
+
+The exact retained Handbook extracts for first warning, final warning, progression and dismissal/alternatives drive Save My Job's source view. The source viewer displays linked documentary qualifications separately as exact quotes with locators. These quotations are not shortened to meet the speech limits; only original proposed responses are condensed.
+
+Rechecked official [ACAS deciding the outcome guidance](https://www.acas.org.uk/disciplinary-procedure-step-by-step/step-5-deciding-on-the-disciplinary-outcome), including warnings, alternative action and dismissal. The app preserves the distinction between asking for a lesser sanction and an entitlement to one; alternative action depends on the circumstances and applicable terms. No source wording or statutory rights were enlarged by the polish.

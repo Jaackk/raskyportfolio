@@ -1,5 +1,6 @@
-const CACHE='rwdef-v3-20261008-2';
+const CACHE='rwdef-v4-20261008-1';
 const FILES=['./','index.html','cockpit.css','cockpit.js','defence.js','documents.js','legal.js','icon.svg','manifest.json','disciplinary-quick-reference.html','SOURCE-AUDIT.md','ASSUMPTIONS-AUDIT.md','README.md'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('rwdef-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==self.location.origin||!url.pathname.startsWith(new URL(self.registration.scope).pathname))return;event.respondWith(caches.open(CACHE).then(cache=>cache.match(event.request,{ignoreSearch:true}).then(cached=>cached||fetch(event.request).then(response=>{if(response.ok&&FILES.some(f=>new URL(f,self.registration.scope).pathname===url.pathname)){const clone=response.clone();event.waitUntil(cache.put(event.request,clone));}return response;}))));});
+self.addEventListener('message',event=>{if(event.data==='rwdef-version')event.ports[0]?.postMessage(CACHE);});

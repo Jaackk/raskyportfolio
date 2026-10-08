@@ -70,3 +70,247 @@ window.RW_DEFENCE.push(
  {id:'panic',category:'Procedure',claim:'I don’t know what to say',say:'I want to answer accurately. Could you clarify exactly what you’re asking me to respond to and what evidence you’re relying upon?',ask:'',trap:'Pause rather than guess. A request for clarity does not require conceding an allegation.',sources:['rights-reply','acas-hearing'],tags:'panic dont know what say unclear',why:'An accurate answer can require a clear allegation and evidence.'},
  {id:'dont-remember',category:'Procedure',claim:'I don’t remember',say:'I do not remember that clearly enough to give a definite answer. Please show me the relevant evidence so I can respond accurately.',ask:'What record or observation can help establish that point?',trap:'Say this only if true. Not remembering is not the same as denying, and reliable evidence may establish the fact.',sources:['acas-hearing'],tags:'cannot remember dont remember memory recollection',why:'Separate recollection from what reliable evidence establishes.'}
 );
+
+// Initial live speech. Full scenario reasoning remains available on expansion.
+window.RW_SHORT={
+  "working": {
+    "say": "Please establish my remaining duties. Working status does not automatically establish gross misconduct.",
+    "ask": "What duty and evidence establish that I was still working?"
+  },
+  "clocked": {
+    "say": "I will accept an accurate clocking record. Please consider the actual duties and circumstances when assessing seriousness.",
+    "ask": "Which duties remained beyond the recorded clocking time?"
+  },
+  "lockup": {
+    "say": "Lock-up may mean work continued. Please assess gross misconduct separately.",
+    "ask": "What specific risk makes this gross misconduct?"
+  },
+  "staff": {
+    "say": "Continuing staff responsibility matters. Please identify the duty and how the alleged conduct could affect it.",
+    "ask": "Which staff member, duty and potential effect are you relying on?"
+  },
+  "safety": {
+    "say": "I understand the safety concern. Please connect the alleged conduct to a specific responsibility and risk.",
+    "ask": "What evidence establishes that particular risk?"
+  },
+  "pint": {
+    "say": "Please establish what I consumed and when. I will not deny reliable evidence.",
+    "ask": "What establishes the contents, quantity and timing?"
+  },
+  "more": {
+    "say": "I will give my accurate recollection and accept what reliable evidence establishes.",
+    "ask": "What establishes the quantity and timing of each drink?"
+  },
+  "intox": {
+    "say": "Please identify the specific observations said to establish intoxication.",
+    "ask": "What behaviour was observed, by whom and when?"
+  },
+  "potential": {
+    "say": "Potential effects matter. Please identify the specific risk from the amount and remaining duties.",
+    "ask": "What specific potential effect are you relying on?"
+  },
+  "something": {
+    "say": "An incident need not occur for risk to matter. Please identify the particular risk here.",
+    "ask": "What specific event was foreseeable, and what supports that assessment?"
+  },
+  "emergency": {
+    "say": "I understand emergency readiness matters. Please identify my remaining duty and how the alleged drinking could affect it.",
+    "ask": "Which emergency responsibility and potential impairment are you relying on?"
+  },
+  "manager": {
+    "say": "I accept my management responsibilities. Please assess the established conduct and circumstances before deciding classification and sanction.",
+    "ask": "Which management duty makes these circumstances gross misconduct?"
+  },
+  "better": {
+    "say": "I understand the standard expected. Please assess any established mistake and a proportionate sanction separately.",
+    "ask": "What would a proportionate response be in these circumstances?"
+  },
+  "rule": {
+    "say": "I accept the alcohol rule. A breach, gross misconduct and the appropriate sanction still need separate consideration.",
+    "ask": "Which established circumstances make this gross misconduct?"
+  },
+  "gross": {
+    "say": "Please explain how the established circumstances meet the complete gross-misconduct wording.",
+    "ask": "Which facts and policy wording support that classification?"
+  },
+  "any": {
+    "say": "The rule prohibits drinking during work. The alcohol example does not make every instance automatically gross misconduct.",
+    "ask": "Which provision and specific circumstances are you relying on?"
+  },
+  "list": {
+    "say": "I accept the examples are not exhaustive. Please explain why the actual circumstances are sufficiently serious.",
+    "ask": "What specific conduct or risk justifies gross misconduct?"
+  },
+  "serious": {
+    "say": "Please identify the safety rule, alleged breach and evidence of seriousness. I will address the actual risk.",
+    "ask": "What specific risk and remaining duty establish the seriousness?"
+  },
+  "benefit": {
+    "say": "The terms contemplate a discretionary post-shift drink. That is not permission to drink while still working.",
+    "ask": "Which condition of the staff-drink provision was not met?"
+  },
+  "weekend": {
+    "say": "Please identify the Friday–Sunday restriction and how it was communicated so I can address its application.",
+    "ask": "Where was the restriction documented, or how was it communicated?"
+  },
+  "everyone": {
+    "say": "Please clarify the actual instruction and its communication. I will address reliable evidence that it applied.",
+    "ask": "When and how was the rule communicated to me?"
+  },
+  "authority": {
+    "say": "Please establish who could authorise the drink and what permission was or was not given.",
+    "ask": "What evidence of permission or its absence has been considered?"
+  },
+  "self": {
+    "say": "Please establish the authorisation rules and my actual decision. I will not assume my role allowed self-authorisation.",
+    "ask": "Who was entitled to authorise it, and what establishes my decision?"
+  },
+  "cctv": {
+    "say": "I will not dispute what clear footage establishes. Please show the relevant sequence and its context.",
+    "ask": "What does the footage establish about contents, timing, quantity and remaining duties?"
+  },
+  "witness": {
+    "say": "Please distinguish what the witness directly observed from their interpretation.",
+    "ask": "What did the witness see or hear, and when?"
+  },
+  "witnessdrunk": {
+    "say": "Please identify the behaviour behind that description so I can answer the observation rather than a label.",
+    "ask": "What specific behaviour did the witness observe?"
+  },
+  "records": {
+    "say": "Please show the record; I will accept it if accurate. Actual duties and context also matter.",
+    "ask": "What does the record establish beyond clock-in and clock-out times?"
+  },
+  "before": {
+    "say": "Please identify each earlier incident and whether it concerns this allegation or the proposed sanction.",
+    "ask": "What dates, findings and records are you relying on?"
+  },
+  "warnings": {
+    "say": "Please identify the warning documents and whether they remain active.",
+    "ask": "How do their dates, level and status affect this allegation or sanction?"
+  },
+  "lateness": {
+    "say": "I acknowledge the reported lateness matters. Their formal status and current effect need clarifying.",
+    "ask": "Were these formal warnings, when were they issued, and are they still active?"
+  },
+  "advance": {
+    "say": "I requested the evidence beforehand. I need a reasonable opportunity to understand and answer it.",
+    "ask": "How will I be given sufficient time to respond?"
+  },
+  "new-evidence": {
+    "say": "I requested this evidence beforehand. I need reasonable time to review it before responding.",
+    "ask": "Can we take the time needed to review this properly?"
+  },
+  "refused": {
+    "say": "Please record my request for review time, its refusal and the reasons given.",
+    "ask": "How can I give a considered response to material first provided now?"
+  },
+  "time": {
+    "say": "Please let me explain the specific checks I still need to make before answering accurately.",
+    "ask": "What time will I have to address those outstanding points?"
+  },
+  "investigated": {
+    "say": "Please show the relevant material and findings so I can respond to the investigation.",
+    "ask": "What supports the disputed finding, and was my explanation checked?"
+  },
+  "disagree": {
+    "say": "Please identify what you reject and the evidence supporting that conclusion.",
+    "ask": "How have you weighed my explanation against that evidence?"
+  },
+  "excuses": {
+    "say": "I am separating the facts from classification and sanction. Please consider the context and mitigation.",
+    "ask": "Which part of my explanation do you consider unsupported?"
+  },
+  "trust": {
+    "say": "Please explain the loss of trust and whether a lesser sanction could address it.",
+    "ask": "What makes the loss of trust irreparable here?"
+  },
+  "confidence": {
+    "say": "Please explain your concern and consider any concrete steps I can honestly offer to restore confidence.",
+    "ask": "Why would a warning or other lesser action be insufficient?"
+  },
+  "keep": {
+    "say": "Please weigh the mitigation I can support and whether a warning would allow me to remain employed.",
+    "ask": "What would a lesser sanction fail to address?"
+  },
+  "dismiss": {
+    "say": "Please consider my explanation and supported mitigation before ending my employment.",
+    "ask": "Why would a warning or final warning be insufficient?"
+  },
+  "accept": {
+    "say": "I accept only the facts I have acknowledged. Please explain the policy classification said to follow.",
+    "ask": "Which accepted facts and rule support that classification?"
+  },
+  "accept-gross": {
+    "say": "On the circumstances established, I dispute gross misconduct. Please assess the complete wording, actual risk and mitigation.",
+    "ask": "Which established facts make this gross misconduct?"
+  },
+  "sorry": {
+    "say": "I will acknowledge any mistake I accept. I do not want to apologise inaccurately for facts still disputed.",
+    "ask": "Can we distinguish acknowledged conduct from disputed classification?"
+  },
+  "close": {
+    "say": "Please consider my explanation, the evidence and supported mitigation before deciding. Please consider whether a lesser sanction is sufficient.",
+    "ask": "Have all my outstanding points been considered?"
+  },
+  "dismissed": {
+    "say": "Please provide the findings, reasons and appeal instructions in writing. I am not resigning.",
+    "ask": "What is the effective date and the deadline and recipient for my appeal?"
+  },
+  "resign": {
+    "say": "I am not resigning. Please complete the process and provide the decision and reasons in writing.",
+    "ask": ""
+  },
+  "new-allegation": {
+    "say": "Please clarify this different or additional allegation before expecting a substantive response.",
+    "ask": "What preparation time will I have for this allegation?"
+  },
+  "interrupted": {
+    "say": "Please let me finish my response and have it recorded.",
+    "ask": "Will I be allowed to finish before a decision is made?"
+  },
+  "no-response": {
+    "say": "I would like to answer the allegation before a decision is made.",
+    "ask": "When can I give my full response?"
+  },
+  "companion": {
+    "say": "I am requesting an eligible companion. Please explain and record the reason for refusal.",
+    "ask": "Is the issue eligibility, availability or their role?"
+  },
+  "ignored": {
+    "say": "Please consider my explanation and the mitigation I have raised before deciding.",
+    "ask": "How will those mitigating circumstances be weighed?"
+  },
+  "predecided": {
+    "say": "Please clarify whether the decision remains open to my response and evidence.",
+    "ask": "Will my explanation and mitigation be considered before the final decision?"
+  },
+  "rule-produced": {
+    "say": "I will consider that instruction. Please establish which version applied and how it was communicated.",
+    "ask": "What establishes that this version applied to me at the relevant time?"
+  },
+  "other": {
+    "say": "I need a moment to understand the question and answer accurately.",
+    "ask": "Which specific point would you like me to address?"
+  },
+  "staff-impact": {
+    "say": "Please identify the impact on staff and its connection to the alleged conduct.",
+    "ask": "Which employee, impact and evidence are you relying on?"
+  },
+  "inconsistent": {
+    "say": "Please consider reliable examples of genuinely comparable treatment before deciding sanction.",
+    "ask": "What relevant differences explain the proposed treatment?"
+  },
+  "others": {
+    "say": "Other conduct does not excuse a breach. Please consider comparable practice and how the rule was communicated.",
+    "ask": "How have comparable circumstances and communication of the rule been considered?"
+  },
+  "panic": {
+    "say": "I want to answer accurately. Please clarify the question and the evidence you are relying on.",
+    "ask": "What specific point do you want me to address?"
+  },
+  "dont-remember": {
+    "say": "I do not remember clearly enough to answer definitively. Please show the evidence.",
+    "ask": "What record or observation can help establish that point?"
+  }
+};
