@@ -45,3 +45,12 @@ Local browser storage is not encryption or authenticated hosting. Anyone with ac
 ## Maintenance
 
 There is no compilation. BUILD.cmd checks JavaScript syntax. START-DEFENCE-TOOL.cmd serves a local copy. cockpit.js/cockpit.css implement the interface, defence.js contains the response library, documents.js the redacted source corpus, and legal.js official summaries. Increment the service-worker cache when deploying changed assets. Only /rwdef is changed.
+
+
+## My case for staying — 8 October 2026
+
+Why keep me? is a one-tap home action. Save my job now starts with a quick human response and an expandable full response in the employee's own words. Previous issues, team contribution, responsibility and recurrence have direct buttons within this private layer. Final comments combine commitment, accepted facts, relevant mitigation and the request for a lesser sanction. Full human responses deliberately exceed the ordinary 25-word limit.
+
+The retention action gains emphasis when an error is accepted, a breach is established, gross misconduct is argued or dismissal is mentioned. Opening a claim records no factual admission. Unknown incidents stay conditional; strong adverse evidence shifts the ending toward mitigation. Advanced facts includes an explicit acceptance of evidence showing deliberate disregard; this removes the contrary claim from both full retention responses. No statement purports to speak for colleagues or guarantees retention. These employee accounts are not independently verified performance evidence.
+
+Existing local-storage format and all previous evidence, appeal and source functionality remain. Sources support mitigation/sanction considerations, not the employee's personal account. Neutral Source View contains no retention strategy. Offline cache revision is v5; open online to receive the update before using offline.

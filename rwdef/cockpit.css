@@ -30,3 +30,6 @@
 /* Preserve reading space when Safari chrome or a smaller phone reduces the viewport. */
 @media(max-width:650px) and (max-height:740px){.live-footer .gear-row{display:none}.live-board .workspace{padding-bottom:calc(110px + env(safe-area-inset-bottom))}.live-board #toast{bottom:120px}}
 @media(max-width:650px) and (max-height:620px){.live-footer .source-bar{display:none}.live-board .workspace{padding-bottom:calc(70px + env(safe-area-inset-bottom))}.live-board #toast{bottom:80px}}
+
+/* Human retention case: full wording is intentionally not word-capped. */
+.stay-home{border-color:var(--accent,#bdcf9f)!important;font-weight:750}.staying-priority{box-shadow:inset 0 0 0 2px #bdd8b0}.staying-case>.eyebrow{margin-bottom:10px}.human-full{margin:12px 0}.human-full>p{font-size:18px;line-height:1.55;white-space:pre-line}.staying-links{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.staying-links button{min-height:44px;flex:1 1 140px;font-size:12px}.staying-basis{margin:12px 0}.staying-case .say p{font-size:22px}.staying-case .ask p{font-size:18px}
