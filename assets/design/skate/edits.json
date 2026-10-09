@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-09",
+  "sourceFolder": "https://drive.google.com/drive/folders/1H8dnsLoMsWcoAZOjYkhIxTO8_dUpKD-Y",
+  "purpose": "User-authorized ESCAPISM to RASKY lettering replacement on four curated original skate graphics. Original downloads preserved outside published site.",
+  "edits": [
+    {
+      "name": "padlock",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The jumping skeleton holding a padlock above a skateboard; replace the bottom word. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "tool": "Built-in image_gen",
+      "file": "assets/design/skate/rasky-padlock.png"
+    },
+    {
+      "name": "heart",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The broken heart made of skateboard decks; replace the arched top word. Keep SKATEBOARDS unchanged. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "tool": "Built-in image_gen",
+      "file": "assets/design/skate/rasky-heart.png"
+    },
+    {
+      "name": "road",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The coloured skeleton skating along the black road, with birds; replace the arched top word. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "tool": "Built-in image_gen",
+      "file": "assets/design/skate/rasky-road.png"
+    },
+    {
+      "name": "arch",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The skeleton climbing out through a brick arch; replace the top word. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "tool": "Built-in image_gen",
+      "file": "assets/design/skate/rasky-arch.png"
+    }
+  ],
+  "expandedCollectionRecord": "assets/design/skate/collection.json",
+  "expandedCollectionNote": "The complete14-design inventory, all source/output hashes, nine additional exact prompts and the unchanged Bandit copy are recorded in collection.json. These original four edit records remain for provenance compatibility."
+}

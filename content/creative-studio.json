@@ -79,15 +79,15 @@
         "Allergies, notes and staff workspace",
         "Kitchen and service summary workflows"
       ],
-      "note": "Locked by Rockwater email login.",
+      "note": "Staff access is restricted to the venue team.",
       "images": [
         {
-          "src": "assets/optimized/rockwater-guest.png",
-          "alt": "Rockwater Preorders guest ordering website view"
+          "src": "assets/portfolio/event-preorders-guest-full.png",
+          "alt": "Event pre-orders: guest ordering website view"
         },
         {
-          "src": "assets/optimized/rockwater-staff.png",
-          "alt": "Rockwater Preorders staff workspace website view"
+          "src": "assets/portfolio/event-preorders-staff-full.png",
+          "alt": "Event pre-orders: staff workspace website view"
         }
       ],
       "buttons": [
@@ -99,6 +99,104 @@
     }
   ],
   "gallery": [
+    {
+      "title": "RASKY Padlock",
+      "image": "assets/design/skate/rasky-padlock.png",
+      "description": "A skateboarding skeleton with a padlock and the RASKY wordmark.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Broken heart",
+      "image": "assets/design/skate/rasky-heart.png",
+      "description": "A broken heart formed from skateboard decks, with RASKY Skateboards lettering.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Open road",
+      "image": "assets/design/skate/rasky-road.png",
+      "description": "A skeleton skating down the road beneath the RASKY wordmark.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Brick arch",
+      "image": "assets/design/skate/rasky-arch.png",
+      "description": "A skeleton climbing through a brick arch beneath RASKY lettering.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Doorway skater",
+      "image": "assets/design/skate/rasky-doorway-skater.png",
+      "description": "A skater emerging from a brick doorway with RASKY Skateboards lettering.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Block wordmark",
+      "image": "assets/design/skate/rasky-block-wordmark.png",
+      "description": "A Baker-inspired block-letter wordmark study, relettered RASKY Skateboards.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Prisoner figure mark",
+      "image": "assets/design/skate/rasky-figure-mark.png",
+      "description": "A Girl-inspired prisoner figure mark study, relettered RASKY Skateboards.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Round wordmark",
+      "image": "assets/design/skate/rasky-round-wordmark.png",
+      "description": "A Santa Cruz-inspired circular wordmark study, relettered RASKY Skateboards.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Made for skateboarders",
+      "image": "assets/design/skate/rasky-makers-seal.png",
+      "description": "A Santa Cruz-inspired seal study with RASKY Skateboards lettering and the words made for skateboarders, by skateboarders.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Road to the clouds",
+      "image": "assets/design/skate/rasky-clouds.png",
+      "description": "Two skaters heading towards the clouds beneath RASKY lettering.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Skeleton behind bars",
+      "image": "assets/design/skate/rasky-bars.png",
+      "description": "A skeleton in a cap, with a skateboard behind bars and the RASKY wordmark.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Doorway skeleton",
+      "image": "assets/design/skate/rasky-doorway-skeleton.png",
+      "description": "A skeleton skating past a doorway, with RASKY Skateboards lettering.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Escape together",
+      "image": "assets/design/skate/rasky-escape-pair.png",
+      "description": "Two prisoners skating together beneath the RASKY wordmark.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
+    {
+      "title": "RASKY Bandit",
+      "image": "assets/design/skate/rasky-bandit.png",
+      "description": "A masked prisoner character breaking through a wall.",
+      "category": "Personal Skate Graphics",
+      "link": "/design/#skate-series"
+    },
     {
       "title": "Restaurant branding",
       "image": "assets/optimized/brand-restaurant-set.jpg",
@@ -121,15 +219,15 @@
       "link": "/etsycalc/"
     },
     {
-      "title": "Rockwater guest ordering",
-      "image": "assets/optimized/rockwater-guest.png",
+      "title": "Event guest ordering",
+      "image": "assets/portfolio/event-preorders-guest-full.png",
       "description": "Guest-facing pre-order flow for hospitality events and menu selections.",
       "category": "Hospitality Tool",
       "link": "/rockwaterpreorders/"
     },
     {
-      "title": "Rockwater staff workspace",
-      "image": "assets/optimized/rockwater-staff.png",
+      "title": "Event staff workspace",
+      "image": "assets/portfolio/event-preorders-staff-full.png",
       "description": "Staff workspace for guest choices, notes, allergies and service preparation.",
       "category": "Hospitality Tool",
       "link": "/rockwaterpreorders/"

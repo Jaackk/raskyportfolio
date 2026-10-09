@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-09",
+  "sourceFolder": "https://drive.google.com/drive/folders/1H8dnsLoMsWcoAZOjYkhIxTO8_dUpKD-Y",
+  "sourceInventory": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/source-inventory.json",
+  "purpose": "Complete14-design collection from the user-supplied28-file folder:13 original designs with ESCAPISM lettering changed to RASKY, plus one unchanged design without lettering. The28 originals comprise numbered and named variants, not28 distinct designs.",
+  "ownership": "User supplied these graphics through their connected Drive and explicitly requested all designs with RASKY lettering. Source filenames mentioning other brands describe the user-supplied files; no affiliation is claimed.",
+  "originalsPreserved": true,
+  "all28OriginalHashesRechecked": true,
+  "designCount": 14,
+  "letteringEditCount": 13,
+  "unchangedCopyCount": 1,
+  "reviewEvidence": [
+    "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/edited-review.jpg",
+    "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/expanded-review-1.png",
+    "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/expanded-review-2.png",
+    "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/expanded-review-3.png",
+    "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/expanded-review-4.png"
+  ],
+  "designs": [
+    {
+      "name": "padlock",
+      "label": "Padlock",
+      "file": "assets/design/skate/rasky-padlock.png",
+      "bytes": 475503,
+      "sha256": "15c72ac0810482aed209ccefa87a07cbb151a63b3c58d6e450a440ec75166600",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The jumping skeleton holding a padlock above a skateboard; replace the bottom word. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "source": {
+        "name": "SkeletonWithPadlock.png",
+        "id": "1YAdRhhZSHf6Kt8Guhb6NvkllKegXBM8j",
+        "sourceUrl": "https://drive.google.com/file/d/1YAdRhhZSHf6Kt8Guhb6NvkllKegXBM8j/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/SkeletonWithPadlock.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGBA",
+        "bytes": 290455,
+        "sha256": "770df6233281ff2a2e35b419fe2fad01a6b57a351132a4c85e202a4df01b43a7"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ]
+    },
+    {
+      "name": "heart",
+      "label": "Broken heart",
+      "file": "assets/design/skate/rasky-heart.png",
+      "bytes": 418958,
+      "sha256": "4e538b2a8b27e669c2fcb07b3718f5e0d6753da224d4525af48c110309337895",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The broken heart made of skateboard decks; replace the arched top word. Keep SKATEBOARDS unchanged. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "source": {
+        "name": "SkateboardsHeart.png",
+        "id": "1CUb5hHIMyC0ixunzvzuoIEtoPVl6Rt5Q",
+        "sourceUrl": "https://drive.google.com/file/d/1CUb5hHIMyC0ixunzvzuoIEtoPVl6Rt5Q/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/SkateboardsHeart.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGBA",
+        "bytes": 315004,
+        "sha256": "9d45ba91a46185a3036687f430914a5505e488fd1ffdc5b5a332523d6aec162f"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ]
+    },
+    {
+      "name": "road",
+      "label": "Open road",
+      "file": "assets/design/skate/rasky-road.png",
+      "bytes": 478448,
+      "sha256": "513d5a695609ccbeccdd90a4824163e03af7e2fbe1786870411c788e5311999b",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The coloured skeleton skating along the black road, with birds; replace the arched top word. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "source": {
+        "name": "SkeletonSkatingOnRoad.png",
+        "id": "1nr5fmTPlVEHCC55FQFBKMlm0AQykvrdd",
+        "sourceUrl": "https://drive.google.com/file/d/1nr5fmTPlVEHCC55FQFBKMlm0AQykvrdd/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/SkeletonSkatingOnRoad.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGBA",
+        "bytes": 762460,
+        "sha256": "17e56f673caa35ddc800707b0b536c6c38039116eae49163a8fbb7a40b438bca"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ]
+    },
+    {
+      "name": "arch",
+      "label": "Brick arch",
+      "file": "assets/design/skate/rasky-arch.png",
+      "bytes": 572216,
+      "sha256": "28982dbefdce9e1e3a382121297acf155dae4b008b02900e4c673f99c53db90a",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The skeleton climbing out through a brick arch; replace the top word. Change ONLY the exact word ESCAPISM to RASKY in matching heavy, slightly irregular vintage serif lettering, same visual position and appropriate centered width. Preserve the existing illustration, every pose, line, texture, other text, colours and composition; do not redesign, redraw, embellish, or add elements. Output the same portrait composition on transparent background, retaining any white fill inside illustration where necessary. No old ESCAPISM letters anywhere. Exact replacement text: RASKY.",
+      "source": {
+        "name": "SkeletonComingFromArch.png",
+        "id": "1t-pTy42sC1DnN8MmARtyzy7KwaMiVW8W",
+        "sourceUrl": "https://drive.google.com/file/d/1t-pTy42sC1DnN8MmARtyzy7KwaMiVW8W/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/SkeletonComingFromArch.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGBA",
+        "bytes": 318335,
+        "sha256": "b77996621a19eef08367ee35562f352f82c29415193b87d685fd4e755f985f11"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ]
+    },
+    {
+      "name": "doorway-skater",
+      "label": "Doorway skater",
+      "file": "assets/design/skate/rasky-doorway-skater.png",
+      "bytes": 358812,
+      "sha256": "f093ad125f238267d10e9b254b45e3cceaedca562a488d68c25d15d4c3d78ffd",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The skater coming through a brick arch. Replace the handwritten ESCAPISM beneath the doorway with RASKY; preserve SKATEBOARDS, the exact skater pose and the brick arch. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "1.png",
+        "id": "1r1it-5qlwrTeDxcaWQJMMjYGOxHRENFX",
+        "sourceUrl": "https://drive.google.com/file/d/1r1it-5qlwrTeDxcaWQJMMjYGOxHRENFX/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/1.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 330193,
+        "sha256": "c53a0a631353725f030229367f2e5f2ae6ac5faa0edc69684c1cb3741817bcd5"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "DoorwaySkater.png",
+        "id": "1mbR-LfGKezXkPARbKSLrbjiIC2x0yctc",
+        "sourceUrl": "https://drive.google.com/file/d/1mbR-LfGKezXkPARbKSLrbjiIC2x0yctc/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/DoorwaySkater.png",
+        "sha256": "3351096a936e5791c2f337b6eae112b5beb77aa96830c29348c05dc2f64fcf2c"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-57c8c5b3-a444-40c7-b467-c8878ae3861a.png"
+    },
+    {
+      "name": "block-wordmark",
+      "label": "Block wordmark",
+      "file": "assets/design/skate/rasky-block-wordmark.png",
+      "bytes": 403944,
+      "sha256": "5288b9c302b3a7cc56ebeccdf400937dfbc43e7996318f5d69ff3c2557ecbb64",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The black rectangular letter-block wordmark. Replace its upper ESCAPISM row with five matching RASKY letter blocks, maintaining the same heavy condensed irregular block-letter style and centered composition. Keep the entire SKATEBOARDS row unchanged. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "2.png",
+        "id": "1yTUK6hXHzW9diJu4I9UBjPfKSrJEj0gX",
+        "sourceUrl": "https://drive.google.com/file/d/1yTUK6hXHzW9diJu4I9UBjPfKSrJEj0gX/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/2.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 259204,
+        "sha256": "2443beefa6afe4a4b3e2f9c0e29eb57afd215db179e99d73413cf2a14798ea1b"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "InspiredByBaker.png",
+        "id": "1RKMFP6uEQSRsiDm3tD6qlp6-Egv8ORke",
+        "sourceUrl": "https://drive.google.com/file/d/1RKMFP6uEQSRsiDm3tD6qlp6-Egv8ORke/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/InspiredByBaker.png",
+        "sha256": "b363137801af702733ac61bdb45dea5f94e1c85fb17f930e786c2615e40d8fa1"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-f0afd012-1e0b-4d6f-a83a-e670cfb0dd9e.png"
+    },
+    {
+      "name": "figure-mark",
+      "label": "Prisoner figure mark",
+      "file": "assets/design/skate/rasky-figure-mark.png",
+      "bytes": 437333,
+      "sha256": "1cc3f485abd24b64a2522920c1720723314dafed4cfd9c15268f86ee8481808d",
+      "width": 1054,
+      "height": 1492,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The rounded rectangular prisoner figure mark. Replace only ESCAPISM below the figure with RASKY in the matching highlighted black lettering. Preserve SKATEBOARDS, the striped figure, cap and outline. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "3.png",
+        "id": "11PfBJD8c4nQ99XHss3H22e_1zcEnu903",
+        "sourceUrl": "https://drive.google.com/file/d/11PfBJD8c4nQ99XHss3H22e_1zcEnu903/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/3.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 165836,
+        "sha256": "e3626abfa15952db913c5f9b30e6cd364664f5aa933bce60f3e741b2cf9e6e19"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "InspiredByGirl.png",
+        "id": "1WH7Y-Ytwqks06AirLCn_Fuc00JN_D8e8",
+        "sourceUrl": "https://drive.google.com/file/d/1WH7Y-Ytwqks06AirLCn_Fuc00JN_D8e8/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/InspiredByGirl.png",
+        "sha256": "4be1ba927527d2101a3582291a077445b096c2490f9b383d6017151c8d72955e"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-b063fcf3-e1e3-4672-b0ef-58deab6cbb17.png"
+    },
+    {
+      "name": "round-wordmark",
+      "label": "Round wordmark",
+      "file": "assets/design/skate/rasky-round-wordmark.png",
+      "bytes": 439348,
+      "sha256": "591c1fcf5fb7423f6dfd61a46f6448637e09d8e3480ccbca281e9d946e69691d",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The solid black circular badge with diagonal white text. Replace ESCAPISM with RASKY in the same inclined bold white type, black outline and diagonal angle. Preserve SKATEBOARDS and the circle. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "4.png",
+        "id": "1TgVUtUGiiR5sjMuI07kYHTdeJGj3iR3i",
+        "sourceUrl": "https://drive.google.com/file/d/1TgVUtUGiiR5sjMuI07kYHTdeJGj3iR3i/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/4.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 314642,
+        "sha256": "5fe7783ebff15be4b456534d34b805bb565e78dba145b665237210f5914277c5"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "InspiredBySantaCruz.png",
+        "id": "16LYlB8E0-F5gDsJ3CJ0Gg6lH4w4LUt6T",
+        "sourceUrl": "https://drive.google.com/file/d/16LYlB8E0-F5gDsJ3CJ0Gg6lH4w4LUt6T/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/InspiredBySantaCruz.png",
+        "sha256": "732356ff44c72aa1f5a4f4cc18117245b57fdd5491c5fce55798e851c2d7ddea"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-6a56adf4-c121-4d9e-94bd-abc95c737c23.png"
+    },
+    {
+      "name": "makers-seal",
+      "label": "Made for skateboarders seal",
+      "file": "assets/design/skate/rasky-makers-seal.png",
+      "bytes": 702492,
+      "sha256": "b79deed1808e3324f0d4f24be3152befaab000b99c41f5efdfdd544a457af965",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The double-circle makers seal. Replace ESCAPISM across the centre with RASKY in the same inclined bold white type and black outline. Keep SKATEBOARDS, MADE FOR SKATEBOARDERS and BY SKATEBOARDERS exactly, and preserve both circles. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "5.png",
+        "id": "1HB2orwo4gTRDwURPWIZxTXy5RiOsZWS7",
+        "sourceUrl": "https://drive.google.com/file/d/1HB2orwo4gTRDwURPWIZxTXy5RiOsZWS7/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/5.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 634843,
+        "sha256": "f4bfbffe40d540b91d76f40074d7a14f4d86ae4f29b5ef38f2bac0f79dcdbac2"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "InspiredBySantaCruzV2.png",
+        "id": "1koaOryBvgRYNpRVFQujXCJG4gAd-MY9e",
+        "sourceUrl": "https://drive.google.com/file/d/1koaOryBvgRYNpRVFQujXCJG4gAd-MY9e/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/InspiredBySantaCruzV2.png",
+        "sha256": "0c72ed93a10a6e36e4ade4a48529e814022f31242ae024894a79b64e72dbacb2"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-f39d0d20-f03d-48c5-ba23-8c77108985b3.png"
+    },
+    {
+      "name": "clouds",
+      "label": "Road to the clouds",
+      "file": "assets/design/skate/rasky-clouds.png",
+      "bytes": 463701,
+      "sha256": "91adcd737fda78fc07a6e37181f37a29516ac5f38eba9584b5da5b9e04bc3952",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The two skaters travelling along a curving road toward clouds and sun-rays. Replace only arched ESCAPISM at top with RASKY in matching heavy serif lettering. Keep SKATEBOARDS below and every part of the illustration. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "8.png",
+        "id": "1dQqvAH61c-fiXe_UPf1CkzFWWnzV_RKM",
+        "sourceUrl": "https://drive.google.com/file/d/1dQqvAH61c-fiXe_UPf1CkzFWWnzV_RKM/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/8.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 514018,
+        "sha256": "d6c0866676984a801d0943d666dcfe6b9190cf5b5766f6281a51427bd6d153d2"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "SkatingTowardsClouds.png",
+        "id": "1hNTE6LL6YOP2doT0rTrQI0fgB2cmmM26",
+        "sourceUrl": "https://drive.google.com/file/d/1hNTE6LL6YOP2doT0rTrQI0fgB2cmmM26/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/SkatingTowardsClouds.png",
+        "sha256": "2c180208a8b01f1084cc0f2ead0b24346d816686efaf8e0b80a8ddff6f1466c9"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-9f854ccc-dbd2-4248-9955-c12bfcd16c0e.png"
+    },
+    {
+      "name": "bars",
+      "label": "Skeleton behind bars",
+      "file": "assets/design/skate/rasky-bars.png",
+      "bytes": 638153,
+      "sha256": "3f99f3debe99a2c62db87b72ee3617e5da4b2d64d03bf17231e31d98dcf50412",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The cream-coloured skeleton in a blue-green cap crouching on a skateboard behind prison bars. Replace only the arched ESCAPISM above with RASKY in matching heavy serif lettering. Preserve all bars, keyhole, bone colour, cap, textures and pose. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "9.png",
+        "id": "1X_eQ59PwEGOWEds3lY9XOBeliboQB6BD",
+        "sourceUrl": "https://drive.google.com/file/d/1X_eQ59PwEGOWEds3lY9XOBeliboQB6BD/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/9.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 1914488,
+        "sha256": "50d19b88183821329f2d5ad84539c821813ae6ae12d3dfc9b6cf54d37c47f5f1"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "SkeletonBehindBars.png",
+        "id": "12OuWGxSa9HziaR5nrUC6MtI7CsUDhw0V",
+        "sourceUrl": "https://drive.google.com/file/d/12OuWGxSa9HziaR5nrUC6MtI7CsUDhw0V/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/SkeletonBehindBars.png",
+        "sha256": "8949e83e295b9e58b1256c29d9ed645919d500ef868323f9a2c3798e269fac1c"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-ad6c1e76-1785-4734-a8f7-1a15bcacba53.png"
+    },
+    {
+      "name": "doorway-skeleton",
+      "label": "Doorway skeleton",
+      "file": "assets/design/skate/rasky-doorway-skeleton.png",
+      "bytes": 378885,
+      "sha256": "30e571d8551537f7f6b1bc3e373bdc71a3f49ceae8e42ce11606b17c5e7d6e41",
+      "width": 1054,
+      "height": 1492,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The skeleton skating past a tall rectangular doorway with arms extended. Replace ESCAPISM at top with RASKY in the same scratched/slanted lettering. Keep SKATEBOARDS below exactly and preserve the skeleton, doorway and skateboard. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "12.png",
+        "id": "1I6OiZSS_lKW9wnVS3IE7SBmRei9X5PjJ",
+        "sourceUrl": "https://drive.google.com/file/d/1I6OiZSS_lKW9wnVS3IE7SBmRei9X5PjJ/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/12.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 362251,
+        "sha256": "6b21e1eaab9fe7dca22fff7d33e9d9d76398a8f820e703cf54765af6c9d43db9"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "SkeletonSkatingPastDoorway.png",
+        "id": "1LZchYrg4ZkFtDgXvTRl8wLnG1e7FgRxS",
+        "sourceUrl": "https://drive.google.com/file/d/1LZchYrg4ZkFtDgXvTRl8wLnG1e7FgRxS/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/SkeletonSkatingPastDoorway.png",
+        "sha256": "6c18400a5238d9b02a4adc1a9305c54b5a7dabcc515232621badf4ee7e9725fc"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-e9e2ccbf-319a-4e08-b073-b09c962535e2.png"
+    },
+    {
+      "name": "escape-pair",
+      "label": "Escape together",
+      "file": "assets/design/skate/rasky-escape-pair.png",
+      "bytes": 378470,
+      "sha256": "531799acfa628b9dc9cbad0a67c7eaabd75cc7fe5b7feeed6c4431e8585cab31",
+      "width": 1055,
+      "height": 1491,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "user-authorized lettering edit",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: text-localization. Edit target: the supplied original skate graphic by the user. The two friendly striped-shirt prisoners escaping together on skateboards with a thumbs-up. Replace only ESCAPISM above the bars with RASKY in the matching rounded bold lettering. Preserve both faces, poses, bars, clothes, skateboards, motion lines and every other illustration detail. Change only this brand word and the exterior background transparency. Exact replacement text: RASKY, spelled R-A-S-K-Y. Keep the existing composition, scale, linework, shapes, colours, textures and any other text; do not redesign, redraw, simplify, embellish or add anything. Preserve white fills within the illustration and white lettering where present. Return the complete original portrait composition as a genuinely transparent PNG, with no clipping. No ESCAPISM letters remain.",
+      "source": {
+        "name": "14.png",
+        "id": "1srvq_qV72hSDB9HMqvxYjcfWFn2M6r8f",
+        "sourceUrl": "https://drive.google.com/file/d/1srvq_qV72hSDB9HMqvxYjcfWFn2M6r8f/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/14.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGB",
+        "bytes": 809734,
+        "sha256": "801248994d5585829033acd23c2f41b7d4008059e828a08da6783e36e9f317da"
+      },
+      "review": "Final output inspected in a browser against a light background. RASKY spelling verified, other required words retained, complete recognisable source illustration/composition and transparent exterior.",
+      "limitations": [
+        "Generated raster derivative; not an editable vector or a pixel-identical illustration preservation guarantee. The source creation method was not independently re-audited."
+      ],
+      "relatedOriginalVariant": {
+        "name": "TwoPrisonersSkating.png",
+        "id": "1BkQGKpbqT0O-tsoYTHkuSXGexaZFtDZf",
+        "sourceUrl": "https://drive.google.com/file/d/1BkQGKpbqT0O-tsoYTHkuSXGexaZFtDZf/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/TwoPrisonersSkating.png",
+        "sha256": "bf6018aab726f66366c566ad24ca403d58532eb04afdf93d4d6136f7c40194e8"
+      },
+      "sourceChoice": "The supplied numbered RGB artwork was the edit target; its named transparent design variant is preserved separately. Variants are not asserted byte- or pixel-identical.",
+      "generatedOriginal": "C:\\Users\\Jacko\\.codex\\generated_images\\01a11e5e-7a16-7993-abb2-32783fea165a\\exec-360fa79d-7edd-4ee1-ba10-55a1a610e4e6.png"
+    },
+    {
+      "name": "bandit",
+      "label": "Bandit",
+      "file": "assets/design/skate/rasky-bandit.png",
+      "bytes": 493949,
+      "sha256": "c6586978b20af31a6a594ca5704128e4451394bdf2f4c92890a78f696e23aec4",
+      "width": 3508,
+      "height": 4961,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "operation": "unchanged copy",
+      "tool": "Filesystem copy; no image editing",
+      "prompt": null,
+      "source": {
+        "name": "PrisonerBandit.png",
+        "id": "1FVSjlPFZd46H_M92Xpt2sydTMF71UaLG",
+        "sourceUrl": "https://drive.google.com/file/d/1FVSjlPFZd46H_M92Xpt2sydTMF71UaLG/view?usp=drivesdk",
+        "localPath": "C:/Users/Jacko/Documents/Codex/theatre-qa/graphics-originals/PrisonerBandit.png",
+        "width": 3508,
+        "height": 4961,
+        "mode": "RGBA",
+        "bytes": 493949,
+        "sha256": "c6586978b20af31a6a594ca5704128e4451394bdf2f4c92890a78f696e23aec4"
+      },
+      "review": "Inspected against a light background. Original has no brand word to replace. Source byte hash and alpha preserved exactly."
+    }
+  ]
+}

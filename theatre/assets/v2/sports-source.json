@@ -1,0 +1,26 @@
+{
+  "sourceRepository": "Jaackk/SportsPredictions",
+  "commit": "2473fdeecde1ebd3f32cf09bee5e3790c5a8667c",
+  "sourcePath": "MockupsImages/7ae1288a-ac79-44e6-98a6-0461bfd79100.png",
+  "sourceRole": "Repository design reference; not verified as an actual application screenshot",
+  "currentFile": "theatre/assets/v2/sports-predictions-concept.webp",
+  "size": [
+    1601,
+    983
+  ],
+  "bytes": 149640,
+  "sha256": "5ef45a7a4d45cb6a687479436ee4c4b3971b1da3a18e9e18db16b03f374f6e1f",
+  "transformation": "Full original frame, WebP quality92, no crop, no zoom, no invented interface; original retained.",
+  "runtimeLimitation": "The actual application is SwiftUI/AppKit for macOS14 or later. This Windows host cannot run that native target. Current main includes no app recording or separately identified real screenshots.",
+  "additionalReference": {
+    "sourcePath": "MockupsImages/d62299c2-fd28-4fc7-8e71-d6d1cfbc839f.png",
+    "currentFile": "theatre/assets/v2/sports-overview-concept.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 134906,
+    "sha256": "4dd1b0f5021492838518b02bf4d58cb9d768d092766d4fd400a6aea7a18c57c6",
+    "role": "Full Overview design reference; same concept/sample-data qualification."
+  }
+}

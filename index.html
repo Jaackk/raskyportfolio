@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:wght@400..600&display=swap" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=20261009-preorders-full" />
     <style>
       #about .about-details li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
       #about .cv-options { display: grid; gap: 16px; }
@@ -30,6 +30,7 @@
       #building .game-note { margin-top: 32px; max-width: 44em; }
       #building .game-note p { margin: 12px 0; color: var(--ink-2); }
     </style>
+    <link rel="stylesheet" href="/theatre/invitation.css?v=20261009i" />
     <script>document.documentElement.classList.add("js");</script>
     <script type="application/ld+json">
       {
@@ -91,6 +92,12 @@
               <p class="kicker" data-cms="homepage.hero.label">Jack Ormondroyd, aka Rasky</p>
               <h1 class="display" id="hero-title" data-cms-rich="homepage.hero.headline">Hospitality by trade. Songs, software and a venue of my own in the <em>making</em>.</h1>
               <p class="lede" data-cms="homepage.hero.body">I've worked in pubs, bars and restaurants for years. Outside of that I write songs and build software, and I'm planning a venue of my own. This is where all of it lives.</p>
+              <div class="theatre-invitation" data-theatre-invitation hidden>
+                <p>Don’t feel like scrolling? <em>I’ll do the driving.</em></p>
+                <button type="button" data-theatre-launch><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1 11 6 2 11Z" fill="currentColor"/></svg> Theatre Mode</button>
+                <small>Under two minutes · Best with sound · Take control whenever you like.</small>
+                <span class="visually-hidden" role="status" data-theatre-loading></span>
+              </div>
             </div>
             <figure class="hero-photo" data-reveal>
               <picture>
@@ -136,7 +143,7 @@
             <div class="phase" data-reveal>
               <p class="meta">Where it starts</p>
               <h3 class="h-md">A cocktail and wine bar with a stage</h3>
-              <p>Signature cocktails, carefully chosen wine, seasonal menus, live music, DJs, tastings and mixology classes, with seating that gets people talking. The first idea was Brighton; the plan suits anywhere coastal with real footfall.</p>
+              <p>Signature cocktails, carefully chosen wine, seasonal menus, live music, DJs, tastings and mixology classes, with seating that gets people talking. One day, somewhere warm and beachside.</p>
             </div>
             <div class="phase" data-reveal="2">
               <p class="meta" data-cms="raskys.vision.title">Where it could go</p>
@@ -165,7 +172,7 @@
 
           <div class="actions">
             <a class="btn btn--solid" href="/raskys/" data-cms-link="raskys.button">Explore Raskys <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            <a class="link" href="/assets/docs/raskys-business-plan.pdf" data-doc="raskysBusinessPlanPdf">Read the business plan (PDF)</a>
+            <a class="link" href="/assets/docs/raskys-business-plan.pdf?v=20261009g" data-doc="raskysBusinessPlanPdf">Read the early concept plan (PDF)</a>
           </div>
         </div>
       </section>
@@ -179,23 +186,23 @@
             <p class="lede">I build websites and small software tools, often for problems I've seen up close in hospitality. Some are working, some are prototypes, a couple are early ideas with a front end.</p>
           </div>
 
-          <article class="feature" aria-labelledby="rockwater-title" data-reveal>
-            <div class="feature-media pair">
-              <a class="shot" href="/rockwaterpreorders/" tabindex="-1" aria-hidden="true">
-                <picture><source type="image/webp" srcset="/assets/optimized/rockwater-guest.webp" /><img src="/assets/optimized/rockwater-guest.png" width="1400" height="982" loading="lazy" decoding="async" alt="" /></picture>
-              </a>
-              <a class="shot" href="/rockwaterpreorders/" tabindex="-1" aria-hidden="true">
-                <picture><source type="image/webp" srcset="/assets/optimized/rockwater-staff.webp" /><img src="/assets/optimized/rockwater-staff.png" width="1400" height="972" loading="lazy" decoding="async" alt="" /></picture>
-              </a>
-            </div>
+          <article class="feature feature--preorders" aria-labelledby="rockwater-title" data-reveal>
+            <figure class="feature-media preorder-previews">
+              <div class="preorder-preview-stack">
+                <button class="image-button preorder-preview preorder-preview--guest" type="button" data-lightbox-src="/assets/portfolio/event-preorders-guest-full.png" data-lightbox-alt="Full guest ordering demonstration page" aria-label="Enlarge the guest ordering page">
+                  <img src="/assets/portfolio/event-preorders-guest-full.png" width="1440" height="1000" loading="lazy" decoding="async" alt="Guest ordering demonstration page, shown in full" />
+                </button>
+                <button class="image-button preorder-preview preorder-preview--staff" type="button" data-lightbox-src="/assets/portfolio/event-preorders-staff-full.png" data-lightbox-alt="Full staff workspace demonstration page" aria-label="Enlarge the staff workspace page">
+                  <img src="/assets/portfolio/event-preorders-staff-full.png" width="1440" height="1000" loading="lazy" decoding="async" alt="Staff workspace demonstration page, shown in full" />
+                </button>
+              </div>
+              <figcaption class="caption">Guest ordering &amp; staff workspace &middot; Demonstration views &middot; Tap to enlarge</figcaption>
+            </figure>
             <div class="feature-copy">
               <span class="tag status--live">Working site &middot; staff login</span>
-              <h3 class="h-lg" id="rockwater-title">Event pre-orders for Rockwater</h3>
-              <dl class="qa">
-                <div><dt>What</dt><dd>A pre-order site for private events. Guests choose their dishes and note allergies; staff see every choice, with kitchen and service summaries.</dd></div>
-                <div><dt>Why</dt><dd>Pre-orders by email and spreadsheet are slow and easy to get wrong. I work at Rockwater in Hove, so I built a simpler way.</dd></div>
-                <div><dt>Built</dt><dd>Guest ordering, a staff workspace, event setup and kitchen summaries. Access is locked to Rockwater logins.</dd></div>
-              </dl>
+              <h3 class="h-lg" id="rockwater-title">Event pre-orders</h3>
+              <p>Guests choose dishes and note allergies; staff get every order in one place, with kitchen and service summaries.</p>
+              <p>Built from the email and spreadsheet juggling I saw on shift, with guest ordering, event setup and a workspace for the venue team.</p>
               <div class="actions">
                 <a class="link" href="/rockwaterpreorders/">Visit the site <span class="arrow" aria-hidden="true">&rarr;</span></a>
               </div>
@@ -220,6 +227,24 @@
                 <a class="link" href="/perfecthost-demo/">Try the prototype <span class="arrow" aria-hidden="true">&rarr;</span></a>
                 <a class="link" href="/perfecthost/">About it</a>
               </div>
+            </div>
+          </article>
+
+          <article class="feature" aria-labelledby="bar-tools-title" data-reveal>
+            <div class="feature-media" style="grid-template-columns:1fr 1fr;align-items:center;gap:18px">
+              <a class="shot" href="/bar-tools/" tabindex="-1" aria-hidden="true"><img src="/theatre/assets/v2/bar-batch.webp" width="780" height="1692" loading="lazy" decoding="async" alt="" style="aspect-ratio:780/1692;object-fit:contain" /></a>
+              <a class="shot" href="/bar-tools/" tabindex="-1" aria-hidden="true"><img src="/theatre/assets/v2/bar-prep.webp" width="780" height="1692" loading="lazy" decoding="async" alt="" style="aspect-ratio:780/1692;object-fit:contain" /></a>
+            </div>
+            <div class="feature-copy">
+              <span class="tag status--live">Working iOS app &middot; development build</span>
+              <h3 class="h-lg" id="bar-tools-title">Bar &amp; service tools</h3>
+              <dl class="qa">
+                <div><dt>What</dt><dd>An iPhone app for recipes, batch calculations, prep, stock and wine guidance.</dd></div>
+                <div><dt>Why</dt><dd>The little things that keep a busy shift moving, together and close to hand.</dd></div>
+                <div><dt>Built</dt><dd>Working native tools with local storage, informed by my own time behind the bar.</dd></div>
+              </dl>
+              <p class="meta">Actual Simulator screens &middot; sample data</p>
+              <div class="actions"><a class="link" href="/bar-tools/">Explore the bar app <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
             </div>
           </article>
 
@@ -366,5 +391,6 @@
     </footer>
 
     <script src="/script.js" defer></script>
+    <script src="/theatre/launch.js?v=20261009i" defer></script>
   </body>
 </html>

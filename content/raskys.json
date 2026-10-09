@@ -1,7 +1,7 @@
 {
   "label": "Raskys",
   "headline": "Not just somewhere to *drink*.",
-  "description": "Raskys is the venue I want to open: cocktails, wine, live music and the kind of service that makes people feel remembered. It doesn't exist yet. The plan does.",
+  "description": "Raskys is the venue I want to open: cocktails, wine, live music and the kind of service that makes people feel remembered. One day, somewhere warm and beachside. It doesn't exist yet. The plan does.",
   "button": {
     "label": "Explore Raskys",
     "href": "/raskys/"
@@ -10,16 +10,16 @@
     "src": "assets/raskys-blueprint.svg",
     "alt": "Light architectural blueprint for the Raskys venue concept"
   },
-  "businessPlanPdf": "assets/docs/raskys-business-plan.pdf",
+  "businessPlanPdf": "assets/docs/raskys-business-plan.pdf?v=20261009g",
   "pageHeadline": "A future venue brand with soul.",
-  "pageDescription": "A flexible hospitality concept for the right coastal or high-footfall location: premium restaurant energy, quality drinks, live music, events, warm service, rooftop atmosphere and memorable moments.",
+  "pageDescription": "One day, somewhere warm and beachside. Raskys is a future venue concept: quality drinks, live music, events, warm service and a rooftop atmosphere. No fixed location and nothing built yet.",
   "pagePrimaryButton": {
     "label": "Discuss Raskys",
     "href": "mailto:hello@raskyjack.com"
   },
   "businessPlanButton": {
-    "label": "Business Plan",
-    "href": "/assets/docs/raskys-business-plan.pdf",
+    "label": "Early concept plan",
+    "href": "/assets/docs/raskys-business-plan.pdf?v=20261009g",
     "external": true
   },
   "concepts": [

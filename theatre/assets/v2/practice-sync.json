@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "source": "theatre/assets/v2/originals/practice-DUD_MWUDRK9.mp4",
+  "publicSource": "https://www.instagram.com/p/DUD_MWUDRK9/",
+  "sourceOwner": "@raskyjack; user confirmed ownership of all music rights.",
+  "sourceCaption": "Gorilla tape for the finger",
+  "sourceInSeconds": 1.886484568382056,
+  "sourceOutSeconds": 14.027814993681949,
+  "showStartSeconds": 49.04060000000001,
+  "showEndSeconds": 60.17420000000001,
+  "nominalDurationSeconds": 11.133600000000001,
+  "encodedDurationSeconds": 11.133333333333333,
+  "frameRate": 30.0,
+  "size": [
+    1276,
+    718
+  ],
+  "durationRatio": 0.917,
+  "playbackSpeed": 1.0905125408942202,
+  "studioMatchOffsetSeconds": 182.45079365079366,
+  "sound": "Video itself has no audio stream. The single premixed soundtrack includes this actual practice recording at a target level7dB below the main live recording, plus supplied studio accompaniment and a restrained studio guitar stem.",
+  "framing": "Entire native landscape frame; no mobile crop, invented detail or optical flow.",
+  "evidence": "Constrained same-song pitch-spectrum match: first16s cosine0.580 to master and0.443 to guitar stem at duration ratio0.917. Full51s practice independently matches the same passage/rate.",
+  "localChecks": [
+    {
+      "sourceCenter": 3,
+      "noteBestShift": 1.1102230246251565e-16,
+      "noteCosine": 0.48976231791267677,
+      "rhythmBestShift": 1.1102230246251565e-16,
+      "rhythmCorrelation": 0.4956082825045739
+    },
+    {
+      "sourceCenter": 5,
+      "noteBestShift": -0.002499999999999891,
+      "noteCosine": 0.5668325156875703,
+      "rhythmBestShift": 1.1102230246251565e-16,
+      "rhythmCorrelation": 0.5880676546886144
+    },
+    {
+      "sourceCenter": 7,
+      "noteBestShift": -0.004999999999999893,
+      "noteCosine": 0.447952084389289,
+      "rhythmBestShift": -0.002499999999999891,
+      "rhythmCorrelation": 0.4504191781540707
+    },
+    {
+      "sourceCenter": 9,
+      "noteBestShift": -0.002499999999999891,
+      "noteCosine": 0.43214176569717183,
+      "rhythmBestShift": -0.002499999999999891,
+      "rhythmCorrelation": 0.41191557615877417
+    },
+    {
+      "sourceCenter": 11,
+      "noteBestShift": -0.002499999999999891,
+      "noteCosine": 0.5437936216370682,
+      "rhythmBestShift": -0.002499999999999891,
+      "rhythmCorrelation": 0.4874886829516521
+    },
+    {
+      "sourceCenter": 13,
+      "noteBestShift": -0.004999999999999893,
+      "noteCosine": 0.46959869210365546,
+      "rhythmBestShift": -0.004999999999999893,
+      "rhythmCorrelation": 0.47999964427091757
+    }
+  ],
+  "limitations": "Signal-supported correspondence, not a listening assessment or proof of every performed note. Interpolated local residual estimates0\u20135ms are below the11.61ms analysis hop. Normal30fps source/output sampling adds frame quantisation.",
+  "posterSourceSeconds": 5.5,
+  "files": {
+    "practice-guitar.mp4": {
+      "bytes": 1909406,
+      "sha256": "2dfb09eb48fa057d34d78e1b71afe57b960be2a9830793c08e9de49f55695e49"
+    },
+    "practice-guitar-poster.jpg": {
+      "bytes": 48341,
+      "sha256": "8eaa60dec0f6d15007697b13d8a25c4909fa5b9be255bc0a87048c585883b717"
+    }
+  },
+  "frameCount": 334,
+  "actualRecordingMix": {
+    "sourceInSeconds": 1.886484568382056,
+    "visibleSourceOutSeconds": 14.027814993681949,
+    "audioSourceOutIncludingCrossfadeSeconds": 14.464020010039636,
+    "durationRatio": 0.917,
+    "showStartSeconds": 49.04060000000001,
+    "showPictureEndSeconds": 60.17420000000001,
+    "audioHandleSeconds": 0.4,
+    "sound": "Actual unseparated practice recording, with its original backing if present, pitch-preserved and retimed by the same constant correspondence as the picture. No neural separation or replaced note."
+  },
+  "actualRecordingGain": 0.4459722364972347
+}

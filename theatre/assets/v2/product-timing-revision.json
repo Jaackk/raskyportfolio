@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "revision": "20261009i-product-timing",
+  "capturedOn": "2026-10-09",
+  "method": "Actual isolated Microsoft Edge UI recordings with Playwright; no application source or UI content modified. Silent H.264 30fps delivery. Real screenshot timestamps are retained, with ordinary discrete UI states held between captured frames.",
+  "sourceScripts": [
+    "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\capture-products.cjs",
+    "C:/Users/Jacko/Documents/Codex/theatre-qa/v2-products.cjs",
+    "C:/Users/Jacko/Documents/Codex/theatre-qa/etsy-arrival.cjs"
+  ],
+  "captureRecords": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\capture-records.json",
+  "perfectHost": {
+    "sourceRoute": "/perfecthost-demo/",
+    "status": "Interactive localStorage prototype with fictional sample data",
+    "durationSeconds": 9.5,
+    "selectSource": "theatre/assets/v2/perfecthost-select.mp4",
+    "selectSourceRange": [
+      0,
+      2
+    ],
+    "editorDurationSeconds": 7.5,
+    "editorCaptureViewportCss": [
+      1024,
+      768
+    ],
+    "deviceScaleFactor": 3,
+    "editorCaptureClipCss": {
+      "x": 596,
+      "y": 494,
+      "width": 420,
+      "height": 266
+    },
+    "sourceNoteVisibilityTransitions": [
+      false,
+      true,
+      false
+    ],
+    "events": [
+      {
+        "event": "four-guests",
+        "time": 0.5310635,
+        "combinedTime": 2.5310635
+      },
+      {
+        "event": "water-done",
+        "time": 1.2831996,
+        "combinedTime": 3.2831996
+      },
+      {
+        "event": "drinks-ordered",
+        "time": 2.1405505000000002,
+        "combinedTime": 4.1405505
+      },
+      {
+        "event": "note-open",
+        "time": 2.947316,
+        "combinedTime": 4.947316
+      },
+      {
+        "event": "typing-complete",
+        "time": 4.1626847,
+        "combinedTime": 6.1626847
+      },
+      {
+        "event": "note-saved",
+        "time": 6.3489151,
+        "combinedTime": 8.3489151
+      }
+    ],
+    "savedNoteVerified": "Sample: anniversary.",
+    "changes": "Replaced the old scripted save-then-reopen editor take. Current film opens Note once, types once, holds the completed text for approximately2.19 seconds, saves once near8.35 seconds, then stays closed to the end. The original2-second plan selection remains. No interaction speed-up.",
+    "manualImage": "A separate genuine persisted-note verification screenshot captured after the recording by reopening Note. This still is for manual/reduced-motion mode; it is not inserted into the movie.",
+    "framing": "Actual420x266 CSS editor captured at3x then downsampled uniformly into1024x768 with #eee8dd padding. Full editor and note form retained."
+  },
+  "etsyCalc": {
+    "sourceRoute": "/etsycalc/",
+    "status": "Working browser estimator; current fee/tax claims not independently audited",
+    "durationSeconds": 7.4,
+    "arrivalDurationSeconds": 1.8,
+    "arrivalFrames": 54,
+    "arrivalMethod": "Fresh context follows ordinary portfolio project link and records actual full homepage viewport.",
+    "workflowDurationSeconds": 5.6,
+    "workflowFrames": 168,
+    "desktopOriginalWorkflow": "C:/Users/Jacko/Documents/Codex/theatre-qa/v2-recordings/etsy-arrival/etsycalc-workflow/original-workflow.mp4",
+    "desktopSourceRange": [
+      0.4,
+      6.0
+    ],
+    "mobileOriginalWorkflow": "C:/Users/Jacko/Documents/Codex/theatre-qa/v2-recordings/etsy-arrival/etsycalc-mobile/original-workflow.mp4",
+    "mobileSourceRange": [
+      0.3,
+      5.9
+    ],
+    "changes": "Homepage opening increased from0.9 to1.8 seconds; original5.6-second calculation workflows retained without new trims or speed changes. Runtime chapter budget assigned by root7.4248s.",
+    "sampleFinalResults": {
+      "desktop": {
+        "price": 34,
+        "makingCost": 12,
+        "profitPerSale": 19.15,
+        "profitMarginPercent": 49.1
+      },
+      "mobile": {
+        "price": 30,
+        "profitPerSale": 19.66,
+        "profitMarginPercent": 56.2
+      }
+    }
+  },
+  "verification": {
+    "fullVideoDecode": "All three passed FFmpeg null decode",
+    "visualReview": "Actual encoded frames inspected around note opening, finished typing, save, final closed state, homepage dwell and final calculator results for desktop/mobile.",
+    "runtimePriorDiagnosis": "Independent current-runtime probe found one playing event and no mid-clip seek, restart or pause; the old modal reopen was encoded in the original take."
+  },
+  "files": [
+    {
+      "file": "theatre/assets/v2/perfecthost-combined.mp4",
+      "previousBackup": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\perfecthost-combined.mp4",
+      "previousIntegrity": {
+        "bytes": 353395,
+        "sha256": "2beb5792abb2669795dc8c898924ff84c687268c7bf4f1a0fe255066a7cd50ad"
+      },
+      "integrity": {
+        "bytes": 361729,
+        "sha256": "145140e0ed7fab6b048a6c965e7c5aa5c6338da8edd03251d7a9c2a7204979bd"
+      },
+      "width": 1024,
+      "height": 768,
+      "frames": 285,
+      "fps": 30.0,
+      "durationSeconds": 9.5,
+      "hasAudio": false
+    },
+    {
+      "file": "theatre/assets/v2/perfecthost-combined-poster.jpg",
+      "previousBackup": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\perfecthost-combined-poster.jpg",
+      "previousIntegrity": {
+        "bytes": 207727,
+        "sha256": "92e5dea3860fac32bf24fabc415c27c8433583541df96d9ac8d137442ab81c8b"
+      },
+      "integrity": {
+        "bytes": 206260,
+        "sha256": "178fb7986303514b43a09d6dca9256796da1f91b4d3963a286554134aa3b0ac9"
+      }
+    },
+    {
+      "file": "theatre/assets/v2/perfecthost-combined-end.jpg",
+      "previousBackup": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\perfecthost-combined-end.jpg",
+      "previousIntegrity": {
+        "bytes": 72769,
+        "sha256": "3a0d0f4e405b859c5b326b5b7466e02cbb55f417e9abbb5602c9454487094a8d"
+      },
+      "integrity": {
+        "bytes": 75397,
+        "sha256": "8d607c48eaab6b8467c75406e7936fd1fbfab2b1442d487b723632d386ee2de3"
+      }
+    },
+    {
+      "file": "theatre/assets/v2/etsycalc-workflow.mp4",
+      "previousBackup": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-workflow.mp4",
+      "previousIntegrity": {
+        "bytes": 965386,
+        "sha256": "f9e2fe49f774cc7e203a05d6878b5f6c3161fbdda17d0a9e43cded8e75786e55"
+      },
+      "integrity": {
+        "bytes": 983286,
+        "sha256": "c52134ff8821188ff34d8d90454a459deb4dc30466c79f336ecd1d028a26f9ba"
+      },
+      "width": 1092,
+      "height": 800,
+      "frames": 222,
+      "fps": 30.0,
+      "durationSeconds": 7.4,
+      "hasAudio": false
+    },
+    {
+      "file": "theatre/assets/v2/etsycalc-workflow-poster.jpg",
+      "previousBackup": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-workflow-poster.jpg",
+      "previousIntegrity": {
+        "bytes": 160187,
+        "sha256": "cf3b1aaa93ded9feddbc5649a0f9312ea20607776a3c976c74b510479bcc159c"
+      },
+      "integrity": {
+        "bytes": 164261,
+        "sha256": "b8bc084fa52a0e535745c3290ed74f1515b1a7d4c1086ded8070324ddcad5d14"
+      }
+    },
+    {
+      "file": "theatre/assets/v2/etsycalc-mobile.mp4",
+      "previousBackup": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-mobile.mp4",
+      "previousIntegrity": {
+        "bytes": 712341,
+        "sha256": "8a4d2a5ee8fcffafd4f432ad42870966acc55f6c87d26e1e75d1c0b616732130"
+      },
+      "integrity": {
+        "bytes": 743027,
+        "sha256": "8af19bbf12581ea20d8cb8e9be4c9d74ddd45f18b59b24acd3cec3e87d934950"
+      },
+      "width": 780,
+      "height": 1520,
+      "frames": 222,
+      "fps": 30.0,
+      "durationSeconds": 7.4,
+      "hasAudio": false
+    },
+    {
+      "file": "theatre/assets/v2/etsycalc-mobile-poster.jpg",
+      "previousBackup": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-mobile-poster.jpg",
+      "previousIntegrity": {
+        "bytes": 210400,
+        "sha256": "1c4f1aeb917b92803ef7b074ad6068b48fe0cdb534930cc34c92d8686e6f48d9"
+      },
+      "integrity": {
+        "bytes": 220985,
+        "sha256": "c7296f637ae5b8597775bab2fe24363e9d672a9fb7a057c1ba110b2eb2ea8155"
+      }
+    }
+  ],
+  "reviewSourceContainers": [
+    {
+      "name": "perfecthost-editor",
+      "path": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\perfecthost-editor\\editor-source.mp4",
+      "sha256": "7ed71298c846d838c50951b932bb0f7a6722978d36ea4f71f8f9ea34491a7d0f",
+      "bytes": 137108,
+      "durationSeconds": 7.5,
+      "rawCaptureConcat": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\perfecthost-editor\\frames.txt",
+      "timingRecord": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\perfecthost-editor\\record.json",
+      "relationship": "Convenient review container encoded from the same raw timestamped JPEG capture. Final movie was encoded directly from rawCaptureConcat, not from this extra compressed copy."
+    },
+    {
+      "name": "etsycalc-workflow-arrival",
+      "path": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-workflow-arrival\\arrival.mp4",
+      "sha256": "c1fddb3717c05c74a85c9b1715b78e50d14e762ce7d8dcf5fd8f9e3817218b1e",
+      "bytes": 149574,
+      "durationSeconds": 1.8,
+      "rawCaptureConcat": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-workflow-arrival\\frames.txt",
+      "timingRecord": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-workflow-arrival\\record.json",
+      "relationship": "Convenient review container encoded from the same raw timestamped JPEG capture. Final movie was encoded directly from rawCaptureConcat, not from this extra compressed copy."
+    },
+    {
+      "name": "etsycalc-mobile-arrival",
+      "path": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-mobile-arrival\\arrival.mp4",
+      "sha256": "eaf1a77b6007ebf5386837989206a3144d6c2e0b39ac6399381e263a0b345c92",
+      "bytes": 193000,
+      "durationSeconds": 1.8,
+      "rawCaptureConcat": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-mobile-arrival\\frames.txt",
+      "timingRecord": "C:\\Users\\Jacko\\Documents\\Codex\\theatre-qa\\product-revision-i\\etsycalc-mobile-arrival\\record.json",
+      "relationship": "Convenient review container encoded from the same raw timestamped JPEG capture. Final movie was encoded directly from rawCaptureConcat, not from this extra compressed copy."
+    }
+  ]
+}

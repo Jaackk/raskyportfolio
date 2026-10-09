@@ -129,7 +129,7 @@ window.RASKY_SITE_DATA = {
       image: "assets/optimized/brand-restaurant-set.jpg",
       alt: "Premium restaurant branding experiment",
       description:
-        "Brands, websites, hospitality tools and creative products, including Perfect Host and Rockwater Preorders.",
+        "Brands, websites, hospitality tools and creative products, including Perfect Host and event pre-orders.",
       link: "/design/"
     },
     {

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bar tools | Rasky</title>
+    <meta name="description" content="A working iPhone app by Jack Ormondroyd: cocktail batching, prep, stock and wine guidance for a busy shift." />
+    <link rel="canonical" href="https://raskyjack.com/bar-tools/" />
+    <meta name="theme-color" content="#f3eee5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rasky" />
+    <meta property="og:title" content="Bar tools | Rasky" />
+    <meta property="og:description" content="A working iPhone app by Jack Ormondroyd: cocktail batching, prep, stock and wine guidance for a busy shift." />
+    <meta property="og:url" content="https://raskyjack.com/bar-tools/" />
+    <meta property="og:image" content="https://raskyjack.com/assets/og/rasky-og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:wght@400..600&display=swap" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
+    <style>
+      .bar-case-screens { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(18px,3vw,48px); margin-top:44px; align-items:start; }
+      .bar-case-screens figure { margin:0; }
+      .bar-case-screens img { width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
+      .bar-case-screens figcaption { margin-top:14px; font:400 14px/1.5 var(--sans); }
+      .bar-case-screens strong { display:block; margin-bottom:4px; }
+      @media(max-width:1000px) { .bar-case-screens { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+      @media(max-width:640px) { .bar-case-screens { grid-template-columns:1fr; gap:38px; max-width:380px; margin-inline:auto; } }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Jack Ormondroyd</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#raskys">Raskys</a>
+          <a href="/#building" aria-current="page">Building</a>
+          <a href="/music/">Music</a>
+          <a href="/#about">About</a>
+          <a class="nav-cta" href="/#contact">Say hello</a>
+        </nav>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+          Menu <span class="bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu" data-menu>
+      <div class="menu-sheet__top">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <button class="menu-close" type="button" data-menu-close>Close <span class="x" aria-hidden="true"></span></button>
+      </div>
+      <ol>
+        <li><a href="/raskys/">Raskys <small>a venue in the making</small></a></li>
+        <li><a href="/#building">Building <small>software &amp; tools</small></a></li>
+        <li><a href="/music/">Music <small>Raskyjack</small></a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Say hello</a></li>
+      </ol>
+      <div class="menu-sheet__foot">
+        <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>
+        <a href="https://open.spotify.com/artist/1kqN5dSAQmj97lQ9CmBjcG" rel="noopener">Spotify</a>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="page-intro" aria-labelledby="bar-title">
+        <div class="wrap">
+          <a class="back" href="/#bar-tools-title"><span class="arrow" aria-hidden="true">&larr;</span> Things I&rsquo;m building</a>
+          <p class="kicker"><span class="tag status--live">Working iOS app &middot; development build</span></p>
+          <h1 class="display" id="bar-title">Made for a <em>busy shift.</em></h1>
+          <p class="lede">My bar and service app. Recipes, batch calculations, prep, stock and a little help finding the right wine, all close to hand on an iPhone.</p>
+          <div class="actions"><a class="btn btn--solid" href="https://github.com/Jaackk/bar-app" rel="noopener">View the source <span class="arrow" aria-hidden="true">&rarr;</span></a><a class="link" href="/#bar-tools-title">Back to the portfolio</a></div>
+          <div class="bar-case-screens">
+            <figure><img src="/theatre/assets/v2/bar-search.webp" width="780" height="1692" alt="Actual app search for Negroni, showing the classic reference result." /><figcaption><strong>Find a classic.</strong> Search the reference library for a recipe when you need it.</figcaption></figure>
+            <figure><img src="/theatre/assets/v2/bar-batch.webp" width="780" height="1692" alt="Actual app batch calculator showing 25 serves, a 3% wastage allowance and calculated ingredient quantities." /><figcaption><strong>Batch it properly.</strong> Scale a recipe to the number of serves, include wastage and save the batch to prep.</figcaption></figure>
+            <figure><img src="/theatre/assets/v2/bar-prep.webp" width="780" height="1692" loading="lazy" alt="Actual prep screen showing today's progress, cordial quantities and dehydrated fruit targets." /><figcaption><strong>Know what&rsquo;s left.</strong> See what needs preparing, scale quantities and mark the work complete.</figcaption></figure>
+            <figure><img src="/theatre/assets/v2/bar-wine.webp" width="780" height="1692" loading="lazy" alt="Actual Wine Finder with taste filters and recommendations from a sample wine list." /><figcaption><strong>Start with their taste.</strong> Find a wine by flavour, style or a quick search.</figcaption></figure>
+          </div>
+          <p class="caption" style="margin-top:28px">Real iPhone Simulator screens from the development build, using sample recipes and data.</p>
+        </div>
+      </section>
+      <section class="room" style="padding-top:0" aria-label="About the bar app">
+        <div class="wrap split">
+          <div class="prose"><h2 class="h-lg" style="margin-bottom:24px">The useful bits, together.</h2><p>I wanted the small things that help a shift run well in one place: clear recipes, sensible batch quantities and a prep list you can actually work through.</p><p>It&rsquo;s a native SwiftUI app with local storage. The working development build also includes stock and order lists, search and learning tools. It is not currently an App Store release.</p></div>
+          <ul class="notes"><li><h3>On the phone</h3><p>Designed around quick reference and the jobs you do while getting ready for service.</p></li><li><h3>Local and offline</h3><p>The core tools and saved work run on the device.</p></li><li><h3>Built from experience</h3><p>A personal software project informed by the practical work of running a bar.</p></li></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Rasky, home"><span class="brand-mark" aria-hidden="true"></span></a>
+        <nav aria-label="Footer">
+          <a href="/raskys/">Raskys</a>
+          <a href="/#building">Building</a>
+          <a href="/music/">Music</a>
+          <a href="/shnork/">Shnork</a>
+          <a href="/design/">Design</a>
+          <a href="mailto:hello@raskyjack.com" data-contact-email>hello@raskyjack.com</a>
+        </nav>
+        <span>&copy; 2026 Jack Ormondroyd</span>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

@@ -1048,6 +1048,134 @@ a.shot:hover img {
   transform: scale(1.015);
 }
 
+.preorder-previews {
+  align-content: center;
+  gap: 24px;
+}
+
+.preorder-previews figure {
+  margin: 0;
+}
+
+/* Portfolio-safe browser captures: branding is absent from the image files. */
+.shot--portfolio-detail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.feature--preorders {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  padding: clamp(28px, 3vw, 40px) 0;
+}
+
+.feature--preorders .preorder-previews {
+  margin: 0;
+  gap: 16px;
+}
+
+.preorder-preview-stack {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  align-items: start;
+}
+
+.preorder-preview {
+  position: relative;
+  grid-row: 1;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(23, 19, 15, 0.08), 0 18px 38px -22px rgba(23, 19, 15, 0.45);
+  transition: translate 240ms var(--ease), box-shadow 240ms var(--ease);
+}
+
+.preorder-preview--guest {
+  grid-column: 1 / 14;
+  z-index: 1;
+}
+
+.preorder-preview--staff {
+  grid-column: 9 / -1;
+  margin-top: 28%;
+  z-index: 2;
+}
+
+.preorder-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.preorder-preview:hover,
+.preorder-preview:focus-visible {
+  z-index: 3;
+  translate: 0 -3px;
+}
+
+.feature--preorders .feature-copy p {
+  margin: 14px 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.feature--preorders .actions {
+  margin-top: 22px;
+}
+
+@media (min-width: 701px) and (max-width: 860px) {
+  .feature.feature--preorders {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .feature--preorders .feature-copy {
+    order: -1;
+  }
+
+}
+
+/* Show actual interface details; preserve the original client screenshots. */
+.shot--event-detail,
+.shot--staff-detail {
+  position: relative;
+}
+
+.shot--event-detail {
+  aspect-ratio: 765 / 310;
+}
+
+.shot--staff-detail {
+  aspect-ratio: 1200 / 270;
+}
+
+.shot--event-detail img,
+.shot--staff-detail img {
+  position: absolute;
+  max-width: none;
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.shot--event-detail img {
+  width: 186.27451%;
+  left: -43.137255%;
+  top: -98.064516%;
+}
+
+.shot--staff-detail img {
+  width: 120%;
+  left: -10%;
+  top: -75.185185%;
+}
+
 .feature-copy h3 {
   margin: 14px 0 18px;
 }

@@ -1,0 +1,165 @@
+{
+  "method": "Four-second windows; bounded multiband spectral-flux correlation. 128-sample analysis hop at 11025Hz, 2.5ms interpolation search. Correlation estimates do not prove sample-accurate or perceptual note alignment.",
+  "windows": [
+    {
+      "sourceCenterSeconds": 2.0,
+      "renderedCenterSeconds": 1.9879583333333333,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9184451722870386,
+      "oldStudioResidualSeconds": 0.005,
+      "newStudioResidualSeconds": 0.0,
+      "studioTransientCorrelation": 0.46184224441589766
+    },
+    {
+      "sourceCenterSeconds": 4.0,
+      "renderedCenterSeconds": 3.9758958333333334,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9477922488755128,
+      "oldStudioResidualSeconds": 0.0,
+      "newStudioResidualSeconds": 0.0,
+      "studioTransientCorrelation": 0.5412031202315944
+    },
+    {
+      "sourceCenterSeconds": 6.0,
+      "renderedCenterSeconds": 5.9667916666666665,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9698030323731148,
+      "oldStudioResidualSeconds": 0.005,
+      "newStudioResidualSeconds": 0.0025,
+      "studioTransientCorrelation": 0.6039169121625982
+    },
+    {
+      "sourceCenterSeconds": 8.0,
+      "renderedCenterSeconds": 7.9618125,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9605811679602176,
+      "oldStudioResidualSeconds": 0.005,
+      "newStudioResidualSeconds": 0.0,
+      "studioTransientCorrelation": 0.4575509413372475
+    },
+    {
+      "sourceCenterSeconds": 10.0,
+      "renderedCenterSeconds": 9.975833333333334,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9412411545618682,
+      "oldStudioResidualSeconds": 0.055,
+      "newStudioResidualSeconds": 0.0075,
+      "studioTransientCorrelation": 0.3269409824838698
+    },
+    {
+      "sourceCenterSeconds": 12.0,
+      "renderedCenterSeconds": 11.985708333333333,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9612317910266052,
+      "oldStudioResidualSeconds": 0.065,
+      "newStudioResidualSeconds": 0.005,
+      "studioTransientCorrelation": 0.43888835822102434
+    },
+    {
+      "sourceCenterSeconds": 14.0,
+      "renderedCenterSeconds": 13.970916666666668,
+      "sourceToRenderedResidualSeconds": 0.0025,
+      "sourceToRenderedCorrelation": 0.9591895423831127,
+      "oldStudioResidualSeconds": 0.045,
+      "newStudioResidualSeconds": -0.01,
+      "studioTransientCorrelation": 0.5415502919177255
+    },
+    {
+      "sourceCenterSeconds": 16.0,
+      "renderedCenterSeconds": 15.956125,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.939697226635976,
+      "oldStudioResidualSeconds": 0.05,
+      "newStudioResidualSeconds": -0.005,
+      "studioTransientCorrelation": 0.5716524977777493
+    },
+    {
+      "sourceCenterSeconds": 18.0,
+      "renderedCenterSeconds": 17.9546875,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9304151265042316,
+      "oldStudioResidualSeconds": 0.06,
+      "newStudioResidualSeconds": 0.0025,
+      "studioTransientCorrelation": 0.4259271984228541
+    },
+    {
+      "sourceCenterSeconds": 20.0,
+      "renderedCenterSeconds": 19.953270833333335,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9256699067424282,
+      "oldStudioResidualSeconds": 0.085,
+      "newStudioResidualSeconds": 0.0125,
+      "studioTransientCorrelation": 0.31974058298089947
+    },
+    {
+      "sourceCenterSeconds": 22.0,
+      "renderedCenterSeconds": 21.933520833333333,
+      "sourceToRenderedResidualSeconds": 0.0025,
+      "sourceToRenderedCorrelation": 0.9395623753066011,
+      "oldStudioResidualSeconds": 0.065,
+      "newStudioResidualSeconds": 0.01,
+      "studioTransientCorrelation": 0.4907057576278212
+    },
+    {
+      "sourceCenterSeconds": 24.0,
+      "renderedCenterSeconds": 23.904166666666665,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9346538036570116,
+      "oldStudioResidualSeconds": 0.06,
+      "newStudioResidualSeconds": -0.01,
+      "studioTransientCorrelation": 0.5781522773134763
+    },
+    {
+      "sourceCenterSeconds": 26.0,
+      "renderedCenterSeconds": 25.854666666666667,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9458047146689671,
+      "oldStudioResidualSeconds": 0.01,
+      "newStudioResidualSeconds": -0.02,
+      "studioTransientCorrelation": 0.6084913533915858
+    },
+    {
+      "sourceCenterSeconds": 28.0,
+      "renderedCenterSeconds": 27.797333333333334,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9537948536288132,
+      "oldStudioResidualSeconds": -0.04,
+      "newStudioResidualSeconds": -0.005,
+      "studioTransientCorrelation": 0.541367221979209
+    },
+    {
+      "sourceCenterSeconds": 30.0,
+      "renderedCenterSeconds": 29.754270833333333,
+      "sourceToRenderedResidualSeconds": 0.0,
+      "sourceToRenderedCorrelation": 0.9335762514089483,
+      "oldStudioResidualSeconds": -0.065,
+      "newStudioResidualSeconds": -0.0025,
+      "studioTransientCorrelation": 0.39373393629611664
+    }
+  ],
+  "sourceToRenderedResidualSecondsRms": 0.0009128709291752768,
+  "sourceToRenderedResidualSecondsMedianAbsolute": 0.0,
+  "oldStudioResidualSecondsRms": 0.04927812225859801,
+  "oldStudioResidualSecondsMedianAbsolute": 0.05,
+  "newStudioResidualSecondsRms": 0.008190441583537076,
+  "newStudioResidualSecondsMedianAbsolute": 0.005,
+  "deliveredRecordingPlacement": {
+    "analysisSampleRate": 11025,
+    "method": "Raw waveform cross-correlation of the rendered source recording against the whole delivered soundtrack; not inferred from cue metadata. Resolution is one analysis sample, about90.7 microseconds.",
+    "recordings": {
+      "practice": {
+        "expectedShowStartSeconds": 49.04060000000001,
+        "detectedFromDeliveredWaveformSeconds": 49.04063492063492,
+        "differenceSeconds": 3.4920634909951787e-05,
+        "correlation": 0.3918777108192444
+      },
+      "live": {
+        "expectedShowStartSeconds": 60.17420000000001,
+        "detectedFromDeliveredWaveformSeconds": 60.174240362811794,
+        "differenceSeconds": 4.036281178088075e-05,
+        "correlation": 0.7237827181816101
+      }
+    }
+  },
+  "limitations": "The local windows helped choose the map, so before/after residuals are fitting diagnostics rather than an independent test. Interpolated shifts are finer than the 11.61ms analysis hop. Neither residual proves exact guitar-note alignment or a successful human listening review."
+}

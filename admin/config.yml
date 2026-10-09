@@ -423,7 +423,7 @@ collections:
 
   - name: projects
     label: "Things I'm building: project list"
-    description: "The 'And the rest' list on the homepage. Rockwater and Perfect Host are featured separately in the page itself."
+    description: "The 'And the rest' list on the homepage. Event pre-orders and Perfect Host are featured separately in the page itself."
     files:
       - name: projects
         label: "Project list"

@@ -1,0 +1,96 @@
+{
+  "sourceFile": "assets/docs/in-the-shadow-of-a-shnork-preview.pdf",
+  "sourceSha256": "e1cd9cfca10f9d8f292e8721ef500839c15dc32085e7080fe75f2b1d3a70a5ea",
+  "sourcePageCount": 42,
+  "sourceType": "Existing illustrated image-page PDF, visually reviewed; no extractable text layer",
+  "selectedPdfPages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "finalPdfPage": 42,
+  "lastNarrativeIllustrationPage": 41,
+  "endingDescription": "Page42 is an illustrated spider/roots chapter-title page: Venom in Veins / The Path of Poison. Page41 is the preceding narrative forest illustration.",
+  "excludedContent": "No buffs/debuffs board appears among any42pages inspected; the board is a separate website image and is not used.",
+  "transform": "Poppler renders actualPDFpages at720pxwidth, contained without crop in720\u00d71024page frames with12px gaps; continuous vertical scroll through all42pages over3.2s: cover0\u20130.2s, slow first-page movement0.2\u20131.1s, accelerating and then smoothly settling through the remaining40page-heights1.1\u20132.8s, final-page hold2.8\u20133.2s. Fast middle is a visual skim, not readable body text. No rebuilt text, new illustrations or fabricated reader controls.",
+  "video": "theatre/assets/v2/shnork-novel-scroll.mp4",
+  "size": [
+    720,
+    1024
+  ],
+  "fps": 30,
+  "frames": 96,
+  "motionCurve": {
+    "coverHold": [
+      0,
+      0.2
+    ],
+    "slowFirstPage": [
+      0.2,
+      1.1
+    ],
+    "acceleratedRemainder": [
+      1.1,
+      2.8
+    ],
+    "finalPageHold": [
+      2.8,
+      3.2
+    ],
+    "description": "Quadratic gentle first-page movement joined at matching velocity to cubic-Hermite acceleration/deceleration; stops smoothly on page42."
+  },
+  "durationSeconds": 3.2,
+  "files": {
+    "shnork-novel-scroll.mp4": {
+      "bytes": 3409036,
+      "sha256": "9e7ed19f98a1babe9c9757e219341a000725dce5ed656954c2ccee81dd00982f"
+    },
+    "shnork-novel-poster.jpg": {
+      "bytes": 143004,
+      "sha256": "6fcc77eab7f1c8ce24af9c5793380edbf2d823ef0ce522914aa6d48c39779136"
+    },
+    "shnork-novel-end.jpg": {
+      "bytes": 150951,
+      "sha256": "acd580afc248dbc44f8b05422744abbdfe32ac4e1d8916efc2e125d3d20aca6d"
+    }
+  }
+}

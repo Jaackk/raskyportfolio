@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 6,
+  "auditioned": false,
+  "durationSeconds": 113.21989583333334,
+  "sourceTrack": "Smoke and glass.wav",
+  "sourceStartSeconds": 135.1401,
+  "sourceEndSeconds": 248.36,
+  "sourceTrackDurationSeconds": 248.35997916666668,
+  "liveSource": "music/media/5c155cf3-efaf-4bca-9d71-3bcef8f36d4b.MP4",
+  "liveSourceInSeconds": 0,
+  "liveSourceOutSeconds": 32.64727083333333,
+  "liveStudioOffsetSeconds": 195.3143,
+  "liveShowStartSeconds": 60.17420000000001,
+  "liveShowEndSeconds": 92.55980416666668,
+  "liveVideoDurationRatio": null,
+  "liveAudioTempoFactor": null,
+  "liveRmsBeforeGain": 0.1136074960231781,
+  "liveGain": 1.2323130506409308,
+  "backingGain": 0.6,
+  "crossfadeSeconds": 0.45,
+  "normalization": "FFmpeg loudnorm I=-16 LUFS, true peak=-1.5dBTP, LRA=11; MP3 192kbps stereo44.1kHz.",
+  "actualDecodedPeak": 0.8399878740310669,
+  "soundtrackChanges": "One continuous final-song excerpt beginning at a quiet detected beat. Actual practice recording target is -7 dB relative to the main live recording target; both retain their original backing/room sound. A 0.4-second cosine dissolve brings in the actual live performance. Nonguitar/nonvocal studio accompaniment remains at gain 0.60. The supplied studio guitar stem is subtle at gain 0.18, fading to zero over the last 3 seconds of the main live video. Actual live sound remains through its complete source duration, with only a 0.035-second file-edge fade. The full master returns smoothly over 0.45 seconds immediately after the actual live recording ends, within its final video frame. Nonguitar accompaniment continues throughout the handoff.",
+  "confidence": "Strong same-song audio correspondence and frame-level verification of the encoded practice mapping. The user reported the studio-only practice mix looked out of time; the revised mix now includes the sound of the actual displayed practice take. Neither hand-motion analysis nor signal matching proves perfect per-note visual sync, and the agent cannot audition audio.",
+  "beatSeconds": [
+    0.0,
+    0.6502,
+    1.3004,
+    1.9505,
+    2.6239,
+    3.2973,
+    3.9706,
+    4.6208,
+    5.271,
+    5.9211,
+    6.5945,
+    7.2679,
+    7.9413,
+    8.6146,
+    9.288,
+    9.9614,
+    10.6348,
+    11.3082,
+    11.9815,
+    12.6549,
+    13.3283,
+    13.9784,
+    14.6286,
+    15.2788,
+    15.9289,
+    16.5791,
+    17.2292,
+    17.8794,
+    18.576,
+    19.2262,
+    19.9228,
+    20.5729,
+    21.2463,
+    21.8965,
+    22.5698,
+    23.2432,
+    23.9166,
+    24.5667,
+    25.2401,
+    25.8903,
+    26.5869,
+    27.237,
+    27.9104,
+    28.5838,
+    29.234,
+    29.8841,
+    30.5575,
+    31.2309,
+    31.9043,
+    32.5544,
+    33.2278,
+    33.8779,
+    34.5513,
+    35.2015,
+    35.8749,
+    36.525,
+    37.1984,
+    37.8486,
+    38.5219,
+    39.1721,
+    39.8455,
+    40.4956,
+    41.169,
+    41.8192,
+    42.4926,
+    43.1427,
+    43.7929,
+    44.443,
+    45.1164,
+    45.7666,
+    46.4167,
+    47.0669,
+    47.7635,
+    48.3904,
+    49.0406,
+    49.6907,
+    50.3641,
+    51.0143,
+    51.6644,
+    52.3146,
+    52.988,
+    53.6149,
+    54.2883,
+    54.9152,
+    55.5886,
+    56.2388,
+    56.8889,
+    57.5391,
+    58.2125,
+    58.8394,
+    59.4896,
+    60.1397,
+    60.7899,
+    61.44,
+    62.0902,
+    62.7404,
+    63.4137,
+    64.0407,
+    64.714,
+    65.3642,
+    66.0144,
+    66.6645,
+    67.3147,
+    67.9648,
+    68.6382,
+    69.2652,
+    69.9153,
+    70.5655,
+    71.2156,
+    71.8658,
+    72.516,
+    73.1661,
+    73.8163,
+    74.4664,
+    75.1166,
+    75.7667,
+    76.4169,
+    77.0671,
+    77.694,
+    78.3442,
+    78.9943,
+    79.6445,
+    80.2946,
+    80.9448,
+    81.5717,
+    82.2219,
+    82.8721,
+    83.5222,
+    84.1724,
+    84.7993,
+    85.4495,
+    86.0996,
+    86.7266,
+    87.3767,
+    88.0269,
+    88.677,
+    89.3272,
+    89.9541,
+    90.6043,
+    91.2545,
+    91.8814,
+    92.5316,
+    93.1585,
+    93.8087,
+    94.4588,
+    95.0858,
+    95.7359,
+    96.3861,
+    97.013,
+    97.6632,
+    98.3133,
+    98.9635,
+    99.6136,
+    100.2406,
+    100.8675,
+    101.5177,
+    102.1678,
+    102.818,
+    103.4449,
+    104.0951,
+    104.7453,
+    105.3954,
+    106.0223,
+    106.6725,
+    107.2994,
+    107.9496,
+    108.5998,
+    109.2499,
+    109.9001
+  ],
+  "revision": "raskys-opening-and-prompt-studio-return",
+  "previousVersionAuditionedByUser": true,
+  "previousConstantBeatFitRmsSeconds": 0.0469,
+  "timeMap": "/theatre/audio-time-map.json",
+  "sourceTargetSeconds": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.5,
+      0.4969791666666667
+    ],
+    [
+      1.0,
+      0.9939791666666666
+    ],
+    [
+      1.5,
+      1.4909583333333334
+    ],
+    [
+      2.0,
+      1.9879583333333333
+    ],
+    [
+      2.5,
+      2.4849375
+    ],
+    [
+      3.0,
+      2.9819375
+    ],
+    [
+      3.5,
+      3.4789166666666667
+    ],
+    [
+      4.0,
+      3.9758958333333334
+    ],
+    [
+      4.5,
+      4.473104166666666
+    ],
+    [
+      5.0,
+      4.970666666666666
+    ],
+    [
+      5.5,
+      5.468583333333333
+    ],
+    [
+      6.0,
+      5.9667916666666665
+    ],
+    [
+      6.5,
+      6.46525
+    ],
+    [
+      7.0,
+      6.9639375
+    ],
+    [
+      7.5,
+      7.4628125
+    ],
+    [
+      8.0,
+      7.9618125
+    ],
+    [
+      8.5,
+      8.4624375
+    ],
+    [
+      9.0,
+      8.965604166666667
+    ],
+    [
+      9.5,
+      9.470375
+    ],
+    [
+      10.0,
+      9.975833333333334
+    ],
+    [
+      10.5,
+      10.481020833333334
+    ],
+    [
+      11.0,
+      10.985020833333333
+    ],
+    [
+      11.5,
+      11.486895833333334
+    ],
+    [
+      12.0,
+      11.985708333333333
+    ],
+    [
+      12.5,
+      12.482458333333334
+    ],
+    [
+      13.0,
+      12.978833333333334
+    ],
+    [
+      13.5,
+      13.4749375
+    ],
+    [
+      14.0,
+      13.970916666666668
+    ],
+    [
+      14.5,
+      14.466895833333334
+    ],
+    [
+      15.0,
+      14.963
+    ],
+    [
+      15.5,
+      15.459354166666667
+    ],
+    [
+      16.0,
+      15.956125
+    ],
+    [
+      16.5,
+      16.454020833333335
+    ],
+    [
+      17.0,
+      16.953416666666666
+    ],
+    [
+      17.5,
+      17.4538125
+    ],
+    [
+      18.0,
+      17.9546875
+    ],
+    [
+      18.5,
+      18.455583333333333
+    ],
+    [
+      19.0,
+      18.955979166666665
+    ],
+    [
+      19.5,
+      19.455375
+    ],
+    [
+      20.0,
+      19.953270833333335
+    ],
+    [
+      20.5,
+      20.449708333333334
+    ],
+    [
+      21.0,
+      20.945145833333335
+    ],
+    [
+      21.5,
+      21.439708333333332
+    ],
+    [
+      22.0,
+      21.933520833333333
+    ],
+    [
+      22.5,
+      22.42675
+    ],
+    [
+      23.0,
+      22.9195
+    ],
+    [
+      23.5,
+      23.4119375
+    ],
+    [
+      24.0,
+      23.904166666666665
+    ],
+    [
+      24.5,
+      24.394875
+    ],
+    [
+      25.0,
+      24.88308333333333
+    ],
+    [
+      25.5,
+      25.369458333333334
+    ],
+    [
+      26.0,
+      25.854666666666667
+    ],
+    [
+      26.5,
+      26.339395833333334
+    ],
+    [
+      27.0,
+      26.824291666666667
+    ],
+    [
+      27.5,
+      27.310041666666667
+    ],
+    [
+      28.0,
+      27.797333333333334
+    ],
+    [
+      28.5,
+      28.2845625
+    ],
+    [
+      29.0,
+      28.7714375
+    ],
+    [
+      29.5,
+      29.2605
+    ],
+    [
+      30.0,
+      29.754270833333333
+    ],
+    [
+      30.5,
+      30.251270833333333
+    ],
+    [
+      31.0,
+      30.74825
+    ],
+    [
+      31.5,
+      31.24525
+    ],
+    [
+      32.0,
+      31.742229166666668
+    ],
+    [
+      32.5,
+      32.23922916666667
+    ],
+    [
+      32.64727083333333,
+      32.38560416666667
+    ]
+  ],
+  "backingGainChangeDb": 7.958800173440752,
+  "liveEq": "120Hz second-order high-pass to reduce room kick/bass overlap; no source separation or note fabrication.",
+  "previousConstantDetectedBeatCount": 51,
+  "liveVideoEncodedDurationSeconds": 32.4,
+  "liveVideoFramesPerSecond": 30.0,
+  "livePlaybackSpeedRange": [
+    0.989201220014838,
+    1.031503846649759
+  ],
+  "studioGuitarGain": 0.18,
+  "practiceRecordingRmsBeforeGain": 0.14022330939769745,
+  "practiceRecordingGain": 0.4459722364972347,
+  "practiceRecordingTargetRms": 0.06253570290113485,
+  "practiceRecordingRelativeToLiveDb": -7.0,
+  "practiceToLiveCrossfadeSeconds": 0.4,
+  "practice": {
+    "sourceInSeconds": 1.886484568382056,
+    "visibleSourceOutSeconds": 14.027814993681949,
+    "audioSourceOutIncludingCrossfadeSeconds": 14.464020010039636,
+    "durationRatio": 0.917,
+    "showStartSeconds": 49.04060000000001,
+    "showPictureEndSeconds": 60.17420000000001,
+    "audioHandleSeconds": 0.4,
+    "sound": "Actual unseparated practice recording, with its original backing if present, pitch-preserved and retimed by the same constant correspondence as the picture. No neural separation or replaced note."
+  },
+  "measuredLiveBodyPremixRms": {
+    "nonguitarStudioAccompaniment": 0.12878082692623138,
+    "studioGuitar": 0.029288259597093653,
+    "actualLiveTarget": 0.14,
+    "actualPracticeTarget": 0.06253570290113485
+  },
+  "studioLeadExit": {
+    "showStartSeconds": 89.57420000000002,
+    "showEndSeconds": 92.57420000000002,
+    "startGain": 0.18,
+    "endGain": 0,
+    "curve": "half-cosine smooth fade, zero-slope endpoints"
+  },
+  "masterReturn": {
+    "showStartSeconds": 92.55980416666668,
+    "showEndSeconds": 93.00980416666668,
+    "curve": "half-cosine crossfade, zero-slope endpoints",
+    "underlay": "Nonguitar/nonvocal stem accompaniment at0.60 continues without a gap.",
+    "placement": "Begins only once actual live audio ends, within the final video frame. No additional chapter-hold delay."
+  },
+  "liveChapterEndSeconds": 92.62480000000002,
+  "openingFadeSeconds": 0.08,
+  "addedOpeningSecondsFromPrevious": 7.9413000000000125,
+  "studioGuitarGainChangeFromPreviousDb": -0.9151498112135035,
+  "actualLiveFileEdgeFadeSeconds": 0.035,
+  "files": {
+    "soundtrack.mp3": {
+      "bytes": 2719076,
+      "sha256": "1bc4b8ccc6824e16a8416b5d42e35c29e041bc3e2298b40f056dadabcd61cec7"
+    },
+    "guitar-synced.mp4": {
+      "bytes": 4010285,
+      "sha256": "72ace6a208d39c8275b1794118692d15ba3717da9ba82789e6a61b95d7f39e4e"
+    },
+    "guitar-poster.jpg": {
+      "bytes": 42824,
+      "sha256": "581b38fb8074d0bf03d9310ddeff464c32f0cda6e2e965e151c4c2a5199950fa"
+    },
+    "waveform.json": {
+      "bytes": 90603,
+      "sha256": "c5bbcad4e0c834641585c92da810edfa8e8ce4d6c41069ecb71b4e5178f0364a"
+    }
+  },
+  "localTimingValidation": {
+    "method": "Four-second windows; bounded multiband spectral-flux correlation. 128-sample analysis hop at 11025Hz, 2.5ms interpolation search. Correlation estimates do not prove sample-accurate or perceptual note alignment.",
+    "sourceToRenderedResidualSecondsRms": 0.0009128709291752768,
+    "sourceToRenderedResidualSecondsMedianAbsolute": 0.0,
+    "oldStudioResidualSecondsRms": 0.04927812225859801,
+    "oldStudioResidualSecondsMedianAbsolute": 0.05,
+    "newStudioResidualSecondsRms": 0.008190441583537076,
+    "newStudioResidualSecondsMedianAbsolute": 0.005,
+    "deliveredRecordingPlacement": {
+      "analysisSampleRate": 11025,
+      "method": "Raw waveform cross-correlation of the rendered source recording against the whole delivered soundtrack; not inferred from cue metadata. Resolution is one analysis sample, about90.7 microseconds.",
+      "recordings": {
+        "practice": {
+          "expectedShowStartSeconds": 49.04060000000001,
+          "detectedFromDeliveredWaveformSeconds": 49.04063492063492,
+          "differenceSeconds": 3.4920634909951787e-05,
+          "correlation": 0.3918777108192444
+        },
+        "live": {
+          "expectedShowStartSeconds": 60.17420000000001,
+          "detectedFromDeliveredWaveformSeconds": 60.174240362811794,
+          "differenceSeconds": 4.036281178088075e-05,
+          "correlation": 0.7237827181816101
+        }
+      }
+    },
+    "limitations": "The local windows helped choose the map, so before/after residuals are fitting diagnostics rather than an independent test. Interpolated shifts are finer than the 11.61ms analysis hop. Neither residual proves exact guitar-note alignment or a successful human listening review.",
+    "report": "/theatre/audio-validation.json"
+  }
+}

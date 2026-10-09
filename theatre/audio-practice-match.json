@@ -1,0 +1,420 @@
+{
+  "coarse": {
+    "whole-practice-to-guitar": [
+      {
+        "studioStart": 182.3695238095238,
+        "rate": 0.92,
+        "cosineSimilarity": 0.36896392703056335
+      },
+      {
+        "studioStart": 183.01968253968255,
+        "rate": 0.9,
+        "cosineSimilarity": 0.2648155093193054
+      },
+      {
+        "studioStart": 181.71936507936508,
+        "rate": 0.9400000000000001,
+        "cosineSimilarity": 0.23018282651901245
+      },
+      {
+        "studioStart": 181.16208616780045,
+        "rate": 0.9600000000000001,
+        "cosineSimilarity": 0.16144098341464996
+      },
+      {
+        "studioStart": 180.83700680272108,
+        "rate": 0.9800000000000001,
+        "cosineSimilarity": 0.11852509528398514
+      },
+      {
+        "studioStart": 180.74412698412698,
+        "rate": 1.0,
+        "cosineSimilarity": 0.09301595389842987
+      },
+      {
+        "studioStart": 180.97632653061225,
+        "rate": 1.02,
+        "cosineSimilarity": 0.08491763472557068
+      },
+      {
+        "studioStart": 180.69768707482993,
+        "rate": 1.04,
+        "cosineSimilarity": 0.0668444111943245
+      },
+      {
+        "studioStart": 15.32517006802721,
+        "rate": 1.12,
+        "cosineSimilarity": 0.06635843962430954
+      },
+      {
+        "studioStart": 13.606893424036281,
+        "rate": 1.1,
+        "cosineSimilarity": 0.06341324746608734
+      },
+      {
+        "studioStart": 12.353015873015874,
+        "rate": 0.9,
+        "cosineSimilarity": 0.05691230669617653
+      },
+      {
+        "studioStart": 21.269478458049885,
+        "rate": 0.9600000000000001,
+        "cosineSimilarity": 0.0565139502286911
+      }
+    ],
+    "practice12to23-to-guitar": [
+      {
+        "studioStart": 193.42222222222222,
+        "rate": 0.92,
+        "cosineSimilarity": 0.4134584665298462
+      },
+      {
+        "studioStart": 193.51510204081632,
+        "rate": 0.9,
+        "cosineSimilarity": 0.3543566167354584
+      },
+      {
+        "studioStart": 193.37578231292517,
+        "rate": 0.9400000000000001,
+        "cosineSimilarity": 0.34872907400131226
+      },
+      {
+        "studioStart": 193.19002267573697,
+        "rate": 0.9600000000000001,
+        "cosineSimilarity": 0.3152201771736145
+      },
+      {
+        "studioStart": 193.00426303854874,
+        "rate": 0.9800000000000001,
+        "cosineSimilarity": 0.2968933582305908
+      },
+      {
+        "studioStart": 192.91138321995464,
+        "rate": 1.0,
+        "cosineSimilarity": 0.2666959762573242
+      },
+      {
+        "studioStart": 193.23646258503402,
+        "rate": 1.02,
+        "cosineSimilarity": 0.24941934645175934
+      },
+      {
+        "studioStart": 192.40054421768707,
+        "rate": 1.04,
+        "cosineSimilarity": 0.24366120994091034
+      },
+      {
+        "studioStart": 192.21478458049887,
+        "rate": 1.12,
+        "cosineSimilarity": 0.23258696496486664
+      },
+      {
+        "studioStart": 192.35410430839002,
+        "rate": 1.08,
+        "cosineSimilarity": 0.23063744604587555
+      },
+      {
+        "studioStart": 192.26122448979592,
+        "rate": 1.1,
+        "cosineSimilarity": 0.2258361279964447
+      },
+      {
+        "studioStart": 192.30766439909297,
+        "rate": 1.06,
+        "cosineSimilarity": 0.2210490107536316
+      }
+    ],
+    "whole-practice-to-master": [
+      {
+        "studioStart": 182.3695238095238,
+        "rate": 0.92,
+        "cosineSimilarity": 0.42332178354263306
+      },
+      {
+        "studioStart": 182.83392290249432,
+        "rate": 0.9,
+        "cosineSimilarity": 0.2392917424440384
+      },
+      {
+        "studioStart": 181.76580498866213,
+        "rate": 0.9400000000000001,
+        "cosineSimilarity": 0.20700603723526
+      },
+      {
+        "studioStart": 171.92054421768708,
+        "rate": 0.92,
+        "cosineSimilarity": 0.1663338989019394
+      },
+      {
+        "studioStart": 181.16208616780045,
+        "rate": 0.9600000000000001,
+        "cosineSimilarity": 0.16235241293907166
+      },
+      {
+        "studioStart": 42.72471655328798,
+        "rate": 0.9600000000000001,
+        "cosineSimilarity": 0.12838469445705414
+      },
+      {
+        "studioStart": 180.9298866213152,
+        "rate": 0.9800000000000001,
+        "cosineSimilarity": 0.12020400911569595
+      },
+      {
+        "studioStart": 161.47156462585033,
+        "rate": 0.92,
+        "cosineSimilarity": 0.11796099692583084
+      },
+      {
+        "studioStart": 75.60417233560091,
+        "rate": 0.9400000000000001,
+        "cosineSimilarity": 0.11468839645385742
+      },
+      {
+        "studioStart": 180.97632653061225,
+        "rate": 1.02,
+        "cosineSimilarity": 0.11068934202194214
+      },
+      {
+        "studioStart": 129.24226757369615,
+        "rate": 0.9400000000000001,
+        "cosineSimilarity": 0.10965602099895477
+      },
+      {
+        "studioStart": 180.74412698412698,
+        "rate": 1.0,
+        "cosineSimilarity": 0.10759246349334717
+      }
+    ]
+  },
+  "whole-practice-to-guitar": [
+    {
+      "studioStart": 182.4391836734694,
+      "rate": 0.917,
+      "cosineSimilarity": 0.44312140345573425
+    },
+    {
+      "studioStart": 182.47401360544217,
+      "rate": 0.916,
+      "cosineSimilarity": 0.43472638726234436
+    },
+    {
+      "studioStart": 182.41596371882085,
+      "rate": 0.918,
+      "cosineSimilarity": 0.42847827076911926
+    },
+    {
+      "studioStart": 182.4972335600907,
+      "rate": 0.915,
+      "cosineSimilarity": 0.41561704874038696
+    },
+    {
+      "studioStart": 182.39274376417234,
+      "rate": 0.919,
+      "cosineSimilarity": 0.4047611951828003
+    },
+    {
+      "studioStart": 182.52045351473922,
+      "rate": 0.914,
+      "cosineSimilarity": 0.39472174644470215
+    },
+    {
+      "studioStart": 182.3695238095238,
+      "rate": 0.92,
+      "cosineSimilarity": 0.38612431287765503
+    },
+    {
+      "studioStart": 182.5668934240363,
+      "rate": 0.913,
+      "cosineSimilarity": 0.3705231845378876
+    },
+    {
+      "studioStart": 182.33469387755102,
+      "rate": 0.921,
+      "cosineSimilarity": 0.3656059801578522
+    },
+    {
+      "studioStart": 182.60172335600907,
+      "rate": 0.912,
+      "cosineSimilarity": 0.3557824194431305
+    },
+    {
+      "studioStart": 182.32308390022675,
+      "rate": 0.922,
+      "cosineSimilarity": 0.3511829674243927
+    },
+    {
+      "studioStart": 182.63655328798185,
+      "rate": 0.911,
+      "cosineSimilarity": 0.3409522771835327
+    }
+  ],
+  "first16-practice-to-guitar": [
+    {
+      "studioStart": 182.45079365079366,
+      "rate": 0.917,
+      "cosineSimilarity": 0.44335126876831055
+    },
+    {
+      "studioStart": 182.46240362811793,
+      "rate": 0.916,
+      "cosineSimilarity": 0.44304829835891724
+    },
+    {
+      "studioStart": 182.4391836734694,
+      "rate": 0.918,
+      "cosineSimilarity": 0.4426214396953583
+    },
+    {
+      "studioStart": 182.46240362811793,
+      "rate": 0.915,
+      "cosineSimilarity": 0.44165945053100586
+    },
+    {
+      "studioStart": 182.42757369614512,
+      "rate": 0.919,
+      "cosineSimilarity": 0.4377287030220032
+    },
+    {
+      "studioStart": 182.47401360544217,
+      "rate": 0.914,
+      "cosineSimilarity": 0.4346759617328644
+    },
+    {
+      "studioStart": 182.41596371882085,
+      "rate": 0.92,
+      "cosineSimilarity": 0.4314407706260681
+    },
+    {
+      "studioStart": 182.48562358276644,
+      "rate": 0.913,
+      "cosineSimilarity": 0.4302653968334198
+    },
+    {
+      "studioStart": 182.41596371882085,
+      "rate": 0.921,
+      "cosineSimilarity": 0.4263615012168884
+    },
+    {
+      "studioStart": 182.48562358276644,
+      "rate": 0.912,
+      "cosineSimilarity": 0.4256565570831299
+    },
+    {
+      "studioStart": 182.4043537414966,
+      "rate": 0.922,
+      "cosineSimilarity": 0.4177413284778595
+    },
+    {
+      "studioStart": 182.4972335600907,
+      "rate": 0.911,
+      "cosineSimilarity": 0.41618701815605164
+    }
+  ],
+  "first16-practice-to-master": [
+    {
+      "studioStart": 182.45079365079366,
+      "rate": 0.917,
+      "cosineSimilarity": 0.5803462862968445
+    },
+    {
+      "studioStart": 182.46240362811793,
+      "rate": 0.916,
+      "cosineSimilarity": 0.5776038765907288
+    },
+    {
+      "studioStart": 182.4391836734694,
+      "rate": 0.918,
+      "cosineSimilarity": 0.5763020515441895
+    },
+    {
+      "studioStart": 182.46240362811793,
+      "rate": 0.915,
+      "cosineSimilarity": 0.5746665596961975
+    },
+    {
+      "studioStart": 182.4391836734694,
+      "rate": 0.919,
+      "cosineSimilarity": 0.5626604557037354
+    },
+    {
+      "studioStart": 182.47401360544217,
+      "rate": 0.914,
+      "cosineSimilarity": 0.5541413426399231
+    },
+    {
+      "studioStart": 182.41596371882085,
+      "rate": 0.92,
+      "cosineSimilarity": 0.5432778596878052
+    },
+    {
+      "studioStart": 182.47401360544217,
+      "rate": 0.913,
+      "cosineSimilarity": 0.5419186353683472
+    },
+    {
+      "studioStart": 182.41596371882085,
+      "rate": 0.921,
+      "cosineSimilarity": 0.5329492092132568
+    },
+    {
+      "studioStart": 182.48562358276644,
+      "rate": 0.912,
+      "cosineSimilarity": 0.5322672724723816
+    },
+    {
+      "studioStart": 182.4043537414966,
+      "rate": 0.922,
+      "cosineSimilarity": 0.511238157749176
+    },
+    {
+      "studioStart": 182.4972335600907,
+      "rate": 0.911,
+      "cosineSimilarity": 0.5105723142623901
+    }
+  ],
+  "introLocalWindows": [
+    {
+      "sourceCenter": 3,
+      "noteBestShift": 1.1102230246251565e-16,
+      "noteCosine": 0.48976231791267677,
+      "rhythmBestShift": 1.1102230246251565e-16,
+      "rhythmCorrelation": 0.4956082825045739
+    },
+    {
+      "sourceCenter": 5,
+      "noteBestShift": -0.002499999999999891,
+      "noteCosine": 0.5668325156875703,
+      "rhythmBestShift": 1.1102230246251565e-16,
+      "rhythmCorrelation": 0.5880676546886144
+    },
+    {
+      "sourceCenter": 7,
+      "noteBestShift": -0.004999999999999893,
+      "noteCosine": 0.447952084389289,
+      "rhythmBestShift": -0.002499999999999891,
+      "rhythmCorrelation": 0.4504191781540707
+    },
+    {
+      "sourceCenter": 9,
+      "noteBestShift": -0.002499999999999891,
+      "noteCosine": 0.43214176569717183,
+      "rhythmBestShift": -0.002499999999999891,
+      "rhythmCorrelation": 0.41191557615877417
+    },
+    {
+      "sourceCenter": 11,
+      "noteBestShift": -0.002499999999999891,
+      "noteCosine": 0.5437936216370682,
+      "rhythmBestShift": -0.002499999999999891,
+      "rhythmCorrelation": 0.4874886829516521
+    },
+    {
+      "sourceCenter": 13,
+      "noteBestShift": -0.004999999999999893,
+      "noteCosine": 0.46959869210365546,
+      "rhythmBestShift": -0.004999999999999893,
+      "rhythmCorrelation": 0.47999964427091757
+    }
+  ]
+}

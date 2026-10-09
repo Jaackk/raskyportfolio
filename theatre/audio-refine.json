@@ -1,0 +1,109 @@
+{
+  "localWindows": [
+    {
+      "liveCenter": 2.0,
+      "noteBestShift": -0.16,
+      "noteCosine": 0.14433704643257228,
+      "rhythmBestShift": 0.005,
+      "rhythmCorrelation": 0.4690700736615321
+    },
+    {
+      "liveCenter": 4.0,
+      "noteBestShift": -0.035,
+      "noteCosine": 0.21091679420621834,
+      "rhythmBestShift": 0.0,
+      "rhythmCorrelation": 0.5465094421466574
+    },
+    {
+      "liveCenter": 6.0,
+      "noteBestShift": 0.12,
+      "noteCosine": 0.18176693067286115,
+      "rhythmBestShift": 0.005,
+      "rhythmCorrelation": 0.6327292756803559
+    },
+    {
+      "liveCenter": 8.0,
+      "noteBestShift": 0.02,
+      "noteCosine": 0.1744495458797922,
+      "rhythmBestShift": 0.005,
+      "rhythmCorrelation": 0.4166131758618723
+    },
+    {
+      "liveCenter": 10.0,
+      "noteBestShift": 0.05,
+      "noteCosine": 0.22309351237560315,
+      "rhythmBestShift": 0.055,
+      "rhythmCorrelation": 0.2614417609174349
+    },
+    {
+      "liveCenter": 12.0,
+      "noteBestShift": 0.105,
+      "noteCosine": 0.27754516082822867,
+      "rhythmBestShift": 0.065,
+      "rhythmCorrelation": 0.4540305926531692
+    },
+    {
+      "liveCenter": 14.0,
+      "noteBestShift": 0.085,
+      "noteCosine": 0.3275393065919186,
+      "rhythmBestShift": 0.045,
+      "rhythmCorrelation": 0.5236997484527406
+    },
+    {
+      "liveCenter": 16.0,
+      "noteBestShift": 0.08,
+      "noteCosine": 0.30131914757112493,
+      "rhythmBestShift": 0.05,
+      "rhythmCorrelation": 0.5779884706707644
+    },
+    {
+      "liveCenter": 18.0,
+      "noteBestShift": 0.09,
+      "noteCosine": 0.2642465600083805,
+      "rhythmBestShift": 0.06,
+      "rhythmCorrelation": 0.4375763291732617
+    },
+    {
+      "liveCenter": 20.0,
+      "noteBestShift": 0.085,
+      "noteCosine": 0.22508821062747558,
+      "rhythmBestShift": 0.085,
+      "rhythmCorrelation": 0.3405469335198791
+    },
+    {
+      "liveCenter": 22.0,
+      "noteBestShift": 0.065,
+      "noteCosine": 0.33175644809276283,
+      "rhythmBestShift": 0.065,
+      "rhythmCorrelation": 0.4883031826888904
+    },
+    {
+      "liveCenter": 24.0,
+      "noteBestShift": 0.045,
+      "noteCosine": 0.4281891711249126,
+      "rhythmBestShift": 0.06,
+      "rhythmCorrelation": 0.44481012248493823
+    },
+    {
+      "liveCenter": 26.0,
+      "noteBestShift": 0.02,
+      "noteCosine": 0.31396470309867347,
+      "rhythmBestShift": 0.01,
+      "rhythmCorrelation": 0.4753744653882982
+    },
+    {
+      "liveCenter": 28.0,
+      "noteBestShift": 0.0,
+      "noteCosine": 0.17576166027334644,
+      "rhythmBestShift": -0.04,
+      "rhythmCorrelation": 0.4924490010586259
+    },
+    {
+      "liveCenter": 30.0,
+      "noteBestShift": -0.065,
+      "noteCosine": 0.09436392841520418,
+      "rhythmBestShift": -0.065,
+      "rhythmCorrelation": 0.33934738578469
+    }
+  ]
+}

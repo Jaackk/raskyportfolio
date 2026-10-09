@@ -1,0 +1,340 @@
+/* The skate collection belongs to this page; shared portfolio layout is untouched. */
+.design-page .page-intro {
+  padding-bottom: clamp(48px, 6vw, 80px);
+}
+
+.skate-collection {
+  padding-bottom: clamp(72px, 10vw, 140px);
+}
+
+.skate-feature {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+  border-top: 1px solid var(--line-strong);
+  padding-top: 36px;
+}
+
+.skate-feature-copy h2 {
+  max-width: 8ch;
+  margin: 22px 0 24px;
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 6.5vw, 6.25rem);
+  font-weight: 400;
+  line-height: .96;
+  letter-spacing: -.055em;
+}
+
+.skate-feature-copy h2 em {
+  color: var(--red, #ad3026);
+}
+
+.skate-introduction {
+  max-width: 29em;
+  font-size: clamp(1rem, 1.5vw, 1.16rem);
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+.skate-project-details {
+  display: grid;
+  gap: 10px;
+  margin: 32px 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-size: .84rem;
+}
+
+.skate-project-details div {
+  display: grid;
+  grid-template-columns: 7em 1fr;
+  gap: 12px;
+}
+
+.skate-project-details dt {
+  color: var(--ink-3);
+}
+
+.skate-project-details dd {
+  margin: 0;
+}
+
+.skate-piece {
+  margin: 0;
+  min-width: 0;
+}
+
+.skate-art-view {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: clamp(340px, 36vw, 460px);
+  padding: 24px 24px 44px;
+  background: #e6e0d4;
+  border: 1px solid rgba(23, 19, 15, .06);
+}
+
+.skate-art-view img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  transition: transform 400ms var(--ease);
+}
+
+.skate-art-view:hover img {
+  transform: translateY(-4px);
+}
+
+.skate-art-view:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.skate-piece--lead .skate-art-view {
+  height: clamp(430px, 46vw, 620px);
+  padding: 20px 36px 44px;
+  background: #e5e0d5;
+}
+
+.skate-piece--heart .skate-art-view {
+  background: #e9ded7;
+}
+
+.skate-piece--road .skate-art-view {
+  background: #dce6e1;
+}
+
+.skate-piece--arch .skate-art-view {
+  background: #e9e5dc;
+}
+
+.skate-enlarge {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.skate-piece figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-strong);
+  font-size: .88rem;
+}
+
+.skate-piece figcaption > span:last-child {
+  font-size: .65rem;
+  letter-spacing: .13em;
+  color: var(--ink-3);
+}
+
+.skate-piece-number {
+  margin-right: 13px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+.skate-series-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  margin: clamp(40px, 6vw, 72px) 0 20px;
+  scroll-margin-top: calc(var(--header-h) + 28px);
+}
+
+.skate-series-heading h3 {
+  margin: 0;
+}
+
+.skate-scroll-hint {
+  margin: 10px 0 0;
+  color: var(--ink-3);
+  font-size: .84rem;
+}
+
+.skate-gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.skate-gallery-position {
+  min-width: 4.5em;
+  margin-right: 6px;
+  font-size: .76rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+
+.skate-gallery-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.skate-gallery-controls .skate-gallery-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  width: auto;
+  min-width: 104px;
+  padding: 0 14px;
+  border-radius: 24px;
+  font-size: .76rem;
+}
+
+.skate-gallery-controls [data-gallery-toggle-icon] {
+  font-size: .68rem;
+  letter-spacing: -2px;
+}
+
+.skate-gallery-controls [data-gallery-toggle][hidden] {
+  display: none;
+}
+
+.skate-gallery-controls button:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.skate-gallery-controls button:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.skate-gallery-controls button:focus-visible,
+.skate-series:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 5px;
+}
+
+.skate-series {
+  display: flex;
+  gap: clamp(18px, 3vw, 36px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 2px 2px 20px;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #a53529 var(--line);
+}
+
+.skate-series-item {
+  flex: 0 0 clamp(280px, 30vw, 365px);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.skate-series.has-auto-scroll {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.skate-series.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+  scroll-snap-type: none;
+}
+
+.skate-series.is-dragging .skate-art-view {
+  cursor: grabbing;
+}
+
+.skate-reference {
+  margin: 10px 0 0;
+  font-size: .72rem;
+  color: var(--ink-3);
+}
+
+.design-work-heading {
+  margin-bottom: 36px;
+}
+
+.design-work-heading h2 {
+  margin-top: 16px;
+}
+
+.design-full-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Transparent black artwork must remain legible when enlarged. */
+.design-page .image-lightbox__panel img {
+  background: #f4efe5;
+  padding: 14px;
+}
+
+@media (max-width: 760px) {
+  .skate-feature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .skate-feature-copy h2 {
+    max-width: 12ch;
+    font-size: clamp(3.4rem, 11vw, 5rem);
+  }
+
+  .skate-project-details {
+    margin: 22px 0;
+  }
+
+  .skate-piece--lead .skate-art-view {
+    height: 500px;
+  }
+
+  .skate-series-item {
+    flex-basis: min(82vw, 340px);
+  }
+
+  .skate-series-heading {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .skate-gallery-controls {
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .skate-art-view {
+    height: 440px;
+    padding: 18px 24px 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skate-art-view img {
+    transition: none;
+  }
+}

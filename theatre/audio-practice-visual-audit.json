@@ -1,0 +1,454 @@
+{
+  "source": "theatre/assets/v2/originals/practice-DUD_MWUDRK9.mp4",
+  "delivered": "theatre/assets/v2/practice-guitar.mp4",
+  "originalAudioStartPtsSeconds": 0,
+  "originalVideoStartPtsSeconds": 0,
+  "deliveredVideoStartPtsSeconds": 0,
+  "frameMatching": "MSE comparison of34 delivered frames to first17 seconds of original, grayscale160x90. Every match follows the intended source-in/duration-ratio mapping within normal30fps rounding.",
+  "maxAbsoluteFrameTimingErrorSeconds": 0.015293650793654485,
+  "frameSamples": [
+    {
+      "outputFrame": 0,
+      "outputTime": 0.0,
+      "sourceFrame": 57,
+      "matchedSourceTime": 1.9,
+      "expectedSourceTime": 1.886484568382056,
+      "outputTimingErrorSeconds": 0.012393650793654645,
+      "mse": 0.21305555555555555
+    },
+    {
+      "outputFrame": 10,
+      "outputTime": 0.3333333333333333,
+      "sourceFrame": 68,
+      "matchedSourceTime": 2.2666666666666666,
+      "expectedSourceTime": 2.2499887486801295,
+      "outputTimingErrorSeconds": 0.015293650793654485,
+      "mse": 0.2940277777777778
+    },
+    {
+      "outputFrame": 20,
+      "outputTime": 0.6666666666666666,
+      "sourceFrame": 78,
+      "matchedSourceTime": 2.6,
+      "expectedSourceTime": 2.6134929289782027,
+      "outputTimingErrorSeconds": -0.012373015873011825,
+      "mse": 0.20319444444444446
+    },
+    {
+      "outputFrame": 30,
+      "outputTime": 1.0,
+      "sourceFrame": 89,
+      "matchedSourceTime": 2.966666666666667,
+      "expectedSourceTime": 2.976997109276276,
+      "outputTimingErrorSeconds": -0.009473015873011578,
+      "mse": 0.22368055555555555
+    },
+    {
+      "outputFrame": 40,
+      "outputTime": 1.3333333333333333,
+      "sourceFrame": 100,
+      "matchedSourceTime": 3.3333333333333335,
+      "expectedSourceTime": 3.3405012895743496,
+      "outputTimingErrorSeconds": -0.006573015873011737,
+      "mse": 0.29194444444444445
+    },
+    {
+      "outputFrame": 50,
+      "outputTime": 1.6666666666666667,
+      "sourceFrame": 111,
+      "matchedSourceTime": 3.7,
+      "expectedSourceTime": 3.704005469872423,
+      "outputTimingErrorSeconds": -0.003673015873011897,
+      "mse": 0.19027777777777777
+    },
+    {
+      "outputFrame": 60,
+      "outputTime": 2.0,
+      "sourceFrame": 122,
+      "matchedSourceTime": 4.066666666666666,
+      "expectedSourceTime": 4.067509650170496,
+      "outputTimingErrorSeconds": -0.0007730158730120565,
+      "mse": 0.2492361111111111
+    },
+    {
+      "outputFrame": 70,
+      "outputTime": 2.3333333333333335,
+      "sourceFrame": 133,
+      "matchedSourceTime": 4.433333333333334,
+      "expectedSourceTime": 4.4310138304685704,
+      "outputTimingErrorSeconds": 0.002126984126987784,
+      "mse": 0.18868055555555555
+    },
+    {
+      "outputFrame": 80,
+      "outputTime": 2.6666666666666665,
+      "sourceFrame": 144,
+      "matchedSourceTime": 4.8,
+      "expectedSourceTime": 4.794518010766643,
+      "outputTimingErrorSeconds": 0.005026984126988439,
+      "mse": 0.248125
+    },
+    {
+      "outputFrame": 90,
+      "outputTime": 3.0,
+      "sourceFrame": 155,
+      "matchedSourceTime": 5.166666666666667,
+      "expectedSourceTime": 5.158022191064717,
+      "outputTimingErrorSeconds": 0.007926984126988279,
+      "mse": 0.21305555555555555
+    },
+    {
+      "outputFrame": 100,
+      "outputTime": 3.3333333333333335,
+      "sourceFrame": 166,
+      "matchedSourceTime": 5.533333333333333,
+      "expectedSourceTime": 5.52152637136279,
+      "outputTimingErrorSeconds": 0.010826984126988121,
+      "mse": 0.27902777777777776
+    },
+    {
+      "outputFrame": 110,
+      "outputTime": 3.6666666666666665,
+      "sourceFrame": 177,
+      "matchedSourceTime": 5.9,
+      "expectedSourceTime": 5.885030551660863,
+      "outputTimingErrorSeconds": 0.013726984126988775,
+      "mse": 0.263125
+    },
+    {
+      "outputFrame": 120,
+      "outputTime": 4.0,
+      "sourceFrame": 187,
+      "matchedSourceTime": 6.233333333333333,
+      "expectedSourceTime": 6.248534731958937,
+      "outputTimingErrorSeconds": -0.013939682539678758,
+      "mse": 0.26895833333333335
+    },
+    {
+      "outputFrame": 130,
+      "outputTime": 4.333333333333333,
+      "sourceFrame": 198,
+      "matchedSourceTime": 6.6,
+      "expectedSourceTime": 6.61203891225701,
+      "outputTimingErrorSeconds": -0.011039682539678103,
+      "mse": 0.18861111111111112
+    },
+    {
+      "outputFrame": 140,
+      "outputTime": 4.666666666666667,
+      "sourceFrame": 209,
+      "matchedSourceTime": 6.966666666666667,
+      "expectedSourceTime": 6.975543092555084,
+      "outputTimingErrorSeconds": -0.008139682539678263,
+      "mse": 0.24055555555555555
+    },
+    {
+      "outputFrame": 150,
+      "outputTime": 5.0,
+      "sourceFrame": 220,
+      "matchedSourceTime": 7.333333333333333,
+      "expectedSourceTime": 7.339047272853158,
+      "outputTimingErrorSeconds": -0.005239682539679236,
+      "mse": 0.21756944444444445
+    },
+    {
+      "outputFrame": 160,
+      "outputTime": 5.333333333333333,
+      "sourceFrame": 231,
+      "matchedSourceTime": 7.7,
+      "expectedSourceTime": 7.70255145315123,
+      "outputTimingErrorSeconds": -0.0023396825396777665,
+      "mse": 0.2115277777777778
+    },
+    {
+      "outputFrame": 170,
+      "outputTime": 5.666666666666667,
+      "sourceFrame": 242,
+      "matchedSourceTime": 8.066666666666666,
+      "expectedSourceTime": 8.066055633449304,
+      "outputTimingErrorSeconds": 0.0005603174603212598,
+      "mse": 0.23798611111111112
+    },
+    {
+      "outputFrame": 180,
+      "outputTime": 6.0,
+      "sourceFrame": 253,
+      "matchedSourceTime": 8.433333333333334,
+      "expectedSourceTime": 8.429559813747378,
+      "outputTimingErrorSeconds": 0.0034603174603211003,
+      "mse": 0.20083333333333334
+    },
+    {
+      "outputFrame": 190,
+      "outputTime": 6.333333333333333,
+      "sourceFrame": 264,
+      "matchedSourceTime": 8.8,
+      "expectedSourceTime": 8.79306399404545,
+      "outputTimingErrorSeconds": 0.00636031746032257,
+      "mse": 0.20069444444444445
+    },
+    {
+      "outputFrame": 200,
+      "outputTime": 6.666666666666667,
+      "sourceFrame": 275,
+      "matchedSourceTime": 9.166666666666666,
+      "expectedSourceTime": 9.156568174343525,
+      "outputTimingErrorSeconds": 0.009260317460320782,
+      "mse": 0.218125
+    },
+    {
+      "outputFrame": 210,
+      "outputTime": 7.0,
+      "sourceFrame": 286,
+      "matchedSourceTime": 9.533333333333333,
+      "expectedSourceTime": 9.520072354641597,
+      "outputTimingErrorSeconds": 0.012160317460322251,
+      "mse": 0.2609722222222222
+    },
+    {
+      "outputFrame": 220,
+      "outputTime": 7.333333333333333,
+      "sourceFrame": 297,
+      "matchedSourceTime": 9.9,
+      "expectedSourceTime": 9.883576534939671,
+      "outputTimingErrorSeconds": 0.015060317460322091,
+      "mse": 0.20472222222222222
+    },
+    {
+      "outputFrame": 230,
+      "outputTime": 7.666666666666667,
+      "sourceFrame": 307,
+      "matchedSourceTime": 10.233333333333333,
+      "expectedSourceTime": 10.247080715237745,
+      "outputTimingErrorSeconds": -0.012606349206346255,
+      "mse": 0.23618055555555556
+    },
+    {
+      "outputFrame": 240,
+      "outputTime": 8.0,
+      "sourceFrame": 318,
+      "matchedSourceTime": 10.6,
+      "expectedSourceTime": 10.610584895535817,
+      "outputTimingErrorSeconds": -0.009706349206344786,
+      "mse": 0.18354166666666666
+    },
+    {
+      "outputFrame": 250,
+      "outputTime": 8.333333333333334,
+      "sourceFrame": 329,
+      "matchedSourceTime": 10.966666666666667,
+      "expectedSourceTime": 10.974089075833891,
+      "outputTimingErrorSeconds": -0.006806349206344946,
+      "mse": 0.14423611111111112
+    },
+    {
+      "outputFrame": 260,
+      "outputTime": 8.666666666666666,
+      "sourceFrame": 340,
+      "matchedSourceTime": 11.333333333333334,
+      "expectedSourceTime": 11.337593256131964,
+      "outputTimingErrorSeconds": -0.003906349206343476,
+      "mse": 0.2296527777777778
+    },
+    {
+      "outputFrame": 270,
+      "outputTime": 9.0,
+      "sourceFrame": 351,
+      "matchedSourceTime": 11.7,
+      "expectedSourceTime": 11.701097436430038,
+      "outputTimingErrorSeconds": -0.0010063492063452646,
+      "mse": 0.193125
+    },
+    {
+      "outputFrame": 280,
+      "outputTime": 9.333333333333334,
+      "sourceFrame": 362,
+      "matchedSourceTime": 12.066666666666666,
+      "expectedSourceTime": 12.064601616728112,
+      "outputTimingErrorSeconds": 0.001893650793654576,
+      "mse": 0.25708333333333333
+    },
+    {
+      "outputFrame": 290,
+      "outputTime": 9.666666666666666,
+      "sourceFrame": 373,
+      "matchedSourceTime": 12.433333333333334,
+      "expectedSourceTime": 12.428105797026184,
+      "outputTimingErrorSeconds": 0.004793650793656045,
+      "mse": 0.22041666666666668
+    },
+    {
+      "outputFrame": 300,
+      "outputTime": 10.0,
+      "sourceFrame": 384,
+      "matchedSourceTime": 12.8,
+      "expectedSourceTime": 12.791609977324258,
+      "outputTimingErrorSeconds": 0.0076936507936558865,
+      "mse": 0.18430555555555556
+    },
+    {
+      "outputFrame": 310,
+      "outputTime": 10.333333333333334,
+      "sourceFrame": 395,
+      "matchedSourceTime": 13.166666666666666,
+      "expectedSourceTime": 13.155114157622332,
+      "outputTimingErrorSeconds": 0.010593650793654099,
+      "mse": 0.19090277777777778
+    },
+    {
+      "outputFrame": 320,
+      "outputTime": 10.666666666666666,
+      "sourceFrame": 406,
+      "matchedSourceTime": 13.533333333333333,
+      "expectedSourceTime": 13.518618337920405,
+      "outputTimingErrorSeconds": 0.013493650793655568,
+      "mse": 0.233125
+    },
+    {
+      "outputFrame": 330,
+      "outputTime": 11.0,
+      "sourceFrame": 416,
+      "matchedSourceTime": 13.866666666666667,
+      "expectedSourceTime": 13.882122518218479,
+      "outputTimingErrorSeconds": -0.014173015873011152,
+      "mse": 0.24819444444444444
+    }
+  ],
+  "motionAudioCorrelation": {
+    "picking": [
+      [
+        -0.14999999999999858,
+        0.17138990644626134
+      ],
+      [
+        1.887379141862766e-15,
+        0.17128371536072282
+      ],
+      [
+        -0.1666666666666653,
+        0.1681996655306111
+      ],
+      [
+        -0.03333333333333155,
+        0.16495466640650652
+      ],
+      [
+        -0.01666666666666483,
+        0.15601010028955553
+      ],
+      [
+        -0.18333333333333202,
+        0.13976829740985797
+      ],
+      [
+        0.05000000000000204,
+        0.121095536680791
+      ],
+      [
+        0.033333333333335324,
+        0.11638748744984244
+      ]
+    ],
+    "fret": [
+      [
+        0.05000000000000204,
+        0.1721444788810885
+      ],
+      [
+        -0.5833333333333333,
+        0.15363456502818573
+      ],
+      [
+        0.08333333333333548,
+        0.153271371977703
+      ],
+      [
+        0.06666666666666876,
+        0.13745857028270864
+      ],
+      [
+        0.033333333333335324,
+        0.1362535566359727
+      ],
+      [
+        0.016666666666668606,
+        0.13355549258349536
+      ],
+      [
+        -0.5499999999999998,
+        0.12543433046404986
+      ],
+      [
+        1.887379141862766e-15,
+        0.12388885712439791
+      ]
+    ],
+    "body": [
+      [
+        0.05000000000000204,
+        0.19792976862858533
+      ],
+      [
+        1.887379141862766e-15,
+        0.1743663792139818
+      ],
+      [
+        0.016666666666668606,
+        0.1736647070099166
+      ],
+      [
+        0.033333333333335324,
+        0.1672564194497961
+      ],
+      [
+        -0.01666666666666483,
+        0.156511844182107
+      ],
+      [
+        0.06666666666666876,
+        0.13322335635715918
+      ],
+      [
+        -0.5833333333333333,
+        0.13214579671566087
+      ],
+      [
+        0.08333333333333548,
+        0.12573258640813936
+      ]
+    ]
+  },
+  "conclusion": "No demonstrated export/trim offset. Hand-motion correlation is weak/ambiguous, so no speculative picture offset was applied. The mix now includes actual practice source sound quietly, per user instruction; this does not prove exact original source hand/audio alignment.",
+  "actualPracticeAudioRenderCheck": {
+    "method": "Source vs rendered multiband spectral-flux correlation in two-second windows.128sample hop at11025Hz, interpolated2.5ms lag search.",
+    "windows": [
+      {
+        "renderedCenterSeconds": 1,
+        "estimatedResidualSeconds": 0.0,
+        "transientCorrelation": 0.8884825512500306
+      },
+      {
+        "renderedCenterSeconds": 3,
+        "estimatedResidualSeconds": 0.0,
+        "transientCorrelation": 0.9466145342729266
+      },
+      {
+        "renderedCenterSeconds": 5,
+        "estimatedResidualSeconds": 0.0,
+        "transientCorrelation": 0.9681624982106523
+      },
+      {
+        "renderedCenterSeconds": 7,
+        "estimatedResidualSeconds": 0.0,
+        "transientCorrelation": 0.9581145380082389
+      },
+      {
+        "renderedCenterSeconds": 9,
+        "estimatedResidualSeconds": 0.0025,
+        "transientCorrelation": 0.917949693660254
+      }
+    ],
+    "rmsEstimatedResidualSeconds": 0.001118033988749895,
+    "limitations": "Interpolation finer than analysis hop; this measures adherence to requested retime, not source-camera sync or perceptual perfection."
+  }
+}

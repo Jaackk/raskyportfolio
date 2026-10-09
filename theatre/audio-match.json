@@ -1,0 +1,870 @@
+{
+  "solo-to-master": [
+    {
+      "studioStart": 195.41913832199546,
+      "rate": 0.9900000000000001,
+      "cosineSimilarity": 0.20129749178886414
+    },
+    {
+      "studioStart": 195.2798185941043,
+      "rate": 1.0,
+      "cosineSimilarity": 0.19255466759204865
+    },
+    {
+      "studioStart": 195.65133786848074,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.17123790085315704
+    },
+    {
+      "studioStart": 195.14049886621316,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.15960915386676788
+    },
+    {
+      "studioStart": 195.88353741496599,
+      "rate": 0.9700000000000001,
+      "cosineSimilarity": 0.14515934884548187
+    },
+    {
+      "studioStart": 194.95473922902494,
+      "rate": 1.02,
+      "cosineSimilarity": 0.1367635875940323
+    },
+    {
+      "studioStart": 196.11573696145123,
+      "rate": 0.9600000000000001,
+      "cosineSimilarity": 0.1263483762741089
+    },
+    {
+      "studioStart": 196.71945578231293,
+      "rate": 0.9400000000000001,
+      "cosineSimilarity": 0.1208747923374176
+    },
+    {
+      "studioStart": 196.4408163265306,
+      "rate": 0.9500000000000001,
+      "cosineSimilarity": 0.12024997919797897
+    },
+    {
+      "studioStart": 194.8154195011338,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.11657655984163284
+    },
+    {
+      "studioStart": 196.99809523809523,
+      "rate": 0.93,
+      "cosineSimilarity": 0.10734405368566513
+    },
+    {
+      "studioStart": 194.6296598639456,
+      "rate": 1.04,
+      "cosineSimilarity": 0.10275764763355255
+    }
+  ],
+  "solo-to-guitar": [
+    {
+      "studioStart": 195.4655782312925,
+      "rate": 0.9900000000000001,
+      "cosineSimilarity": 0.2208154946565628
+    },
+    {
+      "studioStart": 195.65133786848074,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.21246953308582306
+    },
+    {
+      "studioStart": 195.2798185941043,
+      "rate": 1.0,
+      "cosineSimilarity": 0.21145614981651306
+    },
+    {
+      "studioStart": 195.14049886621316,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.20299267768859863
+    },
+    {
+      "studioStart": 195.83709750566894,
+      "rate": 0.9700000000000001,
+      "cosineSimilarity": 0.19476953148841858
+    },
+    {
+      "studioStart": 194.95473922902494,
+      "rate": 1.02,
+      "cosineSimilarity": 0.19138140976428986
+    },
+    {
+      "studioStart": 195.97641723356008,
+      "rate": 0.9600000000000001,
+      "cosineSimilarity": 0.17275121808052063
+    },
+    {
+      "studioStart": 194.76897959183674,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.162697434425354
+    },
+    {
+      "studioStart": 196.4408163265306,
+      "rate": 0.9500000000000001,
+      "cosineSimilarity": 0.15429048240184784
+    },
+    {
+      "studioStart": 196.90521541950113,
+      "rate": 0.93,
+      "cosineSimilarity": 0.14281012117862701
+    },
+    {
+      "studioStart": 196.67301587301588,
+      "rate": 0.9400000000000001,
+      "cosineSimilarity": 0.1421392560005188
+    },
+    {
+      "studioStart": 194.7225396825397,
+      "rate": 1.04,
+      "cosineSimilarity": 0.13819938898086548
+    }
+  ],
+  "edited-full-to-master": [
+    {
+      "studioStart": 12.26013605442177,
+      "rate": 1.08,
+      "cosineSimilarity": 0.1256280243396759
+    },
+    {
+      "studioStart": 12.585215419501134,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.11824911087751389
+    },
+    {
+      "studioStart": 15.603809523809524,
+      "rate": 1.02,
+      "cosineSimilarity": 0.114925816655159
+    },
+    {
+      "studioStart": 12.120816326530612,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.09838681668043137
+    },
+    {
+      "studioStart": 14.675011337868481,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.08786159008741379
+    },
+    {
+      "studioStart": 13.096054421768708,
+      "rate": 1.06,
+      "cosineSimilarity": 0.0852569118142128
+    },
+    {
+      "studioStart": 16.439727891156462,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.08515720069408417
+    },
+    {
+      "studioStart": 14.257052154195012,
+      "rate": 1.04,
+      "cosineSimilarity": 0.08498907089233398
+    },
+    {
+      "studioStart": 1.253877551020408,
+      "rate": 1.08,
+      "cosineSimilarity": 0.0774250477552414
+    },
+    {
+      "studioStart": 13.003174603174603,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.0733223706483841
+    },
+    {
+      "studioStart": 0.8823582766439909,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.07240787148475647
+    },
+    {
+      "studioStart": 11.935056689342403,
+      "rate": 1.1,
+      "cosineSimilarity": 0.07129066437482834
+    }
+  ],
+  "solo-to-edited": [
+    {
+      "studioStart": 10.077460317460318,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.13739317655563354
+    },
+    {
+      "studioStart": 40.58848072562358,
+      "rate": 0.9900000000000001,
+      "cosineSimilarity": 0.13570265471935272
+    },
+    {
+      "studioStart": 30.464580498866212,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.12043371051549911
+    },
+    {
+      "studioStart": 61.161360544217686,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.11626860499382019
+    },
+    {
+      "studioStart": 50.6659410430839,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.11587933450937271
+    },
+    {
+      "studioStart": 40.40272108843537,
+      "rate": 1.0,
+      "cosineSimilarity": 0.10917659103870392
+    },
+    {
+      "studioStart": 50.80526077097505,
+      "rate": 1.0,
+      "cosineSimilarity": 0.10689046233892441
+    },
+    {
+      "studioStart": 9.93814058956916,
+      "rate": 0.9900000000000001,
+      "cosineSimilarity": 0.10353970527648926
+    },
+    {
+      "studioStart": 40.72780045351474,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.10221241414546967
+    },
+    {
+      "studioStart": 10.216780045351474,
+      "rate": 0.9700000000000001,
+      "cosineSimilarity": 0.10007250308990479
+    },
+    {
+      "studioStart": 61.30068027210884,
+      "rate": 1.0,
+      "cosineSimilarity": 0.0943722277879715
+    },
+    {
+      "studioStart": 30.65034013605442,
+      "rate": 0.9700000000000001,
+      "cosineSimilarity": 0.09431202709674835
+    }
+  ],
+  "edited-0-to-master": [
+    {
+      "studioStart": 0.5108390022675737,
+      "rate": 1.12,
+      "cosineSimilarity": 0.2786865830421448
+    },
+    {
+      "studioStart": 0.603718820861678,
+      "rate": 1.1100000000000003,
+      "cosineSimilarity": 0.27234184741973877
+    },
+    {
+      "studioStart": 0.6965986394557823,
+      "rate": 1.1,
+      "cosineSimilarity": 0.2626875638961792
+    },
+    {
+      "studioStart": 0.7894784580498866,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.2481769621372223
+    },
+    {
+      "studioStart": 0.8359183673469388,
+      "rate": 1.08,
+      "cosineSimilarity": 0.23695531487464905
+    },
+    {
+      "studioStart": 0.8823582766439909,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.22221139073371887
+    },
+    {
+      "studioStart": 0.9752380952380952,
+      "rate": 1.06,
+      "cosineSimilarity": 0.20694543421268463
+    },
+    {
+      "studioStart": 2.8792743764172335,
+      "rate": 0.91,
+      "cosineSimilarity": 0.2023860663175583
+    },
+    {
+      "studioStart": 2.9257142857142857,
+      "rate": 0.9,
+      "cosineSimilarity": 0.20155249536037445
+    },
+    {
+      "studioStart": 1.0681179138321995,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.19776305556297302
+    },
+    {
+      "studioStart": 2.8328344671201813,
+      "rate": 0.92,
+      "cosineSimilarity": 0.19674332439899445
+    },
+    {
+      "studioStart": 142.0132426303855,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.19191305339336395
+    }
+  ],
+  "edited-10-to-master": [
+    {
+      "studioStart": 22.987755102040815,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.3278551995754242
+    },
+    {
+      "studioStart": 22.941315192743765,
+      "rate": 1.1,
+      "cosineSimilarity": 0.327210396528244
+    },
+    {
+      "studioStart": 23.034195011337868,
+      "rate": 1.08,
+      "cosineSimilarity": 0.30774563550949097
+    },
+    {
+      "studioStart": 22.894875283446712,
+      "rate": 1.1100000000000003,
+      "cosineSimilarity": 0.29458850622177124
+    },
+    {
+      "studioStart": 23.08063492063492,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.2657969892024994
+    },
+    {
+      "studioStart": 22.801995464852606,
+      "rate": 1.12,
+      "cosineSimilarity": 0.23950350284576416
+    },
+    {
+      "studioStart": 23.127074829931974,
+      "rate": 1.06,
+      "cosineSimilarity": 0.23443472385406494
+    },
+    {
+      "studioStart": 23.219954648526077,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.1926153600215912
+    },
+    {
+      "studioStart": 23.312834467120183,
+      "rate": 1.04,
+      "cosineSimilarity": 0.1669972985982895
+    },
+    {
+      "studioStart": 0.7430385487528345,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.16599340736865997
+    },
+    {
+      "studioStart": 34.08689342403628,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.16438810527324677
+    },
+    {
+      "studioStart": 34.13333333333333,
+      "rate": 1.08,
+      "cosineSimilarity": 0.16274316608905792
+    }
+  ],
+  "edited-20-to-master": [
+    {
+      "studioStart": 33.99401360544218,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.33366337418556213
+    },
+    {
+      "studioStart": 33.90113378684807,
+      "rate": 1.08,
+      "cosineSimilarity": 0.3298632800579071
+    },
+    {
+      "studioStart": 34.04045351473923,
+      "rate": 1.06,
+      "cosineSimilarity": 0.31814247369766235
+    },
+    {
+      "studioStart": 33.90113378684807,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.31176093220710754
+    },
+    {
+      "studioStart": 34.04045351473923,
+      "rate": 1.04,
+      "cosineSimilarity": 0.29514220356941223
+    },
+    {
+      "studioStart": 34.04045351473923,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.29490330815315247
+    },
+    {
+      "studioStart": 33.80825396825397,
+      "rate": 1.1,
+      "cosineSimilarity": 0.28807592391967773
+    },
+    {
+      "studioStart": 34.08689342403628,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.2810989320278168
+    },
+    {
+      "studioStart": 33.761814058956915,
+      "rate": 1.1100000000000003,
+      "cosineSimilarity": 0.26732364296913147
+    },
+    {
+      "studioStart": 34.13333333333333,
+      "rate": 1.02,
+      "cosineSimilarity": 0.25712305307388306
+    },
+    {
+      "studioStart": 34.13333333333333,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.24554872512817383
+    },
+    {
+      "studioStart": 33.715374149659866,
+      "rate": 1.12,
+      "cosineSimilarity": 0.24454239010810852
+    }
+  ],
+  "edited-30-to-master": [
+    {
+      "studioStart": 13.885532879818594,
+      "rate": 1.12,
+      "cosineSimilarity": 0.14417153596878052
+    },
+    {
+      "studioStart": 13.978412698412699,
+      "rate": 1.1100000000000003,
+      "cosineSimilarity": 0.13967140018939972
+    },
+    {
+      "studioStart": 14.071292517006803,
+      "rate": 1.1,
+      "cosineSimilarity": 0.13497720658779144
+    },
+    {
+      "studioStart": 14.210612244897959,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.13115237653255463
+    },
+    {
+      "studioStart": 44.72163265306123,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.12525127828121185
+    },
+    {
+      "studioStart": 14.257052154195012,
+      "rate": 1.08,
+      "cosineSimilarity": 0.12456247210502625
+    },
+    {
+      "studioStart": 14.164172335600908,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.12326624989509583
+    },
+    {
+      "studioStart": 14.071292517006803,
+      "rate": 1.04,
+      "cosineSimilarity": 0.12257377058267593
+    },
+    {
+      "studioStart": 13.978412698412699,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.1220773383975029
+    },
+    {
+      "studioStart": 44.62875283446712,
+      "rate": 1.08,
+      "cosineSimilarity": 0.12201782315969467
+    },
+    {
+      "studioStart": 30.882539682539683,
+      "rate": 1.08,
+      "cosineSimilarity": 0.12181084603071213
+    },
+    {
+      "studioStart": 30.83609977324263,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.12174487113952637
+    }
+  ],
+  "edited-40-to-master": [
+    {
+      "studioStart": 55.44925170068027,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.21192245185375214
+    },
+    {
+      "studioStart": 55.49569160997732,
+      "rate": 1.06,
+      "cosineSimilarity": 0.2079397290945053
+    },
+    {
+      "studioStart": 55.40281179138322,
+      "rate": 1.08,
+      "cosineSimilarity": 0.20236246287822723
+    },
+    {
+      "studioStart": 55.356371882086165,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.18529625236988068
+    },
+    {
+      "studioStart": 55.49569160997732,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.1809011697769165
+    },
+    {
+      "studioStart": 55.356371882086165,
+      "rate": 1.1100000000000003,
+      "cosineSimilarity": 0.16533981263637543
+    },
+    {
+      "studioStart": 44.44299319727891,
+      "rate": 1.08,
+      "cosineSimilarity": 0.16529954969882965
+    },
+    {
+      "studioStart": 55.309931972789116,
+      "rate": 1.1,
+      "cosineSimilarity": 0.16473957896232605
+    },
+    {
+      "studioStart": 44.39655328798186,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.1633899211883545
+    },
+    {
+      "studioStart": 44.30367346938775,
+      "rate": 1.1,
+      "cosineSimilarity": 0.16032665967941284
+    },
+    {
+      "studioStart": 47.04362811791383,
+      "rate": 1.1100000000000003,
+      "cosineSimilarity": 0.15807552635669708
+    },
+    {
+      "studioStart": 55.54213151927438,
+      "rate": 1.04,
+      "cosineSimilarity": 0.15767313539981842
+    }
+  ],
+  "edited-50-to-master": [
+    {
+      "studioStart": 66.22331065759637,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.32219019532203674
+    },
+    {
+      "studioStart": 66.17687074829932,
+      "rate": 1.06,
+      "cosineSimilarity": 0.32113754749298096
+    },
+    {
+      "studioStart": 66.31619047619047,
+      "rate": 1.04,
+      "cosineSimilarity": 0.2718447148799896
+    },
+    {
+      "studioStart": 66.08399092970521,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.27043235301971436
+    },
+    {
+      "studioStart": 66.36263038548753,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.23765653371810913
+    },
+    {
+      "studioStart": 66.03755102040816,
+      "rate": 1.08,
+      "cosineSimilarity": 0.22907835245132446
+    },
+    {
+      "studioStart": 119.8614058956916,
+      "rate": 1.02,
+      "cosineSimilarity": 0.2279500514268875
+    },
+    {
+      "studioStart": 119.7685260770975,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.22204022109508514
+    },
+    {
+      "studioStart": 119.90784580498867,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.21121001243591309
+    },
+    {
+      "studioStart": 66.03755102040816,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.20736362040042877
+    },
+    {
+      "studioStart": 119.72208616780046,
+      "rate": 1.04,
+      "cosineSimilarity": 0.20224499702453613
+    },
+    {
+      "studioStart": 66.45551020408163,
+      "rate": 1.02,
+      "cosineSimilarity": 0.20059922337532043
+    }
+  ],
+  "edited-60-to-master": [
+    {
+      "studioStart": 76.76517006802722,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.22559049725532532
+    },
+    {
+      "studioStart": 162.58612244897958,
+      "rate": 1.0,
+      "cosineSimilarity": 0.22110143303871155
+    },
+    {
+      "studioStart": 162.49324263038548,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.22021548449993134
+    },
+    {
+      "studioStart": 76.81160997732427,
+      "rate": 1.02,
+      "cosineSimilarity": 0.21201513707637787
+    },
+    {
+      "studioStart": 76.71873015873015,
+      "rate": 1.04,
+      "cosineSimilarity": 0.2014095038175583
+    },
+    {
+      "studioStart": 162.49324263038548,
+      "rate": 1.02,
+      "cosineSimilarity": 0.19754120707511902
+    },
+    {
+      "studioStart": 173.17442176870748,
+      "rate": 1.0,
+      "cosineSimilarity": 0.19364061951637268
+    },
+    {
+      "studioStart": 76.85804988662132,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.1874222457408905
+    },
+    {
+      "studioStart": 87.58566893424036,
+      "rate": 1.02,
+      "cosineSimilarity": 0.1866557002067566
+    },
+    {
+      "studioStart": 173.08154195011338,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.18425901234149933
+    },
+    {
+      "studioStart": 162.63256235827666,
+      "rate": 0.9900000000000001,
+      "cosineSimilarity": 0.18361806869506836
+    },
+    {
+      "studioStart": 87.63210884353741,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.18349945545196533
+    }
+  ],
+  "edited-70-to-master": [
+    {
+      "studioStart": 162.02884353741496,
+      "rate": 1.0,
+      "cosineSimilarity": 0.26240023970603943
+    },
+    {
+      "studioStart": 76.25433106575964,
+      "rate": 1.02,
+      "cosineSimilarity": 0.24075013399124146
+    },
+    {
+      "studioStart": 162.12172335600906,
+      "rate": 0.9900000000000001,
+      "cosineSimilarity": 0.23986580967903137
+    },
+    {
+      "studioStart": 76.3007709750567,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.23523415625095367
+    },
+    {
+      "studioStart": 172.6635827664399,
+      "rate": 0.9900000000000001,
+      "cosineSimilarity": 0.2351534217596054
+    },
+    {
+      "studioStart": 172.61714285714285,
+      "rate": 1.0,
+      "cosineSimilarity": 0.22767214477062225
+    },
+    {
+      "studioStart": 161.9824036281179,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.22757606208324432
+    },
+    {
+      "studioStart": 172.756462585034,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.2198435366153717
+    },
+    {
+      "studioStart": 87.12126984126984,
+      "rate": 1.0,
+      "cosineSimilarity": 0.21453538537025452
+    },
+    {
+      "studioStart": 76.20789115646258,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.21240289509296417
+    },
+    {
+      "studioStart": 162.16816326530613,
+      "rate": 0.9800000000000001,
+      "cosineSimilarity": 0.2122584581375122
+    },
+    {
+      "studioStart": 87.07482993197279,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.21058258414268494
+    }
+  ],
+  "edited-80-to-master": [
+    {
+      "studioStart": 97.19873015873016,
+      "rate": 1.02,
+      "cosineSimilarity": 0.1815950572490692
+    },
+    {
+      "studioStart": 97.10585034013606,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.18062151968479156
+    },
+    {
+      "studioStart": 97.05941043083901,
+      "rate": 1.04,
+      "cosineSimilarity": 0.16533339023590088
+    },
+    {
+      "studioStart": 97.2451700680272,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.16218619048595428
+    },
+    {
+      "studioStart": 96.9665306122449,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.14538311958312988
+    },
+    {
+      "studioStart": 96.92009070294785,
+      "rate": 1.06,
+      "cosineSimilarity": 0.12582768499851227
+    },
+    {
+      "studioStart": 97.2451700680272,
+      "rate": 1.0,
+      "cosineSimilarity": 0.12479487806558609
+    },
+    {
+      "studioStart": 31.764897959183674,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.12361861020326614
+    },
+    {
+      "studioStart": 42.81759637188209,
+      "rate": 1.06,
+      "cosineSimilarity": 0.12073132395744324
+    },
+    {
+      "studioStart": 42.77115646258503,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.11709250509738922
+    },
+    {
+      "studioStart": 42.63183673469388,
+      "rate": 1.0900000000000003,
+      "cosineSimilarity": 0.11615628004074097
+    },
+    {
+      "studioStart": 42.67827664399093,
+      "rate": 1.08,
+      "cosineSimilarity": 0.11598704755306244
+    }
+  ],
+  "edited-90-to-master": [
+    {
+      "studioStart": 107.50839002267574,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.18483152985572815
+    },
+    {
+      "studioStart": 107.46195011337869,
+      "rate": 1.02,
+      "cosineSimilarity": 0.18419691920280457
+    },
+    {
+      "studioStart": 107.32263038548753,
+      "rate": 1.0300000000000002,
+      "cosineSimilarity": 0.18351805210113525
+    },
+    {
+      "studioStart": 107.27619047619048,
+      "rate": 1.04,
+      "cosineSimilarity": 0.1686839759349823
+    },
+    {
+      "studioStart": 107.60126984126984,
+      "rate": 1.0,
+      "cosineSimilarity": 0.16098922491073608
+    },
+    {
+      "studioStart": 42.353197278911566,
+      "rate": 1.0700000000000003,
+      "cosineSimilarity": 0.16041958332061768
+    },
+    {
+      "studioStart": 42.44607709750567,
+      "rate": 1.06,
+      "cosineSimilarity": 0.15960046648979187
+    },
+    {
+      "studioStart": 43.049795918367344,
+      "rate": 0.9400000000000001,
+      "cosineSimilarity": 0.15890026092529297
+    },
+    {
+      "studioStart": 42.49251700680272,
+      "rate": 1.0500000000000003,
+      "cosineSimilarity": 0.15853135287761688
+    },
+    {
+      "studioStart": 42.58539682539683,
+      "rate": 1.04,
+      "cosineSimilarity": 0.15801922976970673
+    },
+    {
+      "studioStart": 42.72471655328798,
+      "rate": 1.0100000000000002,
+      "cosineSimilarity": 0.15703123807907104
+    },
+    {
+      "studioStart": 42.67827664399093,
+      "rate": 1.02,
+      "cosineSimilarity": 0.1568029671907425
+    }
+  ]
+}

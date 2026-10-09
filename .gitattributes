@@ -1,0 +1,6 @@
+# Keep the Theatre source and provenance hashes stable across Windows checkouts.
+theatre/*.js text eol=lf
+theatre/*.css text eol=lf
+theatre/*.json text eol=lf
+theatre/assets/**/*.json text eol=lf
+assets/design/skate/*.json text eol=lf

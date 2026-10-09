@@ -1,0 +1,150 @@
+{
+  "source": "music/media/clip3.mp4",
+  "sourceSha256": "8153e0aab71a1f5c1f1f15f42df6be1cc5809b6ac89cc02b5f9e0ac32bd6955f",
+  "sourceSize": [
+    1300,
+    2304
+  ],
+  "sourceFrameRate": "24000/1001",
+  "ownership": "Existing user-supplied band footage in this portfolio. Original and duplicate preserved.",
+  "use": "Silent supplementary performance footage, labelled Other moments / live. Different moments from the band recording, not synchronized alternate camera angles of the audible main solo.",
+  "replaces": [
+    "guitar-broll-blue.mp4",
+    "guitar-broll-warm.mp4"
+  ],
+  "clips": [
+    {
+      "video": "guitar-portrait-blue.mp4",
+      "poster": "guitar-portrait-blue-poster.jpg",
+      "sourceInSeconds": 42.5,
+      "sourceOutSeconds": 47.666666666666664,
+      "outputSize": [
+        720,
+        1280
+      ],
+      "contentSize": [
+        720,
+        1276
+      ],
+      "crop": null,
+      "paddingPixels": {
+        "top": 2,
+        "bottom": 2,
+        "left": 0,
+        "right": 0
+      },
+      "upscaled": false,
+      "audioStream": false,
+      "frameRate": 24,
+      "frameCount": 124,
+      "durationSeconds": 5.166666666666667,
+      "mainChapterLocalInSeconds": 5.19,
+      "mainChapterLocalOutSeconds": 10.3913,
+      "finalFrameHoldSeconds": 0.03463333333333196,
+      "timeTreatment": "No speed change. Native approximately 23.976fps sampled at24fps; complete-frame duration is rounded down to the nearest output frame.",
+      "composition": "Complete native portrait frame; head, face, instrument body and torso remain framed. No crop. Original lighting and head movements are preserved.",
+      "posterLocalSeconds": 3,
+      "posterSourceSeconds": 45.5,
+      "files": {
+        "guitar-portrait-blue.mp4": {
+          "bytes": 1459146,
+          "sha256": "c163736ecd886d7349ea4ca17fe0c25e25f4341d427d4662dc5a345f36679afe"
+        },
+        "guitar-portrait-blue-poster.jpg": {
+          "bytes": 71283,
+          "sha256": "00ce27003226c4aa6e808947bada86c0a58226509e2b8007ff1201254d92fd24"
+        }
+      },
+      "review": "Delivered video reviewed at every0.5s plus final frame; entire head/face retained throughout sampled frames; no foreground occlusion or cut away to another performer. Full decode passed. Output frame count independently counted."
+    },
+    {
+      "video": "guitar-portrait-warm.mp4",
+      "poster": "guitar-portrait-warm-poster.jpg",
+      "sourceInSeconds": 78.2,
+      "sourceOutSeconds": 88.575,
+      "outputSize": [
+        720,
+        1280
+      ],
+      "contentSize": [
+        720,
+        1276
+      ],
+      "crop": null,
+      "paddingPixels": {
+        "top": 2,
+        "bottom": 2,
+        "left": 0,
+        "right": 0
+      },
+      "upscaled": false,
+      "audioStream": false,
+      "frameRate": 24,
+      "frameCount": 249,
+      "durationSeconds": 10.375,
+      "mainChapterLocalInSeconds": 10.3913,
+      "mainChapterLocalOutSeconds": 20.7706,
+      "finalFrameHoldSeconds": 0.004300000000002413,
+      "timeTreatment": "No speed change. Native approximately 23.976fps sampled at24fps; complete-frame duration is rounded down to the nearest output frame.",
+      "composition": "Complete native portrait frame; head, face, instrument body and torso remain framed. No crop. Original lighting and head movements are preserved.",
+      "posterLocalSeconds": 5,
+      "posterSourceSeconds": 83.2,
+      "files": {
+        "guitar-portrait-warm.mp4": {
+          "bytes": 3153673,
+          "sha256": "3deeccd3ffe5962011558373de6a5aee03804cd5ad156cab933e1801d5a10fd7"
+        },
+        "guitar-portrait-warm-poster.jpg": {
+          "bytes": 76942,
+          "sha256": "4d88b55e9cf9559794283cb9a4c61d75771d61834a461328c74dd05242548882"
+        }
+      },
+      "review": "Delivered video reviewed at every0.5s plus final frame; entire head/face retained throughout sampled frames; no foreground occlusion or cut away to another performer. Full decode passed. Output frame count independently counted."
+    },
+    {
+      "video": "guitar-portrait-violet.mp4",
+      "poster": "guitar-portrait-violet-poster.jpg",
+      "sourceInSeconds": 88.6,
+      "sourceOutSeconds": 96.30833333333332,
+      "outputSize": [
+        720,
+        1280
+      ],
+      "contentSize": [
+        720,
+        1276
+      ],
+      "crop": null,
+      "paddingPixels": {
+        "top": 2,
+        "bottom": 2,
+        "left": 0,
+        "right": 0
+      },
+      "upscaled": false,
+      "audioStream": false,
+      "frameRate": 24,
+      "frameCount": 185,
+      "durationSeconds": 7.708333333333333,
+      "mainChapterLocalInSeconds": 20.7706,
+      "mainChapterLocalOutSeconds": 28.5028,
+      "finalFrameHoldSeconds": 0.023866666666665814,
+      "timeTreatment": "No speed change. Native approximately 23.976fps sampled at24fps; complete-frame duration is rounded down to the nearest output frame.",
+      "composition": "Complete native portrait frame; head, face, instrument body and torso remain framed. No crop. Original lighting and head movements are preserved.",
+      "posterLocalSeconds": 6.5,
+      "posterSourceSeconds": 95.1,
+      "files": {
+        "guitar-portrait-violet.mp4": {
+          "bytes": 2221602,
+          "sha256": "c25df399fffe980cd26f97ca45d8a0c50333496678657e998444821c8394441c"
+        },
+        "guitar-portrait-violet-poster.jpg": {
+          "bytes": 61696,
+          "sha256": "8c91e3596d05bed3824897763d21a5170596eb22979a6cdb0a59951177a15381"
+        }
+      },
+      "sourceFramingLimit": "The original camera briefly places the far guitar neck/fretting hand at the right edge around local2.5\u20135.5s; the face stays fully within the image. No additional cropping is applied.",
+      "review": "Delivered video reviewed at every0.5s plus final frame; entire head/face retained throughout sampled frames; no foreground occlusion or cut away to another performer. Full decode passed. Output frame count independently counted."
+    }
+  ]
+}
