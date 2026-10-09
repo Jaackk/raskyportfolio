@@ -85,7 +85,7 @@ Go to:
 https://raskyjack.com/admin/
 ```
 
-Log in with the invited Netlify Identity account, choose a collection, edit the fields, then save/publish. Decap commits the change back to GitHub through Netlify Git Gateway and Netlify redeploys the site.
+The Netlify Identity / Git Gateway editor is a legacy setup. The current editing workflow is Codex/GitHub: commit changes to `main` and GitHub Pages publishes them. The legacy CMS files remain for reference; its sign-in is not part of the current publishing workflow.
 
 Current CMS collections:
 
@@ -222,7 +222,9 @@ For a production-grade public counter, connect a reliable privacy-friendly analy
 
 ## Deploy
 
-The repository is GitHub Pages compatible.
+The public website is hosted on GitHub Pages. Push changes to `main` to publish; a Netlify production deployment is not required.
+
+Netlify still hosts the DNS zone for `raskyjack.com`. Keep that zone and its nameservers: email forwarding is handled separately by ImprovMX. The website records are an apex `ALIAS` to `jaackk.github.io` and a `www` `CNAME` to `jaackk.github.io`. Preserve the existing ImprovMX MX records (priorities 10 and 20) and SPF TXT record when changing website hosting. Do not delete the DNS zone when retiring Netlify website hosting.
 
 Recommended Pages settings:
 
