@@ -2187,6 +2187,13 @@ a.shot:hover img {
     order: 0;
   }
 
+  /* The mobile hero is visible on arrival, without waiting for a scroll reveal. */
+  .js .hero-photo[data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .hero-photo img,
   .music-photo img {
     aspect-ratio: 4 / 3;
