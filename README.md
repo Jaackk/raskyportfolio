@@ -222,9 +222,13 @@ For a production-grade public counter, connect a reliable privacy-friendly analy
 
 ## Deploy
 
-The public website is hosted on GitHub Pages. Push changes to `main` to publish; a Netlify production deployment is not required.
+Edit through Codex and push source changes to GitHub `main`. GitHub Pages builds the latest source, but the public domain temporarily remains on the existing Netlify deployment: the attempted move on 9 October 2026 was rolled back because GitHub continued serving an expired HTTPS certificate after a new certificate request had been pending for over an hour. The mobile hero visibility fix is committed on GitHub but is not in that older Netlify deployment.
 
-Netlify still hosts the DNS zone for `raskyjack.com`. Keep that zone and its nameservers: email forwarding is handled separately by ImprovMX. The website records are an apex `ALIAS` to `jaackk.github.io` and a `www` `CNAME` to `jaackk.github.io`. Preserve the existing ImprovMX MX records (priorities 10 and 20) and SPF TXT record when changing website hosting. Do not delete the DNS zone when retiring Netlify website hosting.
+Netlify automatic builds are stopped to prevent each GitHub push from spending deployment credits. Production publishing is currently blocked by the account's credit limit; the existing deployment continues serving on operational credits. Do not treat a successful GitHub push as a public Netlify deployment.
+
+Netlify hosts the DNS zone for `raskyjack.com`; ImprovMX handles email forwarding. The current website records are an apex `ALIAS` and a `www` `CNAME`, both pointing to `golden-daifuku-e3a614.netlify.app` with TTL 300. Preserve the existing nameservers, ImprovMX MX records (priorities 10 and 20), and SPF TXT record. Do not delete this DNS zone when changing website hosting.
+
+To finish the GitHub Pages migration, resolve its custom-domain HTTPS certificate first and verify both domain names with normal certificate validation. The GitHub destination for the website records is `jaackk.github.io`; email records do not change. GitHub Pages currently has `www.raskyjack.com` configured as its custom domain while that request is pending.
 
 Recommended Pages settings:
 
