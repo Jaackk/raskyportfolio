@@ -1,0 +1,57 @@
+IN THE SHADOW OF A SHNORK — CAPTURE & REPLACEMENT PLAN
+Prepared 13 October 2026. No game build or capture session was launched for this campaign.
+
+SAFE PROCESS
+Wait for the active development/storage jobs to finish. Use a separate copy of the validated Windows package, outside all Unity worktrees. Confirm the exact version and content with the owner. Use a disposable named QA profile and an isolated user-data/save directory through an existing supported mechanism; if isolation cannot be guaranteed, stop before launching. Do not overwrite canonical saves or user preferences. Do not rebuild Unity, merge World Beyond, modify scenes, inject assets or change multiplayer. Use existing, supported camera/UI controls only. Preserve an unedited master with build and capture notes.
+
+WINDOWS CAPTURE
+Target 3840×2160 native, highest stable approved graphics setting, 30 or 60 fps. No artificial frame generation or AI image enhancement. Capture 10–15 seconds before and after each usable moment. Keep characters grounded and anatomically unchanged. Avoid debug HUD, test subtitles, desktop chrome, loading, clipping or broken lighting. Preserve a gameplay HUD version for screenshot review; hide UI only through an existing approved in-game toggle. Do not disguise technical defects with retouching.
+
+Priorities for an 8–10-image Steam gallery:
+01 Home Forest wide: current build, player in lower third, clean trunk/fern depth, native 4K.
+02 Existing waterfall: full Shnork on one bank, falls and connected stream visible. Current grounding fixes required.
+03 River walk: retain bank plants and reflections; avoid foreground occlusion.
+04 Woodland exploration: a different route and camera direction from spawn; expressive movement, not idle duplicates.
+05 Creature encounter: approved current wildlife or predator at a readable distance. Verify species and implementation from the build.
+06 Story: a genuine first-offering or field-note moment without test subtitles. Avoid treating the AI companion as multiplayer.
+07 Two-player private co-op: two separately controlled current clients, visible shared interaction or accepted Stalker encounter, both players identifiable. Remove session codes and private identifiers from capture through safe framing.
+08 Danger: a readable, accepted combat phase. Do not advertise a full Rot Stag victory until its reward/reload acceptance passes.
+09 Environmental detail: ferns, fungus, water and roots with no artificial detail added.
+10 Mysterious location: approved production geography, not an unfinished World Beyond scene.
+
+STEAM RULES
+Export at least five authentic gameplay screenshots at 1920×1080 minimum, 16:9. Do not add promotional copy or capsule art to the screenshot gallery. Current native 720p files are review selections, not upload-ready screenshots. A conventional upscale does not create the missing detail. Capsule artwork may use crops, layout and restrained grading; retain correct game identity and use only game-world elements. No review scores, discount text, CTAs or taglines on standard capsules. Review small capsule at 120×45 and hero/logo positioning with the current Valve template.
+
+IPHONE CAPTURE
+First pass physical-device install, launch, controls, readable UI, representative performance and the advertised story/feature paths. Current iOS export validation was on Windows only. Capture actual iPhone screen recordings and stills using the supported orientation. Do not substitute Windows QA footage. Use matching compositions to replace the six poster designs. Export opaque RGB PNG/JPEG, 1–10 per device slot. Prepared portrait canvases: 1206×2622 medium and 1320×2868 large. Recompose rather than stretch game imagery. If the app ships landscape, prefer genuine landscape capture and compatible landscape layouts; confirm this before submission.
+
+24-SECOND APP PREVIEW REPLACEMENT
+0–4 forest exploration; 4–8 river/falls; 8–12 discovery/story; 12–17 actual encounter or companion; 17–21 another clear gameplay beat; 21–24 concise title. Use screen recording throughout apart from permitted contextual editing. Keep UI legible. No desktop co-op claim until device acceptance. 1920×886 landscape or 886×1920 portrait accepted preview canvas, 30 fps maximum, H.264 10–12 Mbps target, AAC stereo 256 kbps / 48 kHz; 15–30 seconds, ≤500 MB. Current 24-second file is an archival desktop animatic, not an App Store preview ready for upload.
+
+53-SECOND STEAM TRAILER REPLACEMENT
+0–7 quiet native forest, camera at player height.
+7–14 follow the stream to the waterfall.
+14–21 notice a detail and a genuine discovery.
+21–28 a story encounter / first offering.
+28–35 a readable predator or accepted combat beat.
+35–43 genuine two-player interaction (reserve until captured).
+43–48 wider, quieter forest view.
+48–53 exact title and Explore. Discover. Belong.
+The existing edit establishes timing with older recordings; see trailer-source/edit-decision-list.json for actual clip provenance and timecodes.
+
+WORLD BEYOND V3 — FUTURE
+Wait for Claude's explicit completed visual evidence and creator approval. Capture finished Oldwood/valley panorama, connected falls, a grounded forest approach and distant landscape. Label development footage clearly until actually integrated into an accepted production release. Existing before-p4 V3 frames are not proof of final V3 quality. Historical V2 Colossal Hollow cannot be relabelled V3. Do not show planned features through invented artwork.
+
+AUDIO
+Retain Memories Of Stone by Scott Buckley with CC BY 4.0 attribution, track URL, license URL and modification notice. Confirm final marketing-distribution rights for every additional sound/music/narration file. Existing David/ElevenLabs narration is excluded because commercial rights evidence was not established. Record clean game ambience only when its rights are confirmed. Mix water, leaves and steps softly beneath the music; avoid aggressive trailer impacts inconsistent with the game.
+
+METADATA GATES
+Confirm legal developer/publisher display names, release timing, supported operating systems/devices, purchase model, privacy/support URLs, age classification, system requirements, language matrix and accessibility claims. Do not use internal Unity companyName as proof of the legal/trading name. Do not add Steam Cloud, full controller support, achievements, public matchmaking, cross-play or host migration without acceptance evidence.
+
+OFFICIAL REFERENCES
+https://partner.steamgames.com/doc/store/assets/standard
+https://partner.steamgames.com/doc/store/assets/libraryassets
+https://partner.steamgames.com/doc/store/assets/rules
+https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications
+https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications
+https://developer.apple.com/app-store/review/guidelines/

@@ -1,0 +1,108 @@
+IN THE SHADOW OF A SHNORK
+Storefront copy — DRAFT for owner approval — 13 October 2026
+
+PRIMARY TAGLINE
+A small life. An ancient world.
+
+SUPPORTING TAGLINE
+Explore. Discover. Belong.
+
+SHORT TEASERS
+The stream has a source. The shadows have a story. Follow your curiosity into the forest.
+You are small. The forest is not. Begin with a few uncertain steps into a world that was here long before you.
+A first discovery. A sudden danger. A little less alone.
+
+STEAM SHORT DESCRIPTION
+Find your way through an ancient woodland as a small creature with a growing curiosity. Follow the river, notice the life beneath the leaves and unravel the Shnork’s story through exploration, encounters and moments of danger. A mysterious forest adventure with private online co-op in development Beta.
+
+STEAM ABOUT THIS GAME / FULL DESCRIPTION
+A small life. An ancient world.
+
+The forest was here before you. Its roots shape the paths. Its water disappears between stones. Somewhere beyond the familiar trees, something is waiting to be understood.
+
+In The Shadow of a Shnork is an atmospheric fantasy adventure about finding your place in a world much larger than yourself. Explore as the Shnork: a small, expressive creature drawn onward by hunger, danger and an unfolding curiosity.
+
+FOLLOW YOUR CURIOSITY
+Walk among towering trunks, tangled roots and a richly planted forest floor. Trace the stream towards its waterfall. Pause over the small details. The way forward begins with noticing what is around you.
+
+EVERY SHADOW HAS A STORY
+Discover the Shnork’s world through encounters, story moments and field notes. Follow the first survival journey into the hunt, its aftermath and a meeting that brings another life closer to yours. Some discoveries change the way familiar places feel.
+
+WONDER HAS A WILD SIDE
+There is movement beneath the canopy, and not every encounter is gentle. Explore, gather, craft and face danger with the tools you have. Learn when to approach, when to strike and when to move.
+
+A LITTLE LESS ALONE
+Companionship is part of the Shnork’s story. The development Beta also supports private online co-op sessions: invite another player into an expedition and face encounters together. Story progress and multiplayer visits remain distinct.
+
+DEVELOPMENT NOTE
+The game is in active development. This presentation is grounded in existing Windows Beta gameplay. The current validated Windows package is Beta 0.8.8 / build 33; its narrow release validation did not repeat the full earlier story and multiplayer suite. World Beyond imagery belongs only to the separate, explicitly labelled development-preview appendix. Release date, price, final platform features, system requirements and language support have not been announced here.
+
+STEAM FEATURE COPY
+Exploration — Follow the river, read the woodland and discover the details beneath the canopy.
+Story — Experience the Shnork’s awakening, encounters and first steps towards companionship.
+Encounters — Meet forest life and face the danger within the first survival journey.
+Crafting — Gather resources and make the tools that help you find your footing.
+Private co-op — Join another player for an expedition. Verified earlier Windows Beta evidence; final supported devices and session limits remain to be confirmed.
+
+STEAM TAGS — PROPOSED, OWNER REVIEW
+Adventure; Exploration; Fantasy; Story Rich; Atmospheric; Co-op.
+
+APPLE TITLE (24 CHARACTERS)
+In The Shadow of a Shnork
+
+APPLE SUBTITLE (25 CHARACTERS)
+Explore. Discover. Belong.
+
+APPLE PROMOTIONAL TEXT
+A small life in an ancient world. Follow the water, discover the life beneath the leaves and begin to uncover the Shnork’s story.
+
+APPLE DESCRIPTION
+The forest is vast. Your first steps are small.
+
+Enter the world of In The Shadow of a Shnork, an atmospheric fantasy adventure among great trees, twisting roots and flowing water. Play as a small, expressive creature learning to understand the woodland — and its own place within it.
+
+FOLLOW THE WATER
+Explore the Home Forest from its tangled roots to the source of the stream. Look closely at the plants, paths and creatures around you. Curiosity is a reason to keep going.
+
+EVERY SHADOW HAS A STORY
+Experience encounters and story moments that lead from survival and danger towards discovery and companionship. Keep track of what you find in field notes as the Shnork’s world begins to make sense.
+
+A WORLD WITH TEETH
+The woodland is beautiful, but not always gentle. Gather resources, craft tools and face the danger that waits beneath the canopy.
+
+A LITTLE LESS ALONE
+Discover an unexpected companion through the Shnork’s story.
+
+EDITORIAL STATUS — REMOVE ONLY AFTER DEVICE ACCEPTANCE
+This is proposed App Store copy, not a published listing. The iOS export for Beta 0.8.8 exists, but physical-iPhone installation, performance and feature parity have not been verified for this revision. Promotional images currently use desktop gameplay and must be replaced with real iPhone captures. Multiplayer is deliberately omitted from the public-facing iOS description until cross-device acceptance. Availability, pricing, age rating, privacy declarations, app size, compatibility and final language support need confirmation.
+
+APPLE KEYWORDS — PROPOSED (NOT A CLAIM OF SEARCH PERFORMANCE)
+forest,fantasy,adventure,exploration,mystery,creature,story,woodland
+
+APPLE CATEGORY — PROPOSED
+Games / Adventure. Secondary category unconfirmed.
+
+SCREENSHOT HEADLINES AND SUPPORTING LINES
+01 A small life. An ancient world. — Explore the forest, one discovery at a time.
+02 Follow the water. — From the roots to the river’s source.
+03 Every shadow has a story. — An awakening. An unknown predator. A question.
+04 A little less alone. — An encounter that becomes companionship.
+05 Look closer. Go further. — Let the woodland lead you off the familiar path.
+06 Wonder has a wild side. — The forest is beautiful. It is also alive.
+
+RESERVED MULTIPLAYER HEADLINE
+Adventure together. — Reserve until a genuine, approved two-player capture exists. Never substitute an AI companion shot.
+
+WORLD BEYOND — DEVELOPMENT APPENDIX ONLY
+Beyond the familiar trees.
+A glimpse of the environments taking shape in World Beyond. These are existing development captures, not shipping gameplay. V3 remains unfinished; a historical V2 Hollow image is labelled separately.
+
+TRAILER TITLE-CARD DIRECTIONS
+A small life.
+An ancient world.
+Every shadow has a story.
+In The Shadow of a Shnork
+Explore. Discover. Belong.
+
+UNCONFIRMED METADATA
+Developer and publisher trading names; release date; price; final platform support; minimum/recommended system requirements; full controller support; Steam Cloud; achievements; age classification; ratings and reviews; privacy policy/support URLs; supported localizations; accessibility labels; app size; minimum iOS version; iPad support; app purchase model. Do not infer these from internal Unity settings.

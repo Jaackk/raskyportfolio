@@ -1,0 +1,140 @@
+IN THE SHADOW OF A SHNORK — CAMPAIGN DESIGN HANDOFF
+
+DELIVERED
+• A coherent offline marketing studio with seven sections: campaign, Steam,
+  App Store, artwork, trailers, copy and sourcebook.
+• A populated Steam product-page design with gallery/trailer playback, native
+  thumbnails, wishlist/follow preview controls, short description, tags, release
+  status, developer/publisher fields, features, About This Game, requirements,
+  language information and review/age-rating placeholders without fabricated data.
+• An iPhone App Store presentation with title, subtitle, icon, preview placement,
+  screenshot carousel, description, information and privacy/ratings fields.
+• Two art directions across six Steam capsule placements (12 exports): header,
+  small, main, vertical, library capsule and library header.
+• Library hero, transparent library logo and store page background.
+• Eight unretouched native gameplay gallery selections.
+• Six promotional mobile designs at both 1206×2622 and 1320×2868 (12 exports).
+• Two 1024×1024 icon concepts, two transparent logo treatments, editable SVG logo
+  sources, two 1920×622 promotional banners and a multiplayer capture placeholder.
+• Three clearly labelled World Beyond development images, excluded from the
+  production gallery and capsule artwork.
+• Actual 53-second Steam editorial trailer and 24-second App preview structure
+  animatic, with source timecodes, retained short excerpts and licensed music.
+• Complete copy for both storefronts, headline sequence, teaser lines, feature
+  descriptions, metadata gates, trailer cards, storyboard and detailed capture plan.
+• 45 raster assets are indexed in assets.json, including alternate sizes and
+  directions. These are individual files, not merely HTML renderings.
+
+CREATIVE DIRECTION
+Woodland: warm ivory, muted gold, forest green; environment-led composition.
+Riverlight: cool blue-green, restrained ivory; the actual hybrid Shnork in close-up.
+Title: IN THE SHADOW OF A SHNORK. Tagline: Explore. Discover. Belong.
+Leading campaign line: A small life. An ancient world.
+Typography uses installed Baskerville Old Face and Constantia for rendered artwork.
+Fonts are not redistributed. PNG logos are self-contained; editable SVG text may
+substitute on systems without the referenced fonts.
+
+SOURCE AUDIT
+Read-only investigation covered the current production release records, Beta QA,
+historical production captures, character/creature/animation documentation, asset
+licence evidence, existing gameplay recordings and completed World Beyond QA.
+2,275 unique indexed image candidates include diagnostic sheets, old captures and
+non-campaign asset textures. This number does not mean all were marketing-quality
+screenshots or individually approved. Contact-sheet review concentrated on current
+Beta, forest/river, character, story and completed World Beyond evidence; older
+material was rejected when it misrepresented the current protagonist or environment.
+Existing title screens were inspected. No approved standalone marketing logo was
+established; both new treatments are DRAFT, not replacements silently made official.
+
+Eight retained Beta stills and three World Beyond stills are copied under sources/.
+sources/manifest.json records every original path, native dimensions and SHA-256.
+No reference-mockup scenery, concept-region fantasy art, unused creature-pack
+characters or invented gameplay appears in the deliverable artwork.
+
+CURRENT PRODUCTION
+Beta 0.8.8 / build 33, commit 553f2d23008de72cbc118b4d3f71c9ed2e5e5a98,
+branch qa/beta-0.1-build30. Evidence: Downloads/Shnorkscape-Beta-0.8.8-b33/release.json
+and beta-0.1-qa30/QA/Hud33/final-verification.txt.
+The exact archived Windows build passed a rendered title/Home/map/HUD smoke test.
+This narrow revision did not repeat the complete earlier story, boss and Relay suite.
+iOS export integrity was checked on Windows; Xcode/device execution is unverified.
+
+PLAYABLE FEATURES VERSUS AMBITIONS
+Existing evidence supports forest exploration, stream/falls, wildlife/creatures,
+the first survival/story arc, hunt/reveal, first offering, AI companionship, field
+notes, basic resource gathering/crafting, and private two-player Windows co-op.
+Earlier QA demonstrates a Stalker clear/rewards and Rot Stag phases/hatchlings.
+Do not claim an accepted complete Rot Stag victory/reward/reload loop.
+Fishing is deferred. Unused fantasy creatures and suggested future regions are
+not marketed as implemented. Public matchmaking, host migration, full controller
+support, Steam Cloud and cross-device multiplayer are not inferred.
+The proposed iOS description omits multiplayer pending device acceptance.
+
+WORLD BEYOND
+V3 valley/path images are completed QA/World/v3/before-p4 captures of unfinished
+content. They are not an assertion that V3 is complete. The Colossal Hollow image
+is historical V2. All carry a development-preview label in the exported image.
+Future hero/landmark slots wait for finished V3 evidence and approval. No merge,
+rebuild, scene modification or interruption of Claude's work occurred.
+
+TRAILER STATUS
+53-second Steam video: actual edited archival Windows gameplay, 1920×1080/30fps.
+24-second mobile structure: actual archival Windows clips, 1920×886/30fps.
+Permanent on-frame labels identify the earlier character/build. Neither is a
+current-build release trailer or verified iOS preview. Primarily 960×444 and
+960×540 recordings were conventionally upscaled/letterboxed without invented
+frames or camera motion. Current captures are needed to achieve a premium master.
+Compact draft bitrate is about 5.2Mbps video; a final Apple preview should be
+re-encoded from real device footage to Apple's current 10–12Mbps target.
+Both full files decode without errors. Audio is stereo AAC/48kHz at ~256kbps.
+Only used excerpts were retained (about 20MB), not long original recordings.
+Companion footage depicts an AI character, never asserted to be multiplayer.
+
+AUDIO RIGHTS
+Memories Of Stone by Scott Buckley is used under CC BY 4.0. Credits and edit notice
+are included in DRAFT/trailer/CREDITS-AND-SOURCE-NOTES.txt and source metadata.
+https://www.scottbuckley.com.au/library/memories-of-stone/
+https://creativecommons.org/licenses/by/4.0/
+Original recording audio is muted. Supplied David/ElevenLabs narration was not used
+because commercial rights evidence was not established.
+
+STATUS DEFINITIONS
+FINAL — Verified handoff documentation in the offline studio. It does not
+certify platform acceptance or that all artwork has achieved final release quality.
+DRAFT — Exported design work with remaining approval/source/device gates.
+PLACEHOLDER — A named missing real capture or unconfirmed metadata field.
+FUTURE — Unfinished World Beyond content, explicitly outside production claims.
+
+IMPORTANT RELEASE GATES
+1. Most selected screenshots are 1280×720. Steam requires 1920×1080 minimum in 16:9.
+   Native screenshots are preserved rather than relabelled as compliant. Some
+   promotional canvases are enlarged, which cannot restore unavailable detail.
+2. All App Store designs use desktop QA imagery. Their RGB canvases have the
+   checked pixel dimensions, but images must be replaced by genuine iPhone capture.
+3. Native 4K current-build environment/character capture is needed for truly crisp
+   large capsules, hero artwork and the ambitious visual benchmark in the brief.
+   This handoff does not claim the existing QA imagery matches the fidelity of the
+   AI reference scenes; it preserves the actual game's appearance.
+4. Genuine two-player campaign footage is missing; a placeholder and exact shot plan
+   are supplied. Do not replace it with AI companionship or invented interactions.
+5. Confirm developer/publisher name, release information, price/purchase model,
+   supported devices/languages, age rating, privacy/support URLs and system specs.
+6. Final iOS minimum version, iPad support and icon/Xcode packaging remain unverified.
+7. Owner visual approval and final current-platform submission review remain required.
+
+OFFICIAL REQUIREMENTS CHECKED
+Steam: 920×430 header/library header; 462×174 small; 1232×706 main; 748×896 vertical;
+600×900 library; 3840×1240 hero; transparent logo width 1280 and/or height 720;
+optional 1438×810 page background; screenshots 1920×1080 minimum, 16:9.
+Standard capsules contain artwork and game title only; no marketing taglines/CTAs.
+Apple: 1–10 opaque PNG/JPEG screenshots per supported device slot; medium prepared
+at 1206×2622, large at 1320×2868. Title 24 characters; subtitle 25; promotional text
+under 170. Preview duration 15–30s, maximum 30fps, ≤500MB, accepted iPhone preview
+size 1920×886 landscape or 886×1920 portrait. Recheck requirements before uploading.
+https://partner.steamgames.com/doc/store/assets/standard
+https://partner.steamgames.com/doc/store/assets/libraryassets
+https://partner.steamgames.com/doc/store/assets/rules
+https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications
+https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications
+https://developer.apple.com/app-store/review/guidelines/
+

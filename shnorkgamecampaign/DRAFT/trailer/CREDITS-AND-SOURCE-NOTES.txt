@@ -1,0 +1,13 @@
+IN THE SHADOW OF A SHNORK — ARCHIVAL EDITORIAL DRAFTS
+
+Both videos are genuine earlier Windows gameplay/cinematic captures. They are NOT a current Beta 0.8.8 trailer or an iOS App Store preview. Earlier models, rendering and HUD appear. Re-capture current Beta before public use. No World Beyond footage is included. The companion scene is AI companionship, not multiplayer.
+
+Source resolution is chiefly 960x444; offering is 960x540. Export is upscaled, full-source imagery letterboxed. Output 30fps; no generated frames or synthetic camera motion. Existing source frame timing may include QA capture irregularities.
+
+'Memories Of Stone' by Scott Buckley — released under CC-BY 4.0. www.scottbuckley.com.au
+https://www.scottbuckley.com.au/library/memories-of-stone/
+https://creativecommons.org/licenses/by/4.0/
+Changes: excerpted, reduced gain and faded. Commercial use permitted under attribution terms. If uploaded to YouTube, put the credit in the video description.
+Original recordings are muted; unconfirmed narration rights are not used.
+
+See trailer-source/edit-decision-list.json for exact source paths, source timestamps, timeline intervals and reproducible edit script. All present title-card typography is Baskerville installed on this Windows workstation. Font files are not redistributed.
