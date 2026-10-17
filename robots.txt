@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /rockwaterpreorders/
-Disallow: /rwdef/
 
 Sitemap: https://raskyjack.com/sitemap.xml
