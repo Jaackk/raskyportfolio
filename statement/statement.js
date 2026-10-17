@@ -286,7 +286,11 @@
     var head = [];
     if (step.eyebrow) head.push(h("p", { className: "eyebrow", text: step.eyebrow }));
     head.push(h("h1", { className: "step__title", tabindex: "-1", "data-step-title": true, text: step.title }));
-    if (step.intro) head.push(h("p", { className: "step__intro", text: step.intro }));
+    var intro = step.intro;
+    if (step.id === "about" && S.isRequired(S.fieldById("name"), state.privacy)) {
+      intro = "Your name is needed for this type of statement. The other details are optional and help give context to your statement. Please don't include anything you'd rather not share.";
+    }
+    if (intro) head.push(h("p", { className: "step__intro", text: intro }));
     if (step.note) head.push(h("div", { className: "note note--plain" }, icon("info"), h("span", { text: step.note })));
     append(stepBody, head);
 
@@ -349,6 +353,8 @@
   }
 
   function setPrivacy(mode) {
+    // The "use" declaration is worded for the privacy choice, so a new choice needs a fresh confirmation.
+    if (state.privacy !== mode) delete state.declarations.use;
     state.privacy = mode;
     if (mode === "anonymous") {
       // Never keep identity details for an anonymous statement.
@@ -570,7 +576,7 @@
         $("[data-submit-error]").hidden = true;
       });
       list.appendChild(h("label", { className: "choice choice--check", "for": "decl-" + d.id }, input,
-        h("span", { className: "choice__box" }, h("span", { className: "choice__dot", "aria-hidden": "true" }), h("span", { className: "choice__text", text: d.label }))));
+        h("span", { className: "choice__box" }, h("span", { className: "choice__dot", "aria-hidden": "true" }), h("span", { className: "choice__text", text: S.declarationLabel(d, state.privacy) }))));
     });
     decl.appendChild(list);
   }

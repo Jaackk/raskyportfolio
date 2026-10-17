@@ -208,8 +208,17 @@ var STATEMENT_SCHEMA = (function () {
 
   var declarations = [
     { id: "honest", label: "The information I've provided is an honest account to the best of my recollection. I've tried to distinguish what I personally witnessed from anything I was told by somebody else." },
-    { id: "use", label: "I understand that, subject to the privacy preference I selected above, this statement may be used by Jack as evidence in his employment appeal and/or related HR concerns." }
+    // Wording depends on the privacy choice, so respondents confirm exactly what they chose.
+    { id: "use", byPrivacy: {
+      named: "I'm comfortable with my name and this statement being provided to The HR Team / Rockwater, and with Jack using it as evidence in his employment appeal and/or related HR concerns.",
+      confidential: "I understand Jack may use this statement as evidence in his employment appeal and/or related HR concerns, but my name and identity won't be provided to Rockwater / The HR Team unless he asks me first and I agree.",
+      anonymous: "I understand Jack may use this statement, without my name, as evidence in his employment appeal and/or related HR concerns, and that details in my statement or attachments could still identify me."
+    } }
   ];
+
+  function declarationLabel(declaration, privacy) {
+    return declaration.byPrivacy ? declaration.byPrivacy[privacy] : declaration.label;
+  }
 
   var attachmentRules = {
     maxFiles: 4,
@@ -274,6 +283,7 @@ var STATEMENT_SCHEMA = (function () {
     emailSections: emailSections,
     categories: categories,
     declarations: declarations,
+    declarationLabel: declarationLabel,
     attachmentRules: attachmentRules,
     referencePattern: /^RW-[23456789ABCDEFGHJKMNPQRSTVWXYZ]{5}$/,
     fieldById: fieldById,
