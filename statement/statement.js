@@ -319,7 +319,7 @@
   function decorateName(el) {
     var hint = state.privacy === "named"
       ? "Needed for a named statement."
-      : "If you leave this blank, Jack may not be able to ask your permission later.";
+      : "Needed so Jack knows who to ask for permission. Your name won't be provided to Rockwater or The HR Team without your permission.";
     var p = h("p", { className: "hint", id: "f-name-hint", text: hint });
     el.insertBefore(p, el.querySelector("input"));
     el.querySelector("input").setAttribute("aria-describedby", "f-name-hint");
@@ -405,9 +405,11 @@
       showFormError("Please choose how you'd like your statement handled.");
       return $("#privacy-named");
     }
-    if (step.id === "about" && state.privacy === "named" && !S.hasText(state.answers.name)) {
+    if (step.id === "about" && S.isRequired(S.fieldById("name"), state.privacy) && !S.hasText(state.answers.name)) {
       var el = $('[data-field="name"]', stepBody);
-      setFieldError(el, "Please enter your name, or go back and choose a confidential or anonymous statement.");
+      setFieldError(el, state.privacy === "named"
+        ? "Please enter your name, or go back and choose a confidential or anonymous statement."
+        : "Please enter your name so Jack knows who to ask for permission, or go back and choose an anonymous statement.");
       first = el.querySelector("input");
     }
     return first;

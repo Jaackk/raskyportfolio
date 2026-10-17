@@ -246,7 +246,9 @@ var STATEMENT_SCHEMA = (function () {
   }
 
   function isRequired(field, privacy) {
-    return field.id === "name" && privacy === "named";
+    // Named: the name is the statement's attribution. Confidential: Jack needs
+    // to know who to ask before sharing their identity.
+    return field.id === "name" && (privacy === "named" || privacy === "confidential");
   }
 
   function hasText(value) {
