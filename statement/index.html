@@ -31,7 +31,7 @@
       <a href="./" data-nav="welcome">About this page</a>
       <a href="./#handling" data-nav="handling">How your information is handled</a>
       <a href="references.html">Policies &amp; references</a>
-      <a href="./#amend" data-nav="amend">Correct or withdraw a statement</a>
+      <a href="./#amend" data-nav="amend">Change or withdraw an existing statement</a>
     </nav>
   </header>
 
@@ -92,18 +92,23 @@
           <summary>How your information is handled</summary>
           <div class="prose prose--small">
             <p><strong>Who receives it.</strong> Your statement is sent to Jack only. It is emailed to Jack's personal email address and a copy of the original submission is kept in Jack's private Google Drive, so the exact wording you submit is preserved.</p>
-            <p><strong>How your identity is used.</strong> The privacy option you choose on the next screen determines how Jack is permitted to use identifying information from your statement. Confidential statements are clearly marked so that your identity is not provided to Rockwater or The HR Team without Jack asking you first.</p>
-            <p><strong>Anonymous statements.</strong> If you choose anonymous, you won't be asked for your name or contact details and this form does not record your IP address. However, the details of what you describe, or files you upload, may still make you identifiable, and the website and email providers involved may keep their own standard technical logs.</p>
+            <p><strong>How your identity is used.</strong> The privacy option you choose on the next screen determines who may be given your identity:</p>
+            <ul>
+              <li><strong>Named Statement</strong> — The HR Team and Rockwater may know your identity.</li>
+              <li><strong>Confidential Statement</strong> — Jack and The HR Team may know your identity, but it must not be disclosed to Rockwater without further permission.</li>
+              <li><strong>Anonymous Submission</strong> — Jack may know your identity, but it is withheld from The HR Team and Rockwater.</li>
+            </ul>
+            <p><strong>Anonymous submissions.</strong> You choose whether Jack may know who you are (you give your name, and only Jack sees it) or whether you'd rather stay fully anonymous and not give your identity at all. Either way, The HR Team and Rockwater aren't given your identity unless you later change your preference yourself. You won't be asked for contact details, and this form does not record your IP address. However, the details of what you describe, or files you upload, may still make you identifiable, and the website and email providers involved may keep their own standard technical logs.</p>
             <p><strong>Nothing else is collected.</strong> This page has no analytics, tracking or advertising. Nobody else who completes this form can see your answers, and you won't be shown anyone else's.</p>
             <p><strong>How long it's kept.</strong> Statements are kept only for as long as they're needed for Jack's appeal and any related HR process.</p>
-            <p><strong>Changing your mind.</strong> After submitting, you'll be given a reference. You can use it to <a href="./#amend" data-nav="amend">correct or withdraw your statement</a>.</p>
+            <p><strong>Changing your mind.</strong> After submitting, you'll be given a reference and a private link. You can use either to <a href="./#amend" data-nav="amend">change your privacy preference, or correct or withdraw your statement</a>. Your original statement is never altered; any change is recorded alongside it.</p>
             <p>There is no pressure to complete this form. Only provide information you're comfortable sharing.</p>
           </div>
         </details>
 
         <p class="welcome-links">
           <a href="references.html">Policies &amp; references</a>
-          <a href="./#amend" data-nav="amend">Correct or withdraw a statement</a>
+          <a href="./#amend" data-nav="amend">Already submitted? Change or withdraw an existing statement</a>
         </p>
       </div>
     </section>
@@ -184,15 +189,23 @@
         </div>
         <h1 class="step__title" tabindex="-1" data-done-title>Your statement has been submitted successfully.</h1>
         <p class="step__intro">Thank you for taking the time to share your experience.</p>
+        <a class="btn btn--primary btn--block view-link" href="#" target="_blank" rel="noopener" data-view-statement>View statement</a>
+        <p class="view-status" data-view-status aria-live="polite"></p>
         <div class="ref-card">
           <p class="ref-card__label">Your reference</p>
           <p class="ref-card__value" data-done-ref></p>
           <p class="ref-card__time" data-done-time></p>
           <button class="btn btn--quiet" type="button" data-action="copy-ref">Copy reference</button>
-          <p class="ref-card__note">Please keep this reference if you later want to correct or withdraw your statement.</p>
+          <p class="ref-card__note">Keep your reference if you need to return to your statement later.</p>
+        </div>
+        <div class="ref-card" data-link-card hidden>
+          <p class="ref-card__label">Make changes later</p>
+          <button class="btn btn--quiet" type="button" data-action="copy-link">Copy private link</button>
+          <p class="ref-card__note">Save your private link to quickly return to your statement and change your privacy preference, correct or withdraw it.</p>
+          <p class="ref-card__note"><strong>Keep this link private.</strong></p>
         </div>
         <p class="done__meta">Your answers have been cleared from this browser tab.</p>
-        <a class="btn btn--primary btn--block" href="./" data-nav="welcome">Return to start</a>
+        <a class="btn btn--ghost btn--block" href="./" data-nav="welcome">Return to start</a>
       </div>
     </section>
 
@@ -200,8 +213,9 @@
     <section class="view view--amend" data-view="amend" hidden>
       <div class="wrap wrap--narrow">
         <p class="eyebrow">Your statement</p>
-        <h1 class="step__title" tabindex="-1">Correct or withdraw a statement</h1>
-        <p class="step__intro">Use the reference you were given when you submitted. Your original statement is kept unchanged; your correction or withdrawal is recorded alongside it.</p>
+        <h1 class="step__title" tabindex="-1">Change or withdraw an existing statement</h1>
+        <p class="step__intro">Enter the reference you were given when you submitted, or open your private link. Your original statement is never altered; any change, correction or withdrawal is recorded alongside it. You don't need to submit a new statement.</p>
+        <p class="hint">With just your reference, a change that limits who may know your identity is applied straight away. Anything else, such as letting more people know who you are, is sent to Jack to check with you first. Your private link confirms it's you, so its changes apply straight away.</p>
         <form class="step" data-amend-form novalidate>
           <div data-amend-body></div>
           <div class="hp" aria-hidden="true">

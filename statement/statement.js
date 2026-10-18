@@ -62,7 +62,7 @@
   var submitting = false;
 
   function freshState() {
-    return { privacy: null, answers: {}, declarations: {}, step: 0, key: null, amend: {} };
+    return { model: 2, privacy: null, answers: {}, declarations: {}, step: 0, key: null, amend: {} };
   }
 
   function load() {
@@ -73,6 +73,13 @@
       if (!data || typeof data !== "object" || typeof data.answers !== "object") return null;
       data.declarations = data.declarations || {};
       data.amend = data.amend || {};
+      if (data.model !== 2) {
+        // Answers saved under the original privacy options. "Confidential" has a
+        // different meaning now, so that choice must be made again; answers are kept.
+        if (data.privacy === "confidential") { data.privacy = null; data.privacyReset = true; }
+        data.declarations = {};
+        data.model = 2;
+      }
       return data;
     } catch (e) { return null; }
   }
@@ -199,11 +206,40 @@
         control = h("input", {
           className: "input", id: id, name: field.id, type: "text", maxlength: field.max,
           autocomplete: field.autocomplete || "off", placeholder: field.placeholder || null,
-          "aria-describedby": describedBy, enterkeyhint: "next", autocapitalize: field.id === "ref" ? "characters" : "sentences",
-          spellcheck: field.id === "ref" ? "false" : null, required: required
+          "aria-describedby": describedBy, enterkeyhint: "next", autocapitalize: (field.id === "ref" || field.id === "code") ? "characters" : (field.id === "name" ? "words" : "sentences"),
+          spellcheck: (field.id === "ref" || field.id === "code") ? "false" : null, required: required
         });
         control.value = typeof value === "string" ? value : "";
-        control.addEventListener("input", function () { onChange(field.id, control.value); });
+        if (field.prefix) {
+          // Reference: "RW-" is shown as a fixed prefix; the box holds only what
+          // follows it, in capitals, whatever was typed or pasted.
+          control.value = S.referenceSuffix(control.value);
+          control.addEventListener("input", function () {
+            var caret = control.selectionStart == null ? control.value.length : control.selectionStart;
+            var tidy = S.referenceSuffix(control.value);
+            if (tidy !== control.value) {
+              var atEnd = caret >= control.value.length;
+              var kept = function (t) { return t.replace(/[^0-9a-z]/gi, "").length; };
+              var before = kept(control.value.slice(0, caret)) - (kept(control.value) - tidy.length); // less any "RW" dropped from the front
+              control.value = tidy;
+              var pos = atEnd ? tidy.length : Math.max(0, Math.min(tidy.length, before));
+              try { control.setSelectionRange(pos, pos); } catch (e) {}
+            }
+            onChange(field.id, control.value);
+          });
+          wrap.appendChild(h("div", { className: "input-prefixed" },
+            h("span", { className: "input-prefixed__prefix", "aria-hidden": "true", text: field.prefix }), control));
+          control.setAttribute("aria-label", field.label + ", the characters after " + field.prefix);
+          return wrap;
+        }
+        control.addEventListener("input", function () {
+          if (field.id === "code" && control.value !== control.value.toUpperCase()) {
+            var p = control.selectionStart;
+            control.value = control.value.toUpperCase();
+            try { control.setSelectionRange(p, p); } catch (e) {}
+          }
+          onChange(field.id, control.value);
+        });
       }
       wrap.appendChild(control);
       return wrap;
@@ -246,7 +282,7 @@
     wrap.appendChild(list);
 
     if (blocked.length && privacy === "anonymous") {
-      wrap.appendChild(h("p", { className: "hint", text: "Being contacted would mean sharing contact details, so those options aren't available for anonymous statements. If you'd like to be contactable, choose “Named” or “Confidential until I give permission” on the privacy step." }));
+      wrap.appendChild(h("p", { className: "hint", text: "Being contacted would mean sharing contact details, so those options aren't available for anonymous statements. If you'd like to be contactable, choose “Named Statement” or “Confidential Statement” on the privacy step." }));
     }
 
     if (!isCheck && !required) {
@@ -287,8 +323,10 @@
     if (step.eyebrow) head.push(h("p", { className: "eyebrow", text: step.eyebrow }));
     head.push(h("h1", { className: "step__title", tabindex: "-1", "data-step-title": true, text: step.title }));
     var intro = step.intro;
-    if (step.id === "about" && S.isRequired(S.fieldById("name"), state.privacy)) {
+    if (step.id === "about" && (state.privacy === "named" || state.privacy === "confidential")) {
       intro = "Your name is needed for this type of statement. The other details are optional and help give context to your statement. Please don't include anything you'd rather not share.";
+    } else if (step.id === "about" && state.privacy === "anonymous") {
+      intro = "Please say whether Jack may know who you are. The other details are optional and help give context to your statement. Please don't include anything you'd rather not share.";
     }
     if (intro) head.push(h("p", { className: "step__intro", text: intro }));
     if (step.note) head.push(h("div", { className: "note note--plain" }, icon("info"), h("span", { text: step.note })));
@@ -298,8 +336,10 @@
     else {
       var container = h("div", { className: "fields" });
       S.fields.filter(function (f) { return f.step === step.id; }).forEach(function (f) {
-        var el = renderField(f, state.answers, onAnswer, { privacy: state.privacy, required: S.isRequired(f, state.privacy) });
-        if (f.when) el.classList.add("field--sub");
+        // An anonymous respondent's name field only appears once they've said Jack may know who they are.
+        var reqAnswers = f.id === "name" && state.privacy === "anonymous" ? { anon_identity: "jack" } : state.answers;
+        var el = renderField(f, state.answers, onAnswer, { privacy: state.privacy, required: S.isRequired(f, state.privacy, reqAnswers) });
+        if (f.when || (f.anonymousWhen && state.privacy === "anonymous")) el.classList.add("field--sub");
         if (f.id === "name") decorateName(el);
         container.appendChild(el);
       });
@@ -321,9 +361,11 @@
   }
 
   function decorateName(el) {
-    var hint = state.privacy === "named"
-      ? "Needed for a named statement."
-      : "Needed so Jack knows who to ask for permission. Your name won't be provided to Rockwater or The HR Team without your permission.";
+    var hint = {
+      named: "Needed for a named statement.",
+      confidential: "Needed so Jack knows who to ask for permission. The HR Team may know your name, but it won't be provided to Rockwater without your permission.",
+      anonymous: "Only Jack will see your name. It won't be included in anything provided to The HR Team or Rockwater unless you later change your privacy preference."
+    }[state.privacy] || "";
     var p = h("p", { className: "hint", id: "f-name-hint", text: hint });
     el.insertBefore(p, el.querySelector("input"));
     el.querySelector("input").setAttribute("aria-describedby", "f-name-hint");
@@ -347,18 +389,23 @@
     });
     group.appendChild(cards);
     stepBody.appendChild(group);
+    if (state.privacyReset) {
+      stepBody.insertBefore(h("div", { className: "note" }, icon("info"),
+        h("span", { text: "The privacy options have been updated since you started. Please choose your preference again — your answers have been kept." })), group);
+    }
     stepBody.appendChild(h("div", { className: "note" }, icon("info"),
-      h("span", { text: "Anonymous evidence may carry less evidential weight. Details within an account may also make somebody identifiable even where their name is not provided." })));
-    stepBody.appendChild(h("p", { className: "hint", text: "There is no pressure to complete this form. Only provide information you're comfortable sharing. Your selected preference will determine how Jack is permitted to use identifying information from this submission." }));
+      h("span", { text: "Details within a statement or its attachments may make somebody identifiable even where their name isn't given." })));
+    stepBody.appendChild(h("p", { className: "hint", text: "There is no pressure to complete this form. Only provide information you're comfortable sharing. Your selected preference will determine how Jack is permitted to use identifying information from this submission. You can change it later using your reference or the private link you'll be given." }));
   }
 
   function setPrivacy(mode) {
     // The "use" declaration is worded for the privacy choice, so a new choice needs a fresh confirmation.
     if (state.privacy !== mode) delete state.declarations.use;
     state.privacy = mode;
+    state.privacyReset = false;
     if (mode === "anonymous") {
-      // Never keep identity details for an anonymous statement.
-      delete state.answers.name;
+      // Contact details and HR-contact consent don't fit an anonymous statement.
+      // A name, if given, is kept for Jack only.
       delete state.answers.hr_contact;
       if (state.answers.hr === "yes" || state.answers.hr === "maybe") delete state.answers.hr;
     }
@@ -411,11 +458,17 @@
       showFormError("Please choose how you'd like your statement handled.");
       return $("#privacy-named");
     }
-    if (step.id === "about" && S.isRequired(S.fieldById("name"), state.privacy) && !S.hasText(state.answers.name)) {
+    if (step.id === "about" && S.isRequired(S.fieldById("anon_identity"), state.privacy, state.answers) && !state.answers.anon_identity) {
+      var idEl = $('[data-field="anon_identity"]', stepBody);
+      setFieldError(idEl, "Please choose whether Jack may know who you are.");
+      first = idEl.querySelector("input");
+    } else if (step.id === "about" && S.isRequired(S.fieldById("name"), state.privacy, state.answers) && !S.hasText(state.answers.name)) {
       var el = $('[data-field="name"]', stepBody);
-      setFieldError(el, state.privacy === "named"
-        ? "Please enter your name, or go back and choose a confidential or anonymous statement."
-        : "Please enter your name so Jack knows who to ask for permission, or go back and choose an anonymous statement.");
+      setFieldError(el, {
+        named: "Please enter your name, or go back and choose a different privacy option.",
+        confidential: "Please enter your name so Jack knows who to ask for permission, or go back and choose a different privacy option.",
+        anonymous: "Please enter your name so Jack knows who submitted this, or choose “Fully anonymous”."
+      }[state.privacy]);
       first = el.querySelector("input");
     }
     return first;
@@ -626,7 +679,21 @@
     });
   }
 
-  function post(payload) {
+  // Google occasionally turns a POST into a GET on its redirect, so the receiver
+  // answers with its GET reply and nothing is processed. Every request carries a
+  // unique key the receiver de-duplicates on, so sending it again is safe.
+  function post(payload, attempt) {
+    attempt = attempt || 0;
+    return postOnce(payload).then(function (data) {
+      if (data && data.service === "staff-statement" && !("reference" in data) && attempt < 3) {
+        return new Promise(function (r) { setTimeout(r, 1200 * (attempt + 1)); }).then(function () { return post(payload, attempt + 1); });
+      }
+      if (data && data.service === "staff-statement") throw { kind: "bad_response" };
+      return data;
+    });
+  }
+
+  function postOnce(payload) {
     var controller = window.AbortController ? new AbortController() : null;
     var timer = controller ? setTimeout(function () { controller.abort(); }, TIMEOUT_MS) : null;
     return fetch(ENDPOINT, {
@@ -656,6 +723,9 @@
     bad_attachment: "One of the attachments couldn't be accepted. Please check it's an image or PDF and try again.",
     busy: "The form is receiving a lot of submissions right now. Please wait a few minutes and try again.",
     unknown_ref: "That reference wasn't recognised. Please check it and try again.",
+    bad_code: "Your private link couldn't be confirmed for this statement, so this will be sent with your reference instead. Please check the reference and press Send again.",
+    name_needed: "Please add your name. It's needed for a named or confidential statement.",
+    integrity: "Your statement couldn't be updated automatically. Please press Send again to send this to Jack as a request.",
     rejected: "Your submission couldn't be accepted. Please try again.",
     server: "Something went wrong while saving your statement. Please try again."
   };
@@ -731,7 +801,8 @@
       });
     }).then(function (data) {
       if (!data.ok || !S.referencePattern.test(data.reference || "")) throw { kind: "server", code: data.error };
-      lastResult = { reference: data.reference, receivedAt: data.receivedAt, duplicate: !!data.duplicate };
+      lastResult = { reference: data.reference, receivedAt: data.receivedAt, duplicate: !!data.duplicate,
+        changeCode: S.codePattern.test(data.changeCode || "") ? data.changeCode : "" };
       clearAll();
       submitting = false;
       setBusy(btn, $("[data-submit-label]"), false, "", "Submit statement");
@@ -758,25 +829,162 @@
     $("[data-done-title]").textContent = lastResult.duplicate
       ? "Your statement had already been received."
       : "Your statement has been submitted successfully.";
+    $("[data-link-card]").hidden = !lastResult.changeCode;
     var intro = $("[data-done-title]").nextElementSibling;
     intro.textContent = lastResult.duplicate
-      ? "This is the reference for the statement we received earlier. If you changed anything since then, please use “Correct or withdraw a statement” with this reference."
+      ? "This is the reference for the statement we received earlier. If you changed anything since then, please use “Change or withdraw an existing statement” with this reference."
       : "Thank you for taking the time to share your experience.";
+    // Load the PDF straight away so "View statement" opens it with one tap.
+    prepareView($("[data-view-statement]"), $("[data-view-status]"), lastResult.reference, "View statement");
     return true;
   }
 
   // ---------- Correct / withdraw ----------
 
-  function renderAmend() {
+  // The private link carries the statement's secret code. Respondents only ever
+  // see "a private link"; the code travels in the #fragment, which browsers
+  // never send to the website, and is never displayed or asked for.
+  function manageLink(ref, code) {
+    if (!ref || !code) return "";
+    return location.origin + location.pathname + "#amend?ref=" + encodeURIComponent(ref) + "&code=" + encodeURIComponent(code);
+  }
+
+  // ---------- View statement ----------
+  // Fetches the statement's current readable copy (the PDF Jack would give The
+  // HR Team) and points a "View statement" link at it. Opening a new tab needs
+  // a direct tap, so the link only gets its address once the PDF has arrived:
+  // on the completion page that happens before the first tap.
+
+  var viewUrls = {};
+
+  function prepareView(link, status, ref, label) {
+    var cached = viewUrls[ref];
+    if (cached) { setViewReady(link, status, cached, label, ref); return Promise.resolve(); }
+    link.removeAttribute("href");
+    link.setAttribute("aria-disabled", "true");
+    link.textContent = "Preparing your statement…";
+    status.textContent = "";
+    status.classList.remove("view-status--error");
+    return Promise.resolve().then(function () {
+      if (!ENDPOINT) throw { kind: "not_configured" };
+      return post({ schema: S.version, kind: "view", key: newKey(), answers: { ref: ref }, hp: "" });
+    }).then(function (data) {
+      if (!data.ok || typeof data.pdf !== "string") throw { kind: "server", code: data.error };
+      var bin = atob(data.pdf);
+      var bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      viewUrls[ref] = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+      setViewReady(link, status, viewUrls[ref], label, ref);
+    }).catch(function (err) {
+      link.removeAttribute("aria-disabled");
+      link.textContent = "View statement";
+      link.setAttribute("href", "#");
+      link.removeAttribute("data-ready");
+      status.classList.add("view-status--error");
+      status.textContent = err && err.code === "unknown_ref" ? "That reference wasn't recognised. Please check it."
+        : err && err.code === "not_ready" ? "Your statement isn't ready to view yet. Please try again in a minute."
+        : "Your statement couldn't be loaded just now. Please try again.";
+    });
+  }
+
+  function setViewReady(link, status, url, label, ref) {
+    link.setAttribute("href", url);
+    link.setAttribute("data-for", ref);
+    link.setAttribute("data-ready", "");
+    link.removeAttribute("aria-disabled");
+    link.textContent = label;
+    status.classList.remove("view-status--error");
+    status.textContent = "Opens the PDF of your statement, exactly as it would be shared.";
+  }
+
+  // A tap before the PDF is ready (or after an error) starts or retries loading.
+  function onViewTap(e, getRef, label) {
+    var link = e.currentTarget;
+    if (link.hasAttribute("data-ready")) return;
+    e.preventDefault();
+    if (link.getAttribute("aria-disabled") === "true") return;
+    var ref = getRef();
+    var status = link.parentNode.querySelector("[data-view-status]");
+    if (!S.referencePattern.test(ref)) {
+      status.classList.add("view-status--error");
+      status.textContent = "Please enter your reference first.";
+      return;
+    }
+    prepareView(link, status, ref, label);
+  }
+
+  $("[data-view-statement]").addEventListener("click", function (e) {
+    onViewTap(e, function () { return lastResult && lastResult.reference; }, "View statement");
+  });
+
+  // "y8x5q", "rw y8x5q" and "RW-Y8X5Q" all give "RW-Y8X5Q" (see S.referenceSuffix).
+  function normaliseRef(v) {
+    return S.normaliseReference(v);
+  }
+
+  // The secret from a private link, but only while the reference still matches it.
+  function linkCode() {
+    var a = state.amend;
+    return a.linkCode && a.linkRef && normaliseRef(a.ref) === a.linkRef ? a.linkCode : "";
+  }
+
+  function renderAmend(params) {
+    if (params && params.ref) {
+      // Opened from a private link: keep its secret out of sight and out of the address bar.
+      state.amend = { ref: params.ref, linkRef: params.ref, action: "privacy" };
+      if (params.code) state.amend.linkCode = params.code;
+      save();
+      history.replaceState({ v: "amend" }, "", "#amend");
+    }
     var body = $("[data-amend-body]");
     body.innerHTML = "";
     $("[data-amend-error]").hidden = true;
+    body.appendChild(h("div", { className: "note note--plain", "data-link-note": true, hidden: true }, icon("info"),
+      h("span", { text: "You opened this from your private link, so your request will be confirmed automatically." })));
     S.amendmentFields.forEach(function (f) {
-      body.appendChild(renderField(f, state.amend, function (id, v) {
+      var el = renderField(f, state.amend, function (id, v) {
         if (v === undefined || v === "") delete state.amend[id]; else state.amend[id] = v;
         save();
-      }, { prefix: "a-", required: !!f.required }));
+        syncAmendVisibility();
+      }, { prefix: "a-", required: !!f.required });
+      if (f.when) el.classList.add("field--sub");
+      body.appendChild(el);
+      if (f.id === "ref") {
+        var view = h("a", { className: "btn btn--quiet view-link", href: "#", target: "_blank", rel: "noopener", "data-amend-view": true, text: "View statement" });
+        view.addEventListener("click", function (e) {
+          onViewTap(e, function () { return normaliseRef(state.amend.ref); }, "Open statement (PDF)");
+        });
+        body.appendChild(h("div", { className: "amend-view" }, view, h("p", { className: "view-status", "data-view-status": true, "aria-live": "polite" })));
+      }
     });
+    syncAmendVisibility();
+  }
+
+  function syncAmendVisibility() {
+    S.amendmentFields.forEach(function (f) {
+      var el = $('[data-field="' + f.id + '"]', $("[data-amend-body]"));
+      if (el) el.hidden = !S.isActive(f, state.amend, null);
+    });
+    var note = $("[data-link-note]");
+    if (note) note.hidden = !linkCode();
+    // A different reference needs its own statement loading.
+    var view = $("[data-amend-view]");
+    if (view && view.hasAttribute("data-ready") && view.getAttribute("data-for") !== normaliseRef(state.amend.ref)) {
+      view.removeAttribute("data-ready");
+      view.setAttribute("href", "#");
+      view.textContent = "View statement";
+      view.parentNode.querySelector("[data-view-status]").textContent = "";
+    }
+    var labels = { correct: "Send correction", privacy: "Send privacy change", withdraw: "Send withdrawal request" };
+    $("[data-amend-label]").textContent = labels[state.amend.action] || "Send";
+  }
+
+  function amendError(msg, sel) {
+    var errBox = $("[data-amend-error]");
+    errBox.textContent = msg;
+    errBox.hidden = false;
+    var el = $(sel);
+    if (el) el.focus();
   }
 
   $("[data-amend-form]").addEventListener("submit", function (e) {
@@ -784,45 +992,68 @@
     if (submitting) return;
     var errBox = $("[data-amend-error]");
     errBox.hidden = true;
-    var ref = String(state.amend.ref || "").trim().toUpperCase().replace(/^RW(?!-)/, "RW-");
-    if (!S.referencePattern.test(ref)) {
-      errBox.textContent = "Please enter your reference in the format RW-XXXXX.";
-      errBox.hidden = false; $("#a-ref").focus(); return;
-    }
-    if (!state.amend.action) {
-      errBox.textContent = "Please choose whether you'd like to correct or withdraw your statement.";
-      errBox.hidden = false; $("#a-action-0").focus(); return;
-    }
-    if (state.amend.action === "correct" && !S.hasText(state.amend.detail)) {
-      errBox.textContent = "Please describe what should be corrected or added.";
-      errBox.hidden = false; $("#a-detail").focus(); return;
-    }
+    var a = state.amend;
+    var ref = normaliseRef(a.ref);
+    var code = S.codePattern.test(linkCode()) ? linkCode() : "";
+    if (!S.referencePattern.test(ref)) return amendError("Please check your reference. It's the five characters after RW-, for example RW-3WARF.", "#a-ref");
+    if (!a.action) return amendError("Please choose what you'd like to do.", "#a-action-0");
+    if (a.action === "correct" && !S.hasText(a.detail)) return amendError("Please describe what should be corrected or added.", "#a-detail");
+    if (a.action === "privacy" && !a.new_privacy) return amendError("Please choose your privacy preference from now on.", "#a-new_privacy-0");
+
     submitting = true;
     var btn = $("[data-amend-submit]");
-    setBusy(btn, $("[data-amend-label]"), true, "Sending…", "Send");
-    if (!state.amend.key) { state.amend.key = newKey(); save(); }
-    var action = state.amend.action;
+    var idle = $("[data-amend-label]").textContent;
+    setBusy(btn, $("[data-amend-label]"), true, "Sending…", idle);
+    if (!a.key) { a.key = newKey(); save(); }
+    var action = a.action;
 
     Promise.resolve().then(function () {
       if (!ENDPOINT) throw { kind: "not_configured" };
       var answers = { ref: ref, action: action };
-      if (S.hasText(state.amend.detail)) answers.detail = state.amend.detail;
-      return post({ schema: S.version, kind: "amendment", key: state.amend.key, answers: answers, hp: $("#hp-field-2").value });
+      if (code) answers.code = code;
+      if (action === "privacy") {
+        answers.new_privacy = a.new_privacy;
+        if ((a.new_privacy === "named" || a.new_privacy === "confidential") && S.hasText(a.name)) answers.name = a.name;
+      }
+      if (S.hasText(a.detail)) answers.detail = a.detail;
+      return post({ schema: S.version, kind: "amendment", key: a.key, answers: answers, hp: $("#hp-field-2").value });
     }).then(function (data) {
       if (!data.ok) throw { kind: "server", code: data.error };
       submitting = false;
-      setBusy(btn, $("[data-amend-label]"), false, "", "Send");
+      setBusy(btn, $("[data-amend-label]"), false, "", idle);
       state.amend = {};
       save();
-      lastResult = { amendRef: ref, action: action };
+      // Any change may have produced a new readable copy: load it afresh next time.
+      if (viewUrls[ref]) { URL.revokeObjectURL(viewUrls[ref]); delete viewUrls[ref]; }
+      lastResult = { amendRef: ref, action: action, verified: !!data.verified, applied: !!data.applied, unchanged: !!data.unchanged, privacy: data.privacy || "" };
       history.replaceState({ v: "amend-done" }, "", "#amend-done");
       render();
     }).catch(function (err) {
       submitting = false;
-      setBusy(btn, $("[data-amend-label]"), false, "", "Send");
+      setBusy(btn, $("[data-amend-label]"), false, "", idle);
+      if (err && err.kind === "server" && (err.code === "bad_code" || err.code === "integrity")) {
+        // Fall back to sending with the reference alone on the next press.
+        delete state.amend.linkCode;
+        save();
+        syncAmendVisibility();
+      }
       showSubmitError(errBox, err);
     });
   });
+
+  function amendDoneText(r) {
+    if (r.action === "privacy") {
+      if (r.unchanged) return "Your privacy preference for statement " + r.amendRef + " was already " + r.privacy + ". Nothing has changed.";
+      if (r.applied) return "Your privacy preference for statement " + r.amendRef + " is now " + r.privacy + "." +
+        (r.verified ? "" : " Because this only restricts who may know your identity, it has been applied straight away.") +
+        " Your original statement is unchanged, and the change has been recorded alongside it.";
+      return "Your request has been sent to Jack. This change would allow more people to know your identity, and it was sent with your reference rather than your private link, so nothing will change until Jack has checked with you.";
+    }
+    var note = r.verified ? "" : " Because it was sent with your reference rather than your private link, Jack may check with you first.";
+    return r.action === "withdraw"
+      ? "Your request to withdraw statement " + r.amendRef + " has been sent to Jack." + note
+      : "Your correction to statement " + r.amendRef + " has been recorded alongside your original statement." + note;
+  }
 
   // ---------- Routing ----------
 
@@ -860,13 +1091,21 @@
     } else if (route === "done") {
       if (!renderDone()) { history.replaceState(null, "", location.pathname); return render(); }
       show("done"); focusSel = "[data-done-title]";
-    } else if (route === "amend") {
-      show("amend"); renderAmend(); focusSel = "[data-view='amend'] .step__title";
+    } else if (/^amend(\?|$)/.test(route)) {
+      var params = {};
+      (route.split("?")[1] || "").split("&").forEach(function (kv) {
+        var i = kv.indexOf("=");
+        if (i > 0) params[decodeURIComponent(kv.slice(0, i))] = decodeURIComponent(kv.slice(i + 1));
+      });
+      show("amend");
+      renderAmend({ ref: S.referencePattern.test(params.ref || "") ? params.ref : "", code: S.codePattern.test(params.code || "") ? params.code : "" });
+      focusSel = "[data-view='amend'] .step__title";
     } else if (route === "amend-done") {
       if (!lastResult || !lastResult.amendRef) { history.replaceState(null, "", location.pathname); return render(); }
-      $("[data-amend-done-text]").textContent = lastResult.action === "withdraw"
-        ? "Your request to withdraw statement " + lastResult.amendRef + " has been sent to Jack."
-        : "Your correction to statement " + lastResult.amendRef + " has been recorded alongside your original statement.";
+      $("[data-amend-done-title]").textContent = lastResult.action === "privacy" && !lastResult.applied && !lastResult.unchanged
+        ? "Your request has been received." : (lastResult.action === "privacy" ? "Your privacy preference has been updated." : "Your request has been received.");
+      if (lastResult.unchanged) $("[data-amend-done-title]").textContent = "No change was needed.";
+      $("[data-amend-done-text]").textContent = amendDoneText(lastResult);
       show("amend-done"); focusSel = "[data-amend-done-title]";
     } else {
       show("welcome");
@@ -923,9 +1162,10 @@
       if (bad) { bad.focus(); return; }
       go("review");
     }
-    else if (action === "copy-ref") {
-      var ref = $("[data-done-ref]").textContent;
-      if (navigator.clipboard) navigator.clipboard.writeText(ref).then(function () { t.textContent = "Copied"; }, function () {});
+    else if (action === "copy-ref" || action === "copy-link") {
+      var text = action === "copy-ref" ? $("[data-done-ref]").textContent
+        : manageLink(lastResult && lastResult.reference, lastResult && lastResult.changeCode);
+      if (navigator.clipboard && text) navigator.clipboard.writeText(text).then(function () { t.textContent = "Copied"; }, function () {});
     }
   });
 

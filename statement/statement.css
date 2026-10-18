@@ -284,6 +284,13 @@ a:hover { color: var(--brand-2); }
 .input:focus, .textarea:focus, .select:focus {
   outline: none; border-color: var(--brand-2); box-shadow: 0 0 0 3px var(--brand-tint-2);
 }
+.input-prefixed { display: flex; align-items: stretch; }
+.input-prefixed__prefix {
+  display: flex; align-items: center; padding: 0 10px 0 14px; font-size: 16px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--line-strong); border-right: 0;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm); user-select: none;
+}
+.input-prefixed .input { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; min-width: 0; flex: 1; letter-spacing: 0.04em; }
 .textarea { min-height: 132px; resize: vertical; line-height: 1.55; overflow-wrap: anywhere; }
 .textarea--large { min-height: 200px; }
 .select {
@@ -444,6 +451,9 @@ a:hover { color: var(--brand-2); }
 .ref-card__label { margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
 .ref-card__value { margin: 6px 0 2px; font-family: var(--serif); font-size: 38px; letter-spacing: 0.06em; color: var(--brand); user-select: all; }
 .ref-card__time { margin: 0 0 14px; font-size: 13.5px; color: var(--ink-3); }
+.ref-card + .ref-card { margin-top: 14px; }
+.prose ul { margin: 0 0 12px; padding-left: 20px; }
+.prose li { margin: 4px 0; }
 .ref-card__note { margin: 14px 0 0; font-size: 14px; color: var(--ink-2); }
 .done__meta { font-size: 13.5px; color: var(--ink-3); margin: 0 0 22px; }
 
@@ -497,3 +507,11 @@ a:hover { color: var(--brand-2); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+.ref-card__label + .btn { margin-top: 12px; }
+.ref-card__note + .ref-card__note { margin-top: 6px; }
+.view-link { margin: 4px 0 6px; }
+.view-link[aria-disabled="true"] { cursor: progress; }
+.view-status { margin: 0 0 18px; min-height: 1.4em; font-size: 13.5px; color: var(--ink-3); text-align: center; }
+.view-status--error { color: var(--danger, #9a2b1e); }
+.amend-view { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 22px; }
+.amend-view .view-status { margin: 0; text-align: left; }

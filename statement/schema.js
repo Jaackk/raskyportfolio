@@ -13,34 +13,79 @@ var STATEMENT_SCHEMA = (function () {
     { value: "prefer_not", label: "Prefer not to say" }
   ];
 
+  // Privacy model 2 (schema version 2). `identity` says who may be given the
+  // respondent's identity: Jack always may (if they supply it).
   var privacyModes = {
     named: {
-      label: "Named statement",
+      label: "Named Statement",
       description: "I'm comfortable with my name and statement being provided to The HR Team / Rockwater.",
+      summary: "The HR Team and Rockwater may know your identity.",
       status: "NAMED",
+      identity: { jack: true, hr: true, rockwater: true },
       subject: "Rockwater Appeal Evidence — Named Statement"
     },
     confidential: {
-      label: "Confidential until I give permission",
-      description: "Jack may know who I am, but I do not want my identity provided to Rockwater / The HR Team without Jack asking me first.",
-      status: "CONFIDENTIAL — DO NOT IDENTIFY WITHOUT PERMISSION",
+      label: "Confidential Statement",
+      description: "Jack may know who I am, and The HR Team may know my name, but I do not want my identity provided to Rockwater without Jack asking me first.",
+      summary: "Jack and The HR Team may know your identity, but it must not be disclosed to Rockwater without further permission.",
+      status: "CONFIDENTIAL — HR MAY KNOW IDENTITY; NOT ROCKWATER WITHOUT PERMISSION",
+      identity: { jack: true, hr: true, rockwater: false },
       subject: "Rockwater Appeal Evidence — Confidential Statement"
     },
     anonymous: {
-      label: "Anonymous submission",
-      description: "I don't want to provide my name.",
-      status: "ANONYMOUS",
-      subject: "Rockwater Appeal Evidence — Anonymous Statement"
+      label: "Anonymous Submission",
+      description: "Only Jack will see my name. The HR Team can view my statement, but my identity will remain anonymous.",
+      summary: "Jack may know your identity, but it is withheld from The HR Team and Rockwater.",
+      status: "ANONYMOUS — IDENTITY WITHHELD FROM HR AND ROCKWATER",
+      identity: { jack: true, hr: false, rockwater: false },
+      subject: "Rockwater Appeal Evidence — Anonymous Submission"
     }
   };
+
+  // Statements submitted under privacy model 1 (schema version 1, before 18 Oct
+  // 2026). Their meaning is kept exactly; nothing is reinterpreted.
+  // Model-1 "named" and "anonymous" meant the same as model 2 (an anonymous
+  // model-1 statement collected no name). Model-1 "confidential" meant identity
+  // withheld from BOTH The HR Team and Rockwater unless Jack asked first.
+  var legacyModes = {
+    legacy_confidential: {
+      label: "Confidential until I give permission (original option)",
+      description: "Jack may know who I am, but I do not want my identity provided to Rockwater / The HR Team without Jack asking me first.",
+      summary: "Jack may know the respondent's identity. It must not be provided to The HR Team or Rockwater without asking the respondent first.",
+      status: "CONFIDENTIAL (ORIGINAL TERMS) — NOT HR OR ROCKWATER WITHOUT PERMISSION",
+      identity: { jack: true, hr: false, rockwater: false },
+      subject: "Rockwater Appeal Evidence — Confidential Statement (original terms)"
+    }
+  };
+  var v1Wording = {
+    named: { label: "Named statement", description: "I'm comfortable with my name and statement being provided to The HR Team / Rockwater." },
+    confidential: { label: "Confidential until I give permission", description: legacyModes.legacy_confidential.description },
+    anonymous: { label: "Anonymous submission", description: "I don't want to provide my name." }
+  };
+
+  // Maps a stored privacy choice to its meaning, using the model it was made under.
+  function privacyKey(schemaVersion, mode) {
+    if (schemaVersion === 1 && mode === "confidential") return "legacy_confidential";
+    return mode;
+  }
+  function privacyInfo(key) {
+    return privacyModes[key] || legacyModes[key] || null;
+  }
 
   // Each field belongs to a form step (what the respondent sees) and an
   // email section (how Jack receives it). `when` makes a field conditional.
   var fields = [
     // About you
+    // Anonymous Submission only: may Jack know who submitted it? Never shown to
+    // The HR Team or Rockwater either way.
+    { id: "anon_identity", step: "about", section: "respondent", type: "radio",
+      label: "Your identity", onlyPrivacy: ["anonymous"],
+      options: [
+        { value: "jack", label: "Only Jack can know my identity", description: "Rockwater / The HR Team may not know my identity unless I later change these settings." },
+        { value: "none", label: "Fully anonymous", description: "I do not want to provide my identity." }
+      ] },
     { id: "name", step: "about", section: "respondent", type: "text", max: 120,
-      label: "Name", autocomplete: "name",
-      notWhenPrivacy: ["anonymous"] },
+      label: "Name", autocomplete: "name", anonymousWhen: { field: "anon_identity", in: ["jack"] } },
     { id: "role", step: "about", section: "respondent", type: "text", max: 120,
       label: "Role at Rockwater", placeholder: "e.g. Bartender, Floor staff, Supervisor",
       autocomplete: "organization-title" },
@@ -177,15 +222,29 @@ var STATEMENT_SCHEMA = (function () {
   ];
 
   var amendmentFields = [
-    { id: "ref", type: "text", max: 20, label: "Statement reference", placeholder: "RW-XXXXX", required: true },
+    { id: "ref", type: "text", max: 20, label: "Statement reference", prefix: "RW-", placeholder: "XXXXX", required: true,
+      hint: "The five characters after RW-." },
+    // The private link also carries a secret that confirms the request comes
+    // from the respondent. It is never shown or asked for as a field.
     { id: "action", type: "radio", label: "What would you like to do?", required: true,
       options: [
         { value: "correct", label: "Correct or add to my statement" },
+        { value: "privacy", label: "Change my privacy preference" },
         { value: "withdraw", label: "Withdraw my statement" }
       ] },
+    { id: "new_privacy", type: "radio", label: "Your privacy preference from now on", required: true,
+      when: { field: "action", in: ["privacy"] },
+      options: [
+        { value: "named", label: "Named Statement", description: "The HR Team and Rockwater may know your identity." },
+        { value: "confidential", label: "Confidential Statement", description: "Jack and The HR Team may know your identity, but it must not be disclosed to Rockwater without further permission." },
+        { value: "anonymous", label: "Anonymous Submission", description: "Jack may know your identity, but it is withheld from The HR Team and Rockwater." }
+      ] },
+    { id: "name", type: "text", max: 120, label: "Your name", autocomplete: "name",
+      when: { field: "new_privacy", in: ["named", "confidential"] },
+      hint: "Only needed if you didn't give your name with your statement." },
     { id: "detail", type: "textarea", max: 10000,
       label: "Details",
-      hint: "What should be corrected or added? If you're withdrawing, you can leave this blank." }
+      hint: "What should be corrected or added? For a privacy change or withdrawal you can leave this blank, or add anything Jack should know." }
   ];
 
   var emailSections = [
@@ -211,10 +270,14 @@ var STATEMENT_SCHEMA = (function () {
     // Wording depends on the privacy choice, so respondents confirm exactly what they chose.
     { id: "use", byPrivacy: {
       named: "I'm comfortable with my name and this statement being provided to The HR Team / Rockwater, and with Jack using it as evidence in his employment appeal and/or related HR concerns.",
-      confidential: "I understand Jack may use this statement as evidence in his employment appeal and/or related HR concerns, but my name and identity won't be provided to Rockwater / The HR Team unless he asks me first and I agree.",
-      anonymous: "I understand Jack may use this statement, without my name, as evidence in his employment appeal and/or related HR concerns, and that details in my statement or attachments could still identify me."
+      confidential: "I understand Jack may use this statement as evidence in his employment appeal and/or related HR concerns, and that The HR Team may know my name, but my identity won't be provided to Rockwater unless Jack asks me first and I agree.",
+      anonymous: "I understand Jack may use this statement as evidence in his employment appeal and/or related HR concerns without my identity being provided to The HR Team or Rockwater, and that details in my statement or attachments could still identify me."
     } }
   ];
+  // Declaration wording shown by the model-1 form (kept for statements sent from it).
+  v1Wording.named.declaration = "I'm comfortable with my name and this statement being provided to The HR Team / Rockwater, and with Jack using it as evidence in his employment appeal and/or related HR concerns.";
+  v1Wording.confidential.declaration = "I understand Jack may use this statement as evidence in his employment appeal and/or related HR concerns, but my name and identity won't be provided to Rockwater / The HR Team unless he asks me first and I agree.";
+  v1Wording.anonymous.declaration = "I understand Jack may use this statement, without my name, as evidence in his employment appeal and/or related HR concerns, and that details in my statement or attachments could still identify me.";
 
   function declarationLabel(declaration, privacy) {
     return declaration.byPrivacy ? declaration.byPrivacy[privacy] : declaration.label;
@@ -246,6 +309,8 @@ var STATEMENT_SCHEMA = (function () {
   // Whether a field applies, given the privacy choice and earlier answers.
   function isActive(field, answers, privacy) {
     if (field.notWhenPrivacy && field.notWhenPrivacy.indexOf(privacy) !== -1) return false;
+    if (field.onlyPrivacy && field.onlyPrivacy.indexOf(privacy) === -1) return false;
+    if (field.anonymousWhen && privacy === "anonymous" && field.anonymousWhen.in.indexOf(answers[field.anonymousWhen.field]) === -1) return false;
     if (field.when) {
       var parent = fieldById(field.when.field);
       if (parent && !isActive(parent, answers, privacy)) return false;
@@ -254,10 +319,14 @@ var STATEMENT_SCHEMA = (function () {
     return true;
   }
 
-  function isRequired(field, privacy) {
+  function isRequired(field, privacy, answers) {
     // Named: the name is the statement's attribution. Confidential: Jack needs
-    // to know who to ask before sharing their identity.
-    return field.id === "name" && (privacy === "named" || privacy === "confidential");
+    // to know who to ask before sharing their identity. Anonymous: the
+    // respondent says whether Jack may know who they are, and if so, who.
+    if (field.id === "anon_identity") return privacy === "anonymous";
+    if (field.id !== "name") return false;
+    if (privacy === "named" || privacy === "confidential") return true;
+    return privacy === "anonymous" && !!answers && answers.anon_identity === "jack";
   }
 
   function hasText(value) {
@@ -275,9 +344,29 @@ var STATEMENT_SCHEMA = (function () {
     return value;
   }
 
+  // The characters after "RW-", however a reference was typed or pasted:
+  // "3w arf", "rw-3warf" and "RW 3WARF" all give "3WARF". A leading "RW" is
+  // only dropped when more than five characters remain, because a reference
+  // can itself begin with R and W (RW-RW3AB).
+  function referenceSuffix(value) {
+    var c = String(value == null ? "" : value).toUpperCase().replace(/[^0-9A-Z]/g, "");
+    while (c.length > 5 && c.slice(0, 2) === "RW") c = c.slice(2);
+    return c;
+  }
+  // Canonical "RW-XXXXX", or "" if it can't be one.
+  function normaliseReference(value) {
+    var ref = "RW-" + referenceSuffix(value);
+    return /^RW-[23456789ABCDEFGHJKMNPQRSTVWXYZ]{5}$/.test(ref) ? ref : "";
+  }
+
   return {
-    version: 1,
+    version: 2,
     privacyModes: privacyModes,
+    legacyModes: legacyModes,
+    v1Wording: v1Wording,
+    privacyKey: privacyKey,
+    privacyInfo: privacyInfo,
+    codePattern: /^[23456789ABCDEFGHJKMNPQRSTVWXYZ]{4}(-[23456789ABCDEFGHJKMNPQRSTVWXYZ]{4}){4}$/,
     fields: fields,
     amendmentFields: amendmentFields,
     emailSections: emailSections,
@@ -286,6 +375,8 @@ var STATEMENT_SCHEMA = (function () {
     declarationLabel: declarationLabel,
     attachmentRules: attachmentRules,
     referencePattern: /^RW-[23456789ABCDEFGHJKMNPQRSTVWXYZ]{5}$/,
+    referenceSuffix: referenceSuffix,
+    normaliseReference: normaliseReference,
     fieldById: fieldById,
     optionAllowed: optionAllowed,
     isActive: isActive,
