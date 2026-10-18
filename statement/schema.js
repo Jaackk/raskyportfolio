@@ -17,12 +17,12 @@ var STATEMENT_SCHEMA = (function () {
   // respondent's identity: Jack always may (if they supply it).
   var privacyModes = {
     named: {
-      label: "Named Statement",
+      label: "Personal Statement",
       description: "I'm comfortable with my name and statement being provided to The HR Team / Rockwater.",
       summary: "The HR Team and Rockwater may know your identity.",
-      status: "NAMED",
+      status: "PERSONAL (NAMED)",
       identity: { jack: true, hr: true, rockwater: true },
-      subject: "Rockwater Appeal Evidence — Named Statement"
+      subject: "Rockwater Appeal Evidence — Personal Statement"
     },
     confidential: {
       label: "Confidential Statement",
@@ -34,8 +34,8 @@ var STATEMENT_SCHEMA = (function () {
     },
     anonymous: {
       label: "Anonymous Submission",
-      description: "Only Jack will see my name. The HR Team can view my statement, but my identity will remain anonymous.",
-      summary: "Jack may know your identity, but it is withheld from The HR Team and Rockwater.",
+      description: "I can choose to give my name to Jack only, or stay completely anonymous. The HR Team can view my statement, but my identity won't be shared with The HR Team or Rockwater.",
+      summary: "Your identity, if you give it, is for Jack only. It is withheld from The HR Team and Rockwater.",
       status: "ANONYMOUS — IDENTITY WITHHELD FROM HR AND ROCKWATER",
       identity: { jack: true, hr: false, rockwater: false },
       subject: "Rockwater Appeal Evidence — Anonymous Submission"
@@ -228,23 +228,24 @@ var STATEMENT_SCHEMA = (function () {
     // from the respondent. It is never shown or asked for as a field.
     { id: "action", type: "radio", label: "What would you like to do?", required: true,
       options: [
-        { value: "correct", label: "Correct or add to my statement" },
+        { value: "edit", label: "Edit my statement", description: "Your answers open ready to change. The edited version becomes your statement." },
         { value: "privacy", label: "Change my privacy preference" },
-        { value: "withdraw", label: "Withdraw my statement" }
+        { value: "withdraw", label: "Withdraw my statement", description: "It will no longer be used." }
       ] },
     { id: "new_privacy", type: "radio", label: "Your privacy preference from now on", required: true,
       when: { field: "action", in: ["privacy"] },
       options: [
-        { value: "named", label: "Named Statement", description: "The HR Team and Rockwater may know your identity." },
+        { value: "named", label: "Personal Statement", description: "The HR Team and Rockwater may know your identity." },
         { value: "confidential", label: "Confidential Statement", description: "Jack and The HR Team may know your identity, but it must not be disclosed to Rockwater without further permission." },
-        { value: "anonymous", label: "Anonymous Submission", description: "Jack may know your identity, but it is withheld from The HR Team and Rockwater." }
+        { value: "anonymous", label: "Anonymous Submission", description: "Your identity, if you gave it, is for Jack only. It is withheld from The HR Team and Rockwater." }
       ] },
     { id: "name", type: "text", max: 120, label: "Your name", autocomplete: "name",
       when: { field: "new_privacy", in: ["named", "confidential"] },
       hint: "Only needed if you didn't give your name with your statement." },
     { id: "detail", type: "textarea", max: 10000,
-      label: "Details",
-      hint: "What should be corrected or added? For a privacy change or withdrawal you can leave this blank, or add anything Jack should know." }
+      label: "Anything Jack should know",
+      when: { field: "action", in: ["privacy", "withdraw"] },
+      hint: "You can leave this blank." }
   ];
 
   var emailSections = [
@@ -280,7 +281,9 @@ var STATEMENT_SCHEMA = (function () {
   v1Wording.anonymous.declaration = "I understand Jack may use this statement, without my name, as evidence in his employment appeal and/or related HR concerns, and that details in my statement or attachments could still identify me.";
 
   function declarationLabel(declaration, privacy) {
-    return declaration.byPrivacy ? declaration.byPrivacy[privacy] : declaration.label;
+    if (!declaration.byPrivacy) return declaration.label;
+    // Original-terms confidential statements keep the original form's wording.
+    return declaration.byPrivacy[privacy] || (privacy === "legacy_confidential" ? v1Wording.confidential.declaration : undefined);
   }
 
   var attachmentRules = {

@@ -515,3 +515,5 @@ a:hover { color: var(--brand-2); }
 .view-status--error { color: var(--danger, #9a2b1e); }
 .amend-view { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 22px; }
 .amend-view .view-status { margin: 0; text-align: left; }
+.slow-note { margin: 10px 0 0; font-size: 14px; color: var(--ink-2); }
+.view-link[aria-busy="true"] { cursor: progress; opacity: 0.85; }

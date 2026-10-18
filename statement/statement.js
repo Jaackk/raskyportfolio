@@ -5,7 +5,9 @@
   var S = window.STATEMENT_SCHEMA;
   var ENDPOINT = (window.STATEMENT_ENDPOINT || "").trim();
   var STORAGE_KEY = "rw-statement-v1";
-  var TIMEOUT_MS = 90000;
+  var TIMEOUT_MS = 60000;      // saving (the receiver recognises a repeated save, so one retry is safe)
+  var READ_TIMEOUT_MS = 20000; // viewing or loading a statement
+  var SLOW_MS = 8000;          // after this, say it's taking longer than expected
 
   var STEPS = [
     { id: "privacy", name: "Privacy",
@@ -58,7 +60,8 @@
 
   var state = load() || freshState();
   var files = []; // { id, file } — kept in memory only
-  var lastResult = null;
+  var RESULT_KEY = "rw-statement-result";
+  var lastResult = loadResult();
   var submitting = false;
 
   function freshState() {
@@ -84,6 +87,15 @@
     } catch (e) { return null; }
   }
 
+  // The confirmation shown after a submission or change, kept for this tab only,
+  // so it is still there after opening the PDF and coming back.
+  function loadResult() {
+    try { return JSON.parse(window.sessionStorage.getItem(RESULT_KEY) || "null"); } catch (e) { return null; }
+  }
+  function saveResult() {
+    try { window.sessionStorage.setItem(RESULT_KEY, JSON.stringify(lastResult)); } catch (e) { /* storage unavailable */ }
+  }
+
   function save() {
     try { window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { /* storage unavailable: answers stay in memory */ }
   }
@@ -95,7 +107,7 @@
   }
 
   function hasProgress() {
-    if (state.privacy) return true;
+    if (state.privacy || state.edit) return true;
     for (var k in state.answers) if (Object.prototype.hasOwnProperty.call(state.answers, k)) return true;
     return false;
   }
@@ -282,7 +294,7 @@
     wrap.appendChild(list);
 
     if (blocked.length && privacy === "anonymous") {
-      wrap.appendChild(h("p", { className: "hint", text: "Being contacted would mean sharing contact details, so those options aren't available for anonymous statements. If you'd like to be contactable, choose “Named Statement” or “Confidential Statement” on the privacy step." }));
+      wrap.appendChild(h("p", { className: "hint", text: "Being contacted would mean sharing contact details, so those options aren't available for anonymous statements. If you'd like to be contactable, choose “Personal Statement” or “Confidential Statement” on the privacy step." }));
     }
 
     if (!isCheck && !required) {
@@ -353,7 +365,7 @@
     var pct = ((index + 1) / TOTAL_STEPS) * 100;
     $("[data-progress-fill]").style.width = pct + "%";
     $("[data-progress-bar]").setAttribute("aria-valuenow", String(index + 1));
-    $("[data-progress-count]").textContent = "Step " + (index + 1) + " of " + TOTAL_STEPS;
+    $("[data-progress-count]").textContent = state.edit ? "Editing your statement" : "Step " + (index + 1) + " of " + TOTAL_STEPS;
     $("[data-progress-name]").textContent = step.name;
     stepForm.classList.remove("step-enter");
     void stepForm.offsetWidth;
@@ -393,6 +405,8 @@
       stepBody.insertBefore(h("div", { className: "note" }, icon("info"),
         h("span", { text: "The privacy options have been updated since you started. Please choose your preference again — your answers have been kept." })), group);
     }
+    stepBody.appendChild(h("div", { className: "note", "data-anon-nudge": true, hidden: state.privacy !== "anonymous" }, icon("info"),
+      h("span", { text: "Anonymous statements are still valuable. However, allowing The HR Team to know your identity can strengthen your statement while keeping your identity confidential from Rockwater." })));
     stepBody.appendChild(h("div", { className: "note" }, icon("info"),
       h("span", { text: "Details within a statement or its attachments may make somebody identifiable even where their name isn't given." })));
     stepBody.appendChild(h("p", { className: "hint", text: "There is no pressure to complete this form. Only provide information you're comfortable sharing. Your selected preference will determine how Jack is permitted to use identifying information from this submission. You can change it later using your reference or the private link you'll be given." }));
@@ -403,6 +417,8 @@
     if (state.privacy !== mode) delete state.declarations.use;
     state.privacy = mode;
     state.privacyReset = false;
+    var nudge = $("[data-anon-nudge]");
+    if (nudge) nudge.hidden = mode !== "anonymous";
     if (mode === "anonymous") {
       // Contact details and HR-contact consent don't fit an anonymous statement.
       // A name, if given, is kept for Jack only.
@@ -506,6 +522,10 @@
     if (state.privacy === "anonymous") {
       wrap.appendChild(h("p", { className: "hint", text: "Files can identify you — for example names in screenshots, or location details stored in photos." }));
     }
+    var kept = existingAttachments();
+    if (kept.length) {
+      wrap.appendChild(h("p", { className: "hint", text: "Already attached, and kept: " + kept.join(", ") + ". You can add more below." }));
+    }
     var input = h("input", {
       type: "file", multiple: true, id: "files-input", "aria-labelledby": "files-label",
       accept: Object.keys(rules.types).join(",") + ",.heic,.heif,.pdf"
@@ -524,7 +544,7 @@
       Array.prototype.forEach.call(fileList, function (file) {
         var type = normaliseType(file);
         var total = files.reduce(function (n, f) { return n + f.file.size; }, 0);
-        if (files.length >= rules.maxFiles) problems.push(file.name + ": you can attach up to " + rules.maxFiles + " files.");
+        if (files.length + existingAttachments().length >= rules.maxFiles) problems.push(file.name + ": you can attach up to " + rules.maxFiles + " files.");
         else if (!rules.types[type]) problems.push(file.name + ": only images (JPEG, PNG, WebP, HEIC) and PDFs can be attached.");
         else if (file.size === 0) problems.push(file.name + ": this file is empty.");
         else if (file.size > rules.maxFileBytes) problems.push(file.name + ": files must be " + formatBytes(rules.maxFileBytes) + " or smaller.");
@@ -561,6 +581,11 @@
     container.insertBefore(wrap, hrField);
   }
 
+  // Files attached to the statement being edited: kept as they are.
+  function existingAttachments() {
+    return state.edit && Array.isArray(state.edit.attachments) ? state.edit.attachments : [];
+  }
+
   function normaliseType(file) {
     var t = (file.type || "").toLowerCase();
     if (t === "image/jpg") t = "image/jpeg";
@@ -584,11 +609,15 @@
     var body = $("[data-review-body]");
     body.innerHTML = "";
 
-    var mode = S.privacyModes[state.privacy];
+    var editing = !!state.edit;
+    $("[data-review-title]").textContent = editing ? "Check your changes" : "Review your statement";
+    $("[data-review-count]").textContent = editing ? "Editing your statement" : "Step " + TOTAL_STEPS + " of " + TOTAL_STEPS;
+    $("[data-submit-label]").textContent = editing ? "Save changes" : "Submit statement";
+    var mode = S.privacyInfo(state.privacy);
     var privacyCard = h("section", { className: "card review__section" },
-      reviewHead("Privacy preference", "privacy"),
-      h("div", { className: "review__privacy" }, icon(PRIVACY_ICONS[state.privacy]),
-        h("div", null, h("strong", { text: mode.label }), h("span", { text: mode.description }))));
+      editing ? h("div", { className: "review__head" }, h("h2", { className: "card__title", text: "Privacy preference" })) : reviewHead("Privacy preference", "privacy"),
+      h("div", { className: "review__privacy" }, icon(PRIVACY_ICONS[state.privacy] || "lock"),
+        h("div", null, h("strong", { text: mode.label }), h("span", { text: editing ? mode.summary + " To change this, use “Change my privacy preference”." : mode.description }))));
     body.appendChild(privacyCard);
 
     var anyAnswer = false;
@@ -604,7 +633,8 @@
           h("p", { className: "qa__a" + (v ? "" : " qa__a--empty"), text: v || "Not answered" })));
       });
       if (sec.attachments) {
-        var names = files.map(function (f) { return f.file.name + " (" + formatBytes(f.file.size) + ")"; }).join("\n");
+        var names = existingAttachments().map(function (n) { return n + " (already attached)"; })
+          .concat(files.map(function (f) { return f.file.name + " (" + formatBytes(f.file.size) + ")"; })).join("\n");
         card.appendChild(h("div", { className: "qa" },
           h("p", { className: "qa__q", text: "Attachments" }),
           h("p", { className: "qa__a" + (names ? "" : " qa__a--empty"), text: names || "None" })));
@@ -679,23 +709,66 @@
     });
   }
 
+  function delay(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
   // Google occasionally turns a POST into a GET on its redirect, so the receiver
-  // answers with its GET reply and nothing is processed. Every request carries a
-  // unique key the receiver de-duplicates on, so sending it again is safe.
-  function post(payload, attempt) {
-    attempt = attempt || 0;
-    return postOnce(payload).then(function (data) {
-      if (data && data.service === "staff-statement" && !("reference" in data) && attempt < 3) {
-        return new Promise(function (r) { setTimeout(r, 1200 * (attempt + 1)); }).then(function () { return post(payload, attempt + 1); });
+  // answers with its GET reply and nothing is processed; and a request can stall
+  // on Google's side. Every request carries a unique key the receiver
+  // de-duplicates on, so sending it again is safe: it never creates a second
+  // statement or change, and never reports success for something not saved.
+  //   opts.timeout  per attempt (default TIMEOUT_MS)
+  //   opts.onSlow      called once if the whole thing takes longer than expected
+  //   opts.slowAfter   how long that is (default SLOW_MS)
+  //   opts.hedgeAfter  if there's no answer by then, send a second copy and use
+  //                    whichever answers first (Google occasionally never answers
+  //                    a request; a copy of a save is recognised and not applied twice)
+  function post(payload, opts) {
+    opts = opts || {};
+    var slowTimer = opts.onSlow ? setTimeout(opts.onSlow, opts.slowAfter || SLOW_MS) : null;
+    var request = opts.hedgeAfter ? hedged(payload, opts) : send(payload, opts.timeout || TIMEOUT_MS);
+    return request.finally(function () { if (slowTimer) clearTimeout(slowTimer); });
+  }
+
+  function hedged(payload, opts) {
+    return new Promise(function (resolve, reject) {
+      var settled = false, running = 0, launched = 0, timer = null;
+      function launch() {
+        launched++; running++;
+        send(payload, opts.timeout || TIMEOUT_MS).then(function (data) {
+          running--;
+          if (settled) return;
+          settled = true; clearTimeout(timer); resolve(data);
+        }, function (err) {
+          running--;
+          if (settled) return;
+          if (launched < 2) { clearTimeout(timer); launch(); return; }
+          if (running === 0) { settled = true; reject(err); }
+        });
       }
-      if (data && data.service === "staff-statement") throw { kind: "bad_response" };
-      return data;
+      launch();
+      timer = setTimeout(function () { if (!settled && launched < 2) launch(); }, opts.hedgeAfter);
     });
   }
 
-  function postOnce(payload) {
+  function send(payload, timeout) {
+    function attempt(n) {
+      return postOnce(payload, timeout).then(function (data) {
+        if (data && data.service === "staff-statement" && !("reference" in data)) {
+          if (n < 3) return delay(800 * (n + 1)).then(function () { return attempt(n + 1); });
+          throw { kind: "bad_response" };
+        }
+        return data;
+      }, function (err) {
+        if (n < 1 && err && (err.kind === "timeout" || err.kind === "network")) return delay(500).then(function () { return attempt(n + 1); });
+        throw err;
+      });
+    }
+    return attempt(0);
+  }
+
+  function postOnce(payload, timeout) {
     var controller = window.AbortController ? new AbortController() : null;
-    var timer = controller ? setTimeout(function () { controller.abort(); }, TIMEOUT_MS) : null;
+    var timer = controller ? setTimeout(function () { controller.abort(); }, timeout) : null;
     return fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -723,9 +796,10 @@
     bad_attachment: "One of the attachments couldn't be accepted. Please check it's an image or PDF and try again.",
     busy: "The form is receiving a lot of submissions right now. Please wait a few minutes and try again.",
     unknown_ref: "That reference wasn't recognised. Please check it and try again.",
-    bad_code: "Your private link couldn't be confirmed for this statement, so this will be sent with your reference instead. Please check the reference and press Send again.",
-    name_needed: "Please add your name. It's needed for a named or confidential statement.",
-    integrity: "Your statement couldn't be updated automatically. Please press Send again to send this to Jack as a request.",
+    bad_code: "Your private link couldn't be confirmed for this statement, so this will be sent with your reference instead. Please check the reference and try again.",
+    name_needed: "Please add your name. It's needed for a personal or confidential statement.",
+    withdrawn: "This statement has been withdrawn, so it can't be viewed or changed.",
+    integrity: "Your statement couldn't be updated just now. Please try again in a moment.",
     rejected: "Your submission couldn't be accepted. Please try again.",
     server: "Something went wrong while saving your statement. Please try again."
   };
@@ -757,11 +831,32 @@
     box.hidden = false;
   }
 
-  function setBusy(btn, labelEl, busy, busyText, idleText) {
-    btn.disabled = busy;
-    btn.classList.toggle("is-busy", busy);
-    btn.setAttribute("aria-busy", busy ? "true" : "false");
-    labelEl.textContent = busy ? busyText : idleText;
+  // Shows a button working the instant it's tapped, blocks repeat taps, says
+  // how long it usually takes (for saves), and says so if it's taking longer.
+  function startBusy(btn, labelEl, busyText, slowEl, expectText) {
+    var idle = labelEl.textContent;
+    btn.disabled = true;
+    btn.classList.add("is-busy");
+    btn.setAttribute("aria-busy", "true");
+    labelEl.textContent = busyText;
+    if (slowEl) {
+      slowEl.textContent = expectText || "";
+      slowEl.hidden = !expectText;
+    }
+    return {
+      slow: function () {
+        if (!slowEl) return;
+        slowEl.textContent = "This is taking longer than expected. We're still trying…";
+        slowEl.hidden = false;
+      },
+      done: function () {
+        btn.disabled = false;
+        btn.classList.remove("is-busy");
+        btn.setAttribute("aria-busy", "false");
+        labelEl.textContent = idle;
+        if (slowEl) slowEl.hidden = true;
+      }
+    };
   }
 
   $("[data-declaration-form]").addEventListener("submit", function (e) {
@@ -778,9 +873,11 @@
     }
     if (!state.privacy) { go("step-1"); return; }
 
+    var editing = state.edit || null;
     submitting = true;
-    var btn = $("[data-submit]");
-    setBusy(btn, $("[data-submit-label]"), true, "Submitting…", "Submit statement");
+    var busy = startBusy($("[data-submit]"), $("[data-submit-label]"), editing ? "Saving…" : "Submitting…", $("[data-submit-slow]"),
+      editing ? "Saving your changes usually takes about 10 seconds. Please keep this page open."
+        : "Sending your statement usually takes 10 to 20 seconds. Please keep this page open.");
     $("[data-action='edit-statement']").disabled = true;
 
     if (!state.key) { state.key = newKey(); save(); }
@@ -789,29 +886,33 @@
       if (!ENDPOINT) throw { kind: "not_configured" };
       return Promise.all(files.map(readFile)).catch(function () { throw { kind: "file_read" }; });
     }).then(function (attachments) {
-      return post({
-        schema: S.version,
-        kind: "statement",
-        key: state.key,
-        privacy: state.privacy,
-        answers: buildAnswers(),
-        declarations: { honest: true, use: true },
-        attachments: attachments,
-        hp: $("#hp-field").value
-      });
+      var payload = editing
+        ? { schema: S.version, kind: "edit", key: state.key, ref: editing.ref, code: editing.code || undefined,
+            answers: buildAnswers(), declarations: { honest: true, use: true }, attachments: attachments, hp: $("#hp-field").value }
+        : { schema: S.version, kind: "statement", key: state.key, privacy: state.privacy,
+            answers: buildAnswers(), declarations: { honest: true, use: true }, attachments: attachments, hp: $("#hp-field").value };
+      return post(payload, { onSlow: busy.slow, slowAfter: editing ? 20000 : 30000, hedgeAfter: editing ? 25000 : 30000 });
     }).then(function (data) {
-      if (!data.ok || !S.referencePattern.test(data.reference || "")) throw { kind: "server", code: data.error };
-      lastResult = { reference: data.reference, receivedAt: data.receivedAt, duplicate: !!data.duplicate,
-        changeCode: S.codePattern.test(data.changeCode || "") ? data.changeCode : "" };
+      if (editing) {
+        if (!data.ok) throw { kind: "server", code: data.error };
+        forgetView(editing.ref);
+        lastResult = { reference: editing.ref, edited: true, changeCode: editing.code || "" };
+        saveResult();
+      } else {
+        if (!data.ok || !S.referencePattern.test(data.reference || "")) throw { kind: "server", code: data.error };
+        lastResult = { reference: data.reference, receivedAt: data.receivedAt, duplicate: !!data.duplicate,
+          changeCode: S.codePattern.test(data.changeCode || "") ? data.changeCode : "" };
+        saveResult();
+      }
       clearAll();
       submitting = false;
-      setBusy(btn, $("[data-submit-label]"), false, "", "Submit statement");
+      busy.done();
       $("[data-action='edit-statement']").disabled = false;
       history.replaceState({ v: "done" }, "", "#done");
       render();
     }).catch(function (err) {
       submitting = false;
-      setBusy(btn, $("[data-submit-label]"), false, "", "Submit statement");
+      busy.done();
       $("[data-action='edit-statement']").disabled = false;
       showSubmitError(errBox, err);
       errBox.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -825,17 +926,19 @@
     try {
       when = "Received " + new Date(lastResult.receivedAt).toLocaleString("en-GB", { dateStyle: "long", timeStyle: "short", timeZone: "Europe/London" });
     } catch (e) { /* leave blank */ }
-    $("[data-done-time]").textContent = when;
-    $("[data-done-title]").textContent = lastResult.duplicate
-      ? "Your statement had already been received."
+    $("[data-done-time]").textContent = lastResult.edited ? "" : when;
+    $("[data-done-title]").textContent = lastResult.edited ? "Your changes have been saved."
+      : lastResult.duplicate ? "Your statement had already been received."
       : "Your statement has been submitted successfully.";
     $("[data-link-card]").hidden = !lastResult.changeCode;
     var intro = $("[data-done-title]").nextElementSibling;
-    intro.textContent = lastResult.duplicate
+    intro.textContent = lastResult.edited
+      ? "Your edited statement is now your current statement, and a new copy has been created. Your original is kept unchanged alongside it."
+      : lastResult.duplicate
       ? "This is the reference for the statement we received earlier. If you changed anything since then, please use “Change or withdraw an existing statement” with this reference."
       : "Thank you for taking the time to share your experience.";
     // Load the PDF straight away so "View statement" opens it with one tap.
-    prepareView($("[data-view-statement]"), $("[data-view-status]"), lastResult.reference, "View statement");
+    prefetchView($("[data-view-statement]"), $("[data-view-status]"), lastResult.reference);
     return true;
   }
 
@@ -850,72 +953,122 @@
   }
 
   // ---------- View statement ----------
-  // Fetches the statement's current readable copy (the PDF Jack would give The
-  // HR Team) and points a "View statement" link at it. Opening a new tab needs
-  // a direct tap, so the link only gets its address once the PDF has arrived:
-  // on the completion page that happens before the first tap.
+  // Opens the statement's current readable copy (the PDF Jack would give The
+  // HR Team). The receiver reads the existing PDF directly; nothing is
+  // regenerated. The PDF is loaded in the background as soon as the reference
+  // is known, so a tap normally opens it at once. A tap before it has arrived
+  // opens the new tab immediately and fills it when the PDF arrives.
 
-  var viewUrls = {};
+  var viewUrls = {}, viewPending = {};
+  // On iPhone and iPad a PDF opened in a new tab can stay blank, so there it
+  // opens in this tab; Back returns here (the confirmation is kept for the tab).
+  var SAME_TAB_PDF = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-  function prepareView(link, status, ref, label) {
-    var cached = viewUrls[ref];
-    if (cached) { setViewReady(link, status, cached, label, ref); return Promise.resolve(); }
-    link.removeAttribute("href");
-    link.setAttribute("aria-disabled", "true");
-    link.textContent = "Preparing your statement…";
-    status.textContent = "";
-    status.classList.remove("view-status--error");
-    return Promise.resolve().then(function () {
+  function fetchView(ref) {
+    if (viewUrls[ref]) return Promise.resolve(viewUrls[ref]);
+    if (viewPending[ref]) return viewPending[ref];
+    var p = Promise.resolve().then(function () {
       if (!ENDPOINT) throw { kind: "not_configured" };
-      return post({ schema: S.version, kind: "view", key: newKey(), answers: { ref: ref }, hp: "" });
+      return post({ schema: S.version, kind: "view", key: newKey(), answers: { ref: ref }, hp: "" }, { timeout: READ_TIMEOUT_MS, hedgeAfter: 5000 });
     }).then(function (data) {
       if (!data.ok || typeof data.pdf !== "string") throw { kind: "server", code: data.error };
       var bin = atob(data.pdf);
       var bytes = new Uint8Array(bin.length);
       for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
       viewUrls[ref] = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
-      setViewReady(link, status, viewUrls[ref], label, ref);
-    }).catch(function (err) {
-      link.removeAttribute("aria-disabled");
-      link.textContent = "View statement";
-      link.setAttribute("href", "#");
-      link.removeAttribute("data-ready");
-      status.classList.add("view-status--error");
-      status.textContent = err && err.code === "unknown_ref" ? "That reference wasn't recognised. Please check it."
-        : err && err.code === "not_ready" ? "Your statement isn't ready to view yet. Please try again in a minute."
-        : "Your statement couldn't be loaded just now. Please try again.";
+      return viewUrls[ref];
     });
+    viewPending[ref] = p;
+    var clear = function () { if (viewPending[ref] === p) delete viewPending[ref]; };
+    p.then(clear, clear);
+    return p;
   }
 
-  function setViewReady(link, status, url, label, ref) {
+  // After a change the statement has a new readable copy: load it afresh.
+  function forgetView(ref) {
+    if (viewUrls[ref]) { URL.revokeObjectURL(viewUrls[ref]); delete viewUrls[ref]; }
+    delete viewPending[ref];
+  }
+
+  function prefetchView(link, status, ref) {
+    resetView(link, status);
+    link.setAttribute("data-for", ref);
+    fetchView(ref).then(function (url) {
+      if (link.getAttribute("data-for") === ref) setViewReady(link, status, url, ref);
+    }, function () { /* reported only if they tap */ });
+  }
+
+  function resetView(link, status) {
+    link.removeAttribute("data-ready");
+    link.removeAttribute("aria-busy");
+    link.setAttribute("href", "#");
+    link.textContent = "View statement";
+    if (status) { status.textContent = ""; status.classList.remove("view-status--error"); }
+  }
+
+  function setViewReady(link, status, url, ref) {
     link.setAttribute("href", url);
+    link.setAttribute("target", SAME_TAB_PDF ? "_self" : "_blank");
     link.setAttribute("data-for", ref);
     link.setAttribute("data-ready", "");
-    link.removeAttribute("aria-disabled");
-    link.textContent = label;
+    link.removeAttribute("aria-busy");
+    link.textContent = "View statement";
     status.classList.remove("view-status--error");
     status.textContent = "Opens the PDF of your statement, exactly as it would be shared.";
   }
 
-  // A tap before the PDF is ready (or after an error) starts or retries loading.
-  function onViewTap(e, getRef, label) {
+  function viewError(err) {
+    return err && err.code === "unknown_ref" ? "That reference wasn't recognised. Please check it."
+      : err && err.code === "withdrawn" ? SERVER_MESSAGES.withdrawn
+      : err && err.code === "busy" ? "Too many statements have been opened in the last few minutes. Please try again shortly."
+      : "Your statement couldn't be opened just now. Please tap View statement to try again.";
+  }
+
+  function onViewTap(e, getRef) {
     var link = e.currentTarget;
-    if (link.hasAttribute("data-ready")) return;
-    e.preventDefault();
-    if (link.getAttribute("aria-disabled") === "true") return;
     var ref = getRef();
+    if (link.hasAttribute("data-ready") && link.getAttribute("data-for") === ref) return; // opens the PDF
+    e.preventDefault();
+    if (link.getAttribute("aria-busy") === "true") return;
     var status = link.parentNode.querySelector("[data-view-status]");
-    if (!S.referencePattern.test(ref)) {
+    if (!S.referencePattern.test(ref || "")) {
       status.classList.add("view-status--error");
       status.textContent = "Please enter your reference first.";
       return;
     }
-    prepareView(link, status, ref, label);
+    // Open the tab now, while the tap still counts, and fill it when the PDF arrives.
+    var win = null;
+    if (!SAME_TAB_PDF) { try { win = window.open("", "_blank"); } catch (err) { win = null; } }
+    if (win) { try { win.document.title = "Opening statement…"; win.document.body.textContent = "Opening your statement…"; } catch (err) { /* ignore */ } }
+    link.setAttribute("aria-busy", "true");
+    link.setAttribute("data-for", ref);
+    link.textContent = "Opening statement…";
+    status.classList.remove("view-status--error");
+    status.textContent = "";
+    var slow = setTimeout(function () { status.textContent = "This is taking longer than expected. We're still trying…"; }, SLOW_MS);
+    fetchView(ref).then(function (url) {
+      clearTimeout(slow);
+      setViewReady(link, status, url, ref);
+      if (SAME_TAB_PDF) window.location.assign(url);
+      else if (win && !win.closed) win.location.replace(url);
+      else status.textContent = "Your statement is ready. Tap View statement to open it.";
+    }, function (err) {
+      clearTimeout(slow);
+      if (win && !win.closed) win.close();
+      resetView(link, null);
+      status.classList.add("view-status--error");
+      status.textContent = viewError(err);
+    });
   }
 
   $("[data-view-statement]").addEventListener("click", function (e) {
-    onViewTap(e, function () { return lastResult && lastResult.reference; }, "View statement");
+    onViewTap(e, function () { return lastResult && lastResult.reference; });
   });
+  $("[data-amend-done-view]").addEventListener("click", function (e) {
+    onViewTap(e, function () { return lastResult && lastResult.amendRef; });
+  });
+
+  // ---------- Change or withdraw an existing statement ----------
 
   // "y8x5q", "rw y8x5q" and "RW-Y8X5Q" all give "RW-Y8X5Q" (see S.referenceSuffix).
   function normaliseRef(v) {
@@ -925,13 +1078,19 @@
   // The secret from a private link, but only while the reference still matches it.
   function linkCode() {
     var a = state.amend;
-    return a.linkCode && a.linkRef && normaliseRef(a.ref) === a.linkRef ? a.linkCode : "";
+    return a.linkCode && a.linkRef && normaliseRef(a.ref) === a.linkRef && S.codePattern.test(a.linkCode) ? a.linkCode : "";
   }
+
+  var AMEND_LABELS = {
+    edit: ["Open my statement", "Loading statement…"],
+    privacy: ["Save privacy change", "Saving…"],
+    withdraw: ["Withdraw statement", "Withdrawing…"]
+  };
 
   function renderAmend(params) {
     if (params && params.ref) {
       // Opened from a private link: keep its secret out of sight and out of the address bar.
-      state.amend = { ref: params.ref, linkRef: params.ref, action: "privacy" };
+      state.amend = { ref: params.ref, linkRef: params.ref };
       if (params.code) state.amend.linkCode = params.code;
       save();
       history.replaceState({ v: "amend" }, "", "#amend");
@@ -939,25 +1098,43 @@
     var body = $("[data-amend-body]");
     body.innerHTML = "";
     $("[data-amend-error]").hidden = true;
+    $("[data-amend-slow]").hidden = true;
     body.appendChild(h("div", { className: "note note--plain", "data-link-note": true, hidden: true }, icon("info"),
-      h("span", { text: "You opened this from your private link, so your request will be confirmed automatically." })));
+      h("span", { text: "You opened this from your private link." })));
     S.amendmentFields.forEach(function (f) {
       var el = renderField(f, state.amend, function (id, v) {
         if (v === undefined || v === "") delete state.amend[id]; else state.amend[id] = v;
+        if (id === "new_privacy") delete state.amend.confirm; // its declaration wording changes
+        if (id === "action") { delete state.amend.confirm; delete state.amend.confirmWithdraw; }
         save();
         syncAmendVisibility();
+        if (id === "ref") scheduleAmendPrefetch();
       }, { prefix: "a-", required: !!f.required });
       if (f.when) el.classList.add("field--sub");
       body.appendChild(el);
       if (f.id === "ref") {
         var view = h("a", { className: "btn btn--quiet view-link", href: "#", target: "_blank", rel: "noopener", "data-amend-view": true, text: "View statement" });
         view.addEventListener("click", function (e) {
-          onViewTap(e, function () { return normaliseRef(state.amend.ref); }, "Open statement (PDF)");
+          onViewTap(e, function () { return normaliseRef(state.amend.ref); });
         });
         body.appendChild(h("div", { className: "amend-view" }, view, h("p", { className: "view-status", "data-view-status": true, "aria-live": "polite" })));
       }
     });
+    body.appendChild(h("div", { "data-amend-extra": true }));
     syncAmendVisibility();
+    scheduleAmendPrefetch();
+  }
+
+  // Load the PDF as soon as a complete reference is entered, so View statement opens at once.
+  var amendPrefetchTimer = null;
+  function scheduleAmendPrefetch() {
+    clearTimeout(amendPrefetchTimer);
+    amendPrefetchTimer = setTimeout(function () {
+      var ref = normaliseRef(state.amend.ref);
+      var view = $("[data-amend-view]");
+      if (!view || !S.referencePattern.test(ref) || view.getAttribute("data-for") === ref) return;
+      prefetchView(view, view.parentNode.querySelector("[data-view-status]"), ref);
+    }, 450);
   }
 
   function syncAmendVisibility() {
@@ -969,14 +1146,36 @@
     if (note) note.hidden = !linkCode();
     // A different reference needs its own statement loading.
     var view = $("[data-amend-view]");
-    if (view && view.hasAttribute("data-ready") && view.getAttribute("data-for") !== normaliseRef(state.amend.ref)) {
-      view.removeAttribute("data-ready");
-      view.setAttribute("href", "#");
-      view.textContent = "View statement";
-      view.parentNode.querySelector("[data-view-status]").textContent = "";
+    if (view && view.getAttribute("data-for") && view.getAttribute("data-for") !== normaliseRef(state.amend.ref) && view.getAttribute("aria-busy") !== "true") {
+      view.removeAttribute("data-for");
+      resetView(view, view.parentNode.querySelector("[data-view-status]"));
     }
-    var labels = { correct: "Send correction", privacy: "Send privacy change", withdraw: "Send withdrawal request" };
-    $("[data-amend-label]").textContent = labels[state.amend.action] || "Send";
+    renderAmendExtra();
+    $("[data-amend-label]").textContent = (AMEND_LABELS[state.amend.action] || ["Continue"])[0];
+  }
+
+  function confirmBox(id, text, checked, onChange) {
+    var input = h("input", { type: "checkbox", id: id });
+    input.checked = !!checked;
+    input.addEventListener("change", function () { onChange(input.checked); });
+    return h("div", { className: "field", "data-field": id },
+      h("div", { className: "choices" }, h("label", { className: "choice choice--check", "for": id }, input,
+        h("span", { className: "choice__box" }, h("span", { className: "choice__dot", "aria-hidden": "true" }), h("span", { className: "choice__text", text: text })))));
+  }
+
+  // The declaration for a new privacy preference, or the withdrawal confirmation.
+  function renderAmendExtra() {
+    var box = $("[data-amend-extra]");
+    if (!box) return;
+    box.innerHTML = "";
+    var a = state.amend;
+    if (a.action === "privacy" && a.new_privacy) {
+      var use = S.declarations.filter(function (d) { return d.id === "use"; })[0];
+      box.appendChild(h("p", { className: "label", text: "Please confirm" }));
+      box.appendChild(confirmBox("a-confirm", S.declarationLabel(use, a.new_privacy), a.confirm, function (v) { a.confirm = v; save(); }));
+    } else if (a.action === "withdraw") {
+      box.appendChild(confirmBox("a-withdraw", "I want to withdraw my statement. It will no longer be used.", a.confirmWithdraw, function (v) { a.confirmWithdraw = v; save(); }));
+    }
   }
 
   function amendError(msg, sel) {
@@ -994,45 +1193,54 @@
     errBox.hidden = true;
     var a = state.amend;
     var ref = normaliseRef(a.ref);
-    var code = S.codePattern.test(linkCode()) ? linkCode() : "";
+    var code = linkCode();
     if (!S.referencePattern.test(ref)) return amendError("Please check your reference. It's the five characters after RW-, for example RW-3WARF.", "#a-ref");
     if (!a.action) return amendError("Please choose what you'd like to do.", "#a-action-0");
-    if (a.action === "correct" && !S.hasText(a.detail)) return amendError("Please describe what should be corrected or added.", "#a-detail");
     if (a.action === "privacy" && !a.new_privacy) return amendError("Please choose your privacy preference from now on.", "#a-new_privacy-0");
+    if (a.action === "privacy" && !a.confirm) return amendError("Please confirm the statement for your new privacy preference.", "#a-confirm");
+    if (a.action === "withdraw" && !a.confirmWithdraw) return amendError("Please confirm that you want to withdraw your statement.", "#a-withdraw");
 
     submitting = true;
-    var btn = $("[data-amend-submit]");
-    var idle = $("[data-amend-label]").textContent;
-    setBusy(btn, $("[data-amend-label]"), true, "Sending…", idle);
-    if (!a.key) { a.key = newKey(); save(); }
     var action = a.action;
+    var busy = startBusy($("[data-amend-submit]"), $("[data-amend-label]"), AMEND_LABELS[action][1], $("[data-amend-slow]"),
+      action === "edit" ? "" : "This usually takes about 10 seconds. Please keep this page open.");
+    if (!a.key) { a.key = newKey(); save(); }
 
-    Promise.resolve().then(function () {
-      if (!ENDPOINT) throw { kind: "not_configured" };
+    var request;
+    if (action === "edit") {
+      request = post({ schema: S.version, kind: "load", key: newKey(), answers: { ref: ref }, hp: "" }, { timeout: READ_TIMEOUT_MS, hedgeAfter: 5000, onSlow: busy.slow });
+    } else {
       var answers = { ref: ref, action: action };
       if (code) answers.code = code;
       if (action === "privacy") {
         answers.new_privacy = a.new_privacy;
+        answers.confirm = true;
         if ((a.new_privacy === "named" || a.new_privacy === "confidential") && S.hasText(a.name)) answers.name = a.name;
       }
       if (S.hasText(a.detail)) answers.detail = a.detail;
-      return post({ schema: S.version, kind: "amendment", key: a.key, answers: answers, hp: $("#hp-field-2").value });
+      request = post({ schema: S.version, kind: "amendment", key: a.key, answers: answers, hp: $("#hp-field-2").value }, { onSlow: busy.slow, slowAfter: 20000, hedgeAfter: 25000 });
+    }
+
+    Promise.resolve().then(function () {
+      if (!ENDPOINT) throw { kind: "not_configured" };
+      return request;
     }).then(function (data) {
       if (!data.ok) throw { kind: "server", code: data.error };
       submitting = false;
-      setBusy(btn, $("[data-amend-label]"), false, "", idle);
+      busy.done();
+      if (action === "edit") return startEditing(ref, code, data);
       state.amend = {};
       save();
-      // Any change may have produced a new readable copy: load it afresh next time.
-      if (viewUrls[ref]) { URL.revokeObjectURL(viewUrls[ref]); delete viewUrls[ref]; }
-      lastResult = { amendRef: ref, action: action, verified: !!data.verified, applied: !!data.applied, unchanged: !!data.unchanged, privacy: data.privacy || "" };
+      forgetView(ref);
+      lastResult = { amendRef: ref, action: action, applied: !!data.applied || !!data.duplicate, unchanged: !!data.unchanged, privacy: data.privacy || "" };
+      saveResult();
       history.replaceState({ v: "amend-done" }, "", "#amend-done");
       render();
     }).catch(function (err) {
       submitting = false;
-      setBusy(btn, $("[data-amend-label]"), false, "", idle);
-      if (err && err.kind === "server" && (err.code === "bad_code" || err.code === "integrity")) {
-        // Fall back to sending with the reference alone on the next press.
+      busy.done();
+      if (err && err.kind === "server" && err.code === "bad_code") {
+        // Fall back to the reference alone on the next try.
         delete state.amend.linkCode;
         save();
         syncAmendVisibility();
@@ -1041,18 +1249,26 @@
     });
   });
 
+  // Opens the questionnaire with the statement's current answers filled in.
+  function startEditing(ref, code, data) {
+    clearAll();
+    state.edit = { ref: ref, code: code || "", attachments: data.attachments || [], privacyLabel: data.privacyLabel || "" };
+    state.privacy = data.privacy;
+    state.answers = data.answers || {};
+    state.key = newKey();
+    save();
+    go("step-2");
+  }
+
   function amendDoneText(r) {
     if (r.action === "privacy") {
       if (r.unchanged) return "Your privacy preference for statement " + r.amendRef + " was already " + r.privacy + ". Nothing has changed.";
-      if (r.applied) return "Your privacy preference for statement " + r.amendRef + " is now " + r.privacy + "." +
-        (r.verified ? "" : " Because this only restricts who may know your identity, it has been applied straight away.") +
-        " Your original statement is unchanged, and the change has been recorded alongside it.";
-      return "Your request has been sent to Jack. This change would allow more people to know your identity, and it was sent with your reference rather than your private link, so nothing will change until Jack has checked with you.";
+      return "Your privacy preference for statement " + r.amendRef + (r.privacy ? " is now " + r.privacy : " has been updated") +
+        ". A new copy of your statement has been created to match it. Your original statement is kept unchanged alongside it.";
     }
-    var note = r.verified ? "" : " Because it was sent with your reference rather than your private link, Jack may check with you first.";
     return r.action === "withdraw"
-      ? "Your request to withdraw statement " + r.amendRef + " has been sent to Jack." + note
-      : "Your correction to statement " + r.amendRef + " has been recorded alongside your original statement." + note;
+      ? "Statement " + r.amendRef + " has been withdrawn. It will no longer be used."
+      : "Your note about statement " + r.amendRef + " has been recorded alongside your original statement.";
   }
 
   // ---------- Routing ----------
@@ -1081,6 +1297,8 @@
     if (m) {
       var idx = Math.min(Math.max(parseInt(m[1], 10) - 1, 0), STEPS.length - 1);
       if (idx > 0 && !state.privacy) { history.replaceState(null, "", "#step-1"); idx = 0; }
+      // Editing keeps the privacy preference; that is changed separately.
+      if (idx === 0 && state.edit) { history.replaceState(null, "", "#step-2"); idx = 1; }
       state.step = idx; save();
       show("form"); renderStep(idx); focusSel = "[data-step-title]";
     } else if (route === "review") {
@@ -1102,15 +1320,19 @@
       focusSel = "[data-view='amend'] .step__title";
     } else if (route === "amend-done") {
       if (!lastResult || !lastResult.amendRef) { history.replaceState(null, "", location.pathname); return render(); }
-      $("[data-amend-done-title]").textContent = lastResult.action === "privacy" && !lastResult.applied && !lastResult.unchanged
-        ? "Your request has been received." : (lastResult.action === "privacy" ? "Your privacy preference has been updated." : "Your request has been received.");
-      if (lastResult.unchanged) $("[data-amend-done-title]").textContent = "No change was needed.";
+      $("[data-amend-done-title]").textContent = lastResult.unchanged ? "No change was needed."
+        : lastResult.action === "privacy" ? "Your privacy preference has been updated."
+        : lastResult.action === "withdraw" ? "Your statement has been withdrawn."
+        : "Your note has been received.";
       $("[data-amend-done-text]").textContent = amendDoneText(lastResult);
+      var doneView = $("[data-amend-done-view]");
+      doneView.hidden = lastResult.action !== "privacy";
+      if (lastResult.action === "privacy") prefetchView(doneView, doneView.parentNode.querySelector("[data-view-status]"), lastResult.amendRef);
       show("amend-done"); focusSel = "[data-amend-done-title]";
     } else {
       show("welcome");
       var resume = hasProgress();
-      $("[data-start-label]").textContent = resume ? "Continue your statement" : "Start statement";
+      $("[data-start-label]").textContent = state.edit ? "Continue editing your statement" : resume ? "Continue your statement" : "Start statement";
       syncStartAgain(resume);
       if (route === "handling") {
         var d = $("#handling");
@@ -1154,9 +1376,10 @@
     }
     if (action === "start") go("step-" + (hasProgress() ? state.step + 1 : 1));
     else if (action === "back") {
-      if (state.step === 0) go("");
+      if (state.edit && state.step <= 1) go("amend");
+      else if (state.step === 0) go("");
       else go("step-" + state.step);
-    } else if (action === "edit-statement") { state.returnToReview = true; save(); go("step-1"); }
+    } else if (action === "edit-statement") { state.returnToReview = true; save(); go(state.edit ? "step-2" : "step-1"); }
     else if (action === "return-review") {
       var bad = validateStep(state.step);
       if (bad) { bad.focus(); return; }
