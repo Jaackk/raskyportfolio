@@ -35,11 +35,12 @@ function table(head, rows) {
 
 function page(o) {
   const url = `${SITE}/etsycalc/${o.slug}/`;
-  const crumbs = `<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="/etsycalc/">Etsy calculator</a> / ${esc(o.crumb)}</nav>`;
+  const root = o.plain ? ["raskyjack.com", "/"] : ["Etsy calculator", "/etsycalc/"];
+  const crumbs = `<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="${root[1]}">${root[0]}</a> / ${esc(o.crumb)}</nav>`;
   const ld = [
     {
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": o.plain ? "WebPage" : "Article",
       headline: o.h1,
       description: o.desc,
       inLanguage: "en-GB",
@@ -53,7 +54,7 @@ function page(o) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Etsy calculator", item: SITE + "/etsycalc/" },
+        { "@type": "ListItem", position: 1, name: root[0], item: SITE + root[1] },
         { "@type": "ListItem", position: 2, name: o.crumb, item: url }
       ]
     }
@@ -96,7 +97,7 @@ function page(o) {
 ${crumbs}
 <main id="main" class="wrap content article">
 <h1 style="font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;letter-spacing:-0.03em;margin:14px 0 8px">${esc(o.h1)}</h1>
-<p class="sources" style="margin:0 0 14px">Updated ${C.FEES.verifiedLabel}. Figures checked against Etsy's own pages.</p>
+${o.plain ? "" : `<p class="sources" style="margin:0 0 14px">Updated ${C.FEES.verifiedLabel}. Figures checked against Etsy's own pages.</p>`}
 ${o.body}
 ${o.noCta ? "" : `<a class="cta" href="/etsycalc/#calculator"><b>Try it with your own numbers</b><span>Free Etsy fee and profit calculator for UK sellers</span></a>`}
 ${o.noRelated ? "" : `<h2>More guides</h2><div class="cards3">${related}</div>`}
@@ -408,43 +409,56 @@ ${AD_END}
 pages.push({
   slug: "privacy",
   crumb: "Privacy and cookies",
-  title: "Privacy and Cookies | Etsy Profit Calculator",
+  title: "Privacy and Cookies | raskyjack.com",
   h1: "Privacy and cookies",
-  desc: "How the Etsy Profit Calculator handles your data: calculator inputs stay in your browser, and any analytics or advertising is explained here.",
-  noCta: false,
+  desc: "How raskyjack.com, including the Etsy Profit Calculator, handles personal data: what is collected, which third parties are involved, cookies, analytics and ads.",
+  noCta: true,
+  plain: true,
   noRelated: true,
   sources: [["ICO: Cookies and similar technologies", "https://ico.org.uk/for-the-public/online/cookies/"]],
   relatedText: {},
   body: `
+<p>This policy covers the whole of <a href="/">raskyjack.com</a>, including the Etsy Profit Calculator, the guides, and the music, design, software and game pages. It explains what happens to your information when you use the site. It was last updated on ${C.FEES.verifiedLabel}.</p>
+
 <h2>Who runs this site</h2>
-<p>This calculator is run by Jack Ormondroyd as part of <a href="/">raskyjack.com</a>. It is a free tool and is not affiliated with Etsy, Inc.</p>
+<p>The site is run by Jack Ormondroyd (known online as Rasky), who is responsible for how personal data is used on it. Contact: <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>. The site is not affiliated with Etsy, Inc.</p>
 
-<h2>What you type into the calculator</h2>
-<p>Everything you enter in the calculator is processed in your browser. It is not sent to a server and is not stored by this site. If you press "Copy link", the numbers are placed in the link you copy, in the part after the "#", which browsers do not send to the server.</p>
+<h2>Information you give me</h2>
+<p>The public pages have no accounts, sign-up forms or comment boxes. If you email <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a>, I receive your email address and whatever you write, and use it only to reply and to keep a record of the conversation. The address is a forwarding address provided by ImprovMX, so your message passes through that service on its way to my inbox. I keep emails for as long as they are useful and do not sell or share them.</p>
 
-<h2>What is stored on your device</h2>
-<p>The calculator saves your fee settings (for example your VAT status and edited rates) in your browser's local storage so you do not have to re-enter them. This stays on your device. "Reset everything" clears it. If advertising is switched on, your accept or reject choice is stored the same way.</p>
+<h2>Information collected automatically</h2>
+<p>The site is hosted by Netlify. As with any website, your IP address and standard request details (such as the page you asked for and your browser type) reach Netlify's servers so pages can be delivered and the service kept secure.</p>
+<p>Most pages load fonts from Google Fonts, which means your browser contacts Google to download them and Google receives your IP address. The Music page embeds players from Spotify and Apple Music, and some pages link out to services such as YouTube, SoundCloud, Instagram and TikTok. Those companies run their own services and may set their own cookies, especially once you press play or follow a link. A few project pages load code libraries from public content networks (for example the Motion Desk page loads Tailwind CSS). Each of these providers has its own privacy policy.</p>
 
-<h2>Hosting and logs</h2>
-<p>The site is hosted by Netlify. Like any web host, Netlify and its network handle your IP address and standard request information in order to deliver pages and keep the service secure.</p>
+<h2>Cookies and things stored on your device</h2>
+<p>This site does not set cookies of its own. Some pages save settings or your own entries in your browser's local storage so they work next time you visit. Examples are the fee settings on the Etsy calculator, the light or dark choice on the Shnork game, notes in the Perfect Host demo, and your accept or reject choice if adverts are ever switched on. This stays on your device. You can clear it in your browser settings, and the calculator's "Reset everything" button clears its settings.</p>
+
+<h2>The Etsy Profit Calculator</h2>
+<p>Everything you type into the calculator is processed in your browser. It is not sent to a server and is not stored by this site. If you press "Copy link", the numbers are placed in the link you copy, in the part after the "#", which browsers do not send to a server.</p>
 
 <h2>Analytics</h2>
-<p>This site uses <a href="https://umami.is" target="_blank" rel="noopener">Umami</a> (Umami Cloud) to understand how many people visit, where they come from and which pages and tools are used. Umami says its tracker does not use cookies, and this site stores nothing on your device for analytics.</p>
-<p>For each page view Umami records the page address, the referring site, your browser and operating system, device type, screen size and approximate location (country or region). Your browser's request necessarily reaches Umami's servers; Umami's documentation lists the data it collects. This site also sends a few named events when you use a feature, for example "calculator used", "price helper used", "compare used", "copy summary", "copy link" and "export CSV". These events do not include the numbers you type in.</p>
+<p>The Etsy calculator, its guides and this page use <a href="https://umami.is" target="_blank" rel="noopener">Umami</a> (Umami Cloud) to understand how many people visit, where they come from and which pages and tools are used. Other pages on the site do not use analytics. Umami says its tracker does not use cookies, and this site stores nothing on your device for analytics.</p>
+<p>For each page view Umami records the page address, the referring site, your browser and operating system, device type, screen size and approximate location (country or region). Your browser's request necessarily reaches Umami's servers; Umami's documentation lists the data it collects. The calculator also sends a few named events when you use a feature, for example "calculator used", "price helper used", "compare used", "copy summary", "copy link" and "export CSV". These events do not include the numbers you type in.</p>
 <p>The part of a page address after a "#" or "?" is not sent, so a shared calculator link does not leak its figures. If your browser sends a "Do Not Track" signal, analytics does not run. Umami also collects page speed measurements (Core Web Vitals) so the site can be made faster. The data is used only for these statistics and is not combined with advertising data.</p>
 
 <h2>Advertising</h2>
-<p>At the time of writing no adverts are shown and no advertising scripts load. This site is applying to show adverts from Google AdSense. If they are switched on, visitors in the UK and the European Economic Area will be asked for consent first, either by this site's own accept or reject banner or by Google's consent message, which follows the industry TCF standard. Google and its partners may use cookies and similar technologies to show, personalise and measure ads, and to prevent fraud, according to your choice. Depending on that choice you may see no adverts or adverts that are not personalised.</p>
+<p>At the time of writing no adverts are shown and no advertising scripts load anywhere on the site. This site is applying to show adverts from Google AdSense on the Etsy calculator pages. If they are switched on, visitors in the UK and the European Economic Area will be asked for consent first, either by this site's own accept or reject banner or by Google's consent message, which follows the industry TCF standard. Google and its partners may use cookies and similar technologies to show, personalise and measure ads, and to prevent fraud, according to your choice. Depending on that choice you may see no adverts or adverts that are not personalised.</p>
 <p>You will be able to change your choice at any time with the "Ad choices" link in the page footer. Declining does not affect the calculator. This page will be updated when adverts go live. You can learn more at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's advertising technologies page</a>.</p>
 
+<h2>Private tools</h2>
+<p>A small number of pages on this domain are private tools used by invited people, for example an events pre-order system and a staff questionnaire. They are not linked from the public site and are not covered by the public pages above. Anyone asked to use one is told what it collects and why when they are given access.</p>
+
+<h2>Legal basis and how long data is kept</h2>
+<p>Hosting logs and the small amount of technical data above are used because it is necessary to run and secure the site and to understand how it is used (legitimate interests). Emails are kept only as long as needed to deal with them. Consent is the basis for any advertising cookies, and you can withdraw it at any time.</p>
+
 <h2>Links to other sites</h2>
-<p>Pages here link to Etsy, GOV.UK and other sites. They have their own privacy policies. Any link that earns this site a commission will be clearly labelled.</p>
+<p>Pages here link to Etsy, GOV.UK, music services and other sites. They have their own privacy policies. Any link that earns this site a commission will be clearly labelled.</p>
 
 <h2>Your rights</h2>
-<p>Under UK data protection law you can ask what personal data is held about you, ask for it to be corrected or deleted, and complain to the Information Commissioner's Office (ico.org.uk). Because this site does not collect personal data from the calculator, there is usually nothing to access. To raise a request, use the contact details on <a href="/">raskyjack.com</a>.</p>
+<p>Under UK data protection law you can ask what personal data is held about you, ask for it to be corrected or deleted, object to its use, and complain to the Information Commissioner's Office (ico.org.uk). Email <a href="mailto:hello@raskyjack.com">hello@raskyjack.com</a> to make a request.</p>
 
 <h2>Changes</h2>
-<p>If this page changes materially, for example when analytics or advertising is switched on, the date at the top will be updated.</p>
+<p>If this page changes materially, for example when advertising is switched on or a new service is added, the date at the top will be updated.</p>
 `
 });
 

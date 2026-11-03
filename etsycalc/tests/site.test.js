@@ -88,6 +88,13 @@ test("AdSense is prepared but not active", () => {
   for (const rel of PAGES) assert.ok(!/adsbygoogle\.js|googlesyndication/.test(read(rel)), `${rel} loads ads directly`);
 });
 
+test("privacy policy covers the whole site, not only the calculator", () => {
+  const h = read("etsycalc/privacy/index.html");
+  for (const term of ["whole of", "hello@raskyjack.com", "Netlify", "Google Fonts", "ImprovMX", "Spotify", "local storage", "Information Commissioner"]) {
+    assert.ok(h.includes(term), `privacy page should mention ${term}`);
+  }
+});
+
 test("privacy page discloses Umami and its events", () => {
   const h = read("etsycalc/privacy/index.html");
   assert.ok(h.includes("Umami"));

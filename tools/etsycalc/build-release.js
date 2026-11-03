@@ -106,10 +106,22 @@ for (const TAG of TAGS) {
   home = home.replace(/(<meta charset[^>]*>)(\r?\n)/i, (m, h, nl) => `${h}${nl}    ${TAG}${nl}`);
   if (home === before) throw new Error("could not find <meta charset> in index.html");
 }
+// footer: discreet Privacy policy link after the contact email link
+const FOOTER_LINK = '<a href="/etsycalc/privacy/">Privacy policy</a>';
+if (!home.includes(FOOTER_LINK)) {
+  const before = home;
+  home = home.replace(
+    /([ \t]*)(<a href="mailto:hello@raskyjack\.com" data-contact-email>hello@raskyjack\.com<\/a>)(\r?\n)([ \t]*<\/nav>\s*<span>&copy;)/,
+    (m, ind, mail, nl, rest) => ind + mail + nl + ind + FOOTER_LINK + nl + rest
+  );
+  if (home === before) throw new Error("could not find the homepage footer");
+}
 fs.writeFileSync(path.join(OUT, "index.html"), home);
 // prove the homepage differs from the live one by exactly those lines
-const stripped = home.replace(/[ \t]*<meta name="(google-site-verification|google-adsense-account)"[^>]*>\r?\n/g, "");
-if (sha1(Buffer.from(stripped)) !== live.get("index.html")) throw new Error("homepage differs from live by more than the verification tags");
+const stripped = home
+  .replace(/[ \t]*<meta name="(google-site-verification|google-adsense-account)"[^>]*>\r?\n/g, "")
+  .replace(/[ \t]*<a href="\/etsycalc\/privacy\/">Privacy policy<\/a>\r?\n/, "");
+if (sha1(Buffer.from(stripped)) !== live.get("index.html")) throw new Error("homepage differs from live by more than the verification tags and footer link");
 
 // root ads.txt (Google AdSense authorised sellers file)
 fs.writeFileSync(path.join(OUT, "ads.txt"), fs.readFileSync(path.join(__dirname, "ads.txt")));
