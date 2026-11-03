@@ -38,12 +38,18 @@ npx netlify-cli deploy --dir <out dir> --site <site id> --prod
 Rollback: Netlify UI > Deploys > pick the previous deploy > "Publish deploy" (free, instant).
 Never change DNS or the ImprovMX mail records when publishing.
 
-## Turning on analytics (Umami Cloud, free Hobby plan)
+## Analytics (Umami Cloud, enabled 2026-11-03)
 
-1. Create an account at cloud.umami.is, add the website `raskyjack.com`, copy the website ID.
-2. Put the ID in `umamiWebsiteId` in `etsycalc/config.js` and release.
-3. Events recorded: `calculator_used`, `price_helper_used`, `compare_used`, `copy_summary`, `copy_link`, `export_csv`, `export_compare_csv`.
-4. Update the Analytics paragraph in `build-pages.js` (privacy page) to name Umami, rebuild, release.
+Active on the calculator, guides and privacy page via `etsycalc/config.js` (website ID) and `etsycalc/site.js`.
+The tracker never sends the URL hash or query string (shared links carry the entered numbers) and honours Do Not Track.
+Events: `calculator_used`, `price_helper_used`, `compare_used`, `copy_summary`, `copy_link`, `export_csv`, `export_compare_csv`.
+The privacy page text lives in `build-pages.js`; keep it in step with any tracker change.
+
+## Google Search Console
+
+The verification meta tag is stored in `tools/etsycalc/google-site-verification.html` and added to the homepage `<head>` by
+`build-release.js` (the release builder proves the homepage differs from live by that one line only).
+Keep it in place, because Google re-checks it.
 
 ## Turning on AdSense
 
