@@ -25,6 +25,11 @@
     u.src = analytics.umamiSrc || "https://cloud.umami.is/script.js";
     u.setAttribute("data-website-id", analytics.umamiWebsiteId);
     u.setAttribute("data-domains", location.hostname);
+    // Shared calculator links carry the entered numbers after the "#", so never send the hash or query string.
+    u.setAttribute("data-exclude-hash", "true");
+    u.setAttribute("data-exclude-search", "true");
+    u.setAttribute("data-do-not-track", "true");
+    u.setAttribute("data-performance", "true");
     document.head.appendChild(u);
   }
   window.etsyTrack = function (name, data) {

@@ -60,13 +60,27 @@ test("robots.txt does not block the calculator and points at the sitemap", () =>
   assert.ok(/Sitemap:\s*https:\/\/raskyjack\.com\/sitemap\.xml/.test(r));
 });
 
-test("config ships with no analytics or advertising IDs", () => {
+test("config has a valid Umami ID and no advertising IDs", () => {
   const cfg = {};
   new Function("window", read("etsycalc/config.js"))(cfg);
   const c = cfg.ETSYCALC_CONFIG;
-  assert.equal(c.analytics.umamiWebsiteId, "");
+  assert.match(c.analytics.umamiWebsiteId, /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
+  assert.equal(c.analytics.umamiSrc, "https://cloud.umami.is/script.js");
   assert.equal(c.adsense.client, "");
   for (const v of Object.values(c.adsense.slots)) assert.equal(v, "");
+});
+
+test("analytics never sends the URL hash or query, and honours Do Not Track", () => {
+  const js = read("etsycalc/site.js");
+  for (const a of ["data-exclude-hash", "data-exclude-search", "data-do-not-track"]) assert.ok(js.includes(`"${a}", "true"`), a);
+  assert.ok(/doNotTrack/.test(js));
+});
+
+test("privacy page discloses Umami and its events", () => {
+  const h = read("etsycalc/privacy/index.html");
+  assert.ok(h.includes("Umami"));
+  assert.ok(/Do Not Track/.test(h));
+  assert.ok(!/no analytics script runs/i.test(h));
 });
 
 test("no third-party scripts are referenced in page HTML", () => {

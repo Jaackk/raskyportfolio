@@ -5,7 +5,7 @@
 window.ETSYCALC_CONFIG = {
   analytics: {
     // Umami Cloud website ID (https://cloud.umami.is). Looks like a UUID.
-    umamiWebsiteId: "",
+    umamiWebsiteId: "6fa1bb13-4856-4816-bcf2-5fe2dc506c1d",
     umamiSrc: "https://cloud.umami.is/script.js"
   },
   adsense: {
