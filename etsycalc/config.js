@@ -11,6 +11,9 @@ window.ETSYCALC_CONFIG = {
   adsense: {
     // AdSense publisher ID, for example "ca-pub-XXXXXXXXXXXXXXXX". Only fill in once Google has approved the site.
     client: "",
+    // "" = the built-in accept/reject banner gates every ad script (limited eligibility: it is not a Google-certified CMP).
+    // "google" = Google's certified consent message handles consent; enable it in AdSense > Privacy & messaging first.
+    cmp: "",
     // Ad unit IDs created in AdSense for the placements marked data-slot in the pages.
     slots: {
       "calc-below": "",

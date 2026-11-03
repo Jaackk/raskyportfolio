@@ -96,21 +96,26 @@ if (!hd.includes("# Etsy calculator pages only")) {
   fs.writeFileSync(path.join(OUT, "_headers"), hd);
 }
 
-// homepage: add the Google Search Console verification tag (one line in <head>, nothing else)
-const TAG = fs.readFileSync(path.join(__dirname, "google-site-verification.html"), "utf8").trim();
+// homepage: add the Google verification tags (Search Console, AdSense). One line each in <head>, nothing else.
+const TAGS = ["google-site-verification.html", "google-adsense-account.html"].map((f) => fs.readFileSync(path.join(__dirname, f), "utf8").trim());
 let home = fs.readFileSync(path.join(OUT, "index.html"), "utf8");
-if (!home.includes(TAG)) {
+for (const TAG of TAGS) {
+  if (home.includes(TAG)) continue;
   const before = home;
   // after the charset declaration, which must stay first in <head>
   home = home.replace(/(<meta charset[^>]*>)(\r?\n)/i, (m, h, nl) => `${h}${nl}    ${TAG}${nl}`);
-  if (home === before) throw new Error("could not find <head> in index.html");
-  fs.writeFileSync(path.join(OUT, "index.html"), home);
+  if (home === before) throw new Error("could not find <meta charset> in index.html");
 }
-// prove the homepage differs from the live one by exactly that line
-const stripped = home.replace(/[ \t]*<meta name="google-site-verification"[^>]*>\r?\n/, "");
-if (sha1(Buffer.from(stripped)) !== live.get("index.html")) throw new Error("homepage differs from live by more than the verification tag");
+fs.writeFileSync(path.join(OUT, "index.html"), home);
+// prove the homepage differs from the live one by exactly those lines
+const stripped = home.replace(/[ \t]*<meta name="(google-site-verification|google-adsense-account)"[^>]*>\r?\n/g, "");
+if (sha1(Buffer.from(stripped)) !== live.get("index.html")) throw new Error("homepage differs from live by more than the verification tags");
+
+// root ads.txt (Google AdSense authorised sellers file)
+fs.writeFileSync(path.join(OUT, "ads.txt"), fs.readFileSync(path.join(__dirname, "ads.txt")));
 
 // 4. verify against the live manifest
+const ALLOWED_ADDED = (rel) => rel.startsWith("etsycalc/") || rel === "ads.txt";
 const ALLOWED_CHANGED = (rel) => rel.startsWith("etsycalc/") || rel === "sitemap.xml" || rel === "_headers" || rel === "index.html";
 const result = { unchanged: 0, changed: [], added: [], missing: [], unexpected: [] };
 const seen = new Set();
@@ -119,7 +124,7 @@ for (const rel of walk(OUT)) {
   seen.add(key);
   const buf = fs.readFileSync(path.join(OUT, rel));
   if (!live.has(key)) {
-    (rel.startsWith("etsycalc/") ? result.added : result.unexpected).push(rel);
+    (ALLOWED_ADDED(rel) ? result.added : result.unexpected).push(rel);
   } else if (live.get(key) === sha1(buf)) {
     result.unchanged++;
   } else {

@@ -76,6 +76,18 @@ test("analytics never sends the URL hash or query, and honours Do Not Track", ()
   assert.ok(/doNotTrack/.test(js));
 });
 
+test("AdSense is prepared but not active", () => {
+  const cfg = {};
+  new Function("window", read("etsycalc/config.js"))(cfg);
+  assert.equal(cfg.ETSYCALC_CONFIG.adsense.client, "", "ads must stay off until approved");
+  assert.ok(["", "google"].includes(cfg.ETSYCALC_CONFIG.adsense.cmp));
+  const ads = read("tools/etsycalc/ads.txt").trim();
+  assert.match(ads, /^google\.com, pub-\d{16}, DIRECT, f08c47fec0942fa0$/);
+  const tag = read("tools/etsycalc/google-adsense-account.html").trim();
+  assert.equal(tag, `<meta name="google-adsense-account" content="ca-${ads.split(", ")[1]}">`);
+  for (const rel of PAGES) assert.ok(!/adsbygoogle\.js|googlesyndication/.test(read(rel)), `${rel} loads ads directly`);
+});
+
 test("privacy page discloses Umami and its events", () => {
   const h = read("etsycalc/privacy/index.html");
   assert.ok(h.includes("Umami"));

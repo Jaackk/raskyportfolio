@@ -96,8 +96,28 @@
     });
   }
 
-  var choice = store("get", CONSENT_KEY);
   var link = document.getElementById("adChoices");
+
+  // Google-managed consent: Google's certified European regulations message (AdSense > Privacy & messaging)
+  // collects consent and the ad script follows its TCF signals. Switch on with cmp: "google" in config.js.
+  if (ads.cmp === "google") {
+    loadAds();
+    if (link) {
+      link.addEventListener("click", function () {
+        try {
+          if (window.googlefc && typeof window.googlefc.showRevocationMessage === "function") window.googlefc.showRevocationMessage();
+        } catch (e) {}
+      });
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          if (window.googlefc && typeof window.googlefc.showRevocationMessage === "function") link.hidden = false;
+        }, 2500);
+      });
+    }
+    return;
+  }
+
+  var choice = store("get", CONSENT_KEY);
   if (link) {
     link.hidden = false;
     link.addEventListener("click", showBanner);
