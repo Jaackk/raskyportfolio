@@ -430,6 +430,53 @@ html{scroll-behavior:smooth}
 .ov-glance{padding-top:10px}
 .ov-sec{padding-top:24px}
 .ov-cred{margin:4px 0}
+.ov-rail{justify-content:safe center}
+.ov-bossgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(12px,1.6vw,22px);max-width:1560px;margin:0 auto;padding:6px clamp(14px,4vw,44px) 22px}
+.ov-bossgrid .ov-boss{flex:none;width:100%;aspect-ratio:16/9;transform-origin:center}
+.ov-bossgrid .ov-boss:hover,.ov-bossgrid .ov-boss:focus-visible{transform:scale(1.025);z-index:2}
+.ov-bossgrid .ov-btext{padding:clamp(12px,1.6vw,20px)}
+.ov-bossgrid .ov-btext b{font-size:clamp(18px,2vw,28px)}
+.ov-bossgrid .ov-btext span:last-child{font-size:clamp(12px,1.1vw,15px);-webkit-line-clamp:3}
+@media(max-width:700px){.ov-bossgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:16px}
+.ov-bossgrid .ov-boss{flex:0 0 84vw;scroll-snap-align:center}}
+.ov-cfill{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(12px,1.6vw,22px)}
+.ov-cfill .ov-c{width:100%}
+.ov-cfill[style*="--n:1"],.ov-cfill[style*="--n:2"]{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+@media(min-width:900px){.ov-cfill[style*="--n:2"]{max-width:980px;margin:0 auto}
+.ov-cfill[style*="--n:1"]{max-width:560px;margin:0 auto}}
+.ov-cfill .ov-cimg{aspect-ratio:16/9}
+@media(max-width:640px){.ov-cfill{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px}
+.ov-cfill .ov-c{flex:0 0 72vw;scroll-snap-align:start}}
+.ov-placesband{padding-bottom:0}
+.ov-pstage{position:relative;width:100%;height:clamp(300px,42vw,540px);overflow:hidden;background:#06100c;margin-top:4px}
+.ov-ptab{position:absolute;inset:0}
+.ov-ptab[hidden]{display:none}
+.ov-ps{position:absolute;inset:0;padding:0;border:0;background:transparent;opacity:0;transition:opacity 1.4s ease;cursor:zoom-in}
+.ov-ps.on{opacity:1;z-index:1}
+.ov-ps img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02)}
+.ov-ps.on img{animation:kbp 14s ease-out forwards}
+@keyframes kbp{from{transform:scale(1.02)}to{transform:scale(1.1) translate(-1%,-.5%)}}
+.ov-pfade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,var(--bg),transparent 20%,transparent 62%,rgba(4,10,8,.82)),linear-gradient(0deg,var(--bg),transparent 14%)}
+.ov-pui{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;gap:14px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;padding:0 clamp(16px,4vw,56px) clamp(18px,3vw,34px)}
+.ov-pcap{color:#f2f6ee;font:italic 500 clamp(14px,1.6vw,20px)/1.3 var(--serif);text-shadow:0 2px 14px #000;max-width:60ch}
+.ov-ptabs{display:flex;gap:8px;flex-wrap:wrap}
+.ov-ptabs button{border:1px solid rgba(255,255,255,.4);background:rgba(4,10,8,.55);color:#f2f6ee;border-radius:999px;padding:8px 15px;font:600 13px var(--sans);backdrop-filter:blur(6px);display:inline-flex;gap:7px;align-items:center}
+.ov-ptabs button small{opacity:.7;font-size:11px}
+.ov-ptabs button.on{background:var(--gold);color:#1b1612;border-color:var(--gold)}
+.ov-pnav{position:absolute;top:50%;z-index:3;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(4,10,8,.5);color:#fff;font-size:28px;line-height:1;backdrop-filter:blur(6px)}
+.ov-pprev{left:clamp(10px,2vw,28px)}
+.ov-pnext{right:clamp(10px,2vw,28px)}
+@media(max-width:700px){.ov-pnav{display:none}
+.ov-pstage{height:clamp(240px,62vw,340px)}}
+@media (prefers-reduced-motion:reduce){.ov-ps,.ov-ps.on img{transition:none;animation:none}}
+.ov-ic{flex-basis:clamp(190px,19vw,260px)}
+.ov-ic .ov-ii{padding:6px;background:radial-gradient(circle at 50% 42%,#7b5f3e 0%,#34281c 55%,#17110c 100%)}
+.ov-ic .ov-ii img{filter:drop-shadow(0 14px 18px rgba(0,0,0,.55))}
+.ov-ic .ov-ii img.lowres{width:auto;height:auto;max-width:192px;max-height:192px;image-rendering:auto}
+.ov-ic figcaption b{font-size:15.5px}
+.ov-rail{scroll-padding-inline:clamp(14px,4vw,48px)}
+.ov-bossgrid{max-width:min(1800px,100%)}
+.ov-band.rv{transition:opacity .45s ease,transform .45s ease}
 [data-s="Planned"]{--c:var(--s-planned)}
 [data-s="In development"]{--c:var(--s-inprogress)}
 [data-s="Being tested"]{--c:var(--s-testing)}
