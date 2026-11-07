@@ -49,7 +49,7 @@ function hook(f) {
   return m ? m[1] : (t.length > 140 ? t.slice(0, 137).replace(/\s+\S*$/, '') + '...' : t);
 }
 
-var PAGES = [['overview', 'Overview', 'overview'], ['roadmap', 'Roadmap', 'roadmap'], ['dashboard', 'Dashboard', 'dashboard'], ['fixes', 'Bugs & Fixes', 'fixes'], ['history', 'History', 'history'], ['overview/items', 'Items', 'items'], ['overview/places', 'Places', 'places']].filter(function (p) { return D.pages[p[2]] !== false; });
+var PAGES = [['overview', 'Overview', 'overview'], ['roadmap', 'Roadmap', 'roadmap'], ['dashboard', 'Dashboard', 'dashboard'], ['fixes', 'Bugs & Fixes', 'fixes'], ['history', 'History', 'history'], ['overview/items', 'Items', 'items'], ['overview/places', 'Places', 'places'], ['forum', 'Forum', 'forum']].filter(function (p) { return D.pages[p[2]] !== false; });
 
 /* ---------------------------------------------------------------- overview */
 function hero() {
@@ -276,7 +276,7 @@ function reveal() {
 }
 
 /* ------------------------------------------------------------------ router */
-var VIEWS = { overview: overview, roadmap: roadmap, dashboard: dashboard, fixes: fixes, history: history };
+var VIEWS = { overview: overview, roadmap: roadmap, dashboard: dashboard, fixes: fixes, history: history, forum: function () { return '<div id="forumRoot"></div>'; } };
 function route() {
   var parts = (location.hash || '').replace('#', '').split('/'), v = parts[0];
   if (!VIEWS[v] || D.pages[v] === false) v = PAGES.length ? PAGES[0][0] : 'overview';
@@ -287,6 +287,7 @@ function route() {
   window.scrollTo(0, 0);
   if (v === 'overview') { startHero(); reveal(); if (parts[1]) { var tgt = document.getElementById('ov-' + parts[1]); if (tgt) { tgt.classList.add('in'); tgt.scrollIntoView(); } } } else clearInterval(timer);
   if (v === 'history') refreshList('hist');
+  if (v === 'forum' && window.ShnorkForum) window.ShnorkForum.mount($('#forumRoot'));
 }
 $('#nav').innerHTML = PAGES.map(function (n) { return '<a href="#' + n[0] + '" data-p="' + n[0] + '">' + esc(n[1]) + '</a>'; }).join('');
 $('#gen').textContent = D.updated ? 'Updated ' + fd(D.updated) : '';
